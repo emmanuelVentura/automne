@@ -17,7 +17,7 @@
 							<atm-function function="selectOptions" object="{['object2']['fields'][8]}" selected="{request:int:cat}"></atm-function>
 						</select>
 					</div>
-					<div id="loadingSearch"><img src="/img/demo/interieur/loading-media.gif" alt="loading ..." title="loading ..." /></div>
+					<div id="loadingSearch"><img src="img/demo/interieur/loading-media.gif" alt="loading ..." title="loading ..." /></div>
 					<input type="submit" class="button" name="search" id="submitSearch" value="ok" />
 					<div class="spacer"></div>
 				</div>
@@ -105,8 +105,8 @@
 								<atm-function function="pages" maxpages="{maxpages}" currentpage="{currentpage}" displayedpage="5">
 									<pages><a href="{page:self:url}?cat={request:int:cat}&amp;keyword={request:string:keyword}&amp;page={n}">{n}</a> </pages>
 									<currentpage><strong>{n}</strong> </currentpage>
-									<previous><a href="{page:self:url}?cat={request:int:cat}&amp;keyword={request:string:keyword}&amp;page={n}"><img src="/img/demo/interieur/newsPrevious.gif" alt="Previous page" title="Previous page" /></a> </previous>
-									<next><a href="{page:self:url}?cat={request:int:cat}&amp;keyword={request:string:keyword}&amp;page={n}"><img src="/img/demo/interieur/newsNext.gif" alt="Next page suivante" title="Next page" /></a> </next>
+									<previous><a href="{page:self:url}?cat={request:int:cat}&amp;keyword={request:string:keyword}&amp;page={n}"><img src="img/demo/interieur/newsPrevious.gif" alt="Previous page" title="Previous page" /></a> </previous>
+									<next><a href="{page:self:url}?cat={request:int:cat}&amp;keyword={request:string:keyword}&amp;page={n}"><img src="img/demo/interieur/newsNext.gif" alt="Next page suivante" title="Next page" /></a> </next>
 								</atm-function> 
 							</div>
 						</atm-if>
