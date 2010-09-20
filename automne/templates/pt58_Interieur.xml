@@ -4,11 +4,11 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title><atm-constant name="APPLICATION_LABEL" /> : <atm-title /></title>
-	<atm-css-tags files="/css/reset.css,/css/demo/common.css,/css/demo/interieur.css" media="all" />
+	<atm-css-tags files="css/reset.css,css/demo/common.css,css/demo/interieur.css" media="all" />
 	<!--[if lte IE 6]> 
-		<link rel="stylesheet" type="text/css" href="/css/demo/ie6.css" media="all" />
+		<link rel="stylesheet" type="text/css" href="css/demo/ie6.css" media="all" />
 	<![endif]-->
-	<atm-css-tags files="/css/demo/print.css" media="print" />
+	<atm-css-tags files="css/demo/print.css" media="print" />
 	<atm-js-tags />
 	<atm-meta-tags />
 </head>
