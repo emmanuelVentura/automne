@@ -21,7 +21,7 @@
 				<ul class="CMS_lvl2">
 					<atm-linx type="sublinks">
 						<selection>
-							<start><nodespec type="node" value="2" /></start>
+							<start><nodespec type="codename" value="home" /></start>
 						</selection>
 						<display>
 							<htmltemplate><li class="CMS_lvl2"><a class="CMS_lvl2" href="{{href}}">{{title}}</a></li></htmltemplate>
@@ -45,7 +45,7 @@
 			<ul>
 				<atm-linx type="sublinks">
 					<selection>
-						<start><nodespec type="node" value="7" /></start>
+						<start><nodespec type="codename" value="footer" /></start>
 					</selection>
 					<display>
 						<htmltemplate><li><a href="{{href}}">{{title}}</a></li></htmltemplate>
