@@ -3373,8 +3373,6 @@ CREATE TABLE `profilesUsersGroups` (
 -- Contenu de la table `profilesUsersGroups`
 --
 
-INSERT INTO `profilesUsersGroups` (`id_prg`, `description_prg`, `label_prg`, `profile_prg`, `dn_prg`, `invertdn_prg`) VALUES(1, 'Groupe des administrateurs du site', 'Administrateurs', 4, '', 0);
-INSERT INTO `profilesUsersGroups` (`id_prg`, `description_prg`, `label_prg`, `profile_prg`, `dn_prg`, `invertdn_prg`) VALUES(2, 'Groupes des rédacteurs pour le contenu du site.', 'Rédacteurs', 10, '', 0);
 
 -- --------------------------------------------------------
 
