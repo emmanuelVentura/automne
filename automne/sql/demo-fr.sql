@@ -1501,6 +1501,29 @@ CREATE TABLE `log` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `messages`
+--
+
+DROP TABLE IF EXISTS `messages`;
+CREATE TABLE `messages` (
+  `id_mes` int(11) unsigned NOT NULL auto_increment,
+  `module_mes` varchar(50) NOT NULL,
+  `language_mes` varchar(3) NOT NULL,
+  `message_mes` text NOT NULL,
+  UNIQUE KEY `id` (`id_mes`,`module_mes`,`language_mes`),
+  KEY `module` (`module_mes`),
+  KEY `language` (`language_mes`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `messages`
+--
+
+
+-- --------------------------------------------------------
+
+
+--
 -- Structure de la table `modules`
 --
 
