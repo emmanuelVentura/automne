@@ -186,3 +186,18 @@ th{
 	height:					400px;
 	border:					1px solid black;
 }
+.aside .pmedia-item {
+	max-width:				100%;
+	margin-top:				1em;
+}
+.aside .pmedia-item img {
+	max-width:				100%;
+	padding:				0;
+	border:					none;
+	-moz-border-radius:		0;
+	-webkit-border-radius:	0;
+	border-radius:			0;
+	-moz-box-shadow:		none;
+	-webkit-box-shadow:		none;
+	box-shadow:				none;
+}

@@ -4,7 +4,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title><atm-website name="title" /> : <atm-title /></title>
-		<atm-css-tags files="css/reset.css,css/demo/base.css,css/demo/common.css,css/demo/home.css,css/demo/colorbox.css" media="all" />
+		<atm-css-tags files="css/reset.css,css/base.css,css/demo/common.css,css/demo/home.css,css/demo/colorbox.css" media="all" />
 		<atm-js-tags files="js/demo/jquery-1.5.js,js/demo/jquery.colorbox-min.js,js/demo/colorbox.js" />
 		<atm-meta-tags />
 	</head>
