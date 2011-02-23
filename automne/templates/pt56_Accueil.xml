@@ -1,59 +1,51 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title><atm-website name="title" /> : <atm-title /></title>
-	<atm-css-tags files="css/reset.css,css/demo/common.css,css/demo/accueil.css" media="all" />
-	<!--[if lte IE 6]> 
-		<link rel="stylesheet" type="text/css" href="css/demo/ie6.css" media="all" />
-	<![endif]-->
-	<atm-css-tags files="css/demo/print.css" media="print" />
-	<atm-js-tags />
-	<atm-meta-tags />
-</head>
-<body>
-	<div id="main">
-		<div id="container">
-			<div id="header"></div>
-			<h1><atm-title /></h1>
-			<div id="menuLeft">
-				<ul class="CMS_lvl2">
-					<atm-linx type="sublinks">
-						<selection>
-							<start><nodespec type="codename" value="home" /></start>
-						</selection>
-						<display>
-							<htmltemplate><li class="CMS_lvl2"><a class="CMS_lvl2" href="{{href}}">{{title}}</a></li></htmltemplate>
-						</display>
-					</atm-linx>
-				</ul>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title><atm-website name="title" /> : <atm-title /></title>
+		<atm-css-tags files="css/reset.css,css/demo/base.css,css/demo/common.css,css/demo/home.css,css/demo/colorbox.css" media="all" />
+		<atm-js-tags files="js/demo/jquery-1.5.js,js/demo/jquery.colorbox-min.js,js/demo/colorbox.js" />
+		<atm-meta-tags />
+	</head>
+	<body>
+		<div id="header">
+			<div class="viewport center">
+				<h1><atm-website name="title" /></h1>
+				<atm-linx type="sublinks">
+					<selection>
+						<start><nodespec type="codename" value="home" /></start>
+					</selection>
+					<display>
+						<htmltemplate><li class="left"><a href="{{href}}">{{title}}</a></li></htmltemplate>
+						<subleveltemplate><ul class="navigation clearfix">{{sublevel}}</ul></subleveltemplate>
+					</display>
+				</atm-linx>
 			</div>
-			<div id="content">
-				<div id="firstCol">
+		</div>
+		<div id="main">
+			<div class="viewport center">
+				<div class="left content">
 					<atm-clientspace module="standard" id="first" />
 				</div>
-				<div id="secondCol">
+				<div class="left aside">
 					<atm-clientspace module="standard" id="second" />
 				</div>
+				<div class="clear"></div>
 			</div>
-			<div class="spacer"></div>
 		</div>
-	</div>
-	<div id="footer">
-		<div id="menuBottom">
-			<ul>
+		<div id="footer">
+			<div class="viewport center">
 				<atm-linx type="sublinks">
 					<selection>
 						<start><nodespec type="codename" value="footer" /></start>
 					</selection>
 					<display>
-						<htmltemplate><li><a href="{{href}}">{{title}}</a></li></htmltemplate>
+						<htmltemplate><li class="left"><a href="{{href}}">{{title}}</a></li></htmltemplate>
+						<subleveltemplate><ul class="navigation clearfix">{{sublevel}}</ul></subleveltemplate>
 					</display>
 				</atm-linx>
-			</ul>
-			<div class="spacer"></div>
+			</div>
 		</div>
-	</div>
-</body>
+	</body>
 </html>

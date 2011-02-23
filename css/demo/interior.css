@@ -1,0 +1,81 @@
+#header {
+	font-size:				0.8em;
+	padding-top:			0.4em;
+}
+#header .title {
+	background:				transparent url('../img/demo/common/logo_little.png') no-repeat left top;
+	color:					#FFF;
+	font-size:				2em;
+	margin:					0 0 0.4em 0;
+	padding:				0.4em 0 0.4em 2.4em;
+	text-shadow:			2px 2px 2px #4d7802;
+}
+#header .title a{
+	color:					#FFF;
+}
+#breadcrumbs{
+	color:					#6FAD02;
+	padding:				0.5em 0 0.5em 0.5em;
+}
+#header .CMS_parent{
+	background-color:		#f2f2f2;
+}
+#header .CMS_parent a{
+	border:					none;
+	color:					#6FAD02;
+}
+#header .CMS_parent + li a{
+	border:					none;
+}
+/* Menu de navigation annexe */
+.aside ul.CMS_lvl1 {
+	color:					#FFF;
+	background-color:		#6FAD02;
+	margin:					1em 0;
+	padding:				0.8em;	
+	-moz-border-radius:		.5em;
+	-webkit-border-radius:	.5em;
+	border-radius: 			.5em;
+}
+.aside ul.CMS_lvl2 {
+	margin:					0;
+}
+.aside li,
+.aside li.CMS_current a.CMS_lvl1 {
+	list-style:				none;
+	padding:				.25em;
+	-moz-border-radius:		.5em;
+	-webkit-border-radius:	.5em;
+	border-radius: 			.5em;
+}
+.aside li.CMS_current a.CMS_lvl1 {
+	display:				block;
+	background-color:		#4D7802;
+}
+.aside .CMS_lvl2 .CMS_current{
+	background-color:		#4D7802;
+}
+.aside li a{
+	color:					#FFF;
+	font-size:				1.4em;
+}
+.aside ul.CMS_lvl2 li a{
+	color:					#FFF;
+	border-bottom:			0;
+	font-size:				1.2em;
+}
+/* Plan du site */ 
+.content ul.CMS_lvl1 {
+	margin:					0;
+}
+.content li.CMS_lvl2  {
+	list-style: 			none;
+}
+.content li.CMS_lvl2 a {
+	font-size: 				1.5em;
+	font-weight: 			bold;
+}
+.content li.CMS_lvl3 a {
+	font-size: 				1em;
+	font-weight: 			normal;
+}

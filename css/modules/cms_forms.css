@@ -1,31 +1,35 @@
-/* $Id: cms_forms.css,v 1.4 2009/11/02 09:49:34 sebastien Exp $ */
-
-/*Forms error messages*/
+/* Forms */
 .cms_forms_error_msg{
-	border:				1px solid #FF0000;
-	padding:			10px;
+	padding:			1em;
+	background:			#fbe3e4;
+	color:				#8a1f11;
+	border-color:		#fbc2c4;
 }
-/*Forms replacement messages*/
 .cms_forms_msg {
-	border:				1px solid #6FAE03;
 	padding:			10px;
+	background:			#e6efc2;
+	color:				#264409;
+	border-color:		#c6d880;
 }
 .cms_forms td {
 	border:				0;
 }
 .cms_forms textarea {
 	width:				250px;
+	height:				100px;
 }
 .cms_forms label{
 	color:				#473933;
 	font-size:			12px;
 	font-weight:		bold;
 }
-.cms_forms input, .cms_forms textarea, .cms_forms select{
+.cms_forms input, 
+.cms_forms textarea, 
+.cms_forms select {
 	color:				#393939;
-	background:			#FFFFFF;
+	background:			#fff;
 	border:				1px solid #A59893;
-	padding:			1px;
+	padding:			2px;
 }
 .cms_forms input.button{
 	background:			#78B704;
@@ -34,4 +38,5 @@
 	cursor:				pointer;
 	line-height:		18px;
 	width:				60px;
+	border-radius:		.5em;
 }

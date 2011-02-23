@@ -1,0 +1,11 @@
+#header {
+	padding-top:			0.8em;
+}
+#header h1 {
+	background:				transparent url('../img/demo/common/logo.png') no-repeat top left;
+	color:					#FFF;
+	font-size:				4em;
+	margin:					0 0 0.5em 0;
+	padding-left:			110px;
+	text-shadow:			2px 2px 2px #4d7802;
+}

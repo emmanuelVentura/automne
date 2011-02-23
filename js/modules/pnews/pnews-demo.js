@@ -1,12 +1,12 @@
 $(document).ready(function(){
 	var getSearch = function  () {
-		if ($('#keyword').val() && $('#keyword').val().length < 3) {
+		if ($('#pnews-keyword').val() && $('#pnews-keyword').val().length < 3) {
 			return false;
 		}
 		$.ajax({
 			type: 		"GET",
 			url: 		pageURL,
-			data: 		'out=xml&cat=' + $('#cat').val() + '&keyword=' + $('#keyword').val(),
+			data: 		'out=xml&keyword=' + $('#pnews-keyword').val(),
 			success: 	displaySearch
 		});
 		return true;
@@ -27,24 +27,23 @@ $(document).ready(function(){
 	}
 	var displaySearch = function  (xmlcontent) {
 		if (xmlcontent.getElementsByTagName('data').length > 0) {
-			$('#searchresult').html(xmlcontent.getElementsByTagName('data').item(0).firstChild.nodeValue);
-			if ($('#pages')) {
-				$('#pages a').click(getPage);
+			$('.pnews-results').html(xmlcontent.getElementsByTagName('data').item(0).firstChild.nodeValue);
+			if ($('.pnews-results .pnews-pages')) {
+				$('.pnews-results .pnews-pages a').click(getPage);
 			}
 		}
 		return true;
 	}
-	$("#loadingSearch").ajaxStart(function(){
+	$(".pnews-loading").ajaxStart(function(){
 		$(this).show();
 	});
-	$("#loadingSearch").ajaxStop(function(){
+	$(".pnews-loading").ajaxStop(function(){
 		$(this).hide();
 	});
 	
-	$('#submitSearch').hide();
-	$('#keyword').keyup(getSearch);
-	$('#cat').change(getSearch);
-	if ($('#pages')) {
-		$('#pages a').click(getPage);
+	$('.pnews-submit').hide();
+	$('#pnews-keyword').keyup(getSearch);
+	if ($('.pnews-results .pnews-pages')) {
+		$('.pnews-results .pnews-pages a').click(getPage);
 	}
 });
