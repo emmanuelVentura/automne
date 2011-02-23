@@ -1,41 +1,50 @@
--- MySQL dump 10.11
+-- phpMyAdmin SQL Dump
+-- version 2.11.8.1deb5+lenny3
+-- http://www.phpmyadmin.net
 --
--- Host: localhost    Database: automne4_demo-fr
--- ------------------------------------------------------
--- Server version	5.0.51a-24+lenny2
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+-- Serveur: localhost
+-- Généré le : Mer 23 Février 2011 à 14:40
+-- Version du serveur: 5.0.51
+-- Version de PHP: 4.4.4-8+etch6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
 
 --
--- Table structure for table `actionsTimestamps`
+-- Base de données: `automne4_demo-fr`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `actionsTimestamps`
 --
 
 DROP TABLE IF EXISTS `actionsTimestamps`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `actionsTimestamps` (
   `type_at` varchar(50) NOT NULL default '',
   `date_at` datetime NOT NULL default '0000-00-00 00:00:00'
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `actionsTimestamps`
+-- Contenu de la table `actionsTimestamps`
 --
 
+
+-- --------------------------------------------------------
+
 --
--- Table structure for table `blocksFiles_archived`
+-- Structure de la table `blocksFiles_archived`
 --
 
 DROP TABLE IF EXISTS `blocksFiles_archived`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `blocksFiles_archived` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `page` int(11) unsigned NOT NULL default '0',
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
@@ -44,23 +53,22 @@ CREATE TABLE `blocksFiles_archived` (
   `file` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`id`),
   KEY `page` (`page`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `blocksFiles_archived`
+-- Contenu de la table `blocksFiles_archived`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `blocksFiles_deleted`
+-- Structure de la table `blocksFiles_deleted`
 --
 
 DROP TABLE IF EXISTS `blocksFiles_deleted`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `blocksFiles_deleted` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `page` int(11) unsigned NOT NULL default '0',
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
@@ -69,23 +77,22 @@ CREATE TABLE `blocksFiles_deleted` (
   `file` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`id`),
   KEY `page` (`page`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `blocksFiles_deleted`
+-- Contenu de la table `blocksFiles_deleted`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `blocksFiles_edited`
+-- Structure de la table `blocksFiles_edited`
 --
 
 DROP TABLE IF EXISTS `blocksFiles_edited`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `blocksFiles_edited` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `page` int(11) unsigned NOT NULL default '0',
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
@@ -95,23 +102,22 @@ CREATE TABLE `blocksFiles_edited` (
   PRIMARY KEY  (`id`),
   KEY `page` (`page`),
   FULLTEXT KEY `label` (`label`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `blocksFiles_edited`
+-- Contenu de la table `blocksFiles_edited`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `blocksFiles_edition`
+-- Structure de la table `blocksFiles_edition`
 --
 
 DROP TABLE IF EXISTS `blocksFiles_edition`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `blocksFiles_edition` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `page` int(11) unsigned NOT NULL default '0',
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
@@ -120,23 +126,22 @@ CREATE TABLE `blocksFiles_edition` (
   `file` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`id`),
   KEY `page` (`page`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `blocksFiles_edition`
+-- Contenu de la table `blocksFiles_edition`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `blocksFiles_public`
+-- Structure de la table `blocksFiles_public`
 --
 
 DROP TABLE IF EXISTS `blocksFiles_public`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `blocksFiles_public` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `page` int(11) unsigned NOT NULL default '0',
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
@@ -146,23 +151,22 @@ CREATE TABLE `blocksFiles_public` (
   PRIMARY KEY  (`id`),
   KEY `page` (`page`),
   FULLTEXT KEY `label` (`label`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `blocksFiles_public`
+-- Contenu de la table `blocksFiles_public`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `blocksFlashes_archived`
+-- Structure de la table `blocksFlashes_archived`
 --
 
 DROP TABLE IF EXISTS `blocksFlashes_archived`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `blocksFlashes_archived` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `page` int(11) unsigned NOT NULL default '0',
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
@@ -177,23 +181,22 @@ CREATE TABLE `blocksFlashes_archived` (
   `attributes` text NOT NULL,
   PRIMARY KEY  (`id`),
   KEY `page` (`page`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `blocksFlashes_archived`
+-- Contenu de la table `blocksFlashes_archived`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `blocksFlashes_deleted`
+-- Structure de la table `blocksFlashes_deleted`
 --
 
 DROP TABLE IF EXISTS `blocksFlashes_deleted`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `blocksFlashes_deleted` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `page` int(11) unsigned NOT NULL default '0',
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
@@ -208,23 +211,22 @@ CREATE TABLE `blocksFlashes_deleted` (
   `attributes` text NOT NULL,
   PRIMARY KEY  (`id`),
   KEY `page` (`page`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `blocksFlashes_deleted`
+-- Contenu de la table `blocksFlashes_deleted`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `blocksFlashes_edited`
+-- Structure de la table `blocksFlashes_edited`
 --
 
 DROP TABLE IF EXISTS `blocksFlashes_edited`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `blocksFlashes_edited` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `page` int(11) unsigned NOT NULL default '0',
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
@@ -239,23 +241,22 @@ CREATE TABLE `blocksFlashes_edited` (
   `attributes` text NOT NULL,
   PRIMARY KEY  (`id`),
   KEY `page` (`page`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `blocksFlashes_edited`
+-- Contenu de la table `blocksFlashes_edited`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `blocksFlashes_edition`
+-- Structure de la table `blocksFlashes_edition`
 --
 
 DROP TABLE IF EXISTS `blocksFlashes_edition`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `blocksFlashes_edition` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `page` int(11) unsigned NOT NULL default '0',
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
@@ -270,23 +271,22 @@ CREATE TABLE `blocksFlashes_edition` (
   `attributes` text NOT NULL,
   PRIMARY KEY  (`id`),
   KEY `page` (`page`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `blocksFlashes_edition`
+-- Contenu de la table `blocksFlashes_edition`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `blocksFlashes_public`
+-- Structure de la table `blocksFlashes_public`
 --
 
 DROP TABLE IF EXISTS `blocksFlashes_public`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `blocksFlashes_public` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `page` int(11) unsigned NOT NULL default '0',
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
@@ -301,23 +301,22 @@ CREATE TABLE `blocksFlashes_public` (
   `attributes` text NOT NULL,
   PRIMARY KEY  (`id`),
   KEY `page` (`page`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `blocksFlashes_public`
+-- Contenu de la table `blocksFlashes_public`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `blocksImages_archived`
+-- Structure de la table `blocksImages_archived`
 --
 
 DROP TABLE IF EXISTS `blocksImages_archived`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `blocksImages_archived` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `page` int(11) unsigned NOT NULL default '0',
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
@@ -328,23 +327,22 @@ CREATE TABLE `blocksImages_archived` (
   `externalLink` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`id`),
   KEY `page` (`page`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `blocksImages_archived`
+-- Contenu de la table `blocksImages_archived`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `blocksImages_deleted`
+-- Structure de la table `blocksImages_deleted`
 --
 
 DROP TABLE IF EXISTS `blocksImages_deleted`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `blocksImages_deleted` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `page` int(11) unsigned NOT NULL default '0',
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
@@ -355,23 +353,22 @@ CREATE TABLE `blocksImages_deleted` (
   `externalLink` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`id`),
   KEY `page` (`page`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `blocksImages_deleted`
+-- Contenu de la table `blocksImages_deleted`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `blocksImages_edited`
+-- Structure de la table `blocksImages_edited`
 --
 
 DROP TABLE IF EXISTS `blocksImages_edited`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `blocksImages_edited` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `page` int(11) unsigned NOT NULL default '0',
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
@@ -383,24 +380,23 @@ CREATE TABLE `blocksImages_edited` (
   PRIMARY KEY  (`id`),
   KEY `page` (`page`),
   FULLTEXT KEY `label` (`label`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `blocksImages_edited`
+-- Contenu de la table `blocksImages_edited`
 --
 
-INSERT INTO `blocksImages_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `label`, `file`, `enlargedFile`, `externalLink`) VALUES (4,3,'first','a132ad8e6542489be399526940001ee82','image','','p3_7333fffc806233ad382709b1af305da0Nenuphars.png','','0||||_top||0,0|');
+INSERT INTO `blocksImages_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `label`, `file`, `enlargedFile`, `externalLink`) VALUES(4, 3, 'first', 'a132ad8e6542489be399526940001ee82', 'image', '', 'p3_7333fffc806233ad382709b1af305da0Nenuphars.png', '', '0||||_top||0,0|');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `blocksImages_edition`
+-- Structure de la table `blocksImages_edition`
 --
 
 DROP TABLE IF EXISTS `blocksImages_edition`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `blocksImages_edition` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `page` int(11) unsigned NOT NULL default '0',
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
@@ -411,23 +407,22 @@ CREATE TABLE `blocksImages_edition` (
   `externalLink` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`id`),
   KEY `page` (`page`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `blocksImages_edition`
+-- Contenu de la table `blocksImages_edition`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `blocksImages_public`
+-- Structure de la table `blocksImages_public`
 --
 
 DROP TABLE IF EXISTS `blocksImages_public`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `blocksImages_public` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `page` int(11) unsigned NOT NULL default '0',
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
@@ -439,24 +434,23 @@ CREATE TABLE `blocksImages_public` (
   PRIMARY KEY  (`id`),
   KEY `page` (`page`),
   FULLTEXT KEY `label` (`label`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `blocksImages_public`
+-- Contenu de la table `blocksImages_public`
 --
 
-INSERT INTO `blocksImages_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `label`, `file`, `enlargedFile`, `externalLink`) VALUES (4,3,'first','a132ad8e6542489be399526940001ee82','image','','p3_7333fffc806233ad382709b1af305da0Nenuphars.png','','0||||_top||0,0|');
+INSERT INTO `blocksImages_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `label`, `file`, `enlargedFile`, `externalLink`) VALUES(4, 3, 'first', 'a132ad8e6542489be399526940001ee82', 'image', '', 'p3_7333fffc806233ad382709b1af305da0Nenuphars.png', '', '0||||_top||0,0|');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `blocksRawDatas_archived`
+-- Structure de la table `blocksRawDatas_archived`
 --
 
 DROP TABLE IF EXISTS `blocksRawDatas_archived`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `blocksRawDatas_archived` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `page` int(11) unsigned NOT NULL default '0',
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
@@ -464,23 +458,22 @@ CREATE TABLE `blocksRawDatas_archived` (
   `value` text NOT NULL,
   PRIMARY KEY  (`id`),
   KEY `page` (`page`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `blocksRawDatas_archived`
+-- Contenu de la table `blocksRawDatas_archived`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `blocksRawDatas_deleted`
+-- Structure de la table `blocksRawDatas_deleted`
 --
 
 DROP TABLE IF EXISTS `blocksRawDatas_deleted`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `blocksRawDatas_deleted` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `page` int(11) unsigned NOT NULL default '0',
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
@@ -488,23 +481,22 @@ CREATE TABLE `blocksRawDatas_deleted` (
   `value` text NOT NULL,
   PRIMARY KEY  (`id`),
   KEY `page` (`page`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `blocksRawDatas_deleted`
+-- Contenu de la table `blocksRawDatas_deleted`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `blocksRawDatas_edited`
+-- Structure de la table `blocksRawDatas_edited`
 --
 
 DROP TABLE IF EXISTS `blocksRawDatas_edited`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `blocksRawDatas_edited` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `page` int(11) unsigned NOT NULL default '0',
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
@@ -512,37 +504,36 @@ CREATE TABLE `blocksRawDatas_edited` (
   `value` text NOT NULL,
   PRIMARY KEY  (`id`),
   KEY `page` (`page`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `blocksRawDatas_edited`
+-- Contenu de la table `blocksRawDatas_edited`
 --
 
-INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (1,9,'first','aa09fe3cdbc32c9b9b7808a6ae073f604','form','a:1:{s:6:\"formID\";s:1:\"2\";}');
-INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (18,24,'first','a76b35963e7853924f49b447d533f5ab','medias','a:1:{s:6:\"search\";a:1:{s:11:\"mediaresult\";a:1:{s:4:\"item\";s:2:\"45\";}}}');
-INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (5,3,'first','39a32afb98d21c8252ea3714cff0f62e','medias','a:1:{s:6:\"search\";a:1:{s:11:\"mediaresult\";a:1:{s:4:\"item\";s:2:\"36\";}}}');
-INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (7,25,'first','267e03d5f6a4d0392b79a2d31dcd40f2','medias','a:1:{s:6:\"search\";a:1:{s:11:\"mediaresult\";a:1:{s:4:\"item\";s:2:\"25\";}}}');
-INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (16,27,'first','56025a9b887be03112111d215ca6f31d','medias','a:1:{s:6:\"search\";a:1:{s:11:\"mediaresult\";a:1:{s:4:\"item\";s:2:\"26\";}}}');
-INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (9,28,'first','9ba530cba11a3763a081a2e34072711f','medias','a:1:{s:6:\"search\";a:1:{s:11:\"mediaresult\";a:1:{s:4:\"item\";s:2:\"27\";}}}');
-INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (10,35,'first','9f851c9d1868ad933f280c33e5a419f3','medias','a:1:{s:6:\"search\";a:1:{s:11:\"mediaresult\";a:1:{s:4:\"item\";s:2:\"28\";}}}');
-INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (11,37,'first','3c1cf8ef8f25de1ae96706a2585bffb7','medias','a:1:{s:6:\"search\";a:1:{s:11:\"mediaresult\";a:1:{s:4:\"item\";s:2:\"29\";}}}');
-INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (14,38,'first','65990b9ff00394714dd60ffd708b2d77','medias','a:1:{s:6:\"search\";a:1:{s:11:\"mediaresult\";a:1:{s:4:\"item\";s:2:\"39\";}}}');
-INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (15,38,'first','48e8e4c2bea88305e6a9353511f51ea7','medias','a:1:{s:6:\"search\";a:1:{s:11:\"mediaresult\";a:1:{s:4:\"item\";s:2:\"37\";}}}');
-INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (12,38,'first','4f342492c25a2b686c2b531760008d98','medias','a:1:{s:6:\"search\";a:1:{s:11:\"mediaresult\";a:1:{s:4:\"item\";s:2:\"38\";}}}');
-INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (19,26,'first','d9357a8e2eaabff878edd590a3390747','medias','a:1:{s:6:\"search\";a:1:{s:11:\"mediaresult\";a:1:{s:4:\"item\";s:2:\"34\";}}}');
-INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (20,26,'first','22f3ce37f32ed90e7efcb5e2c3379e88','medias','a:1:{s:6:\"search\";a:1:{s:11:\"mediaresult\";a:1:{s:4:\"item\";s:2:\"24\";}}}');
-INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (17,3,'first','f2c8532eb6f56afe1d435350eebd9a52','medias','a:1:{s:6:\"search\";a:1:{s:11:\"mediaresult\";a:1:{s:4:\"item\";s:2:\"35\";}}}');
+INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(1, 9, 'first', 'aa09fe3cdbc32c9b9b7808a6ae073f604', 'form', 'a:1:{s:6:"formID";s:1:"2";}');
+INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(18, 24, 'first', 'a76b35963e7853924f49b447d533f5ab', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"45";}}}');
+INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(5, 3, 'first', '39a32afb98d21c8252ea3714cff0f62e', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"36";}}}');
+INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(7, 25, 'first', '267e03d5f6a4d0392b79a2d31dcd40f2', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"25";}}}');
+INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(16, 27, 'first', '56025a9b887be03112111d215ca6f31d', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"26";}}}');
+INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(9, 28, 'first', '9ba530cba11a3763a081a2e34072711f', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"27";}}}');
+INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(10, 35, 'first', '9f851c9d1868ad933f280c33e5a419f3', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"28";}}}');
+INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(11, 37, 'first', '3c1cf8ef8f25de1ae96706a2585bffb7', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"29";}}}');
+INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(14, 38, 'first', '65990b9ff00394714dd60ffd708b2d77', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"39";}}}');
+INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(15, 38, 'first', '48e8e4c2bea88305e6a9353511f51ea7', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"37";}}}');
+INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(12, 38, 'first', '4f342492c25a2b686c2b531760008d98', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"38";}}}');
+INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(19, 26, 'first', 'd9357a8e2eaabff878edd590a3390747', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"34";}}}');
+INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(20, 26, 'first', '22f3ce37f32ed90e7efcb5e2c3379e88', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"24";}}}');
+INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(17, 3, 'first', 'f2c8532eb6f56afe1d435350eebd9a52', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"35";}}}');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `blocksRawDatas_edition`
+-- Structure de la table `blocksRawDatas_edition`
 --
 
 DROP TABLE IF EXISTS `blocksRawDatas_edition`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `blocksRawDatas_edition` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `page` int(11) unsigned NOT NULL default '0',
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
@@ -550,23 +541,22 @@ CREATE TABLE `blocksRawDatas_edition` (
   `value` text NOT NULL,
   PRIMARY KEY  (`id`),
   KEY `page` (`page`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `blocksRawDatas_edition`
+-- Contenu de la table `blocksRawDatas_edition`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `blocksRawDatas_public`
+-- Structure de la table `blocksRawDatas_public`
 --
 
 DROP TABLE IF EXISTS `blocksRawDatas_public`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `blocksRawDatas_public` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `page` int(11) unsigned NOT NULL default '0',
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
@@ -574,37 +564,36 @@ CREATE TABLE `blocksRawDatas_public` (
   `value` text NOT NULL,
   PRIMARY KEY  (`id`),
   KEY `page` (`page`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `blocksRawDatas_public`
+-- Contenu de la table `blocksRawDatas_public`
 --
 
-INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (1,9,'first','aa09fe3cdbc32c9b9b7808a6ae073f604','form','a:1:{s:6:\"formID\";s:1:\"2\";}');
-INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (18,24,'first','a76b35963e7853924f49b447d533f5ab','medias','a:1:{s:6:\"search\";a:1:{s:11:\"mediaresult\";a:1:{s:4:\"item\";s:2:\"45\";}}}');
-INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (17,3,'first','f2c8532eb6f56afe1d435350eebd9a52','medias','a:1:{s:6:\"search\";a:1:{s:11:\"mediaresult\";a:1:{s:4:\"item\";s:2:\"35\";}}}');
-INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (7,25,'first','267e03d5f6a4d0392b79a2d31dcd40f2','medias','a:1:{s:6:\"search\";a:1:{s:11:\"mediaresult\";a:1:{s:4:\"item\";s:2:\"25\";}}}');
-INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (16,27,'first','56025a9b887be03112111d215ca6f31d','medias','a:1:{s:6:\"search\";a:1:{s:11:\"mediaresult\";a:1:{s:4:\"item\";s:2:\"26\";}}}');
-INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (9,28,'first','9ba530cba11a3763a081a2e34072711f','medias','a:1:{s:6:\"search\";a:1:{s:11:\"mediaresult\";a:1:{s:4:\"item\";s:2:\"27\";}}}');
-INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (10,35,'first','9f851c9d1868ad933f280c33e5a419f3','medias','a:1:{s:6:\"search\";a:1:{s:11:\"mediaresult\";a:1:{s:4:\"item\";s:2:\"28\";}}}');
-INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (11,37,'first','3c1cf8ef8f25de1ae96706a2585bffb7','medias','a:1:{s:6:\"search\";a:1:{s:11:\"mediaresult\";a:1:{s:4:\"item\";s:2:\"29\";}}}');
-INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (12,38,'first','4f342492c25a2b686c2b531760008d98','medias','a:1:{s:6:\"search\";a:1:{s:11:\"mediaresult\";a:1:{s:4:\"item\";s:2:\"38\";}}}');
-INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (15,38,'first','48e8e4c2bea88305e6a9353511f51ea7','medias','a:1:{s:6:\"search\";a:1:{s:11:\"mediaresult\";a:1:{s:4:\"item\";s:2:\"37\";}}}');
-INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (14,38,'first','65990b9ff00394714dd60ffd708b2d77','medias','a:1:{s:6:\"search\";a:1:{s:11:\"mediaresult\";a:1:{s:4:\"item\";s:2:\"39\";}}}');
-INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (20,26,'first','22f3ce37f32ed90e7efcb5e2c3379e88','medias','a:1:{s:6:\"search\";a:1:{s:11:\"mediaresult\";a:1:{s:4:\"item\";s:2:\"24\";}}}');
-INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (19,26,'first','d9357a8e2eaabff878edd590a3390747','medias','a:1:{s:6:\"search\";a:1:{s:11:\"mediaresult\";a:1:{s:4:\"item\";s:2:\"34\";}}}');
-INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (5,3,'first','39a32afb98d21c8252ea3714cff0f62e','medias','a:1:{s:6:\"search\";a:1:{s:11:\"mediaresult\";a:1:{s:4:\"item\";s:2:\"36\";}}}');
+INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(1, 9, 'first', 'aa09fe3cdbc32c9b9b7808a6ae073f604', 'form', 'a:1:{s:6:"formID";s:1:"2";}');
+INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(18, 24, 'first', 'a76b35963e7853924f49b447d533f5ab', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"45";}}}');
+INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(17, 3, 'first', 'f2c8532eb6f56afe1d435350eebd9a52', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"35";}}}');
+INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(7, 25, 'first', '267e03d5f6a4d0392b79a2d31dcd40f2', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"25";}}}');
+INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(16, 27, 'first', '56025a9b887be03112111d215ca6f31d', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"26";}}}');
+INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(9, 28, 'first', '9ba530cba11a3763a081a2e34072711f', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"27";}}}');
+INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(10, 35, 'first', '9f851c9d1868ad933f280c33e5a419f3', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"28";}}}');
+INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(11, 37, 'first', '3c1cf8ef8f25de1ae96706a2585bffb7', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"29";}}}');
+INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(12, 38, 'first', '4f342492c25a2b686c2b531760008d98', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"38";}}}');
+INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(15, 38, 'first', '48e8e4c2bea88305e6a9353511f51ea7', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"37";}}}');
+INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(14, 38, 'first', '65990b9ff00394714dd60ffd708b2d77', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"39";}}}');
+INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(20, 26, 'first', '22f3ce37f32ed90e7efcb5e2c3379e88', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"24";}}}');
+INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(19, 26, 'first', 'd9357a8e2eaabff878edd590a3390747', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"34";}}}');
+INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(5, 3, 'first', '39a32afb98d21c8252ea3714cff0f62e', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"36";}}}');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `blocksTexts_archived`
+-- Structure de la table `blocksTexts_archived`
 --
 
 DROP TABLE IF EXISTS `blocksTexts_archived`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `blocksTexts_archived` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `page` int(11) unsigned NOT NULL default '0',
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
@@ -612,23 +601,22 @@ CREATE TABLE `blocksTexts_archived` (
   `value` text NOT NULL,
   PRIMARY KEY  (`id`),
   KEY `page` (`page`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `blocksTexts_archived`
+-- Contenu de la table `blocksTexts_archived`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `blocksTexts_deleted`
+-- Structure de la table `blocksTexts_deleted`
 --
 
 DROP TABLE IF EXISTS `blocksTexts_deleted`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `blocksTexts_deleted` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `page` int(11) unsigned NOT NULL default '0',
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
@@ -636,23 +624,22 @@ CREATE TABLE `blocksTexts_deleted` (
   `value` text NOT NULL,
   PRIMARY KEY  (`id`),
   KEY `page` (`page`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `blocksTexts_deleted`
+-- Contenu de la table `blocksTexts_deleted`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `blocksTexts_edited`
+-- Structure de la table `blocksTexts_edited`
 --
 
 DROP TABLE IF EXISTS `blocksTexts_edited`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `blocksTexts_edited` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `page` int(11) unsigned NOT NULL default '0',
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
@@ -661,66 +648,65 @@ CREATE TABLE `blocksTexts_edited` (
   PRIMARY KEY  (`id`),
   KEY `page` (`page`),
   FULLTEXT KEY `value` (`value`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `blocksTexts_edited`
+-- Contenu de la table `blocksTexts_edited`
 --
 
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (636,33,'first','adbbb020aeadb2df9957a83e19e55211','texte','<p>Automne se distingue de ses concurrents grâce notamment à :</p>\n<ul>\n    <li>une interface administrateur<strong>&#160;ergonomique, intuitive et réactive;</strong></li>\n    <li>l\'intégration de l\'interface sur votre site, pas de backoffice;</li>\n    <li>une prise en main rapide qui ne demande aucune connaissance technique;</li>\n    <li><strong>une aide contextuelle</strong>&#160;omniprésente dans le logiciel;</li>\n    <li>un assistant de création de modules personnalisés;</li>\n    <li>une optimisation des performances native;&#160;</li>\n    <li>l\'utilisation d\'outils de briques technologiques modernes et éprouvés : PHP5, ExtJS, Zend Framework, etc. ;</li>\n    <li>gestion des <strong>langues internationales</strong>&#160;et des alphabets particuliers;</li>\n    <li>l\'intégration d\'un moteur de recherche full-text pour les contenus;</li>\n    <li>et bien plus encore ...</li>\n</ul>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (567,9,'first','17a6be4c940c12530cfaecfb2eb6b828','texte','<p>Ce formulaire vous permet d\'envoyer une demande de contact. Pour le transformer (Champs, actions, email de destination), modifiez le dans les propriétés du module \"Formulaire\".</p>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (653,9,'first','d227e9c886232aa6c2bbbddb2b348ad4','texte','<p>&#160;Automne est un CMS open-source français édité par l\'agence <a target=\"_blank\" href=\"http://www.ws-interactive.fr\">WS Interactive</a>.</p>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (631,2,'first','a0922acb28a233e527aa46607bfec987c','texte','<p>Automne est un CMS open-source français conçu pour simplifier la gestion de sites web, que ce soit pour les contributeurs ou les dévelopeurs.</p>\n<p>L’interface d’Automne se greffe sur le site web et vous permet d’éditer le contenu de vos pages de manière intuitive.</p>\n<p>Commme tous les CMS, Automne propose un système de <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"25\"/></start></selection><noselection>modèles de page</noselection><display><htmltemplate><a  href=\"{{href}}\">modèles de page</a></htmltemplate></display></atm-linx> qui utilise la syntaxe <abbr title=\"eXtensible Markup Language\">XML</abbr>. Même chose pour les <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"26\"/></start></selection><noselection>modèles de blocs de contenus</noselection><display><htmltemplate><a  href=\"{{href}}\">modèles de blocs de contenus</a></htmltemplate></display></atm-linx> - ou rangées.</p>\n<p>Automne est un CMS stable et performant, il peut vous aider à gérer plusieurs sites ou plusieurs versions de sites. 10 000 pages en 5 langues ne lui font pas peur.</p>\n<p>Automne est extensible et intégre un <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"27\"/></start></selection><noselection>assistant de création de modules</noselection><display><htmltemplate><a  href=\"{{href}}\">assistant de création de modules</a></htmltemplate></display></atm-linx> - le <abbr title=\"Polymorphic Module\">Polymod</abbr>. Créez votre structure en quelques clics et Automne genère l’interface d’administration pour vous.</p>\n<p>La gestion de l’affichage se fait ensuite grâce au meta-langage d’Automne, pour les <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"31\"/></start></selection><noselection>modules simples</noselection><display><htmltemplate><a  href=\"{{href}}\">modules simples</a></htmltemplate></display></atm-linx> quelques balises XML suffisent.</p>\n<p>Vous l’aurez compris, Automne est là avant tout pour vous faciliter la vie.</p>\n<p>Comme tout logiciel libre, vous pouvez contribuer à Automne, en faisant des <a target=\"_blank\" href=\"http://www.automne-cms.org/todo/\">suggestions d’évolution</a>, en remontant <a target=\"_blank\" href=\"http://www.automne-cms.org/bug/\">des bugs</a> ou même en contribuant au <a target=\"_blank\" href=\"https://launchpad.net/automne\">code source</a>.</p>\n<p>Le site communautaire <a target=\"_blank\" href=\"http://www.automne-cms.org\">www.automne-cms.org</a> et son <a target=\"_blank\" href=\"http://forum.automne-cms.org\">forum</a> sont là pour vous aider dans votre découverte d\'Automne.</p>\n<p>Si vous souhaitez avoir des <a target=\"_blank\" href=\"http://www.automne-cms.org/support/\">formations ou obtenir un support professionnel</a>, nous avons des offres sur mesure à vous proposer.</p>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (642,26,'first','d9357a8e2eaabff878edd590a3390747','texte','<p>Les rangées de contenu sont les gabarits qui vont contenir l’information. Elles peuvent recevoir tous types de contenu : texte, image, flash, vidéo… Par exemple, des rangées titres, sous-titres, textes, textes et média sont certaines des rangées par défaut d\'Automne.</p>\n<p>Une rangée est pré-formatée. Cela permet de conserver l\'homogénéité de la présentation du site Internet.<b><br />\n</b></p>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (647,26,'first','8bcb8cc07038c43efc0b850a5e120569','texte','');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (651,26,'first','efa99bdc885c7e3d486c9073dd4b3ea5','texte','<p>&#160;L\'organisation des rangées dans une page est particulièrement simple. Vous pouvez les glisser-déposer à l\'endroit ou vous le souhaitez.</p>\n<p>Les zones de saisies sont clairement indiquées et vous pouvez modifier l\'ensemble du contenu très simplement à l\'aide d\'outils de mise en forme très intuitifs : mise en forme des textes à l\'aide de l\'éditeur WYSIWYG, redimensionner et recadrer des images, créer des liens vers d\'autres sites ou vers une page donnée de votre site.</p>\n<p>Vous pouvez même décider d\'importer le contenu de vos modules à n\'importe quel endroit de vos textes. Si le contenu du module vient à disparaitre (suppression, dépublication, ...), il disparaitra simplement et sans erreur de tous les textes ou vous y faite référence.</p>\n<p><strong>Créez vos propres rangées avec le type d’information et la présentation que vous souhaitez.</strong></p>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (660,27,'first','4564d92b193505d71f29b5ae69dddde0','texte','<h2>Modules en PHP</h2>\n<p>Grâce à l\'<a target=\"_blank\" href=\"http://www.automne-cms.org/api/\">API d\'Automne</a>&#160;vous pouvez aussi développer des modules plus complexes que le Polymod ne saurait traiter.</p>\n<p>Ces modules, créés en PHP peuvent alors réaliser tout type d\'opération métier complexe en s\'intégrant parfaitement à l\'interface d\'Automne.</p>\n<p>Vous pouvez ainsi lier Automne à vos bases de données métier ou encore créer des modules de mailing, d\'e-commerce, interroger des web services distants et ajouter bien d\'autres fonctionnalités encore.</p>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (593,27,'first','f863b4e5ea5a0c8019440ff99e59e29f','texte','<p>Créer ou installez des modules supplémentaires pour ajouter des fonctionnalités propres aux besoins de chaque site.</p>\n<p>Par défaut Automne contient les modules les plus courants : &#160;actualités, médiathèque,&#160;formulaires ou création d\'URLs courtes avec le module Alias par exemple.</p>\n<p><strong>Grâce au générateur d\'application intégré, ajoutez autant de modules supplémentaires que vous le souhaitez.</strong></p>\n<h2>Le générateur de modules</h2>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (591,27,'first','56025a9b887be03112111d215ca6f31d','texte','<p>Une des particularités d’Automne est son générateur de module intégré appelé <abbr title=\"Polymorphic Module\">Polymod</abbr>.</p>\n<p>L\'assistant de création de module vous permet de créer des structures personnalisées et de relier plusieurs objets entre eux (comme une actualité et un commentaire par exemple).</p>\n<p>La création de la structure des objets de vos modules se fait entièrement via l\'interface de gestion des modules d\'Automne, sans écrire la moindre ligne de code. Et ce n\'est pas tout, Automne génère ensuite l\'interface d\'administration correspondante de manière entièrement automatisée. Toujours pas la moindre ligne de PHP à écrire alors que vous pouvez déjà commencer à insérer des données dans vos modules.&#160;</p>\n<p>La gestion de l\'affichage de vos modules se fait ensuite via des <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"26\"/></start></selection><noselection>rangées de contenus</noselection><display><htmltemplate><a  href=\"{{href}}\">rangées de contenus</a></htmltemplate></display></atm-linx> en utilisant les balises XML d\'Automne.</p>\n<p>Exemple :&#160; les modules <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"5\"/></start></selection><noselection>Actualités</noselection><display><htmltemplate><a  href=\"{{href}}\">Actualités</a></htmltemplate></display></atm-linx> et <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"6\"/></start></selection><noselection>Médiathèque</noselection><display><htmltemplate><a  href=\"{{href}}\">Médiathèque</a></htmltemplate></display></atm-linx> fourni dans cette démonstration ont été entièrement créés à partir du générateur de modules d\'Automne. Ils peuvent être modifiés pour être ajustés à ce que vous souhaitez de très simplement.</p>\n<p>Il est donc facile de créer ses propres modules à l\'aide du Polymod et de les partager ensuite avec la communauté.</p>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (192,5,'first','68a1b1d8a072af0eb92f6392eb309ad1','texte','');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (667,31,'first','7448f10ee9579c5f0de5616d06e7b7f2','texte','<p>Voici quelques exemples de modules intégrés à cette démonstration. Il est possible d\'en ajouter d\'autres très simplement.&#160;</p>\n<h2>Module Actualités</h2>\n<ul>\n    <li>Gestion d\'articles ;</li>\n    <li>Gestion des catégories d\'articles ;</li>\n    <li>Moteur de recherche côté client.</li>\n</ul>\n<p><atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"5\"/></start></selection><noselection>Exemple d\'affichage du module Actualités</noselection><display><htmltemplate><a  href=\"{{href}}\">Exemple d\'affichage du module Actualités</a></htmltemplate></display></atm-linx></p>\n<h2>Module Médiathèque</h2>\n<p>Le module Médiathèque installé par défaut permet de :&#160;</p>\n<ul>\n    <li>Stocker différents types de média : vidéo, image, son dans une base commune ;</li>\n    <li>Trier selon le type de média ;</li>\n    <li>Gestion de l\'arborescence des catégories ;</li>\n    <li>Effectuer des recherche par mots clés ;</li>\n    <li>Insérer des médias dans l\'éditeur visuel lors de l\'édition des pages.</li>\n</ul>\n<p>Une fois l\'objet dans la base du module, il est réutilisable dans les pages et les autres modules autant de fois qu\'on le souhaite.</p>\n<p><atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"6\"/></start></selection><noselection>Exemple d\'affichage du module Médiathèque</noselection><display><htmltemplate><a  href=\"{{href}}\">Exemple d\'affichage du module Médiathèque</a></htmltemplate></display></atm-linx>&#160;</p>\n<h2>Module Formulaire</h2>\n<p>L\'assistant de création de formulaires vous aidera à mettre en place tout type de formulaires :</p>\n<ul>\n    <li>Permet l\'envoi de mail, l\'écriture dans une base de données, l\'identification des utilisateurs, de récolter des avis, de faire des sondages ...</li>\n    <li>Un assistant de création de formulaire vous aidera à mettre en place des formulaires tout aussi simple que complexes.</li>\n</ul>\n<p><atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"9\"/></start></selection><noselection>Exemple d\'affichage du module Formulaire</noselection><display><htmltemplate><a  href=\"{{href}}\">Exemple d\'affichage du module Formulaire</a></htmltemplate></display></atm-linx></p>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (637,30,'first','ac2acfd1b03fd3839ffd4502484cbbfa6','texte','');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (663,30,'first','ffcabb4c56442c5a6e6659260c7110fb','texte','<h2>Pré-requis techniques obligatoires</h2>\n<p>Serveur Linux, Windows, Max OSX, Solaris, BSDou tout autre système système Unix permettant de faire tourner les trois outils suivant sur lesquels repose Automne :</p>\n<ul>\n    <li>Serveur web&#160;<a target=\"_blank\" href=\"http://httpd.apache.org/\">Apache</a>;\n    <ul>\n        <li><a target=\"_blank\" href=\"http://www.php.net/\">PHP 5.2.x</a>. Pour des raisons de sécurité nous recommandons la dernière version de la branche 5.x;</li>\n        <li>Extension GD disponible pour PHP (permet le <a target=\"_blank\" href=\"http://www.php.net/manual/fr/ref.image.php\">traitement des images</a>) avec les librairies JPEG, GIF et PNG;</li>\n    </ul>\n    </li>\n    <li>Option \"<a target=\"_blank\" href=\"http://www.php.net/manual/fr/features.safe-mode.php\">safe_mode</a>\" de PHP désactivée;</li>\n    <li>32 à 64Mo de mémoire alloué aux scripts PHP (en fonction du nombre d\'extensions installées sur PHP : plus d\'extensions nécessite plus de mémoire).</li>\n    <li><a target=\"_blank\" href=\"http://www.mysql.com/\">MySQL 5.x .</a></li>\n</ul>\n<p>L\'interface d\'administration d\'Automne est compatible avec les navigateurs :</p>\n<ul>\n    <li><a target=\"_blank\" href=\"http://www.microsoft.com/france/windows/internet-explorer/telechargement-versions-internet-explorer.aspx\">Internet Explorer</a> 7+,</li>\n    <li><a target=\"_blank\" href=\"http://www.mozilla-europe.org/fr/firefox/\">Firefox</a> 3+,</li>\n    <li><a target=\"_blank\" href=\"http://www.apple.com/fr/safari/\">Safari</a> 4+,</li>\n    <li><a target=\"_blank\" href=\"http://www.google.com/chrome?hl=fr\">Google Chrome</a>,</li>\n    <li><a target=\"_blank\" href=\"http://www.opera.com/\">Opera</a> 9+.</li>\n</ul>\n<p>Automne permet de développer des sites pour tout type de navigateur, c\'est fonction des modèles de page utilisés.</p>\n<p>Pour plus de confort et de performance, nous recommandons de mettre à jour votre navigateur.</p>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (625,38,'first','65990b9ff00394714dd60ffd708b2d77','texte','<p>Automne intègre&#160;<strong>un puissant moteur de recherche</strong>&#160;qui&#160;vous permet de rechercher sur l\'ensemble des contenus et des éléments, quel que soit leurs type : &#160;contenus des pages ou des modules, utilisateurs, modèles, etc.</p>\n<p>De plus, les résultats retournés sont fonction des droits de l\'utilisateur.&#160;Celui-ci s\'avère vite indispensable à l\'usage et vous fera gagner un temps précieux dans la gestion de vos sites.</p>\n<p>Chaque module possède un moteur de recherche spécifique avec des filtres par mots-clés ou n\'importe quel autre type de champs.</p>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (612,38,'first','8d1b3ec256dada4f0c811896050fdc9f','texte','');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (615,38,'first','27253551d67fd5f23b3269719a3f5364','texte','<p>Grâce à l\'aide contextuelle intégrée, le moindre bouton de l\'interface n\'aura plus de secret pour vous. Nous avons fait en sorte d\'expliciter la fonction de chacun d\'entre eux afin que vous ne posiez plus de questions.</p>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (619,38,'first','48e8e4c2bea88305e6a9353511f51ea7','texte','<p>Nous avons aussi intégré <strong>une aide technique pour vous assister</strong> dans la création de modèles de pages, de rangées de contenus et de modules.</p>\n<p>Cette aide détaille entre autres la fonction et la syntaxe des différentes balises XML mais aussi les variables à votre disposition pour les modèles de page ou les rangées.</p>\n<p>Une <strong>aide spécifique à chaque module</strong> crée avec le générateur&#160;<atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"27\"/></start></selection><noselection>Polymod</noselection><display><htmltemplate><a  href=\"{{href}}\">Polymod</a></htmltemplate></display></atm-linx> est également générée. Elle se révèle particulièrement utile lors de la création des rangées de contenus associés pour avoir facilement accès aux variables et aux différentes fonctions offertes par Automne.</p>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (605,35,'first','9f851c9d1868ad933f280c33e5a419f3','texte','<p>Il existe trois types de droits fondamentaux :</p>\n<ul>\n    <li>Le droit d\'écriture qui équivaut à un&#160;droit d\'administration ;</li>\n    <li>Le droit de lecture qui équivaut à un droit de visibilité ;</li>\n    <li>Aucun droit, ce qui empêche un utilisateurs d\'avoir accès à un contenu.</li>\n</ul>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (606,35,'first','718dfb04e3bd006a81604b9ccdf448cf','texte','<p>Automne dispose d\'un <strong>système intelligent de gestion des droits des utilisateurs.</strong> Il permet une gestion fine des droits, tant dans les différentes pages que dans les contenus des différents modules. Ce système permet d\'appliquer l\'ensemble de ces droits sur tout types d\'éléments gérés par Automne.</p>\n<p>Ces droits peuvent être attribués sur les pages mais aussi sur les modules, les modèles de pages, les rangées de contenu et sur les différentes actions d\'administration. L\'ensemble de ces droits sont applicables aux utilisateurs et aux groupes d\'utilisateurs ayant accès au site.</p>\n<p>Il existe un droit particulier intitulé <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"37\"/></start></selection><noselection>droit de validation.</noselection><display><htmltemplate><a  href=\"{{href}}\">droit de validation.</a></htmltemplate></display></atm-linx>&#160;Ce droit permet de donner à l\'utilisateur la possibilité de valider le travail des autres utilisateurs pour publier le contenu sur le site en ligne.</p>\n<p>Exemple :</p>\n<ul>\n    <li><em>L\'utilisateur A peut avoir des droits d\'administration sur certaines pages et un droit limité sur les modèles de pages, ce qui lui permettra de ne créer que des pages utilisant les modèles qu\'il peut utiliser.</em></li>\n    <li><em>L\'utilisateur B peut avoir les droits d\'administration sur la partie française des actualités et uniquement le droit de visibilité sur la partie anglaise des. Il ne pourra ainsi modifier que les actualités Française du site.</em></li>\n    <li><em>L\'utilisateur C peut avoir les droits d\'administrations sur le module médiathèque mais aucun droit sur les actualités et les pages du site. Il ne pourra donc que gérer les éléments de la médiathèque que d\'autres utilisateurs pourront ensuite utiliser dans les actualités ou les pages du site.</em></li>\n</ul>\n<p>Bien entendu vous pouvez spécifier finement tous les droits que vous souhaitez et vous pouvez même <strong>créer des groupes d\'utilisateur comportant des droits spécifiques</strong> qui seront additionné aux utilisateurs appartenant à différents groupes.</p>\n<h3>Gestion des droits à partir des groupes</h3>\n<p>Vous avez six groupes utilisateurs distinct :</p>\n<ul>\n    <li>administration des actualités en français ;</li>\n    <li>administration des actualités en anglais ;</li>\n    <li>administration des pages du site en français ;</li>\n    <li>administration des pages du site en anglais ;</li>\n    <li>validation des modifications sur les actualités ;</li>\n    <li>validation des modifications sur les pages.</li>\n</ul>\n<p>En associant un ou plusieurs de ces groupes à des utilisateurs, vous leur donnerez les droits correspondants vous permettant ainsi de créer et de gérer simplement des combinaisons plus ou moins complexes de droits d\'administration.</p>\n<p>De plus, dans le cas de sites extranet ou intranet, vous pouvez aussi réaliser ce type de combinaison sur le droit de visibilité des différents contenus du site, permettant ainsi de créer des <strong>zones de contenu sécurisées</strong> sur votre site.</p>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (610,37,'first','7fac447905b2c5da7fb86162c1656561','texte','<p>&#160;Une fois les différents <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"35\"/></start></selection><noselection>rôles</noselection><display><htmltemplate><a  href=\"{{href}}\">rôles</a></htmltemplate></display></atm-linx> définis, les responsables éditoriaux ont tous les outils nécessaires pour suivre les modifications effectuées sur le site :</p>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (597,28,'first','ac2acfd1b03fd3839ffd4502484cbbfa6','texte','');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (602,28,'first','8d231671f5511d2e3004c79991317d93','texte','<h2>Utilisateurs et groupes</h2>\n<p>Le<atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"35\"/></start></selection><noselection>&#160;super administrateur</noselection><display><htmltemplate><a  href=\"{{href}}\">&#160;super administrateur</a></htmltemplate></display></atm-linx>&#160;possède <strong>tous les droits sur l’application.</strong></p>\n<p>Il peut ensuite designer d\'autres administrateurs, créer des groupes et définir les différents rôles nécessaires à la gestion des sites. Chacun utilisateur dispose alors de droits très précis sur les différents modules d\'Automne.</p>\n<p>Vos utilisateurs n\'auront à leur disposition que les outils qui leurs sont nécessaires. Leur domaines d\'interventions seront définies par votre politique éditoriale.</p>\n<p>Il est naturellement possible, grâce au <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"37\"/></start></selection><noselection>circuit de publication</noselection><display><htmltemplate><a  href=\"{{href}}\">circuit de publication</a></htmltemplate></display></atm-linx>&#160;de soumettre les données saisies à la validation d\'une autorité supérieure. Ainsi le contenu pourra être vérifié, corrigé et validé avant sa mise en ligne.</p>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (611,37,'first','3c1cf8ef8f25de1ae96706a2585bffb7','texte','<ul>\n    <li>Un système d\'alerte email automatique informe les validateurs en temps réel des modifications qui ont été opérées sur le site ;</li>\n    <li>Le validateur peut alors vérifier les modifications faites sur le contenu et les accepter, les refuser ou les modifier.</li>\n    <li>Un système d\'icônes simple et clair permet à tout moment de connaitre le statut des éléments : si ils sont publiés, dépubliés, ou attente d\'une validation.</li>\n    <li>La publication en ligne des modifications n\'est effective que lorsqu\'elles sont approuvées par le validateur. Ce droit particulier est paramétrable dans la <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"28\"/></start></selection><noselection>gestion des utilisateurs.</noselection><display><htmltemplate><a  href=\"{{href}}\">gestion des utilisateurs.</a></htmltemplate></display></atm-linx></li>\n    <li>Le suivi d\'activité stocke toute l\'historique des modifications effectuées dans Automne.</li>\n</ul>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (585,25,'first','267e03d5f6a4d0392b79a2d31dcd40f2','texte','<p>Un des principes fondamental à respecter lors de la gestion de site web est la <strong>séparation entre le contenu et la présentation.</strong>&#160;Le fond et la forme doivent être totalement indépendant l’un de l’autre.</p>\n<p>Cela permettra de concevoir des sites pouvant s\'afficher sur différents types de terminaux :&#160;</p>\n<ul>\n    <li>ordinateur de bureau</li>\n    <li>téléphone mobile</li>\n    <li>télévision</li>\n    <li>imprimante</li>\n    <li>etc.</li>\n</ul>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (587,25,'first','55319cd65490d790a905969af656ee08','texte','<p>Lors de la création du modèle de page, on détermine, par l’insertion de balises XML propres à Automne, l’emplacement des différentes zones modifiables et des menus de navigation.</p>\n<p>Exemple d\'insertion d\'une zone modifiable relative au module de gestion de page :</p>\n<p class=\"code\"><code>&lt;atm-clientspace module=\"standard\" id=\"main-content\" /&gt;</code></p>\n<p>On peut ainsi délimiter facilement les zones d\'intervention des rédacteurs dans les pages.</p>\n<p>De plus grâce aux modèles de page, on assure une présentation homogène des pages du site et on facilite la mise à jour et la maintenance de l\'ensemble du site.</p>\n<p>Les utilisateurs ont ensuite à leur disposition des <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"26\"/></start></selection><noselection>rangées de contenu</noselection><display><htmltemplate><a  href=\"{{href}}\">rangées de contenu</a></htmltemplate></display></atm-linx> à insérer dans les zones modifiables qui leur permettront d\'insérer tous types de contenu.</p>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (258,3,'first','8be44600466b3bd947f5b2c5cb45bf01','texte','');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (557,3,'first','39a32afb98d21c8252ea3714cff0f62e','texte','<p>Vous disposez d’un compte utilisateur <strong>« Rédacteur »</strong> qui vous permet d’avoir accès à l’interface d\'administration d’Automne 4 et donc d’opérer certaines modifications. <strong><br />\n</strong></p>\n<p>Vous pouvez par exemple :</p>\n<ul>\n    <li>modifier, créer et copier des pages ;</li>\n    <li>modifier votre profil ;</li>\n    <li>modifier, créer ou supprimer des éléments du module actualité, médiathèque, etc.</li>\n</ul>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (556,3,'first','6ff77816cb91134d254f1b0723fa0022','texte','<h2>Vos droits sur ce site de démonstration</h2>\n<h3>Que pouvez-vous faire ?</h3>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (633,3,'first','23ba8857d961fd78dc2ff56bb56e39e7','texte','');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (634,3,'first','9110334505c2e7ace9a292686b89c405','texte','<h3>Ce que vous ne pouvez pas faire :</h3>\n<ul>\n    <li>administrer les modules ;</li>\n    <li>valider la modification des pages ;</li>\n    <li>modifier les rangées et les modèles de page ;</li>\n    <li>modifier les paramètres d\'Automne,</li>\n    <li>gérer les utilisateurs,&#160;</li>\n    <li>et bien d\'autres choses &#160;...</li>\n</ul>\n<p>Ces fonctionnalités sont réservées à un compte utilisateur de type&#160;  <strong>« Administrateur ».</strong></p>\n<h2>Continuer la visite</h2>\n<ul>\n    <li><atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"29\"/></start></selection><noselection>Automne</noselection><display><htmltemplate><a  href=\"{{href}}\">Automne</a></htmltemplate></display></atm-linx></li>\n    <li><atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"33\"/></start></selection><noselection>Nouveautés</noselection><display><htmltemplate><a  href=\"{{href}}\">Nouveautés</a></htmltemplate></display></atm-linx></li>\n    <li><atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"30\"/></start></selection><noselection>Pré-requis</noselection><display><htmltemplate><a  href=\"{{href}}\">Pré-requis</a></htmltemplate></display></atm-linx></li>\n    <li><atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"24\"/></start></selection><noselection>Fonctionnalités</noselection><display><htmltemplate><a  href=\"{{href}}\">Fonctionnalités</a></htmltemplate></display></atm-linx></li>\n</ul>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (632,3,'first','401937687b65ea5c249faa74f4e23c9a','texte','');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (665,3,'first','f2c8532eb6f56afe1d435350eebd9a52','texte','<p>Vous êtes sur le site de démonstration d\'Automne qui a pour but de vous présenter les grands principes et la philosophie de ce CMS orienté utilisateur.</p>\n<p>Cette démonstration ne vous permet d\'avoir accès qu\'à une partie des possibilités offertes par Automne, pour avoir un aperçu complet des fonctionnalités, nous vous invitons à <a target=\"_blank\" href=\"http://www.automne-cms.org/web/fr/242-telechargements.php\">télécharger</a> et à installer Automne.</p>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (627,29,'first','ac2acfd1b03fd3839ffd4502484cbbfa6','texte','');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (666,29,'first','530e1be13c69bcfec950100e6c6421a3','texte','<p>Automne est un CMS <a target=\"_blank\" href=\"http://fr.wikipedia.org/wiki/Open_source\">open source,</a> performant et ergonomique. Ce système de gestion de contenu français est déjà utilisé par de grandes entreprises, des organismes public et des associations de toutes tailles.</p>\n<p>Automne offre un environnement sécurisé et collaboratif pour gérer des sites et des applications web.</p>\n<h2>Performant et évolutif</h2>\n<p>Robuste pour sa capacité de gérer plusieurs milliers de pages avec un langage orienté objet. Automne respecte les normes et recommandations du W3C ainsi que les  recommandations en terne d’accessibilité.</p>\n<p>Doté d\'un assistant de création de <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"27\"/></start></selection><noselection>modules de gestion</noselection><display><htmltemplate><a  href=\"{{href}}\">modules de gestion</a></htmltemplate></display></atm-linx>, vous pourrez enrichir  les <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"24\"/></start></selection><noselection>fonctionnalités de votre site Internet</noselection><display><htmltemplate><a  href=\"{{href}}\">fonctionnalités de votre site Internet</a></htmltemplate></display></atm-linx> selon vos besoins.</p>\n<h2>Taillé pour l\'entreprise</h2>\n<p>Automne vous permet de créer et de gérer votre site Internet, Extranet ou Intranet. Il permet de créer des sites Internet institutionnels de qualité professionnelle très rapidement mais aussi de développer des applications web évoluées. Tout cela en restant dans un contexte simple et intuitif qui offre aux utilisateurs toutes les fonctionnalités nécessaires.</p>\n<h2>Pérénité et sécurité</h2>\n<p>Utilisé dès ses débuts par de grands comptes, il offre aux PME un cadre agréable pour le travail collaboratif et la gestion.</p>\n<p>De par son modèle libre, vous êtes assurés d\'avoir des mises à jour régulières pour vos sites.</p>\n<p>Automne est développé par des professionnels certifiés possédant plusieurs années d\'expérience en PHP et en architecture logicielle. Tous les développements sont vérifiés et respectent un haut niveau de qualité et de sécurité.</p>\n<p>Automne est gratuit et librement téléchargeable sur <a target=\"_blank\" href=\"http://sourceforge.net/projects/automne/\">Sourceforge</a>. Il emploie des technologies open-source indépendantes ce qui vous assure de pouvoir l\'utiliser longtemps sans dépendre d\'une entreprise éditrice.</p>\n<p>Par ailleurs, vous disposez d\'un <a target=\"_blank\" href=\"http://www.automne.ws/forum/\">forum communautaire</a> pour signaler tout problème que vous rencontreriez.</p>\n<p>Il vous est aussi possible d\'obtenir un support et des formations dispensés par des professionnels. Pour plus d\'information, rendez vous sur <a target=\"_blank\" href=\"http://www.automne-cms.org\">le site web du CMS Automne</a>.</p>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (662,30,'first','dda8207197eda19c8be4b1f63d76b382','texte','<h2>Pré-requis conseillés</h2>\n<ul>\n    <li>PHP installé sous forme de module Apache (la version CGI offre des performances moindres).</li>\n    <li><a target=\"_blank\" href=\"http://www.php.net/manual/fr/features.commandline.php\">Module CLI de PHP installé </a>et disponible sur le serveur ainsi que les fonctions \"<a target=\"_blank\" href=\"http://www.php.net/system\">system</a>\" et \"<a target=\"_blank\" href=\"http://www.php.net/manual/fr/function.exec.php\">exec</a>\" de PHP pour profiter des scripts en tâche de fond.</li>\n    <li>Option<a target=\"_blank\" href=\"http://www.php.net/manual/fr/ref.info.php#ini.magic-quotes-gpc\"> \"magic_quotes_gpc\"</a> de PHP désactivée.</li>\n    <li>Apache doit avoir le droit de créer et de modifier l’ensemble des fichiers d\'Automne sur le serveur pour profiter du système d’installation et de mises à jour automatique. Sans cela, certaines parties de l’installation et des mises à jour devront être effectuées manuellement.</li>\n    <li>Un cache de code PHP (opcode cache) tel que <a target=\"_blank\" href=\"http://pecl.php.net/package/APC\">APC</a> ou <a target=\"_blank\" href=\"http://www.zend.com/products/zend_optimizer\">Zend optimizer </a>est un plus pour les performances.</li>\n    <li>Certaines fonctionnalités d’Automne (telle que la génération des pages du site) peuvent nécessiter plus de mémoire vive (en particulier si vous avez compilé PHP avec un très grand nombre d\'extensions). En règle générale il est préférable de laisser PHP gérer lui même la mémoire vive alloué aux scripts en permettant l\'usage de la fonction<a target=\"_blank\" href=\"http://www.php.net/manual/fr/ini.core.php#ini.memory-limit\"> \"memory_limit\"</a>.</li>\n</ul>\n<p>Pour des raisons de performance, nous recommandons l’usage d’un serveur Linux ou Unix en production.</p>\n<p>Du fait de l’emploi de fichiers .htaccess, le serveur Apache est fortement conseillé pour des raisons de sécurité.</p>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (562,24,'first','5abba99264b62fec356b41e30aeddf41','texte','');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (570,24,'first','a76b35963e7853924f49b447d533f5ab','texte','<p>Puissant système de gestion de contenu, Automne permet de gérer des sites de plusieurs milliers de pages, d\'en modifier simplement la structure et l\'apparence grâce aux <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"25\"/></start></selection><noselection>modèles de pages</noselection><display><htmltemplate><a  href=\"{{href}}\">modèles de pages</a></htmltemplate></display></atm-linx> et de modifier intuitivement le contenu grâce au principe des <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"26\"/></start></selection><noselection>rangées de contenu.</noselection><display><htmltemplate><a  href=\"{{href}}\">rangées de contenu.</a></htmltemplate></display></atm-linx></p>\n<p>Les nombreuses fonctionnalités pour le site Internet, simples ou complexes, peuvent être générées automatiquement par le <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"27\"/></start></selection><noselection>générateur de module</noselection><display><htmltemplate><a  href=\"{{href}}\">générateur de module</a></htmltemplate></display></atm-linx>&#160;ou bien développées directement en code PHP.</p>\n<p>Automne dispose d\'un système de <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"28\"/></start></selection><noselection>gestion des utilisateurs</noselection><display><htmltemplate><a  href=\"{{href}}\">gestion des utilisateurs</a></htmltemplate></display></atm-linx> et <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"28\"/></start></selection><noselection>groupes d\'utilisateurs</noselection><display><htmltemplate><a  href=\"{{href}}\">groupes d\'utilisateurs</a></htmltemplate></display></atm-linx> basé sur des rôles distincts permettant une <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"35\"/></start></selection><noselection>gestion très fine des droits.</noselection><display><htmltemplate><a  href=\"{{href}}\">gestion très fine des droits.</a></htmltemplate></display></atm-linx> Votre environnement de travail est homogène et ne présente que les fonctionnalités sur lesquelles vous avez le droit d\'agir.</p>\n<p>Pour en savoir plus sur chacune de ces fonctionnalités, rendez-vous sur les rubriques dédiées :&#160;</p>\n<ul>\n    <li><atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"25\"/></start></selection><noselection>Modèles de pages</noselection><display><htmltemplate><a  href=\"{{href}}\">Modèles de pages</a></htmltemplate></display></atm-linx> (structure et apparence),</li>\n    <li><atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"26\"/></start></selection><noselection>Rangées de contenu</noselection><display><htmltemplate><a  href=\"{{href}}\">Rangées de contenu</a></htmltemplate></display></atm-linx> (blocs pré-formatés prêt à l\'emploi),</li>\n    <li><atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"27\"/></start></selection><noselection>Modules </noselection><display><htmltemplate><a  href=\"{{href}}\">Modules </a></htmltemplate></display></atm-linx>(création et gestion de vos applications dynamiques),</li>\n    <li><atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"28\"/></start></selection><noselection>Gestion des utilisateurs et des groupes d\'utilisateurs</noselection><display><htmltemplate><a  href=\"{{href}}\">Gestion des utilisateurs et des groupes d\'utilisateurs</a></htmltemplate></display></atm-linx>,</li>\n    <li><atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"35\"/></start></selection><noselection>Gestion des droits d\'accès</noselection><display><htmltemplate><a  href=\"{{href}}\">Gestion des droits d\'accès</a></htmltemplate></display></atm-linx>,</li>\n    <li><atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"37\"/></start></selection><noselection>Workflow de publication des contenus</noselection><display><htmltemplate><a  href=\"{{href}}\">Workflow de publication des contenus</a></htmltemplate></display></atm-linx>,</li>\n    <li><atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"38\"/></start></selection><noselection>Aide aux utilisateurs</noselection><display><htmltemplate><a  href=\"{{href}}\">Aide aux utilisateurs</a></htmltemplate></display></atm-linx>,</li>\n    <li><atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"34\"/></start></selection><noselection>Fonctions avancées</noselection><display><htmltemplate><a  href=\"{{href}}\">Fonctions avancées</a></htmltemplate></display></atm-linx>.</li>\n</ul>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (626,34,'first','592c2e33c7971c02ec553000d0eaea43','texte','<h2>La gestion multi-sites</h2>\n<p>Une seule et même interface d\'Automne peut gérer autant de sites que vous le souhaitez. Chacun peut posséder son propre nom de domaine, sa propre langue et ses propres éléments (modèles de pages, rangées). Vous pouvez accorder des droits sur un ou plusieurs sites à vos collaborateurs.</p>\n<h2>Espaces sécurisés</h2>\n<p>Le système évolué de gestion des droits permet de réaliser des <strong>espaces sécurisés</strong> sur vos sites. Par l’intermédiaire d’un compte d\'utilisateur et d\'un mot de de passe, votre site Internet se transforme en&#160;<strong>Extranet ou en Intranet&#160;</strong>appliquant ainsi les <strong>droits et restrictions</strong> sur les pages et les contenus que vous aurez spécifié. Les restrictions mises en place sont <strong>invisibles </strong>à ceux qui ne possèdent pas les droits de les voir évitant ainsi toute frustration de vos utilisateurs.</p>\n<h2>Connexion LDAP</h2>\n<p>L\'intérêt principal d\'un annuaire LDAP est la <strong>normalisation de l\'authentification.</strong> Cet annuaire regroupe toutes les informations de type de l’utilisateur (nom, prénom, service, fonction, etc.).</p>\n<p>Automne permet de récupérer automatiquement les informations de l’annuaire afin de définir les utilisateurs et leurs droits. &#160;Par exemple la personne travaillant au service des ressources humaines, aura automatiquement accès à la page ressources humaines alors que d’autres collègues n’y auront pas accès.</p>\n<p>Lors de l’ouverture de session, les identifiants et mot de passe sont envoyées à cet annuaire qui transmet alors les informations de l’utilisateur</p>\n<h2>Authentification unique</h2>\n<p>L\'authentification unique (en anglais <strong>SSO</strong>&#160;signifie Single Sign On) est une méthode permettant à un utilisateur de ne procéder qu\'à une seule authentification pour accéder à plusieurs applications informatiques ou sites web sécurisés.</p>\n<p>Automne dispose aujourd’hui de cette technologie et les utilisateurs pourront directement être connectés à l’interface d\'Automne dés l’ouverture de session sur leur machine.</p>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (604,28,'first','9ba530cba11a3763a081a2e34072711f','texte','<p>On peut créer autant de groupes qu\'il y a de rôles à définir et faire appartenir les utilisateurs à un ou plusieurs groupes. Automne calculera ensuite la somme des <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"35\"/></start></selection><noselection>droits</noselection><display><htmltemplate><a  href=\"{{href}}\">droits</a></htmltemplate></display></atm-linx> correspondants.</p>\n<p>On peut donc avoir un groupe qui n\'aura accès qu\'à certaines parties de l\'arborescence, un autre qu\'à certaines catégories d\'un module et faire appartenir ensuite certains utilisateurs à ces deux groupes.</p>\n<p>Automne vous offre une totale liberté dans l\'organisation et la répartition du travail collaboratif.</p>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (664,38,'first','4f342492c25a2b686c2b531760008d98','texte','<p>Pas envie de lire toute la <a target=\"_blank\" href=\"http://doc.automne-cms.org\">documentation</a> ? Passez la souris au dessus des onglets du module de page, des icônes de statut, des différents boutons ou champs présents dans les fenêtres ou les formulaires de saisie des modules et vous aurez toutes les explications nécessaires.</p>\n<p>Vous ne vous rappelez plus des valeurs possibles à spécifier pour l\'indexation d\'une page par les moteurs de recherche ? Pas grave, l\'aide d\'Automne est là pour ça.</p>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (652,26,'first','22f3ce37f32ed90e7efcb5e2c3379e88','texte','<p>La syntaxe XML d\'Automne vous permet de créer vos propres rangées de contenu en vous laissant une liberté totale sur la manière de structurer vos informations.</p>\n<p>Une rangée peut contenir un ou plusieurs blocs de contenus reliés à un ou plusieurs modules. Grâce au meta-language d\'Automne, vous pouvez créer des rangées qui afficheront du contenu dynamique sous écrire la moindre ligne de code PHP.</p>');
-INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (560,24,'first','ac2acfd1b03fd3839ffd4502484cbbfa6','texte','');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(636, 33, 'first', 'adbbb020aeadb2df9957a83e19e55211', 'texte', '<p>Automne se distingue de ses concurrents grâce notamment à :</p>\n<ul>\n    <li>une interface administrateur<strong>&#160;ergonomique, intuitive et réactive;</strong></li>\n    <li>l''intégration de l''interface sur votre site, pas de backoffice;</li>\n    <li>une prise en main rapide qui ne demande aucune connaissance technique;</li>\n    <li><strong>une aide contextuelle</strong>&#160;omniprésente dans le logiciel;</li>\n    <li>un assistant de création de modules personnalisés;</li>\n    <li>une optimisation des performances native;&#160;</li>\n    <li>l''utilisation d''outils de briques technologiques modernes et éprouvés : PHP5, ExtJS, Zend Framework, etc. ;</li>\n    <li>gestion des <strong>langues internationales</strong>&#160;et des alphabets particuliers;</li>\n    <li>l''intégration d''un moteur de recherche full-text pour les contenus;</li>\n    <li>et bien plus encore ...</li>\n</ul>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(567, 9, 'first', '17a6be4c940c12530cfaecfb2eb6b828', 'texte', '<p>Ce formulaire vous permet d''envoyer une demande de contact. Pour le transformer (Champs, actions, email de destination), modifiez le dans les propriétés du module "Formulaire".</p>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(653, 9, 'first', 'd227e9c886232aa6c2bbbddb2b348ad4', 'texte', '<p>&#160;Automne est un CMS open-source français édité par l''agence <a target="_blank" href="http://www.ws-interactive.fr">WS Interactive</a>.</p>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(631, 2, 'first', 'a0922acb28a233e527aa46607bfec987c', 'texte', '<p>Automne est un CMS open-source français conçu pour simplifier la gestion de sites web, que ce soit pour les contributeurs ou les dévelopeurs.</p>\n<p>L’interface d’Automne se greffe sur le site web et vous permet d’éditer le contenu de vos pages de manière intuitive.</p>\n<p>Commme tous les CMS, Automne propose un système de <atm-linx type="direct"><selection><start><nodespec type="node" value="25"/></start></selection><noselection>modèles de page</noselection><display><htmltemplate><a  href="{{href}}">modèles de page</a></htmltemplate></display></atm-linx> qui utilise la syntaxe <abbr title="eXtensible Markup Language">XML</abbr>. Même chose pour les <atm-linx type="direct"><selection><start><nodespec type="node" value="26"/></start></selection><noselection>modèles de blocs de contenus</noselection><display><htmltemplate><a  href="{{href}}">modèles de blocs de contenus</a></htmltemplate></display></atm-linx> - ou rangées.</p>\n<p>Automne est un CMS stable et performant, il peut vous aider à gérer plusieurs sites ou plusieurs versions de sites. 10 000 pages en 5 langues ne lui font pas peur.</p>\n<p>Automne est extensible et intégre un <atm-linx type="direct"><selection><start><nodespec type="node" value="27"/></start></selection><noselection>assistant de création de modules</noselection><display><htmltemplate><a  href="{{href}}">assistant de création de modules</a></htmltemplate></display></atm-linx> - le <abbr title="Polymorphic Module">Polymod</abbr>. Créez votre structure en quelques clics et Automne genère l’interface d’administration pour vous.</p>\n<p>La gestion de l’affichage se fait ensuite grâce au meta-langage d’Automne, pour les <atm-linx type="direct"><selection><start><nodespec type="node" value="31"/></start></selection><noselection>modules simples</noselection><display><htmltemplate><a  href="{{href}}">modules simples</a></htmltemplate></display></atm-linx> quelques balises XML suffisent.</p>\n<p>Vous l’aurez compris, Automne est là avant tout pour vous faciliter la vie.</p>\n<p>Comme tout logiciel libre, vous pouvez contribuer à Automne, en faisant des <a target="_blank" href="http://www.automne-cms.org/todo/">suggestions d’évolution</a>, en remontant <a target="_blank" href="http://www.automne-cms.org/bug/">des bugs</a> ou même en contribuant au <a target="_blank" href="https://launchpad.net/automne">code source</a>.</p>\n<p>Le site communautaire <a target="_blank" href="http://www.automne-cms.org">www.automne-cms.org</a> et son <a target="_blank" href="http://forum.automne-cms.org">forum</a> sont là pour vous aider dans votre découverte d''Automne.</p>\n<p>Si vous souhaitez avoir des <a target="_blank" href="http://www.automne-cms.org/support/">formations ou obtenir un support professionnel</a>, nous avons des offres sur mesure à vous proposer.</p>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(642, 26, 'first', 'd9357a8e2eaabff878edd590a3390747', 'texte', '<p>Les rangées de contenu sont les gabarits qui vont contenir l’information. Elles peuvent recevoir tous types de contenu : texte, image, flash, vidéo… Par exemple, des rangées titres, sous-titres, textes, textes et média sont certaines des rangées par défaut d''Automne.</p>\n<p>Une rangée est pré-formatée. Cela permet de conserver l''homogénéité de la présentation du site Internet.<b><br />\n</b></p>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(647, 26, 'first', '8bcb8cc07038c43efc0b850a5e120569', 'texte', '');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(651, 26, 'first', 'efa99bdc885c7e3d486c9073dd4b3ea5', 'texte', '<p>&#160;L''organisation des rangées dans une page est particulièrement simple. Vous pouvez les glisser-déposer à l''endroit ou vous le souhaitez.</p>\n<p>Les zones de saisies sont clairement indiquées et vous pouvez modifier l''ensemble du contenu très simplement à l''aide d''outils de mise en forme très intuitifs : mise en forme des textes à l''aide de l''éditeur WYSIWYG, redimensionner et recadrer des images, créer des liens vers d''autres sites ou vers une page donnée de votre site.</p>\n<p>Vous pouvez même décider d''importer le contenu de vos modules à n''importe quel endroit de vos textes. Si le contenu du module vient à disparaitre (suppression, dépublication, ...), il disparaitra simplement et sans erreur de tous les textes ou vous y faite référence.</p>\n<p><strong>Créez vos propres rangées avec le type d’information et la présentation que vous souhaitez.</strong></p>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(660, 27, 'first', '4564d92b193505d71f29b5ae69dddde0', 'texte', '<h2>Modules en PHP</h2>\n<p>Grâce à l''<a target="_blank" href="http://www.automne-cms.org/api/">API d''Automne</a>&#160;vous pouvez aussi développer des modules plus complexes que le Polymod ne saurait traiter.</p>\n<p>Ces modules, créés en PHP peuvent alors réaliser tout type d''opération métier complexe en s''intégrant parfaitement à l''interface d''Automne.</p>\n<p>Vous pouvez ainsi lier Automne à vos bases de données métier ou encore créer des modules de mailing, d''e-commerce, interroger des web services distants et ajouter bien d''autres fonctionnalités encore.</p>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(593, 27, 'first', 'f863b4e5ea5a0c8019440ff99e59e29f', 'texte', '<p>Créer ou installez des modules supplémentaires pour ajouter des fonctionnalités propres aux besoins de chaque site.</p>\n<p>Par défaut Automne contient les modules les plus courants : &#160;actualités, médiathèque,&#160;formulaires ou création d''URLs courtes avec le module Alias par exemple.</p>\n<p><strong>Grâce au générateur d''application intégré, ajoutez autant de modules supplémentaires que vous le souhaitez.</strong></p>\n<h2>Le générateur de modules</h2>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(591, 27, 'first', '56025a9b887be03112111d215ca6f31d', 'texte', '<p>Une des particularités d’Automne est son générateur de module intégré appelé <abbr title="Polymorphic Module">Polymod</abbr>.</p>\n<p>L''assistant de création de module vous permet de créer des structures personnalisées et de relier plusieurs objets entre eux (comme une actualité et un commentaire par exemple).</p>\n<p>La création de la structure des objets de vos modules se fait entièrement via l''interface de gestion des modules d''Automne, sans écrire la moindre ligne de code. Et ce n''est pas tout, Automne génère ensuite l''interface d''administration correspondante de manière entièrement automatisée. Toujours pas la moindre ligne de PHP à écrire alors que vous pouvez déjà commencer à insérer des données dans vos modules.&#160;</p>\n<p>La gestion de l''affichage de vos modules se fait ensuite via des <atm-linx type="direct"><selection><start><nodespec type="node" value="26"/></start></selection><noselection>rangées de contenus</noselection><display><htmltemplate><a  href="{{href}}">rangées de contenus</a></htmltemplate></display></atm-linx> en utilisant les balises XML d''Automne.</p>\n<p>Exemple :&#160; les modules <atm-linx type="direct"><selection><start><nodespec type="node" value="5"/></start></selection><noselection>Actualités</noselection><display><htmltemplate><a  href="{{href}}">Actualités</a></htmltemplate></display></atm-linx> et <atm-linx type="direct"><selection><start><nodespec type="node" value="6"/></start></selection><noselection>Médiathèque</noselection><display><htmltemplate><a  href="{{href}}">Médiathèque</a></htmltemplate></display></atm-linx> fourni dans cette démonstration ont été entièrement créés à partir du générateur de modules d''Automne. Ils peuvent être modifiés pour être ajustés à ce que vous souhaitez de très simplement.</p>\n<p>Il est donc facile de créer ses propres modules à l''aide du Polymod et de les partager ensuite avec la communauté.</p>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(192, 5, 'first', '68a1b1d8a072af0eb92f6392eb309ad1', 'texte', '');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(667, 31, 'first', '7448f10ee9579c5f0de5616d06e7b7f2', 'texte', '<p>Voici quelques exemples de modules intégrés à cette démonstration. Il est possible d''en ajouter d''autres très simplement.&#160;</p>\n<h2>Module Actualités</h2>\n<ul>\n    <li>Gestion d''articles ;</li>\n    <li>Gestion des catégories d''articles ;</li>\n    <li>Moteur de recherche côté client.</li>\n</ul>\n<p><atm-linx type="direct"><selection><start><nodespec type="node" value="5"/></start></selection><noselection>Exemple d''affichage du module Actualités</noselection><display><htmltemplate><a  href="{{href}}">Exemple d''affichage du module Actualités</a></htmltemplate></display></atm-linx></p>\n<h2>Module Médiathèque</h2>\n<p>Le module Médiathèque installé par défaut permet de :&#160;</p>\n<ul>\n    <li>Stocker différents types de média : vidéo, image, son dans une base commune ;</li>\n    <li>Trier selon le type de média ;</li>\n    <li>Gestion de l''arborescence des catégories ;</li>\n    <li>Effectuer des recherche par mots clés ;</li>\n    <li>Insérer des médias dans l''éditeur visuel lors de l''édition des pages.</li>\n</ul>\n<p>Une fois l''objet dans la base du module, il est réutilisable dans les pages et les autres modules autant de fois qu''on le souhaite.</p>\n<p><atm-linx type="direct"><selection><start><nodespec type="node" value="6"/></start></selection><noselection>Exemple d''affichage du module Médiathèque</noselection><display><htmltemplate><a  href="{{href}}">Exemple d''affichage du module Médiathèque</a></htmltemplate></display></atm-linx>&#160;</p>\n<h2>Module Formulaire</h2>\n<p>L''assistant de création de formulaires vous aidera à mettre en place tout type de formulaires :</p>\n<ul>\n    <li>Permet l''envoi de mail, l''écriture dans une base de données, l''identification des utilisateurs, de récolter des avis, de faire des sondages ...</li>\n    <li>Un assistant de création de formulaire vous aidera à mettre en place des formulaires tout aussi simple que complexes.</li>\n</ul>\n<p><atm-linx type="direct"><selection><start><nodespec type="node" value="9"/></start></selection><noselection>Exemple d''affichage du module Formulaire</noselection><display><htmltemplate><a  href="{{href}}">Exemple d''affichage du module Formulaire</a></htmltemplate></display></atm-linx></p>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(637, 30, 'first', 'ac2acfd1b03fd3839ffd4502484cbbfa6', 'texte', '');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(663, 30, 'first', 'ffcabb4c56442c5a6e6659260c7110fb', 'texte', '<h2>Pré-requis techniques obligatoires</h2>\n<p>Serveur Linux, Windows, Max OSX, Solaris, BSDou tout autre système système Unix permettant de faire tourner les trois outils suivant sur lesquels repose Automne :</p>\n<ul>\n    <li>Serveur web&#160;<a target="_blank" href="http://httpd.apache.org/">Apache</a>;\n    <ul>\n        <li><a target="_blank" href="http://www.php.net/">PHP 5.2.x</a>. Pour des raisons de sécurité nous recommandons la dernière version de la branche 5.x;</li>\n        <li>Extension GD disponible pour PHP (permet le <a target="_blank" href="http://www.php.net/manual/fr/ref.image.php">traitement des images</a>) avec les librairies JPEG, GIF et PNG;</li>\n    </ul>\n    </li>\n    <li>Option "<a target="_blank" href="http://www.php.net/manual/fr/features.safe-mode.php">safe_mode</a>" de PHP désactivée;</li>\n    <li>32 à 64Mo de mémoire alloué aux scripts PHP (en fonction du nombre d''extensions installées sur PHP : plus d''extensions nécessite plus de mémoire).</li>\n    <li><a target="_blank" href="http://www.mysql.com/">MySQL 5.x .</a></li>\n</ul>\n<p>L''interface d''administration d''Automne est compatible avec les navigateurs :</p>\n<ul>\n    <li><a target="_blank" href="http://www.microsoft.com/france/windows/internet-explorer/telechargement-versions-internet-explorer.aspx">Internet Explorer</a> 7+,</li>\n    <li><a target="_blank" href="http://www.mozilla-europe.org/fr/firefox/">Firefox</a> 3+,</li>\n    <li><a target="_blank" href="http://www.apple.com/fr/safari/">Safari</a> 4+,</li>\n    <li><a target="_blank" href="http://www.google.com/chrome?hl=fr">Google Chrome</a>,</li>\n    <li><a target="_blank" href="http://www.opera.com/">Opera</a> 9+.</li>\n</ul>\n<p>Automne permet de développer des sites pour tout type de navigateur, c''est fonction des modèles de page utilisés.</p>\n<p>Pour plus de confort et de performance, nous recommandons de mettre à jour votre navigateur.</p>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(625, 38, 'first', '65990b9ff00394714dd60ffd708b2d77', 'texte', '<p>Automne intègre&#160;<strong>un puissant moteur de recherche</strong>&#160;qui&#160;vous permet de rechercher sur l''ensemble des contenus et des éléments, quel que soit leurs type : &#160;contenus des pages ou des modules, utilisateurs, modèles, etc.</p>\n<p>De plus, les résultats retournés sont fonction des droits de l''utilisateur.&#160;Celui-ci s''avère vite indispensable à l''usage et vous fera gagner un temps précieux dans la gestion de vos sites.</p>\n<p>Chaque module possède un moteur de recherche spécifique avec des filtres par mots-clés ou n''importe quel autre type de champs.</p>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(612, 38, 'first', '8d1b3ec256dada4f0c811896050fdc9f', 'texte', '');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(615, 38, 'first', '27253551d67fd5f23b3269719a3f5364', 'texte', '<p>Grâce à l''aide contextuelle intégrée, le moindre bouton de l''interface n''aura plus de secret pour vous. Nous avons fait en sorte d''expliciter la fonction de chacun d''entre eux afin que vous ne posiez plus de questions.</p>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(619, 38, 'first', '48e8e4c2bea88305e6a9353511f51ea7', 'texte', '<p>Nous avons aussi intégré <strong>une aide technique pour vous assister</strong> dans la création de modèles de pages, de rangées de contenus et de modules.</p>\n<p>Cette aide détaille entre autres la fonction et la syntaxe des différentes balises XML mais aussi les variables à votre disposition pour les modèles de page ou les rangées.</p>\n<p>Une <strong>aide spécifique à chaque module</strong> crée avec le générateur&#160;<atm-linx type="direct"><selection><start><nodespec type="node" value="27"/></start></selection><noselection>Polymod</noselection><display><htmltemplate><a  href="{{href}}">Polymod</a></htmltemplate></display></atm-linx> est également générée. Elle se révèle particulièrement utile lors de la création des rangées de contenus associés pour avoir facilement accès aux variables et aux différentes fonctions offertes par Automne.</p>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(605, 35, 'first', '9f851c9d1868ad933f280c33e5a419f3', 'texte', '<p>Il existe trois types de droits fondamentaux :</p>\n<ul>\n    <li>Le droit d''écriture qui équivaut à un&#160;droit d''administration ;</li>\n    <li>Le droit de lecture qui équivaut à un droit de visibilité ;</li>\n    <li>Aucun droit, ce qui empêche un utilisateurs d''avoir accès à un contenu.</li>\n</ul>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(606, 35, 'first', '718dfb04e3bd006a81604b9ccdf448cf', 'texte', '<p>Automne dispose d''un <strong>système intelligent de gestion des droits des utilisateurs.</strong> Il permet une gestion fine des droits, tant dans les différentes pages que dans les contenus des différents modules. Ce système permet d''appliquer l''ensemble de ces droits sur tout types d''éléments gérés par Automne.</p>\n<p>Ces droits peuvent être attribués sur les pages mais aussi sur les modules, les modèles de pages, les rangées de contenu et sur les différentes actions d''administration. L''ensemble de ces droits sont applicables aux utilisateurs et aux groupes d''utilisateurs ayant accès au site.</p>\n<p>Il existe un droit particulier intitulé <atm-linx type="direct"><selection><start><nodespec type="node" value="37"/></start></selection><noselection>droit de validation.</noselection><display><htmltemplate><a  href="{{href}}">droit de validation.</a></htmltemplate></display></atm-linx>&#160;Ce droit permet de donner à l''utilisateur la possibilité de valider le travail des autres utilisateurs pour publier le contenu sur le site en ligne.</p>\n<p>Exemple :</p>\n<ul>\n    <li><em>L''utilisateur A peut avoir des droits d''administration sur certaines pages et un droit limité sur les modèles de pages, ce qui lui permettra de ne créer que des pages utilisant les modèles qu''il peut utiliser.</em></li>\n    <li><em>L''utilisateur B peut avoir les droits d''administration sur la partie française des actualités et uniquement le droit de visibilité sur la partie anglaise des. Il ne pourra ainsi modifier que les actualités Française du site.</em></li>\n    <li><em>L''utilisateur C peut avoir les droits d''administrations sur le module médiathèque mais aucun droit sur les actualités et les pages du site. Il ne pourra donc que gérer les éléments de la médiathèque que d''autres utilisateurs pourront ensuite utiliser dans les actualités ou les pages du site.</em></li>\n</ul>\n<p>Bien entendu vous pouvez spécifier finement tous les droits que vous souhaitez et vous pouvez même <strong>créer des groupes d''utilisateur comportant des droits spécifiques</strong> qui seront additionné aux utilisateurs appartenant à différents groupes.</p>\n<h3>Gestion des droits à partir des groupes</h3>\n<p>Vous avez six groupes utilisateurs distinct :</p>\n<ul>\n    <li>administration des actualités en français ;</li>\n    <li>administration des actualités en anglais ;</li>\n    <li>administration des pages du site en français ;</li>\n    <li>administration des pages du site en anglais ;</li>\n    <li>validation des modifications sur les actualités ;</li>\n    <li>validation des modifications sur les pages.</li>\n</ul>\n<p>En associant un ou plusieurs de ces groupes à des utilisateurs, vous leur donnerez les droits correspondants vous permettant ainsi de créer et de gérer simplement des combinaisons plus ou moins complexes de droits d''administration.</p>\n<p>De plus, dans le cas de sites extranet ou intranet, vous pouvez aussi réaliser ce type de combinaison sur le droit de visibilité des différents contenus du site, permettant ainsi de créer des <strong>zones de contenu sécurisées</strong> sur votre site.</p>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(610, 37, 'first', '7fac447905b2c5da7fb86162c1656561', 'texte', '<p>&#160;Une fois les différents <atm-linx type="direct"><selection><start><nodespec type="node" value="35"/></start></selection><noselection>rôles</noselection><display><htmltemplate><a  href="{{href}}">rôles</a></htmltemplate></display></atm-linx> définis, les responsables éditoriaux ont tous les outils nécessaires pour suivre les modifications effectuées sur le site :</p>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(597, 28, 'first', 'ac2acfd1b03fd3839ffd4502484cbbfa6', 'texte', '');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(602, 28, 'first', '8d231671f5511d2e3004c79991317d93', 'texte', '<h2>Utilisateurs et groupes</h2>\n<p>Le<atm-linx type="direct"><selection><start><nodespec type="node" value="35"/></start></selection><noselection>&#160;super administrateur</noselection><display><htmltemplate><a  href="{{href}}">&#160;super administrateur</a></htmltemplate></display></atm-linx>&#160;possède <strong>tous les droits sur l’application.</strong></p>\n<p>Il peut ensuite designer d''autres administrateurs, créer des groupes et définir les différents rôles nécessaires à la gestion des sites. Chacun utilisateur dispose alors de droits très précis sur les différents modules d''Automne.</p>\n<p>Vos utilisateurs n''auront à leur disposition que les outils qui leurs sont nécessaires. Leur domaines d''interventions seront définies par votre politique éditoriale.</p>\n<p>Il est naturellement possible, grâce au <atm-linx type="direct"><selection><start><nodespec type="node" value="37"/></start></selection><noselection>circuit de publication</noselection><display><htmltemplate><a  href="{{href}}">circuit de publication</a></htmltemplate></display></atm-linx>&#160;de soumettre les données saisies à la validation d''une autorité supérieure. Ainsi le contenu pourra être vérifié, corrigé et validé avant sa mise en ligne.</p>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(611, 37, 'first', '3c1cf8ef8f25de1ae96706a2585bffb7', 'texte', '<ul>\n    <li>Un système d''alerte email automatique informe les validateurs en temps réel des modifications qui ont été opérées sur le site ;</li>\n    <li>Le validateur peut alors vérifier les modifications faites sur le contenu et les accepter, les refuser ou les modifier.</li>\n    <li>Un système d''icônes simple et clair permet à tout moment de connaitre le statut des éléments : si ils sont publiés, dépubliés, ou attente d''une validation.</li>\n    <li>La publication en ligne des modifications n''est effective que lorsqu''elles sont approuvées par le validateur. Ce droit particulier est paramétrable dans la <atm-linx type="direct"><selection><start><nodespec type="node" value="28"/></start></selection><noselection>gestion des utilisateurs.</noselection><display><htmltemplate><a  href="{{href}}">gestion des utilisateurs.</a></htmltemplate></display></atm-linx></li>\n    <li>Le suivi d''activité stocke toute l''historique des modifications effectuées dans Automne.</li>\n</ul>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(585, 25, 'first', '267e03d5f6a4d0392b79a2d31dcd40f2', 'texte', '<p>Un des principes fondamental à respecter lors de la gestion de site web est la <strong>séparation entre le contenu et la présentation.</strong>&#160;Le fond et la forme doivent être totalement indépendant l’un de l’autre.</p>\n<p>Cela permettra de concevoir des sites pouvant s''afficher sur différents types de terminaux :&#160;</p>\n<ul>\n    <li>ordinateur de bureau</li>\n    <li>téléphone mobile</li>\n    <li>télévision</li>\n    <li>imprimante</li>\n    <li>etc.</li>\n</ul>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(587, 25, 'first', '55319cd65490d790a905969af656ee08', 'texte', '<p>Lors de la création du modèle de page, on détermine, par l’insertion de balises XML propres à Automne, l’emplacement des différentes zones modifiables et des menus de navigation.</p>\n<p>Exemple d''insertion d''une zone modifiable relative au module de gestion de page :</p>\n<p class="code"><code>&lt;atm-clientspace module="standard" id="main-content" /&gt;</code></p>\n<p>On peut ainsi délimiter facilement les zones d''intervention des rédacteurs dans les pages.</p>\n<p>De plus grâce aux modèles de page, on assure une présentation homogène des pages du site et on facilite la mise à jour et la maintenance de l''ensemble du site.</p>\n<p>Les utilisateurs ont ensuite à leur disposition des <atm-linx type="direct"><selection><start><nodespec type="node" value="26"/></start></selection><noselection>rangées de contenu</noselection><display><htmltemplate><a  href="{{href}}">rangées de contenu</a></htmltemplate></display></atm-linx> à insérer dans les zones modifiables qui leur permettront d''insérer tous types de contenu.</p>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(258, 3, 'first', '8be44600466b3bd947f5b2c5cb45bf01', 'texte', '');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(557, 3, 'first', '39a32afb98d21c8252ea3714cff0f62e', 'texte', '<p>Vous disposez d’un compte utilisateur <strong>« Rédacteur »</strong> qui vous permet d’avoir accès à l’interface d''administration d’Automne 4 et donc d’opérer certaines modifications. <strong><br />\n</strong></p>\n<p>Vous pouvez par exemple :</p>\n<ul>\n    <li>modifier, créer et copier des pages ;</li>\n    <li>modifier votre profil ;</li>\n    <li>modifier, créer ou supprimer des éléments du module actualité, médiathèque, etc.</li>\n</ul>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(556, 3, 'first', '6ff77816cb91134d254f1b0723fa0022', 'texte', '<h2>Vos droits sur ce site de démonstration</h2>\n<h3>Que pouvez-vous faire ?</h3>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(633, 3, 'first', '23ba8857d961fd78dc2ff56bb56e39e7', 'texte', '');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(634, 3, 'first', '9110334505c2e7ace9a292686b89c405', 'texte', '<h3>Ce que vous ne pouvez pas faire :</h3>\n<ul>\n    <li>administrer les modules ;</li>\n    <li>valider la modification des pages ;</li>\n    <li>modifier les rangées et les modèles de page ;</li>\n    <li>modifier les paramètres d''Automne,</li>\n    <li>gérer les utilisateurs,&#160;</li>\n    <li>et bien d''autres choses &#160;...</li>\n</ul>\n<p>Ces fonctionnalités sont réservées à un compte utilisateur de type&#160;  <strong>« Administrateur ».</strong></p>\n<h2>Continuer la visite</h2>\n<ul>\n    <li><atm-linx type="direct"><selection><start><nodespec type="node" value="29"/></start></selection><noselection>Automne</noselection><display><htmltemplate><a  href="{{href}}">Automne</a></htmltemplate></display></atm-linx></li>\n    <li><atm-linx type="direct"><selection><start><nodespec type="node" value="33"/></start></selection><noselection>Nouveautés</noselection><display><htmltemplate><a  href="{{href}}">Nouveautés</a></htmltemplate></display></atm-linx></li>\n    <li><atm-linx type="direct"><selection><start><nodespec type="node" value="30"/></start></selection><noselection>Pré-requis</noselection><display><htmltemplate><a  href="{{href}}">Pré-requis</a></htmltemplate></display></atm-linx></li>\n    <li><atm-linx type="direct"><selection><start><nodespec type="node" value="24"/></start></selection><noselection>Fonctionnalités</noselection><display><htmltemplate><a  href="{{href}}">Fonctionnalités</a></htmltemplate></display></atm-linx></li>\n</ul>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(632, 3, 'first', '401937687b65ea5c249faa74f4e23c9a', 'texte', '');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(665, 3, 'first', 'f2c8532eb6f56afe1d435350eebd9a52', 'texte', '<p>Vous êtes sur le site de démonstration d''Automne qui a pour but de vous présenter les grands principes et la philosophie de ce CMS orienté utilisateur.</p>\n<p>Cette démonstration ne vous permet d''avoir accès qu''à une partie des possibilités offertes par Automne, pour avoir un aperçu complet des fonctionnalités, nous vous invitons à <a target="_blank" href="http://www.automne-cms.org/web/fr/242-telechargements.php">télécharger</a> et à installer Automne.</p>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(627, 29, 'first', 'ac2acfd1b03fd3839ffd4502484cbbfa6', 'texte', '');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(666, 29, 'first', '530e1be13c69bcfec950100e6c6421a3', 'texte', '<p>Automne est un CMS <a target="_blank" href="http://fr.wikipedia.org/wiki/Open_source">open source,</a> performant et ergonomique. Ce système de gestion de contenu français est déjà utilisé par de grandes entreprises, des organismes public et des associations de toutes tailles.</p>\n<p>Automne offre un environnement sécurisé et collaboratif pour gérer des sites et des applications web.</p>\n<h2>Performant et évolutif</h2>\n<p>Robuste pour sa capacité de gérer plusieurs milliers de pages avec un langage orienté objet. Automne respecte les normes et recommandations du W3C ainsi que les  recommandations en terne d’accessibilité.</p>\n<p>Doté d''un assistant de création de <atm-linx type="direct"><selection><start><nodespec type="node" value="27"/></start></selection><noselection>modules de gestion</noselection><display><htmltemplate><a  href="{{href}}">modules de gestion</a></htmltemplate></display></atm-linx>, vous pourrez enrichir  les <atm-linx type="direct"><selection><start><nodespec type="node" value="24"/></start></selection><noselection>fonctionnalités de votre site Internet</noselection><display><htmltemplate><a  href="{{href}}">fonctionnalités de votre site Internet</a></htmltemplate></display></atm-linx> selon vos besoins.</p>\n<h2>Taillé pour l''entreprise</h2>\n<p>Automne vous permet de créer et de gérer votre site Internet, Extranet ou Intranet. Il permet de créer des sites Internet institutionnels de qualité professionnelle très rapidement mais aussi de développer des applications web évoluées. Tout cela en restant dans un contexte simple et intuitif qui offre aux utilisateurs toutes les fonctionnalités nécessaires.</p>\n<h2>Pérénité et sécurité</h2>\n<p>Utilisé dès ses débuts par de grands comptes, il offre aux PME un cadre agréable pour le travail collaboratif et la gestion.</p>\n<p>De par son modèle libre, vous êtes assurés d''avoir des mises à jour régulières pour vos sites.</p>\n<p>Automne est développé par des professionnels certifiés possédant plusieurs années d''expérience en PHP et en architecture logicielle. Tous les développements sont vérifiés et respectent un haut niveau de qualité et de sécurité.</p>\n<p>Automne est gratuit et librement téléchargeable sur <a target="_blank" href="http://sourceforge.net/projects/automne/">Sourceforge</a>. Il emploie des technologies open-source indépendantes ce qui vous assure de pouvoir l''utiliser longtemps sans dépendre d''une entreprise éditrice.</p>\n<p>Par ailleurs, vous disposez d''un <a target="_blank" href="http://www.automne.ws/forum/">forum communautaire</a> pour signaler tout problème que vous rencontreriez.</p>\n<p>Il vous est aussi possible d''obtenir un support et des formations dispensés par des professionnels. Pour plus d''information, rendez vous sur <a target="_blank" href="http://www.automne-cms.org">le site web du CMS Automne</a>.</p>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(662, 30, 'first', 'dda8207197eda19c8be4b1f63d76b382', 'texte', '<h2>Pré-requis conseillés</h2>\n<ul>\n    <li>PHP installé sous forme de module Apache (la version CGI offre des performances moindres).</li>\n    <li><a target="_blank" href="http://www.php.net/manual/fr/features.commandline.php">Module CLI de PHP installé </a>et disponible sur le serveur ainsi que les fonctions "<a target="_blank" href="http://www.php.net/system">system</a>" et "<a target="_blank" href="http://www.php.net/manual/fr/function.exec.php">exec</a>" de PHP pour profiter des scripts en tâche de fond.</li>\n    <li>Option<a target="_blank" href="http://www.php.net/manual/fr/ref.info.php#ini.magic-quotes-gpc"> "magic_quotes_gpc"</a> de PHP désactivée.</li>\n    <li>Apache doit avoir le droit de créer et de modifier l’ensemble des fichiers d''Automne sur le serveur pour profiter du système d’installation et de mises à jour automatique. Sans cela, certaines parties de l’installation et des mises à jour devront être effectuées manuellement.</li>\n    <li>Un cache de code PHP (opcode cache) tel que <a target="_blank" href="http://pecl.php.net/package/APC">APC</a> ou <a target="_blank" href="http://www.zend.com/products/zend_optimizer">Zend optimizer </a>est un plus pour les performances.</li>\n    <li>Certaines fonctionnalités d’Automne (telle que la génération des pages du site) peuvent nécessiter plus de mémoire vive (en particulier si vous avez compilé PHP avec un très grand nombre d''extensions). En règle générale il est préférable de laisser PHP gérer lui même la mémoire vive alloué aux scripts en permettant l''usage de la fonction<a target="_blank" href="http://www.php.net/manual/fr/ini.core.php#ini.memory-limit"> "memory_limit"</a>.</li>\n</ul>\n<p>Pour des raisons de performance, nous recommandons l’usage d’un serveur Linux ou Unix en production.</p>\n<p>Du fait de l’emploi de fichiers .htaccess, le serveur Apache est fortement conseillé pour des raisons de sécurité.</p>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(562, 24, 'first', '5abba99264b62fec356b41e30aeddf41', 'texte', '');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(570, 24, 'first', 'a76b35963e7853924f49b447d533f5ab', 'texte', '<p>Puissant système de gestion de contenu, Automne permet de gérer des sites de plusieurs milliers de pages, d''en modifier simplement la structure et l''apparence grâce aux <atm-linx type="direct"><selection><start><nodespec type="node" value="25"/></start></selection><noselection>modèles de pages</noselection><display><htmltemplate><a  href="{{href}}">modèles de pages</a></htmltemplate></display></atm-linx> et de modifier intuitivement le contenu grâce au principe des <atm-linx type="direct"><selection><start><nodespec type="node" value="26"/></start></selection><noselection>rangées de contenu.</noselection><display><htmltemplate><a  href="{{href}}">rangées de contenu.</a></htmltemplate></display></atm-linx></p>\n<p>Les nombreuses fonctionnalités pour le site Internet, simples ou complexes, peuvent être générées automatiquement par le <atm-linx type="direct"><selection><start><nodespec type="node" value="27"/></start></selection><noselection>générateur de module</noselection><display><htmltemplate><a  href="{{href}}">générateur de module</a></htmltemplate></display></atm-linx>&#160;ou bien développées directement en code PHP.</p>\n<p>Automne dispose d''un système de <atm-linx type="direct"><selection><start><nodespec type="node" value="28"/></start></selection><noselection>gestion des utilisateurs</noselection><display><htmltemplate><a  href="{{href}}">gestion des utilisateurs</a></htmltemplate></display></atm-linx> et <atm-linx type="direct"><selection><start><nodespec type="node" value="28"/></start></selection><noselection>groupes d''utilisateurs</noselection><display><htmltemplate><a  href="{{href}}">groupes d''utilisateurs</a></htmltemplate></display></atm-linx> basé sur des rôles distincts permettant une <atm-linx type="direct"><selection><start><nodespec type="node" value="35"/></start></selection><noselection>gestion très fine des droits.</noselection><display><htmltemplate><a  href="{{href}}">gestion très fine des droits.</a></htmltemplate></display></atm-linx> Votre environnement de travail est homogène et ne présente que les fonctionnalités sur lesquelles vous avez le droit d''agir.</p>\n<p>Pour en savoir plus sur chacune de ces fonctionnalités, rendez-vous sur les rubriques dédiées :&#160;</p>\n<ul>\n    <li><atm-linx type="direct"><selection><start><nodespec type="node" value="25"/></start></selection><noselection>Modèles de pages</noselection><display><htmltemplate><a  href="{{href}}">Modèles de pages</a></htmltemplate></display></atm-linx> (structure et apparence),</li>\n    <li><atm-linx type="direct"><selection><start><nodespec type="node" value="26"/></start></selection><noselection>Rangées de contenu</noselection><display><htmltemplate><a  href="{{href}}">Rangées de contenu</a></htmltemplate></display></atm-linx> (blocs pré-formatés prêt à l''emploi),</li>\n    <li><atm-linx type="direct"><selection><start><nodespec type="node" value="27"/></start></selection><noselection>Modules </noselection><display><htmltemplate><a  href="{{href}}">Modules </a></htmltemplate></display></atm-linx>(création et gestion de vos applications dynamiques),</li>\n    <li><atm-linx type="direct"><selection><start><nodespec type="node" value="28"/></start></selection><noselection>Gestion des utilisateurs et des groupes d''utilisateurs</noselection><display><htmltemplate><a  href="{{href}}">Gestion des utilisateurs et des groupes d''utilisateurs</a></htmltemplate></display></atm-linx>,</li>\n    <li><atm-linx type="direct"><selection><start><nodespec type="node" value="35"/></start></selection><noselection>Gestion des droits d''accès</noselection><display><htmltemplate><a  href="{{href}}">Gestion des droits d''accès</a></htmltemplate></display></atm-linx>,</li>\n    <li><atm-linx type="direct"><selection><start><nodespec type="node" value="37"/></start></selection><noselection>Workflow de publication des contenus</noselection><display><htmltemplate><a  href="{{href}}">Workflow de publication des contenus</a></htmltemplate></display></atm-linx>,</li>\n    <li><atm-linx type="direct"><selection><start><nodespec type="node" value="38"/></start></selection><noselection>Aide aux utilisateurs</noselection><display><htmltemplate><a  href="{{href}}">Aide aux utilisateurs</a></htmltemplate></display></atm-linx>,</li>\n    <li><atm-linx type="direct"><selection><start><nodespec type="node" value="34"/></start></selection><noselection>Fonctions avancées</noselection><display><htmltemplate><a  href="{{href}}">Fonctions avancées</a></htmltemplate></display></atm-linx>.</li>\n</ul>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(626, 34, 'first', '592c2e33c7971c02ec553000d0eaea43', 'texte', '<h2>La gestion multi-sites</h2>\n<p>Une seule et même interface d''Automne peut gérer autant de sites que vous le souhaitez. Chacun peut posséder son propre nom de domaine, sa propre langue et ses propres éléments (modèles de pages, rangées). Vous pouvez accorder des droits sur un ou plusieurs sites à vos collaborateurs.</p>\n<h2>Espaces sécurisés</h2>\n<p>Le système évolué de gestion des droits permet de réaliser des <strong>espaces sécurisés</strong> sur vos sites. Par l’intermédiaire d’un compte d''utilisateur et d''un mot de de passe, votre site Internet se transforme en&#160;<strong>Extranet ou en Intranet&#160;</strong>appliquant ainsi les <strong>droits et restrictions</strong> sur les pages et les contenus que vous aurez spécifié. Les restrictions mises en place sont <strong>invisibles </strong>à ceux qui ne possèdent pas les droits de les voir évitant ainsi toute frustration de vos utilisateurs.</p>\n<h2>Connexion LDAP</h2>\n<p>L''intérêt principal d''un annuaire LDAP est la <strong>normalisation de l''authentification.</strong> Cet annuaire regroupe toutes les informations de type de l’utilisateur (nom, prénom, service, fonction, etc.).</p>\n<p>Automne permet de récupérer automatiquement les informations de l’annuaire afin de définir les utilisateurs et leurs droits. &#160;Par exemple la personne travaillant au service des ressources humaines, aura automatiquement accès à la page ressources humaines alors que d’autres collègues n’y auront pas accès.</p>\n<p>Lors de l’ouverture de session, les identifiants et mot de passe sont envoyées à cet annuaire qui transmet alors les informations de l’utilisateur</p>\n<h2>Authentification unique</h2>\n<p>L''authentification unique (en anglais <strong>SSO</strong>&#160;signifie Single Sign On) est une méthode permettant à un utilisateur de ne procéder qu''à une seule authentification pour accéder à plusieurs applications informatiques ou sites web sécurisés.</p>\n<p>Automne dispose aujourd’hui de cette technologie et les utilisateurs pourront directement être connectés à l’interface d''Automne dés l’ouverture de session sur leur machine.</p>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(604, 28, 'first', '9ba530cba11a3763a081a2e34072711f', 'texte', '<p>On peut créer autant de groupes qu''il y a de rôles à définir et faire appartenir les utilisateurs à un ou plusieurs groupes. Automne calculera ensuite la somme des <atm-linx type="direct"><selection><start><nodespec type="node" value="35"/></start></selection><noselection>droits</noselection><display><htmltemplate><a  href="{{href}}">droits</a></htmltemplate></display></atm-linx> correspondants.</p>\n<p>On peut donc avoir un groupe qui n''aura accès qu''à certaines parties de l''arborescence, un autre qu''à certaines catégories d''un module et faire appartenir ensuite certains utilisateurs à ces deux groupes.</p>\n<p>Automne vous offre une totale liberté dans l''organisation et la répartition du travail collaboratif.</p>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(664, 38, 'first', '4f342492c25a2b686c2b531760008d98', 'texte', '<p>Pas envie de lire toute la <a target="_blank" href="http://doc.automne-cms.org">documentation</a> ? Passez la souris au dessus des onglets du module de page, des icônes de statut, des différents boutons ou champs présents dans les fenêtres ou les formulaires de saisie des modules et vous aurez toutes les explications nécessaires.</p>\n<p>Vous ne vous rappelez plus des valeurs possibles à spécifier pour l''indexation d''une page par les moteurs de recherche ? Pas grave, l''aide d''Automne est là pour ça.</p>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(652, 26, 'first', '22f3ce37f32ed90e7efcb5e2c3379e88', 'texte', '<p>La syntaxe XML d''Automne vous permet de créer vos propres rangées de contenu en vous laissant une liberté totale sur la manière de structurer vos informations.</p>\n<p>Une rangée peut contenir un ou plusieurs blocs de contenus reliés à un ou plusieurs modules. Grâce au meta-language d''Automne, vous pouvez créer des rangées qui afficheront du contenu dynamique sous écrire la moindre ligne de code PHP.</p>');
+INSERT INTO `blocksTexts_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(560, 24, 'first', 'ac2acfd1b03fd3839ffd4502484cbbfa6', 'texte', '');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `blocksTexts_edition`
+-- Structure de la table `blocksTexts_edition`
 --
 
 DROP TABLE IF EXISTS `blocksTexts_edition`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `blocksTexts_edition` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `page` int(11) unsigned NOT NULL default '0',
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
@@ -728,23 +714,22 @@ CREATE TABLE `blocksTexts_edition` (
   `value` text NOT NULL,
   PRIMARY KEY  (`id`),
   KEY `page` (`page`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `blocksTexts_edition`
+-- Contenu de la table `blocksTexts_edition`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `blocksTexts_public`
+-- Structure de la table `blocksTexts_public`
 --
 
 DROP TABLE IF EXISTS `blocksTexts_public`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `blocksTexts_public` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `page` int(11) unsigned NOT NULL default '0',
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
@@ -753,66 +738,65 @@ CREATE TABLE `blocksTexts_public` (
   PRIMARY KEY  (`id`),
   KEY `page` (`page`),
   FULLTEXT KEY `value` (`value`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `blocksTexts_public`
+-- Contenu de la table `blocksTexts_public`
 --
 
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (667,31,'first','7448f10ee9579c5f0de5616d06e7b7f2','texte','<p>Voici quelques exemples de modules intégrés à cette démonstration. Il est possible d\'en ajouter d\'autres très simplement.&#160;</p>\n<h2>Module Actualités</h2>\n<ul>\n    <li>Gestion d\'articles ;</li>\n    <li>Gestion des catégories d\'articles ;</li>\n    <li>Moteur de recherche côté client.</li>\n</ul>\n<p><atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"5\"/></start></selection><noselection>Exemple d\'affichage du module Actualités</noselection><display><htmltemplate><a  href=\"{{href}}\">Exemple d\'affichage du module Actualités</a></htmltemplate></display></atm-linx></p>\n<h2>Module Médiathèque</h2>\n<p>Le module Médiathèque installé par défaut permet de :&#160;</p>\n<ul>\n    <li>Stocker différents types de média : vidéo, image, son dans une base commune ;</li>\n    <li>Trier selon le type de média ;</li>\n    <li>Gestion de l\'arborescence des catégories ;</li>\n    <li>Effectuer des recherche par mots clés ;</li>\n    <li>Insérer des médias dans l\'éditeur visuel lors de l\'édition des pages.</li>\n</ul>\n<p>Une fois l\'objet dans la base du module, il est réutilisable dans les pages et les autres modules autant de fois qu\'on le souhaite.</p>\n<p><atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"6\"/></start></selection><noselection>Exemple d\'affichage du module Médiathèque</noselection><display><htmltemplate><a  href=\"{{href}}\">Exemple d\'affichage du module Médiathèque</a></htmltemplate></display></atm-linx>&#160;</p>\n<h2>Module Formulaire</h2>\n<p>L\'assistant de création de formulaires vous aidera à mettre en place tout type de formulaires :</p>\n<ul>\n    <li>Permet l\'envoi de mail, l\'écriture dans une base de données, l\'identification des utilisateurs, de récolter des avis, de faire des sondages ...</li>\n    <li>Un assistant de création de formulaire vous aidera à mettre en place des formulaires tout aussi simple que complexes.</li>\n</ul>\n<p><atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"9\"/></start></selection><noselection>Exemple d\'affichage du module Formulaire</noselection><display><htmltemplate><a  href=\"{{href}}\">Exemple d\'affichage du module Formulaire</a></htmltemplate></display></atm-linx></p>');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (587,25,'first','55319cd65490d790a905969af656ee08','texte','<p>Lors de la création du modèle de page, on détermine, par l’insertion de balises XML propres à Automne, l’emplacement des différentes zones modifiables et des menus de navigation.</p>\n<p>Exemple d\'insertion d\'une zone modifiable relative au module de gestion de page :</p>\n<p class=\"code\"><code>&lt;atm-clientspace module=\"standard\" id=\"main-content\" /&gt;</code></p>\n<p>On peut ainsi délimiter facilement les zones d\'intervention des rédacteurs dans les pages.</p>\n<p>De plus grâce aux modèles de page, on assure une présentation homogène des pages du site et on facilite la mise à jour et la maintenance de l\'ensemble du site.</p>\n<p>Les utilisateurs ont ensuite à leur disposition des <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"26\"/></start></selection><noselection>rangées de contenu</noselection><display><htmltemplate><a  href=\"{{href}}\">rangées de contenu</a></htmltemplate></display></atm-linx> à insérer dans les zones modifiables qui leur permettront d\'insérer tous types de contenu.</p>');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (642,26,'first','d9357a8e2eaabff878edd590a3390747','texte','<p>Les rangées de contenu sont les gabarits qui vont contenir l’information. Elles peuvent recevoir tous types de contenu : texte, image, flash, vidéo… Par exemple, des rangées titres, sous-titres, textes, textes et média sont certaines des rangées par défaut d\'Automne.</p>\n<p>Une rangée est pré-formatée. Cela permet de conserver l\'homogénéité de la présentation du site Internet.<b><br />\n</b></p>');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (647,26,'first','8bcb8cc07038c43efc0b850a5e120569','texte','');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (651,26,'first','efa99bdc885c7e3d486c9073dd4b3ea5','texte','<p>&#160;L\'organisation des rangées dans une page est particulièrement simple. Vous pouvez les glisser-déposer à l\'endroit ou vous le souhaitez.</p>\n<p>Les zones de saisies sont clairement indiquées et vous pouvez modifier l\'ensemble du contenu très simplement à l\'aide d\'outils de mise en forme très intuitifs : mise en forme des textes à l\'aide de l\'éditeur WYSIWYG, redimensionner et recadrer des images, créer des liens vers d\'autres sites ou vers une page donnée de votre site.</p>\n<p>Vous pouvez même décider d\'importer le contenu de vos modules à n\'importe quel endroit de vos textes. Si le contenu du module vient à disparaitre (suppression, dépublication, ...), il disparaitra simplement et sans erreur de tous les textes ou vous y faite référence.</p>\n<p><strong>Créez vos propres rangées avec le type d’information et la présentation que vous souhaitez.</strong></p>');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (662,30,'first','dda8207197eda19c8be4b1f63d76b382','texte','<h2>Pré-requis conseillés</h2>\n<ul>\n    <li>PHP installé sous forme de module Apache (la version CGI offre des performances moindres).</li>\n    <li><a target=\"_blank\" href=\"http://www.php.net/manual/fr/features.commandline.php\">Module CLI de PHP installé </a>et disponible sur le serveur ainsi que les fonctions \"<a target=\"_blank\" href=\"http://www.php.net/system\">system</a>\" et \"<a target=\"_blank\" href=\"http://www.php.net/manual/fr/function.exec.php\">exec</a>\" de PHP pour profiter des scripts en tâche de fond.</li>\n    <li>Option<a target=\"_blank\" href=\"http://www.php.net/manual/fr/ref.info.php#ini.magic-quotes-gpc\"> \"magic_quotes_gpc\"</a> de PHP désactivée.</li>\n    <li>Apache doit avoir le droit de créer et de modifier l’ensemble des fichiers d\'Automne sur le serveur pour profiter du système d’installation et de mises à jour automatique. Sans cela, certaines parties de l’installation et des mises à jour devront être effectuées manuellement.</li>\n    <li>Un cache de code PHP (opcode cache) tel que <a target=\"_blank\" href=\"http://pecl.php.net/package/APC\">APC</a> ou <a target=\"_blank\" href=\"http://www.zend.com/products/zend_optimizer\">Zend optimizer </a>est un plus pour les performances.</li>\n    <li>Certaines fonctionnalités d’Automne (telle que la génération des pages du site) peuvent nécessiter plus de mémoire vive (en particulier si vous avez compilé PHP avec un très grand nombre d\'extensions). En règle générale il est préférable de laisser PHP gérer lui même la mémoire vive alloué aux scripts en permettant l\'usage de la fonction<a target=\"_blank\" href=\"http://www.php.net/manual/fr/ini.core.php#ini.memory-limit\"> \"memory_limit\"</a>.</li>\n</ul>\n<p>Pour des raisons de performance, nous recommandons l’usage d’un serveur Linux ou Unix en production.</p>\n<p>Du fait de l’emploi de fichiers .htaccess, le serveur Apache est fortement conseillé pour des raisons de sécurité.</p>');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (637,30,'first','ac2acfd1b03fd3839ffd4502484cbbfa6','texte','');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (663,30,'first','ffcabb4c56442c5a6e6659260c7110fb','texte','<h2>Pré-requis techniques obligatoires</h2>\n<p>Serveur Linux, Windows, Max OSX, Solaris, BSDou tout autre système système Unix permettant de faire tourner les trois outils suivant sur lesquels repose Automne :</p>\n<ul>\n    <li>Serveur web&#160;<a target=\"_blank\" href=\"http://httpd.apache.org/\">Apache</a>;\n    <ul>\n        <li><a target=\"_blank\" href=\"http://www.php.net/\">PHP 5.2.x</a>. Pour des raisons de sécurité nous recommandons la dernière version de la branche 5.x;</li>\n        <li>Extension GD disponible pour PHP (permet le <a target=\"_blank\" href=\"http://www.php.net/manual/fr/ref.image.php\">traitement des images</a>) avec les librairies JPEG, GIF et PNG;</li>\n    </ul>\n    </li>\n    <li>Option \"<a target=\"_blank\" href=\"http://www.php.net/manual/fr/features.safe-mode.php\">safe_mode</a>\" de PHP désactivée;</li>\n    <li>32 à 64Mo de mémoire alloué aux scripts PHP (en fonction du nombre d\'extensions installées sur PHP : plus d\'extensions nécessite plus de mémoire).</li>\n    <li><a target=\"_blank\" href=\"http://www.mysql.com/\">MySQL 5.x .</a></li>\n</ul>\n<p>L\'interface d\'administration d\'Automne est compatible avec les navigateurs :</p>\n<ul>\n    <li><a target=\"_blank\" href=\"http://www.microsoft.com/france/windows/internet-explorer/telechargement-versions-internet-explorer.aspx\">Internet Explorer</a> 7+,</li>\n    <li><a target=\"_blank\" href=\"http://www.mozilla-europe.org/fr/firefox/\">Firefox</a> 3+,</li>\n    <li><a target=\"_blank\" href=\"http://www.apple.com/fr/safari/\">Safari</a> 4+,</li>\n    <li><a target=\"_blank\" href=\"http://www.google.com/chrome?hl=fr\">Google Chrome</a>,</li>\n    <li><a target=\"_blank\" href=\"http://www.opera.com/\">Opera</a> 9+.</li>\n</ul>\n<p>Automne permet de développer des sites pour tout type de navigateur, c\'est fonction des modèles de page utilisés.</p>\n<p>Pour plus de confort et de performance, nous recommandons de mettre à jour votre navigateur.</p>');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (606,35,'first','718dfb04e3bd006a81604b9ccdf448cf','texte','<p>Automne dispose d\'un <strong>système intelligent de gestion des droits des utilisateurs.</strong> Il permet une gestion fine des droits, tant dans les différentes pages que dans les contenus des différents modules. Ce système permet d\'appliquer l\'ensemble de ces droits sur tout types d\'éléments gérés par Automne.</p>\n<p>Ces droits peuvent être attribués sur les pages mais aussi sur les modules, les modèles de pages, les rangées de contenu et sur les différentes actions d\'administration. L\'ensemble de ces droits sont applicables aux utilisateurs et aux groupes d\'utilisateurs ayant accès au site.</p>\n<p>Il existe un droit particulier intitulé <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"37\"/></start></selection><noselection>droit de validation.</noselection><display><htmltemplate><a  href=\"{{href}}\">droit de validation.</a></htmltemplate></display></atm-linx>&#160;Ce droit permet de donner à l\'utilisateur la possibilité de valider le travail des autres utilisateurs pour publier le contenu sur le site en ligne.</p>\n<p>Exemple :</p>\n<ul>\n    <li><em>L\'utilisateur A peut avoir des droits d\'administration sur certaines pages et un droit limité sur les modèles de pages, ce qui lui permettra de ne créer que des pages utilisant les modèles qu\'il peut utiliser.</em></li>\n    <li><em>L\'utilisateur B peut avoir les droits d\'administration sur la partie française des actualités et uniquement le droit de visibilité sur la partie anglaise des. Il ne pourra ainsi modifier que les actualités Française du site.</em></li>\n    <li><em>L\'utilisateur C peut avoir les droits d\'administrations sur le module médiathèque mais aucun droit sur les actualités et les pages du site. Il ne pourra donc que gérer les éléments de la médiathèque que d\'autres utilisateurs pourront ensuite utiliser dans les actualités ou les pages du site.</em></li>\n</ul>\n<p>Bien entendu vous pouvez spécifier finement tous les droits que vous souhaitez et vous pouvez même <strong>créer des groupes d\'utilisateur comportant des droits spécifiques</strong> qui seront additionné aux utilisateurs appartenant à différents groupes.</p>\n<h3>Gestion des droits à partir des groupes</h3>\n<p>Vous avez six groupes utilisateurs distinct :</p>\n<ul>\n    <li>administration des actualités en français ;</li>\n    <li>administration des actualités en anglais ;</li>\n    <li>administration des pages du site en français ;</li>\n    <li>administration des pages du site en anglais ;</li>\n    <li>validation des modifications sur les actualités ;</li>\n    <li>validation des modifications sur les pages.</li>\n</ul>\n<p>En associant un ou plusieurs de ces groupes à des utilisateurs, vous leur donnerez les droits correspondants vous permettant ainsi de créer et de gérer simplement des combinaisons plus ou moins complexes de droits d\'administration.</p>\n<p>De plus, dans le cas de sites extranet ou intranet, vous pouvez aussi réaliser ce type de combinaison sur le droit de visibilité des différents contenus du site, permettant ainsi de créer des <strong>zones de contenu sécurisées</strong> sur votre site.</p>');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (192,5,'first','68a1b1d8a072af0eb92f6392eb309ad1','texte','');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (605,35,'first','9f851c9d1868ad933f280c33e5a419f3','texte','<p>Il existe trois types de droits fondamentaux :</p>\n<ul>\n    <li>Le droit d\'écriture qui équivaut à un&#160;droit d\'administration ;</li>\n    <li>Le droit de lecture qui équivaut à un droit de visibilité ;</li>\n    <li>Aucun droit, ce qui empêche un utilisateurs d\'avoir accès à un contenu.</li>\n</ul>');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (631,2,'first','a0922acb28a233e527aa46607bfec987c','texte','<p>Automne est un CMS open-source français conçu pour simplifier la gestion de sites web, que ce soit pour les contributeurs ou les dévelopeurs.</p>\n<p>L’interface d’Automne se greffe sur le site web et vous permet d’éditer le contenu de vos pages de manière intuitive.</p>\n<p>Commme tous les CMS, Automne propose un système de <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"25\"/></start></selection><noselection>modèles de page</noselection><display><htmltemplate><a  href=\"{{href}}\">modèles de page</a></htmltemplate></display></atm-linx> qui utilise la syntaxe <abbr title=\"eXtensible Markup Language\">XML</abbr>. Même chose pour les <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"26\"/></start></selection><noselection>modèles de blocs de contenus</noselection><display><htmltemplate><a  href=\"{{href}}\">modèles de blocs de contenus</a></htmltemplate></display></atm-linx> - ou rangées.</p>\n<p>Automne est un CMS stable et performant, il peut vous aider à gérer plusieurs sites ou plusieurs versions de sites. 10 000 pages en 5 langues ne lui font pas peur.</p>\n<p>Automne est extensible et intégre un <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"27\"/></start></selection><noselection>assistant de création de modules</noselection><display><htmltemplate><a  href=\"{{href}}\">assistant de création de modules</a></htmltemplate></display></atm-linx> - le <abbr title=\"Polymorphic Module\">Polymod</abbr>. Créez votre structure en quelques clics et Automne genère l’interface d’administration pour vous.</p>\n<p>La gestion de l’affichage se fait ensuite grâce au meta-langage d’Automne, pour les <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"31\"/></start></selection><noselection>modules simples</noselection><display><htmltemplate><a  href=\"{{href}}\">modules simples</a></htmltemplate></display></atm-linx> quelques balises XML suffisent.</p>\n<p>Vous l’aurez compris, Automne est là avant tout pour vous faciliter la vie.</p>\n<p>Comme tout logiciel libre, vous pouvez contribuer à Automne, en faisant des <a target=\"_blank\" href=\"http://www.automne-cms.org/todo/\">suggestions d’évolution</a>, en remontant <a target=\"_blank\" href=\"http://www.automne-cms.org/bug/\">des bugs</a> ou même en contribuant au <a target=\"_blank\" href=\"https://launchpad.net/automne\">code source</a>.</p>\n<p>Le site communautaire <a target=\"_blank\" href=\"http://www.automne-cms.org\">www.automne-cms.org</a> et son <a target=\"_blank\" href=\"http://forum.automne-cms.org\">forum</a> sont là pour vous aider dans votre découverte d\'Automne.</p>\n<p>Si vous souhaitez avoir des <a target=\"_blank\" href=\"http://www.automne-cms.org/support/\">formations ou obtenir un support professionnel</a>, nous avons des offres sur mesure à vous proposer.</p>');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (593,27,'first','f863b4e5ea5a0c8019440ff99e59e29f','texte','<p>Créer ou installez des modules supplémentaires pour ajouter des fonctionnalités propres aux besoins de chaque site.</p>\n<p>Par défaut Automne contient les modules les plus courants : &#160;actualités, médiathèque,&#160;formulaires ou création d\'URLs courtes avec le module Alias par exemple.</p>\n<p><strong>Grâce au générateur d\'application intégré, ajoutez autant de modules supplémentaires que vous le souhaitez.</strong></p>\n<h2>Le générateur de modules</h2>');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (591,27,'first','56025a9b887be03112111d215ca6f31d','texte','<p>Une des particularités d’Automne est son générateur de module intégré appelé <abbr title=\"Polymorphic Module\">Polymod</abbr>.</p>\n<p>L\'assistant de création de module vous permet de créer des structures personnalisées et de relier plusieurs objets entre eux (comme une actualité et un commentaire par exemple).</p>\n<p>La création de la structure des objets de vos modules se fait entièrement via l\'interface de gestion des modules d\'Automne, sans écrire la moindre ligne de code. Et ce n\'est pas tout, Automne génère ensuite l\'interface d\'administration correspondante de manière entièrement automatisée. Toujours pas la moindre ligne de PHP à écrire alors que vous pouvez déjà commencer à insérer des données dans vos modules.&#160;</p>\n<p>La gestion de l\'affichage de vos modules se fait ensuite via des <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"26\"/></start></selection><noselection>rangées de contenus</noselection><display><htmltemplate><a  href=\"{{href}}\">rangées de contenus</a></htmltemplate></display></atm-linx> en utilisant les balises XML d\'Automne.</p>\n<p>Exemple :&#160; les modules <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"5\"/></start></selection><noselection>Actualités</noselection><display><htmltemplate><a  href=\"{{href}}\">Actualités</a></htmltemplate></display></atm-linx> et <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"6\"/></start></selection><noselection>Médiathèque</noselection><display><htmltemplate><a  href=\"{{href}}\">Médiathèque</a></htmltemplate></display></atm-linx> fourni dans cette démonstration ont été entièrement créés à partir du générateur de modules d\'Automne. Ils peuvent être modifiés pour être ajustés à ce que vous souhaitez de très simplement.</p>\n<p>Il est donc facile de créer ses propres modules à l\'aide du Polymod et de les partager ensuite avec la communauté.</p>');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (653,9,'first','d227e9c886232aa6c2bbbddb2b348ad4','texte','<p>&#160;Automne est un CMS open-source français édité par l\'agence <a target=\"_blank\" href=\"http://www.ws-interactive.fr\">WS Interactive</a>.</p>');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (567,9,'first','17a6be4c940c12530cfaecfb2eb6b828','texte','<p>Ce formulaire vous permet d\'envoyer une demande de contact. Pour le transformer (Champs, actions, email de destination), modifiez le dans les propriétés du module \"Formulaire\".</p>');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (560,24,'first','ac2acfd1b03fd3839ffd4502484cbbfa6','texte','');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (636,33,'first','adbbb020aeadb2df9957a83e19e55211','texte','<p>Automne se distingue de ses concurrents grâce notamment à :</p>\n<ul>\n    <li>une interface administrateur<strong>&#160;ergonomique, intuitive et réactive;</strong></li>\n    <li>l\'intégration de l\'interface sur votre site, pas de backoffice;</li>\n    <li>une prise en main rapide qui ne demande aucune connaissance technique;</li>\n    <li><strong>une aide contextuelle</strong>&#160;omniprésente dans le logiciel;</li>\n    <li>un assistant de création de modules personnalisés;</li>\n    <li>une optimisation des performances native;&#160;</li>\n    <li>l\'utilisation d\'outils de briques technologiques modernes et éprouvés : PHP5, ExtJS, Zend Framework, etc. ;</li>\n    <li>gestion des <strong>langues internationales</strong>&#160;et des alphabets particuliers;</li>\n    <li>l\'intégration d\'un moteur de recherche full-text pour les contenus;</li>\n    <li>et bien plus encore ...</li>\n</ul>');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (664,38,'first','4f342492c25a2b686c2b531760008d98','texte','<p>Pas envie de lire toute la <a target=\"_blank\" href=\"http://doc.automne-cms.org\">documentation</a> ? Passez la souris au dessus des onglets du module de page, des icônes de statut, des différents boutons ou champs présents dans les fenêtres ou les formulaires de saisie des modules et vous aurez toutes les explications nécessaires.</p>\n<p>Vous ne vous rappelez plus des valeurs possibles à spécifier pour l\'indexation d\'une page par les moteurs de recherche ? Pas grave, l\'aide d\'Automne est là pour ça.</p>');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (612,38,'first','8d1b3ec256dada4f0c811896050fdc9f','texte','');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (615,38,'first','27253551d67fd5f23b3269719a3f5364','texte','<p>Grâce à l\'aide contextuelle intégrée, le moindre bouton de l\'interface n\'aura plus de secret pour vous. Nous avons fait en sorte d\'expliciter la fonction de chacun d\'entre eux afin que vous ne posiez plus de questions.</p>');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (619,38,'first','48e8e4c2bea88305e6a9353511f51ea7','texte','<p>Nous avons aussi intégré <strong>une aide technique pour vous assister</strong> dans la création de modèles de pages, de rangées de contenus et de modules.</p>\n<p>Cette aide détaille entre autres la fonction et la syntaxe des différentes balises XML mais aussi les variables à votre disposition pour les modèles de page ou les rangées.</p>\n<p>Une <strong>aide spécifique à chaque module</strong> crée avec le générateur&#160;<atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"27\"/></start></selection><noselection>Polymod</noselection><display><htmltemplate><a  href=\"{{href}}\">Polymod</a></htmltemplate></display></atm-linx> est également générée. Elle se révèle particulièrement utile lors de la création des rangées de contenus associés pour avoir facilement accès aux variables et aux différentes fonctions offertes par Automne.</p>');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (610,37,'first','7fac447905b2c5da7fb86162c1656561','texte','<p>&#160;Une fois les différents <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"35\"/></start></selection><noselection>rôles</noselection><display><htmltemplate><a  href=\"{{href}}\">rôles</a></htmltemplate></display></atm-linx> définis, les responsables éditoriaux ont tous les outils nécessaires pour suivre les modifications effectuées sur le site :</p>');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (611,37,'first','3c1cf8ef8f25de1ae96706a2585bffb7','texte','<ul>\n    <li>Un système d\'alerte email automatique informe les validateurs en temps réel des modifications qui ont été opérées sur le site ;</li>\n    <li>Le validateur peut alors vérifier les modifications faites sur le contenu et les accepter, les refuser ou les modifier.</li>\n    <li>Un système d\'icônes simple et clair permet à tout moment de connaitre le statut des éléments : si ils sont publiés, dépubliés, ou attente d\'une validation.</li>\n    <li>La publication en ligne des modifications n\'est effective que lorsqu\'elles sont approuvées par le validateur. Ce droit particulier est paramétrable dans la <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"28\"/></start></selection><noselection>gestion des utilisateurs.</noselection><display><htmltemplate><a  href=\"{{href}}\">gestion des utilisateurs.</a></htmltemplate></display></atm-linx></li>\n    <li>Le suivi d\'activité stocke toute l\'historique des modifications effectuées dans Automne.</li>\n</ul>');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (258,3,'first','8be44600466b3bd947f5b2c5cb45bf01','texte','');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (557,3,'first','39a32afb98d21c8252ea3714cff0f62e','texte','<p>Vous disposez d’un compte utilisateur <strong>« Rédacteur »</strong> qui vous permet d’avoir accès à l’interface d\'administration d’Automne 4 et donc d’opérer certaines modifications. <strong><br />\n</strong></p>\n<p>Vous pouvez par exemple :</p>\n<ul>\n    <li>modifier, créer et copier des pages ;</li>\n    <li>modifier votre profil ;</li>\n    <li>modifier, créer ou supprimer des éléments du module actualité, médiathèque, etc.</li>\n</ul>');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (556,3,'first','6ff77816cb91134d254f1b0723fa0022','texte','<h2>Vos droits sur ce site de démonstration</h2>\n<h3>Que pouvez-vous faire ?</h3>');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (633,3,'first','23ba8857d961fd78dc2ff56bb56e39e7','texte','');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (634,3,'first','9110334505c2e7ace9a292686b89c405','texte','<h3>Ce que vous ne pouvez pas faire :</h3>\n<ul>\n    <li>administrer les modules ;</li>\n    <li>valider la modification des pages ;</li>\n    <li>modifier les rangées et les modèles de page ;</li>\n    <li>modifier les paramètres d\'Automne,</li>\n    <li>gérer les utilisateurs,&#160;</li>\n    <li>et bien d\'autres choses &#160;...</li>\n</ul>\n<p>Ces fonctionnalités sont réservées à un compte utilisateur de type&#160;  <strong>« Administrateur ».</strong></p>\n<h2>Continuer la visite</h2>\n<ul>\n    <li><atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"29\"/></start></selection><noselection>Automne</noselection><display><htmltemplate><a  href=\"{{href}}\">Automne</a></htmltemplate></display></atm-linx></li>\n    <li><atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"33\"/></start></selection><noselection>Nouveautés</noselection><display><htmltemplate><a  href=\"{{href}}\">Nouveautés</a></htmltemplate></display></atm-linx></li>\n    <li><atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"30\"/></start></selection><noselection>Pré-requis</noselection><display><htmltemplate><a  href=\"{{href}}\">Pré-requis</a></htmltemplate></display></atm-linx></li>\n    <li><atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"24\"/></start></selection><noselection>Fonctionnalités</noselection><display><htmltemplate><a  href=\"{{href}}\">Fonctionnalités</a></htmltemplate></display></atm-linx></li>\n</ul>');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (632,3,'first','401937687b65ea5c249faa74f4e23c9a','texte','');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (665,3,'first','f2c8532eb6f56afe1d435350eebd9a52','texte','<p>Vous êtes sur le site de démonstration d\'Automne qui a pour but de vous présenter les grands principes et la philosophie de ce CMS orienté utilisateur.</p>\n<p>Cette démonstration ne vous permet d\'avoir accès qu\'à une partie des possibilités offertes par Automne, pour avoir un aperçu complet des fonctionnalités, nous vous invitons à <a target=\"_blank\" href=\"http://www.automne-cms.org/web/fr/242-telechargements.php\">télécharger</a> et à installer Automne.</p>');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (604,28,'first','9ba530cba11a3763a081a2e34072711f','texte','<p>On peut créer autant de groupes qu\'il y a de rôles à définir et faire appartenir les utilisateurs à un ou plusieurs groupes. Automne calculera ensuite la somme des <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"35\"/></start></selection><noselection>droits</noselection><display><htmltemplate><a  href=\"{{href}}\">droits</a></htmltemplate></display></atm-linx> correspondants.</p>\n<p>On peut donc avoir un groupe qui n\'aura accès qu\'à certaines parties de l\'arborescence, un autre qu\'à certaines catégories d\'un module et faire appartenir ensuite certains utilisateurs à ces deux groupes.</p>\n<p>Automne vous offre une totale liberté dans l\'organisation et la répartition du travail collaboratif.</p>');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (627,29,'first','ac2acfd1b03fd3839ffd4502484cbbfa6','texte','');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (666,29,'first','530e1be13c69bcfec950100e6c6421a3','texte','<p>Automne est un CMS <a target=\"_blank\" href=\"http://fr.wikipedia.org/wiki/Open_source\">open source,</a> performant et ergonomique. Ce système de gestion de contenu français est déjà utilisé par de grandes entreprises, des organismes public et des associations de toutes tailles.</p>\n<p>Automne offre un environnement sécurisé et collaboratif pour gérer des sites et des applications web.</p>\n<h2>Performant et évolutif</h2>\n<p>Robuste pour sa capacité de gérer plusieurs milliers de pages avec un langage orienté objet. Automne respecte les normes et recommandations du W3C ainsi que les  recommandations en terne d’accessibilité.</p>\n<p>Doté d\'un assistant de création de <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"27\"/></start></selection><noselection>modules de gestion</noselection><display><htmltemplate><a  href=\"{{href}}\">modules de gestion</a></htmltemplate></display></atm-linx>, vous pourrez enrichir  les <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"24\"/></start></selection><noselection>fonctionnalités de votre site Internet</noselection><display><htmltemplate><a  href=\"{{href}}\">fonctionnalités de votre site Internet</a></htmltemplate></display></atm-linx> selon vos besoins.</p>\n<h2>Taillé pour l\'entreprise</h2>\n<p>Automne vous permet de créer et de gérer votre site Internet, Extranet ou Intranet. Il permet de créer des sites Internet institutionnels de qualité professionnelle très rapidement mais aussi de développer des applications web évoluées. Tout cela en restant dans un contexte simple et intuitif qui offre aux utilisateurs toutes les fonctionnalités nécessaires.</p>\n<h2>Pérénité et sécurité</h2>\n<p>Utilisé dès ses débuts par de grands comptes, il offre aux PME un cadre agréable pour le travail collaboratif et la gestion.</p>\n<p>De par son modèle libre, vous êtes assurés d\'avoir des mises à jour régulières pour vos sites.</p>\n<p>Automne est développé par des professionnels certifiés possédant plusieurs années d\'expérience en PHP et en architecture logicielle. Tous les développements sont vérifiés et respectent un haut niveau de qualité et de sécurité.</p>\n<p>Automne est gratuit et librement téléchargeable sur <a target=\"_blank\" href=\"http://sourceforge.net/projects/automne/\">Sourceforge</a>. Il emploie des technologies open-source indépendantes ce qui vous assure de pouvoir l\'utiliser longtemps sans dépendre d\'une entreprise éditrice.</p>\n<p>Par ailleurs, vous disposez d\'un <a target=\"_blank\" href=\"http://www.automne.ws/forum/\">forum communautaire</a> pour signaler tout problème que vous rencontreriez.</p>\n<p>Il vous est aussi possible d\'obtenir un support et des formations dispensés par des professionnels. Pour plus d\'information, rendez vous sur <a target=\"_blank\" href=\"http://www.automne-cms.org\">le site web du CMS Automne</a>.</p>');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (570,24,'first','a76b35963e7853924f49b447d533f5ab','texte','<p>Puissant système de gestion de contenu, Automne permet de gérer des sites de plusieurs milliers de pages, d\'en modifier simplement la structure et l\'apparence grâce aux <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"25\"/></start></selection><noselection>modèles de pages</noselection><display><htmltemplate><a  href=\"{{href}}\">modèles de pages</a></htmltemplate></display></atm-linx> et de modifier intuitivement le contenu grâce au principe des <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"26\"/></start></selection><noselection>rangées de contenu.</noselection><display><htmltemplate><a  href=\"{{href}}\">rangées de contenu.</a></htmltemplate></display></atm-linx></p>\n<p>Les nombreuses fonctionnalités pour le site Internet, simples ou complexes, peuvent être générées automatiquement par le <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"27\"/></start></selection><noselection>générateur de module</noselection><display><htmltemplate><a  href=\"{{href}}\">générateur de module</a></htmltemplate></display></atm-linx>&#160;ou bien développées directement en code PHP.</p>\n<p>Automne dispose d\'un système de <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"28\"/></start></selection><noselection>gestion des utilisateurs</noselection><display><htmltemplate><a  href=\"{{href}}\">gestion des utilisateurs</a></htmltemplate></display></atm-linx> et <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"28\"/></start></selection><noselection>groupes d\'utilisateurs</noselection><display><htmltemplate><a  href=\"{{href}}\">groupes d\'utilisateurs</a></htmltemplate></display></atm-linx> basé sur des rôles distincts permettant une <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"35\"/></start></selection><noselection>gestion très fine des droits.</noselection><display><htmltemplate><a  href=\"{{href}}\">gestion très fine des droits.</a></htmltemplate></display></atm-linx> Votre environnement de travail est homogène et ne présente que les fonctionnalités sur lesquelles vous avez le droit d\'agir.</p>\n<p>Pour en savoir plus sur chacune de ces fonctionnalités, rendez-vous sur les rubriques dédiées :&#160;</p>\n<ul>\n    <li><atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"25\"/></start></selection><noselection>Modèles de pages</noselection><display><htmltemplate><a  href=\"{{href}}\">Modèles de pages</a></htmltemplate></display></atm-linx> (structure et apparence),</li>\n    <li><atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"26\"/></start></selection><noselection>Rangées de contenu</noselection><display><htmltemplate><a  href=\"{{href}}\">Rangées de contenu</a></htmltemplate></display></atm-linx> (blocs pré-formatés prêt à l\'emploi),</li>\n    <li><atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"27\"/></start></selection><noselection>Modules </noselection><display><htmltemplate><a  href=\"{{href}}\">Modules </a></htmltemplate></display></atm-linx>(création et gestion de vos applications dynamiques),</li>\n    <li><atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"28\"/></start></selection><noselection>Gestion des utilisateurs et des groupes d\'utilisateurs</noselection><display><htmltemplate><a  href=\"{{href}}\">Gestion des utilisateurs et des groupes d\'utilisateurs</a></htmltemplate></display></atm-linx>,</li>\n    <li><atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"35\"/></start></selection><noselection>Gestion des droits d\'accès</noselection><display><htmltemplate><a  href=\"{{href}}\">Gestion des droits d\'accès</a></htmltemplate></display></atm-linx>,</li>\n    <li><atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"37\"/></start></selection><noselection>Workflow de publication des contenus</noselection><display><htmltemplate><a  href=\"{{href}}\">Workflow de publication des contenus</a></htmltemplate></display></atm-linx>,</li>\n    <li><atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"38\"/></start></selection><noselection>Aide aux utilisateurs</noselection><display><htmltemplate><a  href=\"{{href}}\">Aide aux utilisateurs</a></htmltemplate></display></atm-linx>,</li>\n    <li><atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"34\"/></start></selection><noselection>Fonctions avancées</noselection><display><htmltemplate><a  href=\"{{href}}\">Fonctions avancées</a></htmltemplate></display></atm-linx>.</li>\n</ul>');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (562,24,'first','5abba99264b62fec356b41e30aeddf41','texte','');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (626,34,'first','592c2e33c7971c02ec553000d0eaea43','texte','<h2>La gestion multi-sites</h2>\n<p>Une seule et même interface d\'Automne peut gérer autant de sites que vous le souhaitez. Chacun peut posséder son propre nom de domaine, sa propre langue et ses propres éléments (modèles de pages, rangées). Vous pouvez accorder des droits sur un ou plusieurs sites à vos collaborateurs.</p>\n<h2>Espaces sécurisés</h2>\n<p>Le système évolué de gestion des droits permet de réaliser des <strong>espaces sécurisés</strong> sur vos sites. Par l’intermédiaire d’un compte d\'utilisateur et d\'un mot de de passe, votre site Internet se transforme en&#160;<strong>Extranet ou en Intranet&#160;</strong>appliquant ainsi les <strong>droits et restrictions</strong> sur les pages et les contenus que vous aurez spécifié. Les restrictions mises en place sont <strong>invisibles </strong>à ceux qui ne possèdent pas les droits de les voir évitant ainsi toute frustration de vos utilisateurs.</p>\n<h2>Connexion LDAP</h2>\n<p>L\'intérêt principal d\'un annuaire LDAP est la <strong>normalisation de l\'authentification.</strong> Cet annuaire regroupe toutes les informations de type de l’utilisateur (nom, prénom, service, fonction, etc.).</p>\n<p>Automne permet de récupérer automatiquement les informations de l’annuaire afin de définir les utilisateurs et leurs droits. &#160;Par exemple la personne travaillant au service des ressources humaines, aura automatiquement accès à la page ressources humaines alors que d’autres collègues n’y auront pas accès.</p>\n<p>Lors de l’ouverture de session, les identifiants et mot de passe sont envoyées à cet annuaire qui transmet alors les informations de l’utilisateur</p>\n<h2>Authentification unique</h2>\n<p>L\'authentification unique (en anglais <strong>SSO</strong>&#160;signifie Single Sign On) est une méthode permettant à un utilisateur de ne procéder qu\'à une seule authentification pour accéder à plusieurs applications informatiques ou sites web sécurisés.</p>\n<p>Automne dispose aujourd’hui de cette technologie et les utilisateurs pourront directement être connectés à l’interface d\'Automne dés l’ouverture de session sur leur machine.</p>');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (585,25,'first','267e03d5f6a4d0392b79a2d31dcd40f2','texte','<p>Un des principes fondamental à respecter lors de la gestion de site web est la <strong>séparation entre le contenu et la présentation.</strong>&#160;Le fond et la forme doivent être totalement indépendant l’un de l’autre.</p>\n<p>Cela permettra de concevoir des sites pouvant s\'afficher sur différents types de terminaux :&#160;</p>\n<ul>\n    <li>ordinateur de bureau</li>\n    <li>téléphone mobile</li>\n    <li>télévision</li>\n    <li>imprimante</li>\n    <li>etc.</li>\n</ul>');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (660,27,'first','4564d92b193505d71f29b5ae69dddde0','texte','<h2>Modules en PHP</h2>\n<p>Grâce à l\'<a target=\"_blank\" href=\"http://www.automne-cms.org/api/\">API d\'Automne</a>&#160;vous pouvez aussi développer des modules plus complexes que le Polymod ne saurait traiter.</p>\n<p>Ces modules, créés en PHP peuvent alors réaliser tout type d\'opération métier complexe en s\'intégrant parfaitement à l\'interface d\'Automne.</p>\n<p>Vous pouvez ainsi lier Automne à vos bases de données métier ou encore créer des modules de mailing, d\'e-commerce, interroger des web services distants et ajouter bien d\'autres fonctionnalités encore.</p>');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (602,28,'first','8d231671f5511d2e3004c79991317d93','texte','<h2>Utilisateurs et groupes</h2>\n<p>Le<atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"35\"/></start></selection><noselection>&#160;super administrateur</noselection><display><htmltemplate><a  href=\"{{href}}\">&#160;super administrateur</a></htmltemplate></display></atm-linx>&#160;possède <strong>tous les droits sur l’application.</strong></p>\n<p>Il peut ensuite designer d\'autres administrateurs, créer des groupes et définir les différents rôles nécessaires à la gestion des sites. Chacun utilisateur dispose alors de droits très précis sur les différents modules d\'Automne.</p>\n<p>Vos utilisateurs n\'auront à leur disposition que les outils qui leurs sont nécessaires. Leur domaines d\'interventions seront définies par votre politique éditoriale.</p>\n<p>Il est naturellement possible, grâce au <atm-linx type=\"direct\"><selection><start><nodespec type=\"node\" value=\"37\"/></start></selection><noselection>circuit de publication</noselection><display><htmltemplate><a  href=\"{{href}}\">circuit de publication</a></htmltemplate></display></atm-linx>&#160;de soumettre les données saisies à la validation d\'une autorité supérieure. Ainsi le contenu pourra être vérifié, corrigé et validé avant sa mise en ligne.</p>');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (597,28,'first','ac2acfd1b03fd3839ffd4502484cbbfa6','texte','');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (625,38,'first','65990b9ff00394714dd60ffd708b2d77','texte','<p>Automne intègre&#160;<strong>un puissant moteur de recherche</strong>&#160;qui&#160;vous permet de rechercher sur l\'ensemble des contenus et des éléments, quel que soit leurs type : &#160;contenus des pages ou des modules, utilisateurs, modèles, etc.</p>\n<p>De plus, les résultats retournés sont fonction des droits de l\'utilisateur.&#160;Celui-ci s\'avère vite indispensable à l\'usage et vous fera gagner un temps précieux dans la gestion de vos sites.</p>\n<p>Chaque module possède un moteur de recherche spécifique avec des filtres par mots-clés ou n\'importe quel autre type de champs.</p>');
-INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (652,26,'first','22f3ce37f32ed90e7efcb5e2c3379e88','texte','<p>La syntaxe XML d\'Automne vous permet de créer vos propres rangées de contenu en vous laissant une liberté totale sur la manière de structurer vos informations.</p>\n<p>Une rangée peut contenir un ou plusieurs blocs de contenus reliés à un ou plusieurs modules. Grâce au meta-language d\'Automne, vous pouvez créer des rangées qui afficheront du contenu dynamique sous écrire la moindre ligne de code PHP.</p>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(667, 31, 'first', '7448f10ee9579c5f0de5616d06e7b7f2', 'texte', '<p>Voici quelques exemples de modules intégrés à cette démonstration. Il est possible d''en ajouter d''autres très simplement.&#160;</p>\n<h2>Module Actualités</h2>\n<ul>\n    <li>Gestion d''articles ;</li>\n    <li>Gestion des catégories d''articles ;</li>\n    <li>Moteur de recherche côté client.</li>\n</ul>\n<p><atm-linx type="direct"><selection><start><nodespec type="node" value="5"/></start></selection><noselection>Exemple d''affichage du module Actualités</noselection><display><htmltemplate><a  href="{{href}}">Exemple d''affichage du module Actualités</a></htmltemplate></display></atm-linx></p>\n<h2>Module Médiathèque</h2>\n<p>Le module Médiathèque installé par défaut permet de :&#160;</p>\n<ul>\n    <li>Stocker différents types de média : vidéo, image, son dans une base commune ;</li>\n    <li>Trier selon le type de média ;</li>\n    <li>Gestion de l''arborescence des catégories ;</li>\n    <li>Effectuer des recherche par mots clés ;</li>\n    <li>Insérer des médias dans l''éditeur visuel lors de l''édition des pages.</li>\n</ul>\n<p>Une fois l''objet dans la base du module, il est réutilisable dans les pages et les autres modules autant de fois qu''on le souhaite.</p>\n<p><atm-linx type="direct"><selection><start><nodespec type="node" value="6"/></start></selection><noselection>Exemple d''affichage du module Médiathèque</noselection><display><htmltemplate><a  href="{{href}}">Exemple d''affichage du module Médiathèque</a></htmltemplate></display></atm-linx>&#160;</p>\n<h2>Module Formulaire</h2>\n<p>L''assistant de création de formulaires vous aidera à mettre en place tout type de formulaires :</p>\n<ul>\n    <li>Permet l''envoi de mail, l''écriture dans une base de données, l''identification des utilisateurs, de récolter des avis, de faire des sondages ...</li>\n    <li>Un assistant de création de formulaire vous aidera à mettre en place des formulaires tout aussi simple que complexes.</li>\n</ul>\n<p><atm-linx type="direct"><selection><start><nodespec type="node" value="9"/></start></selection><noselection>Exemple d''affichage du module Formulaire</noselection><display><htmltemplate><a  href="{{href}}">Exemple d''affichage du module Formulaire</a></htmltemplate></display></atm-linx></p>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(587, 25, 'first', '55319cd65490d790a905969af656ee08', 'texte', '<p>Lors de la création du modèle de page, on détermine, par l’insertion de balises XML propres à Automne, l’emplacement des différentes zones modifiables et des menus de navigation.</p>\n<p>Exemple d''insertion d''une zone modifiable relative au module de gestion de page :</p>\n<p class="code"><code>&lt;atm-clientspace module="standard" id="main-content" /&gt;</code></p>\n<p>On peut ainsi délimiter facilement les zones d''intervention des rédacteurs dans les pages.</p>\n<p>De plus grâce aux modèles de page, on assure une présentation homogène des pages du site et on facilite la mise à jour et la maintenance de l''ensemble du site.</p>\n<p>Les utilisateurs ont ensuite à leur disposition des <atm-linx type="direct"><selection><start><nodespec type="node" value="26"/></start></selection><noselection>rangées de contenu</noselection><display><htmltemplate><a  href="{{href}}">rangées de contenu</a></htmltemplate></display></atm-linx> à insérer dans les zones modifiables qui leur permettront d''insérer tous types de contenu.</p>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(642, 26, 'first', 'd9357a8e2eaabff878edd590a3390747', 'texte', '<p>Les rangées de contenu sont les gabarits qui vont contenir l’information. Elles peuvent recevoir tous types de contenu : texte, image, flash, vidéo… Par exemple, des rangées titres, sous-titres, textes, textes et média sont certaines des rangées par défaut d''Automne.</p>\n<p>Une rangée est pré-formatée. Cela permet de conserver l''homogénéité de la présentation du site Internet.<b><br />\n</b></p>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(647, 26, 'first', '8bcb8cc07038c43efc0b850a5e120569', 'texte', '');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(651, 26, 'first', 'efa99bdc885c7e3d486c9073dd4b3ea5', 'texte', '<p>&#160;L''organisation des rangées dans une page est particulièrement simple. Vous pouvez les glisser-déposer à l''endroit ou vous le souhaitez.</p>\n<p>Les zones de saisies sont clairement indiquées et vous pouvez modifier l''ensemble du contenu très simplement à l''aide d''outils de mise en forme très intuitifs : mise en forme des textes à l''aide de l''éditeur WYSIWYG, redimensionner et recadrer des images, créer des liens vers d''autres sites ou vers une page donnée de votre site.</p>\n<p>Vous pouvez même décider d''importer le contenu de vos modules à n''importe quel endroit de vos textes. Si le contenu du module vient à disparaitre (suppression, dépublication, ...), il disparaitra simplement et sans erreur de tous les textes ou vous y faite référence.</p>\n<p><strong>Créez vos propres rangées avec le type d’information et la présentation que vous souhaitez.</strong></p>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(662, 30, 'first', 'dda8207197eda19c8be4b1f63d76b382', 'texte', '<h2>Pré-requis conseillés</h2>\n<ul>\n    <li>PHP installé sous forme de module Apache (la version CGI offre des performances moindres).</li>\n    <li><a target="_blank" href="http://www.php.net/manual/fr/features.commandline.php">Module CLI de PHP installé </a>et disponible sur le serveur ainsi que les fonctions "<a target="_blank" href="http://www.php.net/system">system</a>" et "<a target="_blank" href="http://www.php.net/manual/fr/function.exec.php">exec</a>" de PHP pour profiter des scripts en tâche de fond.</li>\n    <li>Option<a target="_blank" href="http://www.php.net/manual/fr/ref.info.php#ini.magic-quotes-gpc"> "magic_quotes_gpc"</a> de PHP désactivée.</li>\n    <li>Apache doit avoir le droit de créer et de modifier l’ensemble des fichiers d''Automne sur le serveur pour profiter du système d’installation et de mises à jour automatique. Sans cela, certaines parties de l’installation et des mises à jour devront être effectuées manuellement.</li>\n    <li>Un cache de code PHP (opcode cache) tel que <a target="_blank" href="http://pecl.php.net/package/APC">APC</a> ou <a target="_blank" href="http://www.zend.com/products/zend_optimizer">Zend optimizer </a>est un plus pour les performances.</li>\n    <li>Certaines fonctionnalités d’Automne (telle que la génération des pages du site) peuvent nécessiter plus de mémoire vive (en particulier si vous avez compilé PHP avec un très grand nombre d''extensions). En règle générale il est préférable de laisser PHP gérer lui même la mémoire vive alloué aux scripts en permettant l''usage de la fonction<a target="_blank" href="http://www.php.net/manual/fr/ini.core.php#ini.memory-limit"> "memory_limit"</a>.</li>\n</ul>\n<p>Pour des raisons de performance, nous recommandons l’usage d’un serveur Linux ou Unix en production.</p>\n<p>Du fait de l’emploi de fichiers .htaccess, le serveur Apache est fortement conseillé pour des raisons de sécurité.</p>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(637, 30, 'first', 'ac2acfd1b03fd3839ffd4502484cbbfa6', 'texte', '');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(663, 30, 'first', 'ffcabb4c56442c5a6e6659260c7110fb', 'texte', '<h2>Pré-requis techniques obligatoires</h2>\n<p>Serveur Linux, Windows, Max OSX, Solaris, BSDou tout autre système système Unix permettant de faire tourner les trois outils suivant sur lesquels repose Automne :</p>\n<ul>\n    <li>Serveur web&#160;<a target="_blank" href="http://httpd.apache.org/">Apache</a>;\n    <ul>\n        <li><a target="_blank" href="http://www.php.net/">PHP 5.2.x</a>. Pour des raisons de sécurité nous recommandons la dernière version de la branche 5.x;</li>\n        <li>Extension GD disponible pour PHP (permet le <a target="_blank" href="http://www.php.net/manual/fr/ref.image.php">traitement des images</a>) avec les librairies JPEG, GIF et PNG;</li>\n    </ul>\n    </li>\n    <li>Option "<a target="_blank" href="http://www.php.net/manual/fr/features.safe-mode.php">safe_mode</a>" de PHP désactivée;</li>\n    <li>32 à 64Mo de mémoire alloué aux scripts PHP (en fonction du nombre d''extensions installées sur PHP : plus d''extensions nécessite plus de mémoire).</li>\n    <li><a target="_blank" href="http://www.mysql.com/">MySQL 5.x .</a></li>\n</ul>\n<p>L''interface d''administration d''Automne est compatible avec les navigateurs :</p>\n<ul>\n    <li><a target="_blank" href="http://www.microsoft.com/france/windows/internet-explorer/telechargement-versions-internet-explorer.aspx">Internet Explorer</a> 7+,</li>\n    <li><a target="_blank" href="http://www.mozilla-europe.org/fr/firefox/">Firefox</a> 3+,</li>\n    <li><a target="_blank" href="http://www.apple.com/fr/safari/">Safari</a> 4+,</li>\n    <li><a target="_blank" href="http://www.google.com/chrome?hl=fr">Google Chrome</a>,</li>\n    <li><a target="_blank" href="http://www.opera.com/">Opera</a> 9+.</li>\n</ul>\n<p>Automne permet de développer des sites pour tout type de navigateur, c''est fonction des modèles de page utilisés.</p>\n<p>Pour plus de confort et de performance, nous recommandons de mettre à jour votre navigateur.</p>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(606, 35, 'first', '718dfb04e3bd006a81604b9ccdf448cf', 'texte', '<p>Automne dispose d''un <strong>système intelligent de gestion des droits des utilisateurs.</strong> Il permet une gestion fine des droits, tant dans les différentes pages que dans les contenus des différents modules. Ce système permet d''appliquer l''ensemble de ces droits sur tout types d''éléments gérés par Automne.</p>\n<p>Ces droits peuvent être attribués sur les pages mais aussi sur les modules, les modèles de pages, les rangées de contenu et sur les différentes actions d''administration. L''ensemble de ces droits sont applicables aux utilisateurs et aux groupes d''utilisateurs ayant accès au site.</p>\n<p>Il existe un droit particulier intitulé <atm-linx type="direct"><selection><start><nodespec type="node" value="37"/></start></selection><noselection>droit de validation.</noselection><display><htmltemplate><a  href="{{href}}">droit de validation.</a></htmltemplate></display></atm-linx>&#160;Ce droit permet de donner à l''utilisateur la possibilité de valider le travail des autres utilisateurs pour publier le contenu sur le site en ligne.</p>\n<p>Exemple :</p>\n<ul>\n    <li><em>L''utilisateur A peut avoir des droits d''administration sur certaines pages et un droit limité sur les modèles de pages, ce qui lui permettra de ne créer que des pages utilisant les modèles qu''il peut utiliser.</em></li>\n    <li><em>L''utilisateur B peut avoir les droits d''administration sur la partie française des actualités et uniquement le droit de visibilité sur la partie anglaise des. Il ne pourra ainsi modifier que les actualités Française du site.</em></li>\n    <li><em>L''utilisateur C peut avoir les droits d''administrations sur le module médiathèque mais aucun droit sur les actualités et les pages du site. Il ne pourra donc que gérer les éléments de la médiathèque que d''autres utilisateurs pourront ensuite utiliser dans les actualités ou les pages du site.</em></li>\n</ul>\n<p>Bien entendu vous pouvez spécifier finement tous les droits que vous souhaitez et vous pouvez même <strong>créer des groupes d''utilisateur comportant des droits spécifiques</strong> qui seront additionné aux utilisateurs appartenant à différents groupes.</p>\n<h3>Gestion des droits à partir des groupes</h3>\n<p>Vous avez six groupes utilisateurs distinct :</p>\n<ul>\n    <li>administration des actualités en français ;</li>\n    <li>administration des actualités en anglais ;</li>\n    <li>administration des pages du site en français ;</li>\n    <li>administration des pages du site en anglais ;</li>\n    <li>validation des modifications sur les actualités ;</li>\n    <li>validation des modifications sur les pages.</li>\n</ul>\n<p>En associant un ou plusieurs de ces groupes à des utilisateurs, vous leur donnerez les droits correspondants vous permettant ainsi de créer et de gérer simplement des combinaisons plus ou moins complexes de droits d''administration.</p>\n<p>De plus, dans le cas de sites extranet ou intranet, vous pouvez aussi réaliser ce type de combinaison sur le droit de visibilité des différents contenus du site, permettant ainsi de créer des <strong>zones de contenu sécurisées</strong> sur votre site.</p>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(192, 5, 'first', '68a1b1d8a072af0eb92f6392eb309ad1', 'texte', '');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(605, 35, 'first', '9f851c9d1868ad933f280c33e5a419f3', 'texte', '<p>Il existe trois types de droits fondamentaux :</p>\n<ul>\n    <li>Le droit d''écriture qui équivaut à un&#160;droit d''administration ;</li>\n    <li>Le droit de lecture qui équivaut à un droit de visibilité ;</li>\n    <li>Aucun droit, ce qui empêche un utilisateurs d''avoir accès à un contenu.</li>\n</ul>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(631, 2, 'first', 'a0922acb28a233e527aa46607bfec987c', 'texte', '<p>Automne est un CMS open-source français conçu pour simplifier la gestion de sites web, que ce soit pour les contributeurs ou les dévelopeurs.</p>\n<p>L’interface d’Automne se greffe sur le site web et vous permet d’éditer le contenu de vos pages de manière intuitive.</p>\n<p>Commme tous les CMS, Automne propose un système de <atm-linx type="direct"><selection><start><nodespec type="node" value="25"/></start></selection><noselection>modèles de page</noselection><display><htmltemplate><a  href="{{href}}">modèles de page</a></htmltemplate></display></atm-linx> qui utilise la syntaxe <abbr title="eXtensible Markup Language">XML</abbr>. Même chose pour les <atm-linx type="direct"><selection><start><nodespec type="node" value="26"/></start></selection><noselection>modèles de blocs de contenus</noselection><display><htmltemplate><a  href="{{href}}">modèles de blocs de contenus</a></htmltemplate></display></atm-linx> - ou rangées.</p>\n<p>Automne est un CMS stable et performant, il peut vous aider à gérer plusieurs sites ou plusieurs versions de sites. 10 000 pages en 5 langues ne lui font pas peur.</p>\n<p>Automne est extensible et intégre un <atm-linx type="direct"><selection><start><nodespec type="node" value="27"/></start></selection><noselection>assistant de création de modules</noselection><display><htmltemplate><a  href="{{href}}">assistant de création de modules</a></htmltemplate></display></atm-linx> - le <abbr title="Polymorphic Module">Polymod</abbr>. Créez votre structure en quelques clics et Automne genère l’interface d’administration pour vous.</p>\n<p>La gestion de l’affichage se fait ensuite grâce au meta-langage d’Automne, pour les <atm-linx type="direct"><selection><start><nodespec type="node" value="31"/></start></selection><noselection>modules simples</noselection><display><htmltemplate><a  href="{{href}}">modules simples</a></htmltemplate></display></atm-linx> quelques balises XML suffisent.</p>\n<p>Vous l’aurez compris, Automne est là avant tout pour vous faciliter la vie.</p>\n<p>Comme tout logiciel libre, vous pouvez contribuer à Automne, en faisant des <a target="_blank" href="http://www.automne-cms.org/todo/">suggestions d’évolution</a>, en remontant <a target="_blank" href="http://www.automne-cms.org/bug/">des bugs</a> ou même en contribuant au <a target="_blank" href="https://launchpad.net/automne">code source</a>.</p>\n<p>Le site communautaire <a target="_blank" href="http://www.automne-cms.org">www.automne-cms.org</a> et son <a target="_blank" href="http://forum.automne-cms.org">forum</a> sont là pour vous aider dans votre découverte d''Automne.</p>\n<p>Si vous souhaitez avoir des <a target="_blank" href="http://www.automne-cms.org/support/">formations ou obtenir un support professionnel</a>, nous avons des offres sur mesure à vous proposer.</p>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(593, 27, 'first', 'f863b4e5ea5a0c8019440ff99e59e29f', 'texte', '<p>Créer ou installez des modules supplémentaires pour ajouter des fonctionnalités propres aux besoins de chaque site.</p>\n<p>Par défaut Automne contient les modules les plus courants : &#160;actualités, médiathèque,&#160;formulaires ou création d''URLs courtes avec le module Alias par exemple.</p>\n<p><strong>Grâce au générateur d''application intégré, ajoutez autant de modules supplémentaires que vous le souhaitez.</strong></p>\n<h2>Le générateur de modules</h2>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(591, 27, 'first', '56025a9b887be03112111d215ca6f31d', 'texte', '<p>Une des particularités d’Automne est son générateur de module intégré appelé <abbr title="Polymorphic Module">Polymod</abbr>.</p>\n<p>L''assistant de création de module vous permet de créer des structures personnalisées et de relier plusieurs objets entre eux (comme une actualité et un commentaire par exemple).</p>\n<p>La création de la structure des objets de vos modules se fait entièrement via l''interface de gestion des modules d''Automne, sans écrire la moindre ligne de code. Et ce n''est pas tout, Automne génère ensuite l''interface d''administration correspondante de manière entièrement automatisée. Toujours pas la moindre ligne de PHP à écrire alors que vous pouvez déjà commencer à insérer des données dans vos modules.&#160;</p>\n<p>La gestion de l''affichage de vos modules se fait ensuite via des <atm-linx type="direct"><selection><start><nodespec type="node" value="26"/></start></selection><noselection>rangées de contenus</noselection><display><htmltemplate><a  href="{{href}}">rangées de contenus</a></htmltemplate></display></atm-linx> en utilisant les balises XML d''Automne.</p>\n<p>Exemple :&#160; les modules <atm-linx type="direct"><selection><start><nodespec type="node" value="5"/></start></selection><noselection>Actualités</noselection><display><htmltemplate><a  href="{{href}}">Actualités</a></htmltemplate></display></atm-linx> et <atm-linx type="direct"><selection><start><nodespec type="node" value="6"/></start></selection><noselection>Médiathèque</noselection><display><htmltemplate><a  href="{{href}}">Médiathèque</a></htmltemplate></display></atm-linx> fourni dans cette démonstration ont été entièrement créés à partir du générateur de modules d''Automne. Ils peuvent être modifiés pour être ajustés à ce que vous souhaitez de très simplement.</p>\n<p>Il est donc facile de créer ses propres modules à l''aide du Polymod et de les partager ensuite avec la communauté.</p>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(653, 9, 'first', 'd227e9c886232aa6c2bbbddb2b348ad4', 'texte', '<p>&#160;Automne est un CMS open-source français édité par l''agence <a target="_blank" href="http://www.ws-interactive.fr">WS Interactive</a>.</p>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(567, 9, 'first', '17a6be4c940c12530cfaecfb2eb6b828', 'texte', '<p>Ce formulaire vous permet d''envoyer une demande de contact. Pour le transformer (Champs, actions, email de destination), modifiez le dans les propriétés du module "Formulaire".</p>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(560, 24, 'first', 'ac2acfd1b03fd3839ffd4502484cbbfa6', 'texte', '');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(636, 33, 'first', 'adbbb020aeadb2df9957a83e19e55211', 'texte', '<p>Automne se distingue de ses concurrents grâce notamment à :</p>\n<ul>\n    <li>une interface administrateur<strong>&#160;ergonomique, intuitive et réactive;</strong></li>\n    <li>l''intégration de l''interface sur votre site, pas de backoffice;</li>\n    <li>une prise en main rapide qui ne demande aucune connaissance technique;</li>\n    <li><strong>une aide contextuelle</strong>&#160;omniprésente dans le logiciel;</li>\n    <li>un assistant de création de modules personnalisés;</li>\n    <li>une optimisation des performances native;&#160;</li>\n    <li>l''utilisation d''outils de briques technologiques modernes et éprouvés : PHP5, ExtJS, Zend Framework, etc. ;</li>\n    <li>gestion des <strong>langues internationales</strong>&#160;et des alphabets particuliers;</li>\n    <li>l''intégration d''un moteur de recherche full-text pour les contenus;</li>\n    <li>et bien plus encore ...</li>\n</ul>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(664, 38, 'first', '4f342492c25a2b686c2b531760008d98', 'texte', '<p>Pas envie de lire toute la <a target="_blank" href="http://doc.automne-cms.org">documentation</a> ? Passez la souris au dessus des onglets du module de page, des icônes de statut, des différents boutons ou champs présents dans les fenêtres ou les formulaires de saisie des modules et vous aurez toutes les explications nécessaires.</p>\n<p>Vous ne vous rappelez plus des valeurs possibles à spécifier pour l''indexation d''une page par les moteurs de recherche ? Pas grave, l''aide d''Automne est là pour ça.</p>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(612, 38, 'first', '8d1b3ec256dada4f0c811896050fdc9f', 'texte', '');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(615, 38, 'first', '27253551d67fd5f23b3269719a3f5364', 'texte', '<p>Grâce à l''aide contextuelle intégrée, le moindre bouton de l''interface n''aura plus de secret pour vous. Nous avons fait en sorte d''expliciter la fonction de chacun d''entre eux afin que vous ne posiez plus de questions.</p>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(619, 38, 'first', '48e8e4c2bea88305e6a9353511f51ea7', 'texte', '<p>Nous avons aussi intégré <strong>une aide technique pour vous assister</strong> dans la création de modèles de pages, de rangées de contenus et de modules.</p>\n<p>Cette aide détaille entre autres la fonction et la syntaxe des différentes balises XML mais aussi les variables à votre disposition pour les modèles de page ou les rangées.</p>\n<p>Une <strong>aide spécifique à chaque module</strong> crée avec le générateur&#160;<atm-linx type="direct"><selection><start><nodespec type="node" value="27"/></start></selection><noselection>Polymod</noselection><display><htmltemplate><a  href="{{href}}">Polymod</a></htmltemplate></display></atm-linx> est également générée. Elle se révèle particulièrement utile lors de la création des rangées de contenus associés pour avoir facilement accès aux variables et aux différentes fonctions offertes par Automne.</p>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(610, 37, 'first', '7fac447905b2c5da7fb86162c1656561', 'texte', '<p>&#160;Une fois les différents <atm-linx type="direct"><selection><start><nodespec type="node" value="35"/></start></selection><noselection>rôles</noselection><display><htmltemplate><a  href="{{href}}">rôles</a></htmltemplate></display></atm-linx> définis, les responsables éditoriaux ont tous les outils nécessaires pour suivre les modifications effectuées sur le site :</p>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(611, 37, 'first', '3c1cf8ef8f25de1ae96706a2585bffb7', 'texte', '<ul>\n    <li>Un système d''alerte email automatique informe les validateurs en temps réel des modifications qui ont été opérées sur le site ;</li>\n    <li>Le validateur peut alors vérifier les modifications faites sur le contenu et les accepter, les refuser ou les modifier.</li>\n    <li>Un système d''icônes simple et clair permet à tout moment de connaitre le statut des éléments : si ils sont publiés, dépubliés, ou attente d''une validation.</li>\n    <li>La publication en ligne des modifications n''est effective que lorsqu''elles sont approuvées par le validateur. Ce droit particulier est paramétrable dans la <atm-linx type="direct"><selection><start><nodespec type="node" value="28"/></start></selection><noselection>gestion des utilisateurs.</noselection><display><htmltemplate><a  href="{{href}}">gestion des utilisateurs.</a></htmltemplate></display></atm-linx></li>\n    <li>Le suivi d''activité stocke toute l''historique des modifications effectuées dans Automne.</li>\n</ul>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(258, 3, 'first', '8be44600466b3bd947f5b2c5cb45bf01', 'texte', '');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(557, 3, 'first', '39a32afb98d21c8252ea3714cff0f62e', 'texte', '<p>Vous disposez d’un compte utilisateur <strong>« Rédacteur »</strong> qui vous permet d’avoir accès à l’interface d''administration d’Automne 4 et donc d’opérer certaines modifications. <strong><br />\n</strong></p>\n<p>Vous pouvez par exemple :</p>\n<ul>\n    <li>modifier, créer et copier des pages ;</li>\n    <li>modifier votre profil ;</li>\n    <li>modifier, créer ou supprimer des éléments du module actualité, médiathèque, etc.</li>\n</ul>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(556, 3, 'first', '6ff77816cb91134d254f1b0723fa0022', 'texte', '<h2>Vos droits sur ce site de démonstration</h2>\n<h3>Que pouvez-vous faire ?</h3>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(633, 3, 'first', '23ba8857d961fd78dc2ff56bb56e39e7', 'texte', '');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(634, 3, 'first', '9110334505c2e7ace9a292686b89c405', 'texte', '<h3>Ce que vous ne pouvez pas faire :</h3>\n<ul>\n    <li>administrer les modules ;</li>\n    <li>valider la modification des pages ;</li>\n    <li>modifier les rangées et les modèles de page ;</li>\n    <li>modifier les paramètres d''Automne,</li>\n    <li>gérer les utilisateurs,&#160;</li>\n    <li>et bien d''autres choses &#160;...</li>\n</ul>\n<p>Ces fonctionnalités sont réservées à un compte utilisateur de type&#160;  <strong>« Administrateur ».</strong></p>\n<h2>Continuer la visite</h2>\n<ul>\n    <li><atm-linx type="direct"><selection><start><nodespec type="node" value="29"/></start></selection><noselection>Automne</noselection><display><htmltemplate><a  href="{{href}}">Automne</a></htmltemplate></display></atm-linx></li>\n    <li><atm-linx type="direct"><selection><start><nodespec type="node" value="33"/></start></selection><noselection>Nouveautés</noselection><display><htmltemplate><a  href="{{href}}">Nouveautés</a></htmltemplate></display></atm-linx></li>\n    <li><atm-linx type="direct"><selection><start><nodespec type="node" value="30"/></start></selection><noselection>Pré-requis</noselection><display><htmltemplate><a  href="{{href}}">Pré-requis</a></htmltemplate></display></atm-linx></li>\n    <li><atm-linx type="direct"><selection><start><nodespec type="node" value="24"/></start></selection><noselection>Fonctionnalités</noselection><display><htmltemplate><a  href="{{href}}">Fonctionnalités</a></htmltemplate></display></atm-linx></li>\n</ul>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(632, 3, 'first', '401937687b65ea5c249faa74f4e23c9a', 'texte', '');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(665, 3, 'first', 'f2c8532eb6f56afe1d435350eebd9a52', 'texte', '<p>Vous êtes sur le site de démonstration d''Automne qui a pour but de vous présenter les grands principes et la philosophie de ce CMS orienté utilisateur.</p>\n<p>Cette démonstration ne vous permet d''avoir accès qu''à une partie des possibilités offertes par Automne, pour avoir un aperçu complet des fonctionnalités, nous vous invitons à <a target="_blank" href="http://www.automne-cms.org/web/fr/242-telechargements.php">télécharger</a> et à installer Automne.</p>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(604, 28, 'first', '9ba530cba11a3763a081a2e34072711f', 'texte', '<p>On peut créer autant de groupes qu''il y a de rôles à définir et faire appartenir les utilisateurs à un ou plusieurs groupes. Automne calculera ensuite la somme des <atm-linx type="direct"><selection><start><nodespec type="node" value="35"/></start></selection><noselection>droits</noselection><display><htmltemplate><a  href="{{href}}">droits</a></htmltemplate></display></atm-linx> correspondants.</p>\n<p>On peut donc avoir un groupe qui n''aura accès qu''à certaines parties de l''arborescence, un autre qu''à certaines catégories d''un module et faire appartenir ensuite certains utilisateurs à ces deux groupes.</p>\n<p>Automne vous offre une totale liberté dans l''organisation et la répartition du travail collaboratif.</p>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(627, 29, 'first', 'ac2acfd1b03fd3839ffd4502484cbbfa6', 'texte', '');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(666, 29, 'first', '530e1be13c69bcfec950100e6c6421a3', 'texte', '<p>Automne est un CMS <a target="_blank" href="http://fr.wikipedia.org/wiki/Open_source">open source,</a> performant et ergonomique. Ce système de gestion de contenu français est déjà utilisé par de grandes entreprises, des organismes public et des associations de toutes tailles.</p>\n<p>Automne offre un environnement sécurisé et collaboratif pour gérer des sites et des applications web.</p>\n<h2>Performant et évolutif</h2>\n<p>Robuste pour sa capacité de gérer plusieurs milliers de pages avec un langage orienté objet. Automne respecte les normes et recommandations du W3C ainsi que les  recommandations en terne d’accessibilité.</p>\n<p>Doté d''un assistant de création de <atm-linx type="direct"><selection><start><nodespec type="node" value="27"/></start></selection><noselection>modules de gestion</noselection><display><htmltemplate><a  href="{{href}}">modules de gestion</a></htmltemplate></display></atm-linx>, vous pourrez enrichir  les <atm-linx type="direct"><selection><start><nodespec type="node" value="24"/></start></selection><noselection>fonctionnalités de votre site Internet</noselection><display><htmltemplate><a  href="{{href}}">fonctionnalités de votre site Internet</a></htmltemplate></display></atm-linx> selon vos besoins.</p>\n<h2>Taillé pour l''entreprise</h2>\n<p>Automne vous permet de créer et de gérer votre site Internet, Extranet ou Intranet. Il permet de créer des sites Internet institutionnels de qualité professionnelle très rapidement mais aussi de développer des applications web évoluées. Tout cela en restant dans un contexte simple et intuitif qui offre aux utilisateurs toutes les fonctionnalités nécessaires.</p>\n<h2>Pérénité et sécurité</h2>\n<p>Utilisé dès ses débuts par de grands comptes, il offre aux PME un cadre agréable pour le travail collaboratif et la gestion.</p>\n<p>De par son modèle libre, vous êtes assurés d''avoir des mises à jour régulières pour vos sites.</p>\n<p>Automne est développé par des professionnels certifiés possédant plusieurs années d''expérience en PHP et en architecture logicielle. Tous les développements sont vérifiés et respectent un haut niveau de qualité et de sécurité.</p>\n<p>Automne est gratuit et librement téléchargeable sur <a target="_blank" href="http://sourceforge.net/projects/automne/">Sourceforge</a>. Il emploie des technologies open-source indépendantes ce qui vous assure de pouvoir l''utiliser longtemps sans dépendre d''une entreprise éditrice.</p>\n<p>Par ailleurs, vous disposez d''un <a target="_blank" href="http://www.automne.ws/forum/">forum communautaire</a> pour signaler tout problème que vous rencontreriez.</p>\n<p>Il vous est aussi possible d''obtenir un support et des formations dispensés par des professionnels. Pour plus d''information, rendez vous sur <a target="_blank" href="http://www.automne-cms.org">le site web du CMS Automne</a>.</p>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(570, 24, 'first', 'a76b35963e7853924f49b447d533f5ab', 'texte', '<p>Puissant système de gestion de contenu, Automne permet de gérer des sites de plusieurs milliers de pages, d''en modifier simplement la structure et l''apparence grâce aux <atm-linx type="direct"><selection><start><nodespec type="node" value="25"/></start></selection><noselection>modèles de pages</noselection><display><htmltemplate><a  href="{{href}}">modèles de pages</a></htmltemplate></display></atm-linx> et de modifier intuitivement le contenu grâce au principe des <atm-linx type="direct"><selection><start><nodespec type="node" value="26"/></start></selection><noselection>rangées de contenu.</noselection><display><htmltemplate><a  href="{{href}}">rangées de contenu.</a></htmltemplate></display></atm-linx></p>\n<p>Les nombreuses fonctionnalités pour le site Internet, simples ou complexes, peuvent être générées automatiquement par le <atm-linx type="direct"><selection><start><nodespec type="node" value="27"/></start></selection><noselection>générateur de module</noselection><display><htmltemplate><a  href="{{href}}">générateur de module</a></htmltemplate></display></atm-linx>&#160;ou bien développées directement en code PHP.</p>\n<p>Automne dispose d''un système de <atm-linx type="direct"><selection><start><nodespec type="node" value="28"/></start></selection><noselection>gestion des utilisateurs</noselection><display><htmltemplate><a  href="{{href}}">gestion des utilisateurs</a></htmltemplate></display></atm-linx> et <atm-linx type="direct"><selection><start><nodespec type="node" value="28"/></start></selection><noselection>groupes d''utilisateurs</noselection><display><htmltemplate><a  href="{{href}}">groupes d''utilisateurs</a></htmltemplate></display></atm-linx> basé sur des rôles distincts permettant une <atm-linx type="direct"><selection><start><nodespec type="node" value="35"/></start></selection><noselection>gestion très fine des droits.</noselection><display><htmltemplate><a  href="{{href}}">gestion très fine des droits.</a></htmltemplate></display></atm-linx> Votre environnement de travail est homogène et ne présente que les fonctionnalités sur lesquelles vous avez le droit d''agir.</p>\n<p>Pour en savoir plus sur chacune de ces fonctionnalités, rendez-vous sur les rubriques dédiées :&#160;</p>\n<ul>\n    <li><atm-linx type="direct"><selection><start><nodespec type="node" value="25"/></start></selection><noselection>Modèles de pages</noselection><display><htmltemplate><a  href="{{href}}">Modèles de pages</a></htmltemplate></display></atm-linx> (structure et apparence),</li>\n    <li><atm-linx type="direct"><selection><start><nodespec type="node" value="26"/></start></selection><noselection>Rangées de contenu</noselection><display><htmltemplate><a  href="{{href}}">Rangées de contenu</a></htmltemplate></display></atm-linx> (blocs pré-formatés prêt à l''emploi),</li>\n    <li><atm-linx type="direct"><selection><start><nodespec type="node" value="27"/></start></selection><noselection>Modules </noselection><display><htmltemplate><a  href="{{href}}">Modules </a></htmltemplate></display></atm-linx>(création et gestion de vos applications dynamiques),</li>\n    <li><atm-linx type="direct"><selection><start><nodespec type="node" value="28"/></start></selection><noselection>Gestion des utilisateurs et des groupes d''utilisateurs</noselection><display><htmltemplate><a  href="{{href}}">Gestion des utilisateurs et des groupes d''utilisateurs</a></htmltemplate></display></atm-linx>,</li>\n    <li><atm-linx type="direct"><selection><start><nodespec type="node" value="35"/></start></selection><noselection>Gestion des droits d''accès</noselection><display><htmltemplate><a  href="{{href}}">Gestion des droits d''accès</a></htmltemplate></display></atm-linx>,</li>\n    <li><atm-linx type="direct"><selection><start><nodespec type="node" value="37"/></start></selection><noselection>Workflow de publication des contenus</noselection><display><htmltemplate><a  href="{{href}}">Workflow de publication des contenus</a></htmltemplate></display></atm-linx>,</li>\n    <li><atm-linx type="direct"><selection><start><nodespec type="node" value="38"/></start></selection><noselection>Aide aux utilisateurs</noselection><display><htmltemplate><a  href="{{href}}">Aide aux utilisateurs</a></htmltemplate></display></atm-linx>,</li>\n    <li><atm-linx type="direct"><selection><start><nodespec type="node" value="34"/></start></selection><noselection>Fonctions avancées</noselection><display><htmltemplate><a  href="{{href}}">Fonctions avancées</a></htmltemplate></display></atm-linx>.</li>\n</ul>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(562, 24, 'first', '5abba99264b62fec356b41e30aeddf41', 'texte', '');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(626, 34, 'first', '592c2e33c7971c02ec553000d0eaea43', 'texte', '<h2>La gestion multi-sites</h2>\n<p>Une seule et même interface d''Automne peut gérer autant de sites que vous le souhaitez. Chacun peut posséder son propre nom de domaine, sa propre langue et ses propres éléments (modèles de pages, rangées). Vous pouvez accorder des droits sur un ou plusieurs sites à vos collaborateurs.</p>\n<h2>Espaces sécurisés</h2>\n<p>Le système évolué de gestion des droits permet de réaliser des <strong>espaces sécurisés</strong> sur vos sites. Par l’intermédiaire d’un compte d''utilisateur et d''un mot de de passe, votre site Internet se transforme en&#160;<strong>Extranet ou en Intranet&#160;</strong>appliquant ainsi les <strong>droits et restrictions</strong> sur les pages et les contenus que vous aurez spécifié. Les restrictions mises en place sont <strong>invisibles </strong>à ceux qui ne possèdent pas les droits de les voir évitant ainsi toute frustration de vos utilisateurs.</p>\n<h2>Connexion LDAP</h2>\n<p>L''intérêt principal d''un annuaire LDAP est la <strong>normalisation de l''authentification.</strong> Cet annuaire regroupe toutes les informations de type de l’utilisateur (nom, prénom, service, fonction, etc.).</p>\n<p>Automne permet de récupérer automatiquement les informations de l’annuaire afin de définir les utilisateurs et leurs droits. &#160;Par exemple la personne travaillant au service des ressources humaines, aura automatiquement accès à la page ressources humaines alors que d’autres collègues n’y auront pas accès.</p>\n<p>Lors de l’ouverture de session, les identifiants et mot de passe sont envoyées à cet annuaire qui transmet alors les informations de l’utilisateur</p>\n<h2>Authentification unique</h2>\n<p>L''authentification unique (en anglais <strong>SSO</strong>&#160;signifie Single Sign On) est une méthode permettant à un utilisateur de ne procéder qu''à une seule authentification pour accéder à plusieurs applications informatiques ou sites web sécurisés.</p>\n<p>Automne dispose aujourd’hui de cette technologie et les utilisateurs pourront directement être connectés à l’interface d''Automne dés l’ouverture de session sur leur machine.</p>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(585, 25, 'first', '267e03d5f6a4d0392b79a2d31dcd40f2', 'texte', '<p>Un des principes fondamental à respecter lors de la gestion de site web est la <strong>séparation entre le contenu et la présentation.</strong>&#160;Le fond et la forme doivent être totalement indépendant l’un de l’autre.</p>\n<p>Cela permettra de concevoir des sites pouvant s''afficher sur différents types de terminaux :&#160;</p>\n<ul>\n    <li>ordinateur de bureau</li>\n    <li>téléphone mobile</li>\n    <li>télévision</li>\n    <li>imprimante</li>\n    <li>etc.</li>\n</ul>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(660, 27, 'first', '4564d92b193505d71f29b5ae69dddde0', 'texte', '<h2>Modules en PHP</h2>\n<p>Grâce à l''<a target="_blank" href="http://www.automne-cms.org/api/">API d''Automne</a>&#160;vous pouvez aussi développer des modules plus complexes que le Polymod ne saurait traiter.</p>\n<p>Ces modules, créés en PHP peuvent alors réaliser tout type d''opération métier complexe en s''intégrant parfaitement à l''interface d''Automne.</p>\n<p>Vous pouvez ainsi lier Automne à vos bases de données métier ou encore créer des modules de mailing, d''e-commerce, interroger des web services distants et ajouter bien d''autres fonctionnalités encore.</p>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(602, 28, 'first', '8d231671f5511d2e3004c79991317d93', 'texte', '<h2>Utilisateurs et groupes</h2>\n<p>Le<atm-linx type="direct"><selection><start><nodespec type="node" value="35"/></start></selection><noselection>&#160;super administrateur</noselection><display><htmltemplate><a  href="{{href}}">&#160;super administrateur</a></htmltemplate></display></atm-linx>&#160;possède <strong>tous les droits sur l’application.</strong></p>\n<p>Il peut ensuite designer d''autres administrateurs, créer des groupes et définir les différents rôles nécessaires à la gestion des sites. Chacun utilisateur dispose alors de droits très précis sur les différents modules d''Automne.</p>\n<p>Vos utilisateurs n''auront à leur disposition que les outils qui leurs sont nécessaires. Leur domaines d''interventions seront définies par votre politique éditoriale.</p>\n<p>Il est naturellement possible, grâce au <atm-linx type="direct"><selection><start><nodespec type="node" value="37"/></start></selection><noselection>circuit de publication</noselection><display><htmltemplate><a  href="{{href}}">circuit de publication</a></htmltemplate></display></atm-linx>&#160;de soumettre les données saisies à la validation d''une autorité supérieure. Ainsi le contenu pourra être vérifié, corrigé et validé avant sa mise en ligne.</p>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(597, 28, 'first', 'ac2acfd1b03fd3839ffd4502484cbbfa6', 'texte', '');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(625, 38, 'first', '65990b9ff00394714dd60ffd708b2d77', 'texte', '<p>Automne intègre&#160;<strong>un puissant moteur de recherche</strong>&#160;qui&#160;vous permet de rechercher sur l''ensemble des contenus et des éléments, quel que soit leurs type : &#160;contenus des pages ou des modules, utilisateurs, modèles, etc.</p>\n<p>De plus, les résultats retournés sont fonction des droits de l''utilisateur.&#160;Celui-ci s''avère vite indispensable à l''usage et vous fera gagner un temps précieux dans la gestion de vos sites.</p>\n<p>Chaque module possède un moteur de recherche spécifique avec des filtres par mots-clés ou n''importe quel autre type de champs.</p>');
+INSERT INTO `blocksTexts_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(652, 26, 'first', '22f3ce37f32ed90e7efcb5e2c3379e88', 'texte', '<p>La syntaxe XML d''Automne vous permet de créer vos propres rangées de contenu en vous laissant une liberté totale sur la manière de structurer vos informations.</p>\n<p>Une rangée peut contenir un ou plusieurs blocs de contenus reliés à un ou plusieurs modules. Grâce au meta-language d''Automne, vous pouvez créer des rangées qui afficheront du contenu dynamique sous écrire la moindre ligne de code PHP.</p>');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `blocksVarchars_archived`
+-- Structure de la table `blocksVarchars_archived`
 --
 
 DROP TABLE IF EXISTS `blocksVarchars_archived`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `blocksVarchars_archived` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `page` int(11) unsigned NOT NULL default '0',
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
@@ -820,23 +804,22 @@ CREATE TABLE `blocksVarchars_archived` (
   `value` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`id`),
   KEY `page` (`page`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `blocksVarchars_archived`
+-- Contenu de la table `blocksVarchars_archived`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `blocksVarchars_deleted`
+-- Structure de la table `blocksVarchars_deleted`
 --
 
 DROP TABLE IF EXISTS `blocksVarchars_deleted`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `blocksVarchars_deleted` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `page` int(11) unsigned NOT NULL default '0',
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
@@ -844,23 +827,22 @@ CREATE TABLE `blocksVarchars_deleted` (
   `value` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`id`),
   KEY `page` (`page`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `blocksVarchars_deleted`
+-- Contenu de la table `blocksVarchars_deleted`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `blocksVarchars_edited`
+-- Structure de la table `blocksVarchars_edited`
 --
 
 DROP TABLE IF EXISTS `blocksVarchars_edited`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `blocksVarchars_edited` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `page` int(11) unsigned NOT NULL default '0',
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
@@ -869,50 +851,49 @@ CREATE TABLE `blocksVarchars_edited` (
   PRIMARY KEY  (`id`),
   KEY `page` (`page`),
   FULLTEXT KEY `value` (`value`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `blocksVarchars_edited`
+-- Contenu de la table `blocksVarchars_edited`
 --
 
-INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (50,2,'first','a5dc59c9028fd290e4f240131991fa8a2','stitre',' Automne, la gestion de contenu libre et intuitive');
-INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (54,29,'first','6600f0d4c66704194be3cfd3b144cc51','titre','Automne');
-INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (43,35,'first','bd159ce9706787ad5cdda03cbd03de7e','titre','Gestion des droits');
-INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (46,38,'first','3a8e6888f4d5e7036861b7863814f35e','stitre','Aide technique');
-INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (30,31,'first','2e05b6ab8648c84e56b486ea0bbf09fc','titre','Exemples de modules');
-INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (34,8,'first','d2d4e5e21d0e19cc40dfc62fa94d20df','titre','Plan du site');
-INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (39,25,'first','f9cbbf6b3c5ac7cbb1a803ab380d36f3','titre','Les modèles de pages');
-INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (31,24,'first','26396451d4054e05237066375ccd6e8e','titre','Fonctionnalités');
-INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (33,9,'first','9ce6e306ff41794fc8cac477c349a086','titre','Contact');
-INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (59,9,'first','759d757b5beb586dd93fecdbd1cd6c3b','titre','WS Interactive, 15 quai Lombard 31000 Toulouse, France');
-INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (36,24,'first','d92af30786e78deab57f106f9398e830','stitre','Les grands principes d\'Automne\n');
-INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (38,26,'first','51acc66642f99a940dc8eb94504c131b','titre','Les rangées de contenu');
-INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (40,27,'first','5d7229d29d8f71d7b30d9f830db58735','titre','Les modules de gestion');
-INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (42,28,'first','7be68b66b22b4b190536a89f91d4da32','titre','Gestion des utilisateurs');
-INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (44,35,'first','18f076b2de7e3b4310097f83ac547533','stitre','Contrôle d\'accès à base de rôles');
-INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (45,37,'first','f94004914e89f986916e96a4731db322','titre','Le circuit de validation');
-INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (24,38,'first','e76f4966a4808ea827d71853fd371ee3','stitre','Aide contextuelle');
-INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (47,38,'first','67834d6b4d508349b9b2892e4932e718','stitre','Moteur de recherche interne');
-INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (49,34,'first','3b670218b85e117891afe278e7049563','titre','Fonctionnalités avancées');
-INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (51,5,'first','413bd2c305740ddba9c4883228604ab1','titre','Actualités');
-INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (52,6,'first','608b203e1d2422c57d5f890bcef33f36','titre','Médiathèque');
-INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (16,29,'first','ef68332801171f3678986a9192ea85db','stitre','');
-INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (57,33,'first','b5e288a53dc78ea05a6535356abeac07','titre','Points forts');
-INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (56,30,'first','59655220bef9a6a88d8c2e35b30ba1d0','titre','Pré-requis');
-INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (4,3,'first','a909549cfffa588cae12e01ad4152f1f8','titre','Présentation Titre h1');
-INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (48,38,'first','e1c9a76f8a25f03b479f1aaac1d48932','titre','L\'aide aux utilisateurs');
-INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (32,3,'first','8af055ba864f1f9fc7572b993e54c6d7','titre','Présentation');
+INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(50, 2, 'first', 'a5dc59c9028fd290e4f240131991fa8a2', 'stitre', ' Automne, la gestion de contenu libre et intuitive');
+INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(54, 29, 'first', '6600f0d4c66704194be3cfd3b144cc51', 'titre', 'Automne');
+INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(43, 35, 'first', 'bd159ce9706787ad5cdda03cbd03de7e', 'titre', 'Gestion des droits');
+INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(46, 38, 'first', '3a8e6888f4d5e7036861b7863814f35e', 'stitre', 'Aide technique');
+INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(30, 31, 'first', '2e05b6ab8648c84e56b486ea0bbf09fc', 'titre', 'Exemples de modules');
+INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(34, 8, 'first', 'd2d4e5e21d0e19cc40dfc62fa94d20df', 'titre', 'Plan du site');
+INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(39, 25, 'first', 'f9cbbf6b3c5ac7cbb1a803ab380d36f3', 'titre', 'Les modèles de pages');
+INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(31, 24, 'first', '26396451d4054e05237066375ccd6e8e', 'titre', 'Fonctionnalités');
+INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(33, 9, 'first', '9ce6e306ff41794fc8cac477c349a086', 'titre', 'Contact');
+INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(59, 9, 'first', '759d757b5beb586dd93fecdbd1cd6c3b', 'titre', 'WS Interactive, 15 quai Lombard 31000 Toulouse, France');
+INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(36, 24, 'first', 'd92af30786e78deab57f106f9398e830', 'stitre', 'Les grands principes d''Automne\n');
+INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(38, 26, 'first', '51acc66642f99a940dc8eb94504c131b', 'titre', 'Les rangées de contenu');
+INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(40, 27, 'first', '5d7229d29d8f71d7b30d9f830db58735', 'titre', 'Les modules de gestion');
+INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(42, 28, 'first', '7be68b66b22b4b190536a89f91d4da32', 'titre', 'Gestion des utilisateurs');
+INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(44, 35, 'first', '18f076b2de7e3b4310097f83ac547533', 'stitre', 'Contrôle d''accès à base de rôles');
+INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(45, 37, 'first', 'f94004914e89f986916e96a4731db322', 'titre', 'Le circuit de validation');
+INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(24, 38, 'first', 'e76f4966a4808ea827d71853fd371ee3', 'stitre', 'Aide contextuelle');
+INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(47, 38, 'first', '67834d6b4d508349b9b2892e4932e718', 'stitre', 'Moteur de recherche interne');
+INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(49, 34, 'first', '3b670218b85e117891afe278e7049563', 'titre', 'Fonctionnalités avancées');
+INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(51, 5, 'first', '413bd2c305740ddba9c4883228604ab1', 'titre', 'Actualités');
+INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(52, 6, 'first', '608b203e1d2422c57d5f890bcef33f36', 'titre', 'Médiathèque');
+INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(16, 29, 'first', 'ef68332801171f3678986a9192ea85db', 'stitre', '');
+INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(57, 33, 'first', 'b5e288a53dc78ea05a6535356abeac07', 'titre', 'Points forts');
+INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(56, 30, 'first', '59655220bef9a6a88d8c2e35b30ba1d0', 'titre', 'Pré-requis');
+INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(4, 3, 'first', 'a909549cfffa588cae12e01ad4152f1f8', 'titre', 'Présentation Titre h1');
+INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(48, 38, 'first', 'e1c9a76f8a25f03b479f1aaac1d48932', 'titre', 'L''aide aux utilisateurs');
+INSERT INTO `blocksVarchars_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(32, 3, 'first', '8af055ba864f1f9fc7572b993e54c6d7', 'titre', 'Présentation');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `blocksVarchars_edition`
+-- Structure de la table `blocksVarchars_edition`
 --
 
 DROP TABLE IF EXISTS `blocksVarchars_edition`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `blocksVarchars_edition` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `page` int(11) unsigned NOT NULL default '0',
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
@@ -920,23 +901,22 @@ CREATE TABLE `blocksVarchars_edition` (
   `value` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`id`),
   KEY `page` (`page`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `blocksVarchars_edition`
+-- Contenu de la table `blocksVarchars_edition`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `blocksVarchars_public`
+-- Structure de la table `blocksVarchars_public`
 --
 
 DROP TABLE IF EXISTS `blocksVarchars_public`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `blocksVarchars_public` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `page` int(11) unsigned NOT NULL default '0',
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
@@ -945,50 +925,49 @@ CREATE TABLE `blocksVarchars_public` (
   PRIMARY KEY  (`id`),
   KEY `page` (`page`),
   FULLTEXT KEY `value` (`value`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `blocksVarchars_public`
+-- Contenu de la table `blocksVarchars_public`
 --
 
-INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (50,2,'first','a5dc59c9028fd290e4f240131991fa8a2','stitre',' Automne, la gestion de contenu libre et intuitive');
-INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (16,29,'first','ef68332801171f3678986a9192ea85db','stitre','');
-INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (32,3,'first','8af055ba864f1f9fc7572b993e54c6d7','titre','Présentation');
-INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (43,35,'first','bd159ce9706787ad5cdda03cbd03de7e','titre','Gestion des droits');
-INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (48,38,'first','e1c9a76f8a25f03b479f1aaac1d48932','titre','L\'aide aux utilisateurs');
-INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (30,31,'first','2e05b6ab8648c84e56b486ea0bbf09fc','titre','Exemples de modules');
-INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (34,8,'first','d2d4e5e21d0e19cc40dfc62fa94d20df','titre','Plan du site');
-INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (39,25,'first','f9cbbf6b3c5ac7cbb1a803ab380d36f3','titre','Les modèles de pages');
-INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (36,24,'first','d92af30786e78deab57f106f9398e830','stitre','Les grands principes d\'Automne\n');
-INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (59,9,'first','759d757b5beb586dd93fecdbd1cd6c3b','titre','WS Interactive, 15 quai Lombard 31000 Toulouse, France');
-INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (33,9,'first','9ce6e306ff41794fc8cac477c349a086','titre','Contact');
-INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (31,24,'first','26396451d4054e05237066375ccd6e8e','titre','Fonctionnalités');
-INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (38,26,'first','51acc66642f99a940dc8eb94504c131b','titre','Les rangées de contenu');
-INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (40,27,'first','5d7229d29d8f71d7b30d9f830db58735','titre','Les modules de gestion');
-INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (42,28,'first','7be68b66b22b4b190536a89f91d4da32','titre','Gestion des utilisateurs');
-INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (44,35,'first','18f076b2de7e3b4310097f83ac547533','stitre','Contrôle d\'accès à base de rôles');
-INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (45,37,'first','f94004914e89f986916e96a4731db322','titre','Le circuit de validation');
-INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (47,38,'first','67834d6b4d508349b9b2892e4932e718','stitre','Moteur de recherche interne');
-INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (24,38,'first','e76f4966a4808ea827d71853fd371ee3','stitre','Aide contextuelle');
-INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (46,38,'first','3a8e6888f4d5e7036861b7863814f35e','stitre','Aide technique');
-INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (49,34,'first','3b670218b85e117891afe278e7049563','titre','Fonctionnalités avancées');
-INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (51,5,'first','413bd2c305740ddba9c4883228604ab1','titre','Actualités');
-INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (52,6,'first','608b203e1d2422c57d5f890bcef33f36','titre','Médiathèque');
-INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (54,29,'first','6600f0d4c66704194be3cfd3b144cc51','titre','Automne');
-INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (57,33,'first','b5e288a53dc78ea05a6535356abeac07','titre','Points forts');
-INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (56,30,'first','59655220bef9a6a88d8c2e35b30ba1d0','titre','Pré-requis');
-INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES (4,3,'first','a909549cfffa588cae12e01ad4152f1f8','titre','Présentation Titre h1');
+INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(50, 2, 'first', 'a5dc59c9028fd290e4f240131991fa8a2', 'stitre', ' Automne, la gestion de contenu libre et intuitive');
+INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(16, 29, 'first', 'ef68332801171f3678986a9192ea85db', 'stitre', '');
+INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(32, 3, 'first', '8af055ba864f1f9fc7572b993e54c6d7', 'titre', 'Présentation');
+INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(43, 35, 'first', 'bd159ce9706787ad5cdda03cbd03de7e', 'titre', 'Gestion des droits');
+INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(48, 38, 'first', 'e1c9a76f8a25f03b479f1aaac1d48932', 'titre', 'L''aide aux utilisateurs');
+INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(30, 31, 'first', '2e05b6ab8648c84e56b486ea0bbf09fc', 'titre', 'Exemples de modules');
+INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(34, 8, 'first', 'd2d4e5e21d0e19cc40dfc62fa94d20df', 'titre', 'Plan du site');
+INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(39, 25, 'first', 'f9cbbf6b3c5ac7cbb1a803ab380d36f3', 'titre', 'Les modèles de pages');
+INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(36, 24, 'first', 'd92af30786e78deab57f106f9398e830', 'stitre', 'Les grands principes d''Automne\n');
+INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(59, 9, 'first', '759d757b5beb586dd93fecdbd1cd6c3b', 'titre', 'WS Interactive, 15 quai Lombard 31000 Toulouse, France');
+INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(33, 9, 'first', '9ce6e306ff41794fc8cac477c349a086', 'titre', 'Contact');
+INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(31, 24, 'first', '26396451d4054e05237066375ccd6e8e', 'titre', 'Fonctionnalités');
+INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(38, 26, 'first', '51acc66642f99a940dc8eb94504c131b', 'titre', 'Les rangées de contenu');
+INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(40, 27, 'first', '5d7229d29d8f71d7b30d9f830db58735', 'titre', 'Les modules de gestion');
+INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(42, 28, 'first', '7be68b66b22b4b190536a89f91d4da32', 'titre', 'Gestion des utilisateurs');
+INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(44, 35, 'first', '18f076b2de7e3b4310097f83ac547533', 'stitre', 'Contrôle d''accès à base de rôles');
+INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(45, 37, 'first', 'f94004914e89f986916e96a4731db322', 'titre', 'Le circuit de validation');
+INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(47, 38, 'first', '67834d6b4d508349b9b2892e4932e718', 'stitre', 'Moteur de recherche interne');
+INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(24, 38, 'first', 'e76f4966a4808ea827d71853fd371ee3', 'stitre', 'Aide contextuelle');
+INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(46, 38, 'first', '3a8e6888f4d5e7036861b7863814f35e', 'stitre', 'Aide technique');
+INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(49, 34, 'first', '3b670218b85e117891afe278e7049563', 'titre', 'Fonctionnalités avancées');
+INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(51, 5, 'first', '413bd2c305740ddba9c4883228604ab1', 'titre', 'Actualités');
+INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(52, 6, 'first', '608b203e1d2422c57d5f890bcef33f36', 'titre', 'Médiathèque');
+INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(54, 29, 'first', '6600f0d4c66704194be3cfd3b144cc51', 'titre', 'Automne');
+INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(57, 33, 'first', 'b5e288a53dc78ea05a6535356abeac07', 'titre', 'Points forts');
+INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(56, 30, 'first', '59655220bef9a6a88d8c2e35b30ba1d0', 'titre', 'Pré-requis');
+INSERT INTO `blocksVarchars_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(4, 3, 'first', 'a909549cfffa588cae12e01ad4152f1f8', 'titre', 'Présentation Titre h1');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `contactDatas`
+-- Structure de la table `contactDatas`
 --
 
 DROP TABLE IF EXISTS `contactDatas`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `contactDatas` (
-  `id_cd` int(11) unsigned NOT NULL,
+  `id_cd` int(11) unsigned NOT NULL auto_increment,
   `service_cd` varchar(100) NOT NULL default '',
   `jobTitle_cd` varchar(100) NOT NULL default '',
   `addressField1_cd` varchar(255) NOT NULL default '',
@@ -1003,23 +982,22 @@ CREATE TABLE `contactDatas` (
   `fax_cd` varchar(20) NOT NULL default '',
   `email_cd` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`id_cd`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `contactDatas`
+-- Contenu de la table `contactDatas`
 --
 
-INSERT INTO `contactDatas` (`id_cd`, `service_cd`, `jobTitle_cd`, `addressField1_cd`, `addressField2_cd`, `addressField3_cd`, `zip_cd`, `city_cd`, `state_cd`, `country_cd`, `phone_cd`, `cellphone_cd`, `fax_cd`, `email_cd`) VALUES (1,'','','','','','','','','','','','','root@localhost');
-INSERT INTO `contactDatas` (`id_cd`, `service_cd`, `jobTitle_cd`, `addressField1_cd`, `addressField2_cd`, `addressField3_cd`, `zip_cd`, `city_cd`, `state_cd`, `country_cd`, `phone_cd`, `cellphone_cd`, `fax_cd`, `email_cd`) VALUES (3,'','','','','','','','','','','','','nobody@localhost');
+INSERT INTO `contactDatas` (`id_cd`, `service_cd`, `jobTitle_cd`, `addressField1_cd`, `addressField2_cd`, `addressField3_cd`, `zip_cd`, `city_cd`, `state_cd`, `country_cd`, `phone_cd`, `cellphone_cd`, `fax_cd`, `email_cd`) VALUES(1, '', '', '', '', '', '', '', '', '', '', '', '', 'root@localhost');
+INSERT INTO `contactDatas` (`id_cd`, `service_cd`, `jobTitle_cd`, `addressField1_cd`, `addressField2_cd`, `addressField3_cd`, `zip_cd`, `city_cd`, `state_cd`, `country_cd`, `phone_cd`, `cellphone_cd`, `fax_cd`, `email_cd`) VALUES(3, '', '', '', '', '', '', '', '', '', '', '', '', 'nobody@localhost');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `languages`
+-- Structure de la table `languages`
 --
 
 DROP TABLE IF EXISTS `languages`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `languages` (
   `code_lng` varchar(5) NOT NULL default '',
   `label_lng` varchar(50) NOT NULL default '',
@@ -1027,483 +1005,477 @@ CREATE TABLE `languages` (
   `availableForBackoffice_lng` tinyint(4) NOT NULL default '0',
   `modulesDenied_lng` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`code_lng`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `languages`
+-- Contenu de la table `languages`
 --
 
-INSERT INTO `languages` (`code_lng`, `label_lng`, `dateFormat_lng`, `availableForBackoffice_lng`, `modulesDenied_lng`) VALUES ('fr','Français','d/m/Y',1,'');
-INSERT INTO `languages` (`code_lng`, `label_lng`, `dateFormat_lng`, `availableForBackoffice_lng`, `modulesDenied_lng`) VALUES ('en','English','m/d/Y',1,'');
+INSERT INTO `languages` (`code_lng`, `label_lng`, `dateFormat_lng`, `availableForBackoffice_lng`, `modulesDenied_lng`) VALUES('fr', 'Français', 'd/m/Y', 1, '');
+INSERT INTO `languages` (`code_lng`, `label_lng`, `dateFormat_lng`, `availableForBackoffice_lng`, `modulesDenied_lng`) VALUES('en', 'English', 'm/d/Y', 1, '');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `linx_real_public`
+-- Structure de la table `linx_real_public`
 --
 
 DROP TABLE IF EXISTS `linx_real_public`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `linx_real_public` (
   `start_lre` int(11) unsigned NOT NULL default '0',
   `stop_lre` int(11) NOT NULL default '0',
   UNIQUE KEY `start_lre` (`start_lre`,`stop_lre`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `linx_real_public`
+-- Contenu de la table `linx_real_public`
 --
 
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (2,3);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (2,8);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (2,9);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (2,24);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (2,25);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (2,26);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (2,27);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (2,31);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (3,2);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (3,3);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (3,8);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (3,9);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (3,24);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (3,29);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (3,30);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (3,31);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (3,33);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (5,2);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (5,3);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (5,5);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (5,6);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (5,8);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (5,9);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (5,24);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (5,31);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (5,36);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (6,2);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (6,3);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (6,5);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (6,6);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (6,8);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (6,9);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (6,24);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (6,31);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (6,36);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (8,2);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (8,3);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (8,5);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (8,6);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (8,8);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (8,9);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (8,24);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (8,25);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (8,26);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (8,27);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (8,28);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (8,29);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (8,30);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (8,31);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (8,33);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (8,34);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (8,35);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (8,36);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (8,37);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (8,38);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (9,2);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (9,3);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (9,8);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (9,9);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (9,24);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (9,31);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (24,2);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (24,3);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (24,8);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (24,9);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (24,24);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (24,25);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (24,26);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (24,27);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (24,28);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (24,31);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (24,34);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (24,35);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (24,37);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (24,38);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (25,2);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (25,3);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (25,8);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (25,9);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (25,24);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (25,25);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (25,26);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (25,27);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (25,28);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (25,31);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (25,34);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (25,35);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (25,37);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (25,38);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (26,2);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (26,3);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (26,8);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (26,9);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (26,24);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (26,25);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (26,26);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (26,27);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (26,28);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (26,31);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (26,34);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (26,35);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (26,37);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (26,38);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (27,2);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (27,3);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (27,5);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (27,6);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (27,8);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (27,9);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (27,24);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (27,25);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (27,26);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (27,27);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (27,28);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (27,31);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (27,34);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (27,35);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (27,37);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (27,38);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (28,2);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (28,3);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (28,8);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (28,9);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (28,24);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (28,25);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (28,26);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (28,27);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (28,28);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (28,31);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (28,34);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (28,35);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (28,37);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (28,38);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (29,2);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (29,3);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (29,8);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (29,9);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (29,24);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (29,27);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (29,29);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (29,30);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (29,31);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (29,33);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (30,2);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (30,3);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (30,8);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (30,9);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (30,24);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (30,29);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (30,30);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (30,31);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (30,33);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (31,2);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (31,3);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (31,5);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (31,6);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (31,8);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (31,9);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (31,24);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (31,31);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (31,36);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (33,2);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (33,3);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (33,8);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (33,9);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (33,24);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (33,29);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (33,30);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (33,31);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (33,33);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (34,2);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (34,3);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (34,8);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (34,9);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (34,24);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (34,25);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (34,26);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (34,27);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (34,28);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (34,31);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (34,34);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (34,35);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (34,37);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (34,38);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (35,2);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (35,3);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (35,8);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (35,9);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (35,24);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (35,25);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (35,26);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (35,27);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (35,28);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (35,31);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (35,34);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (35,35);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (35,37);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (35,38);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (36,2);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (36,3);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (36,5);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (36,6);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (36,8);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (36,9);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (36,24);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (36,31);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (36,36);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (37,2);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (37,3);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (37,8);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (37,9);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (37,24);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (37,25);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (37,26);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (37,27);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (37,28);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (37,31);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (37,34);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (37,35);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (37,37);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (37,38);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (38,2);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (38,3);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (38,8);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (38,9);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (38,24);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (38,25);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (38,26);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (38,27);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (38,28);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (38,31);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (38,34);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (38,35);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (38,37);
-INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES (38,38);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(2, 3);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(2, 8);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(2, 9);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(2, 24);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(2, 25);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(2, 26);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(2, 27);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(2, 31);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(3, 2);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(3, 3);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(3, 8);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(3, 9);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(3, 24);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(3, 29);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(3, 30);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(3, 31);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(3, 33);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(5, 2);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(5, 3);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(5, 5);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(5, 6);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(5, 8);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(5, 9);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(5, 24);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(5, 31);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(5, 36);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(6, 2);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(6, 3);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(6, 5);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(6, 6);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(6, 8);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(6, 9);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(6, 24);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(6, 31);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(6, 36);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(8, 2);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(8, 3);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(8, 5);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(8, 6);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(8, 8);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(8, 9);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(8, 24);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(8, 25);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(8, 26);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(8, 27);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(8, 28);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(8, 29);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(8, 30);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(8, 31);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(8, 33);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(8, 34);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(8, 35);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(8, 36);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(8, 37);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(8, 38);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(9, 2);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(9, 3);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(9, 8);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(9, 9);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(9, 24);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(9, 31);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(24, 2);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(24, 3);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(24, 8);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(24, 9);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(24, 24);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(24, 25);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(24, 26);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(24, 27);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(24, 28);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(24, 31);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(24, 34);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(24, 35);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(24, 37);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(24, 38);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(25, 2);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(25, 3);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(25, 8);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(25, 9);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(25, 24);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(25, 25);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(25, 26);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(25, 27);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(25, 28);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(25, 31);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(25, 34);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(25, 35);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(25, 37);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(25, 38);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(26, 2);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(26, 3);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(26, 8);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(26, 9);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(26, 24);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(26, 25);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(26, 26);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(26, 27);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(26, 28);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(26, 31);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(26, 34);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(26, 35);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(26, 37);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(26, 38);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(27, 2);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(27, 3);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(27, 5);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(27, 6);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(27, 8);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(27, 9);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(27, 24);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(27, 25);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(27, 26);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(27, 27);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(27, 28);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(27, 31);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(27, 34);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(27, 35);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(27, 37);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(27, 38);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(28, 2);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(28, 3);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(28, 8);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(28, 9);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(28, 24);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(28, 25);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(28, 26);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(28, 27);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(28, 28);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(28, 31);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(28, 34);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(28, 35);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(28, 37);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(28, 38);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(29, 2);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(29, 3);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(29, 8);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(29, 9);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(29, 24);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(29, 27);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(29, 29);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(29, 30);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(29, 31);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(29, 33);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(30, 2);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(30, 3);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(30, 8);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(30, 9);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(30, 24);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(30, 29);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(30, 30);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(30, 31);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(30, 33);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(31, 2);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(31, 3);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(31, 5);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(31, 6);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(31, 8);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(31, 9);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(31, 24);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(31, 31);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(31, 36);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(33, 2);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(33, 3);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(33, 8);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(33, 9);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(33, 24);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(33, 29);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(33, 30);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(33, 31);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(33, 33);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(34, 2);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(34, 3);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(34, 8);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(34, 9);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(34, 24);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(34, 25);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(34, 26);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(34, 27);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(34, 28);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(34, 31);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(34, 34);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(34, 35);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(34, 37);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(34, 38);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(35, 2);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(35, 3);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(35, 8);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(35, 9);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(35, 24);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(35, 25);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(35, 26);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(35, 27);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(35, 28);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(35, 31);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(35, 34);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(35, 35);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(35, 37);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(35, 38);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(36, 2);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(36, 3);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(36, 5);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(36, 6);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(36, 8);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(36, 9);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(36, 24);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(36, 31);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(36, 36);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(37, 2);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(37, 3);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(37, 8);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(37, 9);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(37, 24);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(37, 25);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(37, 26);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(37, 27);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(37, 28);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(37, 31);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(37, 34);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(37, 35);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(37, 37);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(37, 38);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(38, 2);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(38, 3);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(38, 8);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(38, 9);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(38, 24);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(38, 25);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(38, 26);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(38, 27);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(38, 28);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(38, 31);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(38, 34);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(38, 35);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(38, 37);
+INSERT INTO `linx_real_public` (`start_lre`, `stop_lre`) VALUES(38, 38);
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `linx_tree_edited`
+-- Structure de la table `linx_tree_edited`
 --
 
 DROP TABLE IF EXISTS `linx_tree_edited`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `linx_tree_edited` (
-  `id_ltr` int(11) unsigned NOT NULL,
+  `id_ltr` int(11) unsigned NOT NULL auto_increment,
   `father_ltr` int(11) unsigned NOT NULL default '0',
   `sibling_ltr` int(11) unsigned NOT NULL default '0',
   `order_ltr` int(11) unsigned NOT NULL default '0',
   PRIMARY KEY  (`id_ltr`),
   KEY `father_ltr` (`father_ltr`),
   KEY `sibling_ltr` (`sibling_ltr`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `linx_tree_edited`
+-- Contenu de la table `linx_tree_edited`
 --
 
-INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (19,1,2,1);
-INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (20,2,3,1);
-INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (58,24,38,7);
-INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (49,31,5,1);
-INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (51,31,6,2);
-INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (24,2,7,4);
-INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (25,7,8,1);
-INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (26,7,9,2);
-INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (40,2,24,2);
-INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (41,24,25,1);
-INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (42,24,26,2);
-INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (43,24,27,3);
-INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (44,24,28,4);
-INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (45,3,29,1);
-INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (46,3,30,3);
-INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (48,2,31,3);
-INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (53,3,33,2);
-INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (54,24,34,8);
-INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (55,24,35,5);
-INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (56,31,36,3);
-INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (57,24,37,6);
+INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(19, 1, 2, 1);
+INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(20, 2, 3, 1);
+INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(58, 24, 38, 7);
+INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(49, 31, 5, 1);
+INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(51, 31, 6, 2);
+INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(24, 2, 7, 4);
+INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(25, 7, 8, 1);
+INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(26, 7, 9, 2);
+INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(40, 2, 24, 2);
+INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(41, 24, 25, 1);
+INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(42, 24, 26, 2);
+INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(43, 24, 27, 3);
+INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(44, 24, 28, 4);
+INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(45, 3, 29, 1);
+INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(46, 3, 30, 3);
+INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(48, 2, 31, 3);
+INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(53, 3, 33, 2);
+INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(54, 24, 34, 8);
+INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(55, 24, 35, 5);
+INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(56, 31, 36, 3);
+INSERT INTO `linx_tree_edited` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(57, 24, 37, 6);
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `linx_tree_public`
+-- Structure de la table `linx_tree_public`
 --
 
 DROP TABLE IF EXISTS `linx_tree_public`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `linx_tree_public` (
-  `id_ltr` int(11) unsigned NOT NULL,
+  `id_ltr` int(11) unsigned NOT NULL auto_increment,
   `father_ltr` int(11) unsigned NOT NULL default '0',
   `sibling_ltr` int(11) unsigned NOT NULL default '0',
   `order_ltr` int(11) unsigned NOT NULL default '0',
   PRIMARY KEY  (`id_ltr`),
   KEY `father_ltr` (`father_ltr`),
   KEY `sibling_ltr` (`sibling_ltr`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `linx_tree_public`
+-- Contenu de la table `linx_tree_public`
 --
 
-INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (61,1,2,1);
-INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (138,3,30,3);
-INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (188,24,34,8);
-INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (101,2,3,1);
-INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (77,7,8,1);
-INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (78,7,9,2);
-INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (106,2,24,2);
-INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (187,24,38,7);
-INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (186,24,37,6);
-INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (185,24,35,5);
-INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (184,24,28,4);
-INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (137,3,33,2);
-INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (136,3,29,1);
-INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (129,2,31,3);
-INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (157,31,6,2);
-INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (156,31,5,1);
-INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (183,24,27,3);
-INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (182,24,26,2);
-INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (158,31,36,3);
-INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES (181,24,25,1);
+INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(61, 1, 2, 1);
+INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(138, 3, 30, 3);
+INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(188, 24, 34, 8);
+INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(101, 2, 3, 1);
+INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(77, 7, 8, 1);
+INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(78, 7, 9, 2);
+INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(106, 2, 24, 2);
+INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(187, 24, 38, 7);
+INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(186, 24, 37, 6);
+INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(185, 24, 35, 5);
+INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(184, 24, 28, 4);
+INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(137, 3, 33, 2);
+INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(136, 3, 29, 1);
+INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(129, 2, 31, 3);
+INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(157, 31, 6, 2);
+INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(156, 31, 5, 1);
+INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(183, 24, 27, 3);
+INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(182, 24, 26, 2);
+INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(158, 31, 36, 3);
+INSERT INTO `linx_tree_public` (`id_ltr`, `father_ltr`, `sibling_ltr`, `order_ltr`) VALUES(181, 24, 25, 1);
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `linx_watch_public`
+-- Structure de la table `linx_watch_public`
 --
 
 DROP TABLE IF EXISTS `linx_watch_public`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `linx_watch_public` (
   `page_lwa` int(11) unsigned NOT NULL default '0',
   `target_lwa` int(11) unsigned NOT NULL default '0',
   UNIQUE KEY `page_lwa` (`page_lwa`,`target_lwa`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `linx_watch_public`
+-- Contenu de la table `linx_watch_public`
 --
 
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (2,2);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (2,7);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (3,2);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (3,3);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (3,7);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (5,2);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (5,5);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (5,7);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (5,31);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (6,2);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (6,6);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (6,7);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (6,31);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (8,2);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (8,3);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (8,7);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (8,8);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (8,24);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (8,31);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (9,2);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (9,7);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (9,9);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (24,2);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (24,7);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (24,24);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (25,2);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (25,7);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (25,24);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (25,25);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (26,2);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (26,7);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (26,24);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (26,26);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (27,2);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (27,7);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (27,24);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (27,27);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (28,2);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (28,7);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (28,24);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (28,28);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (29,2);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (29,3);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (29,7);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (29,29);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (30,2);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (30,3);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (30,7);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (30,30);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (31,2);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (31,7);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (31,31);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (33,2);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (33,3);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (33,7);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (33,33);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (34,2);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (34,7);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (34,24);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (34,34);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (35,2);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (35,7);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (35,24);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (35,35);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (36,2);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (36,7);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (36,31);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (36,36);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (37,2);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (37,7);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (37,24);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (37,37);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (38,2);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (38,7);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (38,24);
-INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES (38,38);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(2, 2);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(2, 7);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(3, 2);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(3, 3);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(3, 7);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(5, 2);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(5, 5);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(5, 7);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(5, 31);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(6, 2);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(6, 6);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(6, 7);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(6, 31);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(8, 2);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(8, 3);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(8, 7);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(8, 8);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(8, 24);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(8, 31);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(9, 2);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(9, 7);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(9, 9);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(24, 2);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(24, 7);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(24, 24);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(25, 2);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(25, 7);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(25, 24);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(25, 25);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(26, 2);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(26, 7);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(26, 24);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(26, 26);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(27, 2);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(27, 7);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(27, 24);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(27, 27);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(28, 2);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(28, 7);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(28, 24);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(28, 28);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(29, 2);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(29, 3);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(29, 7);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(29, 29);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(30, 2);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(30, 3);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(30, 7);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(30, 30);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(31, 2);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(31, 7);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(31, 31);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(33, 2);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(33, 3);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(33, 7);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(33, 33);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(34, 2);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(34, 7);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(34, 24);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(34, 34);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(35, 2);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(35, 7);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(35, 24);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(35, 35);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(36, 2);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(36, 7);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(36, 31);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(36, 36);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(37, 2);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(37, 7);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(37, 24);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(37, 37);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(38, 2);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(38, 7);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(38, 24);
+INSERT INTO `linx_watch_public` (`page_lwa`, `target_lwa`) VALUES(38, 38);
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `locks`
+-- Structure de la table `locks`
 --
 
 DROP TABLE IF EXISTS `locks`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `locks` (
-  `id_lok` int(11) unsigned NOT NULL,
+  `id_lok` int(11) unsigned NOT NULL auto_increment,
   `resource_lok` int(11) unsigned NOT NULL default '0',
   `locksmithData_lok` int(11) unsigned NOT NULL default '0',
   `date_lok` datetime NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`id_lok`),
   KEY `resource_lok` (`resource_lok`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `locks`
+-- Contenu de la table `locks`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `log`
+-- Structure de la table `log`
 --
 
 DROP TABLE IF EXISTS `log`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `log` (
-  `id_log` int(11) unsigned NOT NULL,
+  `id_log` int(11) unsigned NOT NULL auto_increment,
   `user_log` int(11) unsigned NOT NULL default '0',
   `action_log` int(11) unsigned NOT NULL default '0',
   `datetime_log` datetime NOT NULL default '0000-00-00 00:00:00',
@@ -1519,117 +1491,228 @@ CREATE TABLE `log` (
   PRIMARY KEY  (`id_log`),
   KEY `user_log` (`user_log`),
   KEY `action_log` (`action_log`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `log`
---
-
-
---
--- Table structure for table `messages`
---
-
-DROP TABLE IF EXISTS `messages`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-CREATE TABLE `messages` (
-  `id_mes` int(11) unsigned NOT NULL,
-  `module_mes` varchar(50) NOT NULL,
-  `language_mes` varchar(3) NOT NULL,
-  `message_mes` text NOT NULL,
-  UNIQUE KEY `id` (`id_mes`,`module_mes`,`language_mes`),
-  KEY `module` (`module_mes`),
-  KEY `language` (`language_mes`)
-);
-SET character_set_client = @saved_cs_client;
-
---
--- Dumping data for table `messages`
+-- Contenu de la table `log`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `mod_cms_aliases`
+-- Structure de la table `modules`
+--
+
+DROP TABLE IF EXISTS `modules`;
+CREATE TABLE `modules` (
+  `id_mod` int(11) unsigned NOT NULL auto_increment,
+  `label_mod` int(11) unsigned NOT NULL default '0',
+  `codename_mod` varchar(20) NOT NULL default '',
+  `administrationFrontend_mod` varchar(100) NOT NULL default '',
+  `hasParameters_mod` tinyint(4) NOT NULL default '0',
+  `isPolymod_mod` int(1) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`id_mod`),
+  KEY `codename_mod` (`codename_mod`),
+  KEY `isPolymod_mod` (`isPolymod_mod`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `modules`
+--
+
+INSERT INTO `modules` (`id_mod`, `label_mod`, `codename_mod`, `administrationFrontend_mod`, `hasParameters_mod`, `isPolymod_mod`) VALUES(1, 243, 'standard', '', 1, 0);
+INSERT INTO `modules` (`id_mod`, `label_mod`, `codename_mod`, `administrationFrontend_mod`, `hasParameters_mod`, `isPolymod_mod`) VALUES(2, 1, 'cms_aliases', 'index.php', 0, 0);
+INSERT INTO `modules` (`id_mod`, `label_mod`, `codename_mod`, `administrationFrontend_mod`, `hasParameters_mod`, `isPolymod_mod`) VALUES(3, 1, 'cms_forms', 'index.php', 1, 0);
+INSERT INTO `modules` (`id_mod`, `label_mod`, `codename_mod`, `administrationFrontend_mod`, `hasParameters_mod`, `isPolymod_mod`) VALUES(4, 1, 'pnews', 'index.php', 0, 1);
+INSERT INTO `modules` (`id_mod`, `label_mod`, `codename_mod`, `administrationFrontend_mod`, `hasParameters_mod`, `isPolymod_mod`) VALUES(5, 1, 'pmedia', 'index.php', 0, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `modulesCategories`
+--
+
+DROP TABLE IF EXISTS `modulesCategories`;
+CREATE TABLE `modulesCategories` (
+  `id_mca` int(11) unsigned NOT NULL auto_increment,
+  `uuid_mca` varchar(36) NOT NULL,
+  `module_mca` varchar(20) NOT NULL default '',
+  `parent_mca` int(10) unsigned NOT NULL default '0',
+  `root_mca` int(10) unsigned NOT NULL default '0',
+  `lineage_mca` varchar(255) NOT NULL default '',
+  `order_mca` int(10) unsigned NOT NULL default '1',
+  `icon_mca` varchar(255) NOT NULL default '',
+  PRIMARY KEY  (`id_mca`),
+  KEY `module` (`module_mca`),
+  KEY `lineage` (`lineage_mca`),
+  KEY `parent` (`parent_mca`),
+  KEY `root` (`root_mca`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `modulesCategories`
+--
+
+INSERT INTO `modulesCategories` (`id_mca`, `uuid_mca`, `module_mca`, `parent_mca`, `root_mca`, `lineage_mca`, `order_mca`, `icon_mca`) VALUES(1, 'e595b48c-0baa-102e-80e2-001a6470da26', 'cms_forms', 0, 0, '1', 1, '');
+INSERT INTO `modulesCategories` (`id_mca`, `uuid_mca`, `module_mca`, `parent_mca`, `root_mca`, `lineage_mca`, `order_mca`, `icon_mca`) VALUES(2, 'e595b5b8-0baa-102e-80e2-001a6470da26', 'pnews', 0, 0, '2', 2, '');
+INSERT INTO `modulesCategories` (`id_mca`, `uuid_mca`, `module_mca`, `parent_mca`, `root_mca`, `lineage_mca`, `order_mca`, `icon_mca`) VALUES(17, 'e595b676-0baa-102e-80e2-001a6470da26', 'pnews', 2, 2, '2;17', 1, '');
+INSERT INTO `modulesCategories` (`id_mca`, `uuid_mca`, `module_mca`, `parent_mca`, `root_mca`, `lineage_mca`, `order_mca`, `icon_mca`) VALUES(18, 'e595b734-0baa-102e-80e2-001a6470da26', 'pmedia', 0, 0, '18', 5, '');
+INSERT INTO `modulesCategories` (`id_mca`, `uuid_mca`, `module_mca`, `parent_mca`, `root_mca`, `lineage_mca`, `order_mca`, `icon_mca`) VALUES(19, 'e595b7e8-0baa-102e-80e2-001a6470da26', 'pmedia', 18, 18, '18;19', 3, '');
+INSERT INTO `modulesCategories` (`id_mca`, `uuid_mca`, `module_mca`, `parent_mca`, `root_mca`, `lineage_mca`, `order_mca`, `icon_mca`) VALUES(20, 'e595b8a6-0baa-102e-80e2-001a6470da26', 'pmedia', 18, 18, '18;20', 1, '');
+INSERT INTO `modulesCategories` (`id_mca`, `uuid_mca`, `module_mca`, `parent_mca`, `root_mca`, `lineage_mca`, `order_mca`, `icon_mca`) VALUES(21, 'e595b964-0baa-102e-80e2-001a6470da26', 'pmedia', 18, 18, '18;21', 2, '');
+INSERT INTO `modulesCategories` (`id_mca`, `uuid_mca`, `module_mca`, `parent_mca`, `root_mca`, `lineage_mca`, `order_mca`, `icon_mca`) VALUES(22, 'e595ba18-0baa-102e-80e2-001a6470da26', 'pmedia', 18, 18, '18;22', 4, '');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `modulesCategories_clearances`
+--
+
+DROP TABLE IF EXISTS `modulesCategories_clearances`;
+CREATE TABLE `modulesCategories_clearances` (
+  `id_mcc` int(11) unsigned NOT NULL auto_increment,
+  `profile_mcc` int(11) unsigned NOT NULL default '0',
+  `category_mcc` int(10) unsigned NOT NULL default '0',
+  `clearance_mcc` tinyint(16) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`id_mcc`),
+  UNIQUE KEY `profilecategories` (`profile_mcc`,`category_mcc`),
+  KEY `profile` (`profile_mcc`),
+  KEY `category` (`category_mcc`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `modulesCategories_clearances`
+--
+
+INSERT INTO `modulesCategories_clearances` (`id_mcc`, `profile_mcc`, `category_mcc`, `clearance_mcc`) VALUES(669, 1, 1, 3);
+INSERT INTO `modulesCategories_clearances` (`id_mcc`, `profile_mcc`, `category_mcc`, `clearance_mcc`) VALUES(172, 3, 2, 1);
+INSERT INTO `modulesCategories_clearances` (`id_mcc`, `profile_mcc`, `category_mcc`, `clearance_mcc`) VALUES(171, 3, 1, 1);
+INSERT INTO `modulesCategories_clearances` (`id_mcc`, `profile_mcc`, `category_mcc`, `clearance_mcc`) VALUES(670, 1, 2, 3);
+INSERT INTO `modulesCategories_clearances` (`id_mcc`, `profile_mcc`, `category_mcc`, `clearance_mcc`) VALUES(671, 1, 18, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `modulesCategories_i18nm`
+--
+
+DROP TABLE IF EXISTS `modulesCategories_i18nm`;
+CREATE TABLE `modulesCategories_i18nm` (
+  `id_mcl` int(11) unsigned NOT NULL auto_increment,
+  `category_mcl` int(11) unsigned NOT NULL default '0',
+  `language_mcl` char(2) NOT NULL default 'en',
+  `label_mcl` varchar(255) NOT NULL default '',
+  `description_mcl` text NOT NULL,
+  `file_mcl` varchar(255) NOT NULL default '',
+  PRIMARY KEY  (`id_mcl`),
+  UNIQUE KEY `categoryperlang` (`category_mcl`,`language_mcl`),
+  KEY `category` (`category_mcl`),
+  KEY `language` (`language_mcl`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `modulesCategories_i18nm`
+--
+
+INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES(167, 1, 'en', 'Forms', '', '');
+INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES(168, 1, 'fr', 'Formulaire', '', '');
+INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES(155, 2, 'en', 'News', '', '');
+INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES(156, 2, 'fr', 'Actualités', '', '');
+INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES(27, 6, 'en', 'Documents', '', '');
+INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES(28, 6, 'fr', 'Documents', '', '');
+INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES(71, 14, 'en', 'Pictures', '', '');
+INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES(72, 14, 'fr', 'Photos', '', '');
+INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES(161, 17, 'en', 'News item', '', '');
+INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES(162, 17, 'fr', 'Actualité', '', '');
+INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES(113, 18, 'en', 'Media', '', '');
+INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES(114, 18, 'fr', 'Média', '', '');
+INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES(131, 19, 'en', 'Movie', '', '');
+INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES(132, 19, 'fr', 'Vidéo', '', '');
+INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES(119, 20, 'en', 'Image', '', '');
+INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES(120, 20, 'fr', 'Image', '', '');
+INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES(125, 21, 'en', 'Document', '', '');
+INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES(126, 21, 'fr', 'Document', '', '');
+INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES(144, 22, 'fr', 'Audio', '', '');
+INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES(143, 22, 'en', 'Audio', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `mod_cms_aliases`
 --
 
 DROP TABLE IF EXISTS `mod_cms_aliases`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mod_cms_aliases` (
-  `id_ma` int(11) unsigned NOT NULL,
+  `id_ma` int(11) unsigned NOT NULL auto_increment,
   `parent_ma` int(11) unsigned NOT NULL default '0',
   `page_ma` int(11) NOT NULL default '0',
   `url_ma` varchar(255) NOT NULL default '',
   `alias_ma` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`id_ma`),
   KEY `alias_ma` (`alias_ma`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mod_cms_aliases`
+-- Contenu de la table `mod_cms_aliases`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `mod_cms_forms_actions`
+-- Structure de la table `mod_cms_forms_actions`
 --
 
 DROP TABLE IF EXISTS `mod_cms_forms_actions`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mod_cms_forms_actions` (
-  `id_act` int(10) unsigned NOT NULL,
+  `id_act` int(10) unsigned NOT NULL auto_increment,
   `form_act` int(11) unsigned NOT NULL default '0',
   `value_act` mediumtext NOT NULL,
   `type_act` tinyint(2) unsigned NOT NULL default '0',
   `text_act` mediumtext NOT NULL,
   PRIMARY KEY  (`id_act`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mod_cms_forms_actions`
+-- Contenu de la table `mod_cms_forms_actions`
 --
 
-INSERT INTO `mod_cms_forms_actions` (`id_act`, `form_act`, `value_act`, `type_act`, `text_act`) VALUES (7,2,'text',0,'');
-INSERT INTO `mod_cms_forms_actions` (`id_act`, `form_act`, `value_act`, `type_act`, `text_act`) VALUES (8,2,'',2,'');
-INSERT INTO `mod_cms_forms_actions` (`id_act`, `form_act`, `value_act`, `type_act`, `text_act`) VALUES (9,2,'text',99,'Votre demande a été envoyée par email. Vous recevrez une réponse rapidement.');
-INSERT INTO `mod_cms_forms_actions` (`id_act`, `form_act`, `value_act`, `type_act`, `text_act`) VALUES (10,2,'text',1,'La saisie des champs suivants est incorrecte.');
-INSERT INTO `mod_cms_forms_actions` (`id_act`, `form_act`, `value_act`, `type_act`, `text_act`) VALUES (11,2,'root@localhost',3,'Demande de contact§§Le message ci-dessous a été posté depuis le formulaire de contact de la démonstration d\'Automne :§§');
+INSERT INTO `mod_cms_forms_actions` (`id_act`, `form_act`, `value_act`, `type_act`, `text_act`) VALUES(7, 2, 'text', 0, '');
+INSERT INTO `mod_cms_forms_actions` (`id_act`, `form_act`, `value_act`, `type_act`, `text_act`) VALUES(8, 2, '', 2, '');
+INSERT INTO `mod_cms_forms_actions` (`id_act`, `form_act`, `value_act`, `type_act`, `text_act`) VALUES(9, 2, 'text', 99, 'Votre demande a été envoyée par email. Vous recevrez une réponse rapidement.');
+INSERT INTO `mod_cms_forms_actions` (`id_act`, `form_act`, `value_act`, `type_act`, `text_act`) VALUES(10, 2, 'text', 1, 'La saisie des champs suivants est incorrecte.');
+INSERT INTO `mod_cms_forms_actions` (`id_act`, `form_act`, `value_act`, `type_act`, `text_act`) VALUES(11, 2, 'root@localhost', 3, 'Demande de contact§§Le message ci-dessous a été posté depuis le formulaire de contact de la démonstration d''Automne :§§');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `mod_cms_forms_categories`
+-- Structure de la table `mod_cms_forms_categories`
 --
 
 DROP TABLE IF EXISTS `mod_cms_forms_categories`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mod_cms_forms_categories` (
-  `id_fca` int(11) unsigned NOT NULL,
+  `id_fca` int(11) unsigned NOT NULL auto_increment,
   `form_fca` int(11) unsigned NOT NULL default '0',
   `category_fca` int(11) unsigned NOT NULL default '0',
   PRIMARY KEY  (`id_fca`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mod_cms_forms_categories`
+-- Contenu de la table `mod_cms_forms_categories`
 --
 
-INSERT INTO `mod_cms_forms_categories` (`id_fca`, `form_fca`, `category_fca`) VALUES (3,2,1);
+INSERT INTO `mod_cms_forms_categories` (`id_fca`, `form_fca`, `category_fca`) VALUES(3, 2, 1);
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `mod_cms_forms_fields`
+-- Structure de la table `mod_cms_forms_fields`
 --
 
 DROP TABLE IF EXISTS `mod_cms_forms_fields`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mod_cms_forms_fields` (
-  `id_fld` int(11) unsigned NOT NULL,
+  `id_fld` int(11) unsigned NOT NULL auto_increment,
   `form_fld` int(11) unsigned NOT NULL default '0',
   `name_fld` varchar(32) NOT NULL default '',
   `label_fld` varchar(255) NOT NULL default '',
@@ -1642,29 +1725,28 @@ CREATE TABLE `mod_cms_forms_fields` (
   `order_fld` int(11) unsigned NOT NULL default '0',
   `params_fld` mediumtext NOT NULL,
   PRIMARY KEY  (`id_fld`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mod_cms_forms_fields`
+-- Contenu de la table `mod_cms_forms_fields`
 --
 
-INSERT INTO `mod_cms_forms_fields` (`id_fld`, `form_fld`, `name_fld`, `label_fld`, `defaultValue_fld`, `dataValidation_fld`, `type_fld`, `options_fld`, `required_fld`, `active_fld`, `order_fld`, `params_fld`) VALUES (11,2,'54b8a11ea29b491d40561eb321aed37f','Nom *','','','text','a:1:{s:0:\"\";s:0:\"\";}',1,1,0,'');
-INSERT INTO `mod_cms_forms_fields` (`id_fld`, `form_fld`, `name_fld`, `label_fld`, `defaultValue_fld`, `dataValidation_fld`, `type_fld`, `options_fld`, `required_fld`, `active_fld`, `order_fld`, `params_fld`) VALUES (12,2,'5d62b28a2c474455ae3a937127cf7204','Prénom *','','','text','a:1:{s:0:\"\";s:0:\"\";}',1,1,1,'');
-INSERT INTO `mod_cms_forms_fields` (`id_fld`, `form_fld`, `name_fld`, `label_fld`, `defaultValue_fld`, `dataValidation_fld`, `type_fld`, `options_fld`, `required_fld`, `active_fld`, `order_fld`, `params_fld`) VALUES (13,2,'4f77750ba5f191904e9aaab3acab488d','Email *','','','email','a:1:{s:0:\"\";s:0:\"\";}',1,1,2,'');
-INSERT INTO `mod_cms_forms_fields` (`id_fld`, `form_fld`, `name_fld`, `label_fld`, `defaultValue_fld`, `dataValidation_fld`, `type_fld`, `options_fld`, `required_fld`, `active_fld`, `order_fld`, `params_fld`) VALUES (14,2,'4005693f0d616bab1865d71fea32d1f6','Sujet du message *','','','text','a:1:{s:0:\"\";s:0:\"\";}',1,1,3,'');
-INSERT INTO `mod_cms_forms_fields` (`id_fld`, `form_fld`, `name_fld`, `label_fld`, `defaultValue_fld`, `dataValidation_fld`, `type_fld`, `options_fld`, `required_fld`, `active_fld`, `order_fld`, `params_fld`) VALUES (15,2,'778a8c9cce20558836139d64c7d403c0','Message *','','','textarea','a:1:{s:0:\"\";s:0:\"\";}',1,1,5,'');
-INSERT INTO `mod_cms_forms_fields` (`id_fld`, `form_fld`, `name_fld`, `label_fld`, `defaultValue_fld`, `dataValidation_fld`, `type_fld`, `options_fld`, `required_fld`, `active_fld`, `order_fld`, `params_fld`) VALUES (16,2,'8e17e732a07c18b447c226014789627c','Envoyer','Envoyer','','submit','a:1:{s:0:\"\";s:0:\"\";}',0,1,4,'');
+INSERT INTO `mod_cms_forms_fields` (`id_fld`, `form_fld`, `name_fld`, `label_fld`, `defaultValue_fld`, `dataValidation_fld`, `type_fld`, `options_fld`, `required_fld`, `active_fld`, `order_fld`, `params_fld`) VALUES(11, 2, '54b8a11ea29b491d40561eb321aed37f', 'Nom *', '', '', 'text', 'a:1:{s:0:"";s:0:"";}', 1, 1, 0, '');
+INSERT INTO `mod_cms_forms_fields` (`id_fld`, `form_fld`, `name_fld`, `label_fld`, `defaultValue_fld`, `dataValidation_fld`, `type_fld`, `options_fld`, `required_fld`, `active_fld`, `order_fld`, `params_fld`) VALUES(12, 2, '5d62b28a2c474455ae3a937127cf7204', 'Prénom *', '', '', 'text', 'a:1:{s:0:"";s:0:"";}', 1, 1, 1, '');
+INSERT INTO `mod_cms_forms_fields` (`id_fld`, `form_fld`, `name_fld`, `label_fld`, `defaultValue_fld`, `dataValidation_fld`, `type_fld`, `options_fld`, `required_fld`, `active_fld`, `order_fld`, `params_fld`) VALUES(13, 2, '4f77750ba5f191904e9aaab3acab488d', 'Email *', '', '', 'email', 'a:1:{s:0:"";s:0:"";}', 1, 1, 2, '');
+INSERT INTO `mod_cms_forms_fields` (`id_fld`, `form_fld`, `name_fld`, `label_fld`, `defaultValue_fld`, `dataValidation_fld`, `type_fld`, `options_fld`, `required_fld`, `active_fld`, `order_fld`, `params_fld`) VALUES(14, 2, '4005693f0d616bab1865d71fea32d1f6', 'Sujet du message *', '', '', 'text', 'a:1:{s:0:"";s:0:"";}', 1, 1, 3, '');
+INSERT INTO `mod_cms_forms_fields` (`id_fld`, `form_fld`, `name_fld`, `label_fld`, `defaultValue_fld`, `dataValidation_fld`, `type_fld`, `options_fld`, `required_fld`, `active_fld`, `order_fld`, `params_fld`) VALUES(15, 2, '778a8c9cce20558836139d64c7d403c0', 'Message *', '', '', 'textarea', 'a:1:{s:0:"";s:0:"";}', 1, 1, 5, '');
+INSERT INTO `mod_cms_forms_fields` (`id_fld`, `form_fld`, `name_fld`, `label_fld`, `defaultValue_fld`, `dataValidation_fld`, `type_fld`, `options_fld`, `required_fld`, `active_fld`, `order_fld`, `params_fld`) VALUES(16, 2, '8e17e732a07c18b447c226014789627c', 'Envoyer', 'Envoyer', '', 'submit', 'a:1:{s:0:"";s:0:"";}', 0, 1, 4, '');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `mod_cms_forms_formulars`
+-- Structure de la table `mod_cms_forms_formulars`
 --
 
 DROP TABLE IF EXISTS `mod_cms_forms_formulars`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mod_cms_forms_formulars` (
-  `id_frm` int(11) unsigned NOT NULL,
+  `id_frm` int(11) unsigned NOT NULL auto_increment,
   `name_frm` varchar(255) NOT NULL default '',
   `source_frm` text NOT NULL,
   `language_frm` char(2) NOT NULL default 'en',
@@ -1674,45 +1756,43 @@ CREATE TABLE `mod_cms_forms_formulars` (
   `DestinationData_frm` mediumtext NOT NULL,
   `responses_frm` int(11) unsigned NOT NULL default '0',
   PRIMARY KEY  (`id_frm`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mod_cms_forms_formulars`
+-- Contenu de la table `mod_cms_forms_formulars`
 --
 
-INSERT INTO `mod_cms_forms_formulars` (`id_frm`, `name_frm`, `source_frm`, `language_frm`, `owner_frm`, `closed_frm`, `destinationType_frm`, `DestinationData_frm`, `responses_frm`) VALUES (2,'Contact','<form id=\"cms_forms_2\">\n    <table width=\"100%\" cellspacing=\"1\" cellpadding=\"1\" border=\"0\" align=\"center\">\n        <tbody>\n            <tr>\n                <td style=\"text-align: right;\"><label for=\"zY21zX2ZpZWxkXzExX3JlcQ==\">Nom * </label></td>\n                <td><input type=\"text\" name=\"54b8a11ea29b491d40561eb321aed37f\" id=\"zY21zX2ZpZWxkXzExX3JlcQ==\" value=\"\" /></td>\n            </tr>\n            <tr>\n                <td style=\"text-align: right;\"><label for=\"zY21zX2ZpZWxkXzEyX3JlcQ==\">Prénom * </label></td>\n                <td><input type=\"text\" name=\"5d62b28a2c474455ae3a937127cf7204\" id=\"zY21zX2ZpZWxkXzEyX3JlcQ==\" value=\"\" /></td>\n            </tr>\n            <tr>\n                <td style=\"text-align: right;\"><label for=\"zY21zX2ZpZWxkXzEzX2VtYWlsX3JlcQ==\">Email * </label></td>\n                <td><input type=\"text\" name=\"4f77750ba5f191904e9aaab3acab488d\" id=\"zY21zX2ZpZWxkXzEzX2VtYWlsX3JlcQ==\" value=\"\" /></td>\n            </tr>\n            <tr>\n                <td style=\"text-align: right;\"><label for=\"zY21zX2ZpZWxkXzE0X3JlcQ==\">Sujet du message * </label></td>\n                <td><input type=\"text\" name=\"4005693f0d616bab1865d71fea32d1f6\" id=\"zY21zX2ZpZWxkXzE0X3JlcQ==\" value=\"\" /></td>\n            </tr>\n            <tr>\n                <td style=\"text-align: right;\"><label for=\"zY21zX2ZpZWxkXzE1X3JlcQ==\">Message * </label></td>\n                <td><textarea name=\"778a8c9cce20558836139d64c7d403c0\" id=\"zY21zX2ZpZWxkXzE1X3JlcQ==\"></textarea></td>\n            </tr>\n            <tr>\n                <td style=\"text-align: right;\">&#160;</td>\n                <td><input type=\"submit\" value=\"Envoyer\" name=\"8e17e732a07c18b447c226014789627c\" class=\"button\" id=\"zY21zX2ZpZWxkXzE2\" /></td>\n            </tr>\n        </tbody>\n    </table>\n</form>','fr',4,0,0,'',0);
+INSERT INTO `mod_cms_forms_formulars` (`id_frm`, `name_frm`, `source_frm`, `language_frm`, `owner_frm`, `closed_frm`, `destinationType_frm`, `DestinationData_frm`, `responses_frm`) VALUES(2, 'Contact', '<form id="cms_forms_2">\n    <table width="100%" cellspacing="1" cellpadding="1" border="0" align="center">\n        <tbody>\n            <tr>\n                <td style="text-align: right;"><label for="zY21zX2ZpZWxkXzExX3JlcQ==">Nom * </label></td>\n                <td><input type="text" name="54b8a11ea29b491d40561eb321aed37f" id="zY21zX2ZpZWxkXzExX3JlcQ==" value="" /></td>\n            </tr>\n            <tr>\n                <td style="text-align: right;"><label for="zY21zX2ZpZWxkXzEyX3JlcQ==">Prénom * </label></td>\n                <td><input type="text" name="5d62b28a2c474455ae3a937127cf7204" id="zY21zX2ZpZWxkXzEyX3JlcQ==" value="" /></td>\n            </tr>\n            <tr>\n                <td style="text-align: right;"><label for="zY21zX2ZpZWxkXzEzX2VtYWlsX3JlcQ==">Email * </label></td>\n                <td><input type="text" name="4f77750ba5f191904e9aaab3acab488d" id="zY21zX2ZpZWxkXzEzX2VtYWlsX3JlcQ==" value="" /></td>\n            </tr>\n            <tr>\n                <td style="text-align: right;"><label for="zY21zX2ZpZWxkXzE0X3JlcQ==">Sujet du message * </label></td>\n                <td><input type="text" name="4005693f0d616bab1865d71fea32d1f6" id="zY21zX2ZpZWxkXzE0X3JlcQ==" value="" /></td>\n            </tr>\n            <tr>\n                <td style="text-align: right;"><label for="zY21zX2ZpZWxkXzE1X3JlcQ==">Message * </label></td>\n                <td><textarea name="778a8c9cce20558836139d64c7d403c0" id="zY21zX2ZpZWxkXzE1X3JlcQ=="></textarea></td>\n            </tr>\n            <tr>\n                <td style="text-align: right;">&#160;</td>\n                <td><input type="submit" value="Envoyer" name="8e17e732a07c18b447c226014789627c" class="button" id="zY21zX2ZpZWxkXzE2" /></td>\n            </tr>\n        </tbody>\n    </table>\n</form>', 'fr', 4, 0, 0, '', 0);
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `mod_cms_forms_records`
+-- Structure de la table `mod_cms_forms_records`
 --
 
 DROP TABLE IF EXISTS `mod_cms_forms_records`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mod_cms_forms_records` (
-  `id_rec` int(11) unsigned NOT NULL,
+  `id_rec` int(11) unsigned NOT NULL auto_increment,
   `sending_rec` int(11) unsigned NOT NULL default '0',
   `field_rec` int(11) unsigned NOT NULL default '0',
   `value_rec` text NOT NULL,
   PRIMARY KEY  (`id_rec`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mod_cms_forms_records`
+-- Contenu de la table `mod_cms_forms_records`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `mod_cms_forms_senders`
+-- Structure de la table `mod_cms_forms_senders`
 --
 
 DROP TABLE IF EXISTS `mod_cms_forms_senders`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mod_cms_forms_senders` (
-  `id_snd` int(11) unsigned NOT NULL,
+  `id_snd` int(11) unsigned NOT NULL auto_increment,
   `clientIP_snd` varchar(255) NOT NULL default '',
   `dateInserted_snd` datetime default '0000-00-00 00:00:00',
   `sessionID_snd` varchar(100) NOT NULL default '',
@@ -1722,23 +1802,22 @@ CREATE TABLE `mod_cms_forms_senders` (
   PRIMARY KEY  (`id_snd`),
   KEY `userID_snd` (`userID_snd`),
   KEY `sessionID_snd` (`sessionID_snd`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mod_cms_forms_senders`
+-- Contenu de la table `mod_cms_forms_senders`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `mod_object_definition`
+-- Structure de la table `mod_object_definition`
 --
 
 DROP TABLE IF EXISTS `mod_object_definition`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mod_object_definition` (
-  `id_mod` int(11) unsigned NOT NULL,
+  `id_mod` int(11) unsigned NOT NULL auto_increment,
   `uuid_mod` varchar(36) NOT NULL,
   `label_id_mod` int(11) unsigned NOT NULL default '0',
   `description_id_mod` int(11) unsigned NOT NULL default '0',
@@ -1753,25 +1832,24 @@ CREATE TABLE `mod_object_definition` (
   `resultsDefinition_mod` mediumtext NOT NULL,
   PRIMARY KEY  (`id_mod`),
   KEY `module_mod` (`module_mod`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mod_object_definition`
+-- Contenu de la table `mod_object_definition`
 --
 
-INSERT INTO `mod_object_definition` (`id_mod`, `uuid_mod`, `label_id_mod`, `description_id_mod`, `resource_usage_mod`, `module_mod`, `admineditable_mod`, `composedLabel_mod`, `previewURL_mod`, `indexable_mod`, `indexURL_mod`, `compiledIndexURL_mod`, `resultsDefinition_mod`) VALUES (1,'e583bc28-0baa-102e-80e2-001a6470da26',1,2,1,'pnews',0,'','5||item={[\'object1\'][\'id\']}',0,'','','');
-INSERT INTO `mod_object_definition` (`id_mod`, `uuid_mod`, `label_id_mod`, `description_id_mod`, `resource_usage_mod`, `module_mod`, `admineditable_mod`, `composedLabel_mod`, `previewURL_mod`, `indexable_mod`, `indexURL_mod`, `compiledIndexURL_mod`, `resultsDefinition_mod`) VALUES (2,'e583bd90-0baa-102e-80e2-001a6470da26',70,71,1,'pmedia',0,'','6||item={[\'object2\'][\'id\']}',0,'','','<div class=\"pmedias\">\r\n	<atm-if what=\"{[\'object2\'][\'fields\'][9][\'fileExtension\']} == \'flv\'\">\r\n		<atm-if what=\"{[\'object2\'][\'fields\'][9][\'thumbnail\']}\">\r\n			<script type=\"text/javascript\">\r\n				swfobject.embedSWF(\'{constant:string:PATH_REALROOT_WR}/automne/playerflv/player_flv.swf\', \'media-{[\'object2\'][\'id\']}\', \'320\', \'200\', \'9.0.0\', \'{constant:string:PATH_REALROOT_WR}/automne/swfobject/expressInstall.swf\', {flv:\'{[\'object2\'][\'fields\'][9][\'file\']}\', configxml:\'{constant:string:PATH_REALROOT_WR}/automne/playerflv/config_playerflv.xml\', startimage:\'{[\'object2\'][\'fields\'][9][\'thumb\']}\'}, {allowfullscreen:true, wmode:\'transparent\'}, {\'style\':\'float:right;\'});\r\n			</script>\r\n		</atm-if>\r\n		<atm-if what=\"!{[\'object2\'][\'fields\'][9][\'thumbnail\']}\">\r\n			<script type=\"text/javascript\">\r\n				swfobject.embedSWF(\'{constant:string:PATH_REALROOT_WR}/automne/playerflv/player_flv.swf\', \'media-{[\'object2\'][\'id\']}\', \'320\', \'200\', \'9.0.0\', \'{constant:string:PATH_REALROOT_WR}/automne/swfobject/expressInstall.swf\', {flv:\'{[\'object2\'][\'fields\'][9][\'file\']}\', configxml:\'{constant:string:PATH_REALROOT_WR}/automne/playerflv/config_playerflv.xml\'}, {allowfullscreen:true, wmode:\'transparent\'}, {\'style\':\'float:right;\'});\r\n			</script>\r\n		</atm-if>\r\n		<div id=\"media-{[\'object2\'][\'id\']}\" class=\"pmedias-video\" style=\"width:320px;height:200px;float:right;\">\r\n			<p><a href=\"http://www.adobe.com/go/getflashplayer\" target=\"_blank\"><img src=\"http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif\" alt=\"Get Adobe Flash player\" /></a></p>\r\n		</div>\r\n	</atm-if>\r\n	<atm-if what=\"{[\'object2\'][\'fields\'][9][\'fileExtension\']} == \'mp3\'\">\r\n		<script type=\"text/javascript\">\r\n			swfobject.embedSWF(\'{constant:string:PATH_REALROOT_WR}/automne/playermp3/player_mp3.swf\', \'media-{[\'object2\'][\'id\']}\', \'200\', \'20\', \'9.0.0\', \'{constant:string:PATH_REALROOT_WR}/automne/swfobject/expressInstall.swf\', {mp3:\'{[\'object2\'][\'fields\'][9][\'file\']}\', configxml:\'{constant:string:PATH_REALROOT_WR}/automne/playermp3/config_playermp3.xml\'}, {wmode:\'transparent\'}, {\'style\':\'float:right;\'});\r\n		</script>\r\n		<div id=\"media-{[\'object2\'][\'id\']}\" class=\"pmedias-audio\" style=\"width:200px;height:20px;float:right;\">\r\n			<p><a href=\"http://www.adobe.com/go/getflashplayer\" target=\"_blank\"><img src=\"http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif\" alt=\"Get Adobe Flash player\" /></a></p>\r\n		</div>\r\n	</atm-if>\r\n	<atm-if what=\"{[\'object2\'][\'fields\'][9][\'thumbname\']} &amp;&amp; {[\'object2\'][\'fields\'][9][\'fileExtension\']} != \'flv\' &amp;&amp; {[\'object2\'][\'fields\'][9][\'fileExtension\']} != \'mp3\'\">\r\n		<p style=\"float:right;\" class=\"pmedias-file\"><a href=\"{[\'object2\'][\'fields\'][9][\'file\']}\" target=\"_blank\"><img src=\"{[\'object2\'][\'fields\'][9][\'thumb\']|200}\" /></a></p>\r\n	</atm-if>\r\n	<atm-if what=\"!{[\'object2\'][\'fields\'][9][\'thumbname\']} &amp;&amp; ({[\'object2\'][\'fields\'][9][\'fileExtension\']} == \'jpg\' || {[\'object2\'][\'fields\'][9][\'fileExtension\']} == \'gif\' || {[\'object2\'][\'fields\'][9][\'fileExtension\']} == \'png\')\">\r\n		<p style=\"float:right;\" class=\"pmedias-image\"><a href=\"{[\'object2\'][\'fields\'][9][\'file\']}\" target=\"_blank\"><img src=\"{[\'object2\'][\'fields\'][9][\'file\']|200}\" /></a></p>\r\n	</atm-if>\r\n	<p>{[\'object2\'][\'fields\'][9][\'fieldname\']} : <strong><atm-if what=\"{[\'object2\'][\'fields\'][9][\'fileIcon\']}\"><img src=\"{[\'object2\'][\'fields\'][9][\'fileIcon\']}\" alt=\"{[\'object2\'][\'fields\'][9][\'fileExtension\']}\" title=\"{[\'object2\'][\'fields\'][9][\'fileExtension\']}\" /></atm-if> {[\'object2\'][\'fields\'][9][\'fileHTML\']} ({[\'object2\'][\'fields\'][9][\'fileSize\']}Mo)</strong></p>\r\n	<p>{[\'object2\'][\'fields\'][8][\'fieldname\']} : <strong>{[\'object2\'][\'fields\'][8][\'label\']}</strong></p>\r\n	<div style=\"clear:both;\"> </div>\r\n</div>');
+INSERT INTO `mod_object_definition` (`id_mod`, `uuid_mod`, `label_id_mod`, `description_id_mod`, `resource_usage_mod`, `module_mod`, `admineditable_mod`, `composedLabel_mod`, `previewURL_mod`, `indexable_mod`, `indexURL_mod`, `compiledIndexURL_mod`, `resultsDefinition_mod`) VALUES(1, 'e583bc28-0baa-102e-80e2-001a6470da26', 1, 2, 1, 'pnews', 0, '', '5||item={[''object1''][''id'']}', 0, '', '', '');
+INSERT INTO `mod_object_definition` (`id_mod`, `uuid_mod`, `label_id_mod`, `description_id_mod`, `resource_usage_mod`, `module_mod`, `admineditable_mod`, `composedLabel_mod`, `previewURL_mod`, `indexable_mod`, `indexURL_mod`, `compiledIndexURL_mod`, `resultsDefinition_mod`) VALUES(2, 'e583bd90-0baa-102e-80e2-001a6470da26', 70, 71, 1, 'pmedia', 0, '', '6||item={[''object2''][''id'']}', 0, '', '', '<div class="pmedias">\r\n	<atm-if what="{[''object2''][''fields''][9][''fileExtension'']} == ''flv''">\r\n		<atm-if what="{[''object2''][''fields''][9][''thumbnail'']}">\r\n			<script type="text/javascript">\r\n				swfobject.embedSWF(''{constant:string:PATH_REALROOT_WR}/automne/playerflv/player_flv.swf'', ''media-{[''object2''][''id'']}'', ''320'', ''200'', ''9.0.0'', ''{constant:string:PATH_REALROOT_WR}/automne/swfobject/expressInstall.swf'', {flv:''{[''object2''][''fields''][9][''file'']}'', configxml:''{constant:string:PATH_REALROOT_WR}/automne/playerflv/config_playerflv.xml'', startimage:''{[''object2''][''fields''][9][''thumb'']}''}, {allowfullscreen:true, wmode:''transparent''}, {''style'':''float:right;''});\r\n			</script>\r\n		</atm-if>\r\n		<atm-if what="!{[''object2''][''fields''][9][''thumbnail'']}">\r\n			<script type="text/javascript">\r\n				swfobject.embedSWF(''{constant:string:PATH_REALROOT_WR}/automne/playerflv/player_flv.swf'', ''media-{[''object2''][''id'']}'', ''320'', ''200'', ''9.0.0'', ''{constant:string:PATH_REALROOT_WR}/automne/swfobject/expressInstall.swf'', {flv:''{[''object2''][''fields''][9][''file'']}'', configxml:''{constant:string:PATH_REALROOT_WR}/automne/playerflv/config_playerflv.xml''}, {allowfullscreen:true, wmode:''transparent''}, {''style'':''float:right;''});\r\n			</script>\r\n		</atm-if>\r\n		<div id="media-{[''object2''][''id'']}" class="pmedias-video" style="width:320px;height:200px;float:right;">\r\n			<p><a href="http://www.adobe.com/go/getflashplayer" target="_blank"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p>\r\n		</div>\r\n	</atm-if>\r\n	<atm-if what="{[''object2''][''fields''][9][''fileExtension'']} == ''mp3''">\r\n		<script type="text/javascript">\r\n			swfobject.embedSWF(''{constant:string:PATH_REALROOT_WR}/automne/playermp3/player_mp3.swf'', ''media-{[''object2''][''id'']}'', ''200'', ''20'', ''9.0.0'', ''{constant:string:PATH_REALROOT_WR}/automne/swfobject/expressInstall.swf'', {mp3:''{[''object2''][''fields''][9][''file'']}'', configxml:''{constant:string:PATH_REALROOT_WR}/automne/playermp3/config_playermp3.xml''}, {wmode:''transparent''}, {''style'':''float:right;''});\r\n		</script>\r\n		<div id="media-{[''object2''][''id'']}" class="pmedias-audio" style="width:200px;height:20px;float:right;">\r\n			<p><a href="http://www.adobe.com/go/getflashplayer" target="_blank"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p>\r\n		</div>\r\n	</atm-if>\r\n	<atm-if what="{[''object2''][''fields''][9][''thumbname'']} &amp;&amp; {[''object2''][''fields''][9][''fileExtension'']} != ''flv'' &amp;&amp; {[''object2''][''fields''][9][''fileExtension'']} != ''mp3''">\r\n		<p style="float:right;" class="pmedias-file"><a href="{[''object2''][''fields''][9][''file'']}" target="_blank"><img src="{[''object2''][''fields''][9][''thumb'']|200}" /></a></p>\r\n	</atm-if>\r\n	<atm-if what="!{[''object2''][''fields''][9][''thumbname'']} &amp;&amp; ({[''object2''][''fields''][9][''fileExtension'']} == ''jpg'' || {[''object2''][''fields''][9][''fileExtension'']} == ''gif'' || {[''object2''][''fields''][9][''fileExtension'']} == ''png'')">\r\n		<p style="float:right;" class="pmedias-image"><a href="{[''object2''][''fields''][9][''file'']}" target="_blank"><img src="{[''object2''][''fields''][9][''file'']|200}" /></a></p>\r\n	</atm-if>\r\n	<p>{[''object2''][''fields''][9][''fieldname'']} : <strong><atm-if what="{[''object2''][''fields''][9][''fileIcon'']}"><img src="{[''object2''][''fields''][9][''fileIcon'']}" alt="{[''object2''][''fields''][9][''fileExtension'']}" title="{[''object2''][''fields''][9][''fileExtension'']}" /></atm-if> {[''object2''][''fields''][9][''fileHTML'']} ({[''object2''][''fields''][9][''fileSize'']}Mo)</strong></p>\r\n	<p>{[''object2''][''fields''][8][''fieldname'']} : <strong>{[''object2''][''fields''][8][''label'']}</strong></p>\r\n	<div style="clear:both;"> </div>\r\n</div>');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `mod_object_field`
+-- Structure de la table `mod_object_field`
 --
 
 DROP TABLE IF EXISTS `mod_object_field`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mod_object_field` (
-  `id_mof` int(11) unsigned NOT NULL,
+  `id_mof` int(11) unsigned NOT NULL auto_increment,
   `uuid_mof` varchar(36) NOT NULL,
   `object_id_mof` int(11) unsigned NOT NULL default '0',
   `label_id_mof` int(11) unsigned NOT NULL default '0',
@@ -1786,204 +1864,202 @@ CREATE TABLE `mod_object_field` (
   `params_mof` mediumtext NOT NULL,
   PRIMARY KEY  (`id_mof`),
   KEY `object_id_mof` (`object_id_mof`,`type_mof`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mod_object_field`
+-- Contenu de la table `mod_object_field`
 --
 
-INSERT INTO `mod_object_field` (`id_mof`, `uuid_mof`, `object_id_mof`, `label_id_mof`, `desc_id_mof`, `type_mof`, `order_mof`, `system_mof`, `required_mof`, `indexable_mof`, `searchlist_mof`, `searchable_mof`, `params_mof`) VALUES (1,'e58dfdbe-0baa-102e-80e2-001a6470da26',1,3,0,'CMS_object_string',1,0,1,0,0,1,'a:3:{s:9:\"maxLength\";s:3:\"255\";s:7:\"isEmail\";b:0;s:8:\"matchExp\";s:0:\"\";}');
-INSERT INTO `mod_object_field` (`id_mof`, `uuid_mof`, `object_id_mof`, `label_id_mof`, `desc_id_mof`, `type_mof`, `order_mof`, `system_mof`, `required_mof`, `indexable_mof`, `searchlist_mof`, `searchable_mof`, `params_mof`) VALUES (2,'e58dfef4-0baa-102e-80e2-001a6470da26',1,4,5,'CMS_object_text',3,0,1,0,0,1,'a:4:{s:4:\"html\";b:1;s:7:\"toolbar\";s:9:\"BasicLink\";s:12:\"toolbarWidth\";s:3:\"550\";s:13:\"toolbarHeight\";s:3:\"200\";}');
-INSERT INTO `mod_object_field` (`id_mof`, `uuid_mof`, `object_id_mof`, `label_id_mof`, `desc_id_mof`, `type_mof`, `order_mof`, `system_mof`, `required_mof`, `indexable_mof`, `searchlist_mof`, `searchable_mof`, `params_mof`) VALUES (3,'e58dffc6-0baa-102e-80e2-001a6470da26',1,6,7,'CMS_object_text',4,0,0,0,0,1,'a:4:{s:4:\"html\";b:1;s:7:\"toolbar\";s:9:\"BasicLink\";s:12:\"toolbarWidth\";s:3:\"550\";s:13:\"toolbarHeight\";s:3:\"500\";}');
-INSERT INTO `mod_object_field` (`id_mof`, `uuid_mof`, `object_id_mof`, `label_id_mof`, `desc_id_mof`, `type_mof`, `order_mof`, `system_mof`, `required_mof`, `indexable_mof`, `searchlist_mof`, `searchable_mof`, `params_mof`) VALUES (4,'e58e0098-0baa-102e-80e2-001a6470da26',1,8,0,'CMS_object_image',5,0,0,0,0,1,'a:8:{s:8:\"maxWidth\";s:0:\"\";s:9:\"maxHeight\";s:0:\"\";s:8:\"makeZoom\";b:1;s:12:\"maxZoomWidth\";s:0:\"\";s:13:\"maxZoomHeight\";s:0:\"\";s:15:\"useDistinctZoom\";b:0;s:14:\"maxWidthPreviz\";s:2:\"16\";s:15:\"legendMandatory\";b:0;}');
-INSERT INTO `mod_object_field` (`id_mof`, `uuid_mof`, `object_id_mof`, `label_id_mof`, `desc_id_mof`, `type_mof`, `order_mof`, `system_mof`, `required_mof`, `indexable_mof`, `searchlist_mof`, `searchable_mof`, `params_mof`) VALUES (5,'e58e016a-0baa-102e-80e2-001a6470da26',1,9,0,'CMS_object_categories',2,0,1,0,1,1,'a:6:{s:15:\"multiCategories\";b:0;s:12:\"rootCategory\";s:1:\"2\";s:12:\"defaultValue\";s:0:\"\";s:15:\"associateUnused\";b:0;s:11:\"selectWidth\";s:0:\"\";s:12:\"selectHeight\";s:0:\"\";}');
-INSERT INTO `mod_object_field` (`id_mof`, `uuid_mof`, `object_id_mof`, `label_id_mof`, `desc_id_mof`, `type_mof`, `order_mof`, `system_mof`, `required_mof`, `indexable_mof`, `searchlist_mof`, `searchable_mof`, `params_mof`) VALUES (6,'e58e023c-0baa-102e-80e2-001a6470da26',2,80,0,'CMS_object_string',1,0,1,0,0,1,'a:3:{s:9:\"maxLength\";s:3:\"255\";s:7:\"isEmail\";b:0;s:8:\"matchExp\";s:0:\"\";}');
-INSERT INTO `mod_object_field` (`id_mof`, `uuid_mof`, `object_id_mof`, `label_id_mof`, `desc_id_mof`, `type_mof`, `order_mof`, `system_mof`, `required_mof`, `indexable_mof`, `searchlist_mof`, `searchable_mof`, `params_mof`) VALUES (7,'e58e0304-0baa-102e-80e2-001a6470da26',2,83,0,'CMS_object_text',2,0,0,0,0,1,'a:4:{s:4:\"html\";b:1;s:7:\"toolbar\";s:9:\"BasicLink\";s:12:\"toolbarWidth\";s:4:\"100%\";s:13:\"toolbarHeight\";s:3:\"200\";}');
-INSERT INTO `mod_object_field` (`id_mof`, `uuid_mof`, `object_id_mof`, `label_id_mof`, `desc_id_mof`, `type_mof`, `order_mof`, `system_mof`, `required_mof`, `indexable_mof`, `searchlist_mof`, `searchable_mof`, `params_mof`) VALUES (8,'e58e03d6-0baa-102e-80e2-001a6470da26',2,84,0,'CMS_object_categories',3,0,1,0,1,1,'a:6:{s:15:\"multiCategories\";b:0;s:12:\"rootCategory\";s:2:\"18\";s:12:\"defaultValue\";s:0:\"\";s:15:\"associateUnused\";b:0;s:11:\"selectWidth\";s:0:\"\";s:12:\"selectHeight\";s:0:\"\";}');
-INSERT INTO `mod_object_field` (`id_mof`, `uuid_mof`, `object_id_mof`, `label_id_mof`, `desc_id_mof`, `type_mof`, `order_mof`, `system_mof`, `required_mof`, `indexable_mof`, `searchlist_mof`, `searchable_mof`, `params_mof`) VALUES (9,'e58e049e-0baa-102e-80e2-001a6470da26',2,85,86,'CMS_object_file',4,0,1,0,1,1,'a:8:{s:12:\"useThumbnail\";b:1;s:13:\"thumbMaxWidth\";s:0:\"\";s:14:\"thumbMaxHeight\";s:0:\"\";s:9:\"fileIcons\";a:18:{s:3:\"doc\";s:7:\"doc.gif\";s:3:\"gif\";s:7:\"gif.gif\";s:4:\"html\";s:8:\"html.gif\";s:3:\"htm\";s:8:\"html.gif\";s:3:\"jpg\";s:7:\"jpg.gif\";s:4:\"jpeg\";s:7:\"jpg.gif\";s:3:\"jpe\";s:7:\"jpg.gif\";s:3:\"mov\";s:7:\"mov.gif\";s:3:\"mp3\";s:7:\"mp3.gif\";s:3:\"pdf\";s:7:\"pdf.gif\";s:3:\"png\";s:7:\"png.gif\";s:3:\"ppt\";s:7:\"ppt.gif\";s:3:\"pps\";s:7:\"ppt.gif\";s:3:\"swf\";s:7:\"swf.gif\";s:3:\"sxw\";s:7:\"sxw.gif\";s:3:\"url\";s:7:\"url.gif\";s:3:\"xls\";s:7:\"xls.gif\";s:3:\"xml\";s:7:\"xml.gif\";}s:8:\"allowFtp\";b:0;s:6:\"ftpDir\";s:13:\"/automne/tmp/\";s:11:\"allowedType\";s:0:\"\";s:14:\"disallowedType\";s:31:\"exe,php,pif,vbs,bat,com,scr,reg\";}');
+INSERT INTO `mod_object_field` (`id_mof`, `uuid_mof`, `object_id_mof`, `label_id_mof`, `desc_id_mof`, `type_mof`, `order_mof`, `system_mof`, `required_mof`, `indexable_mof`, `searchlist_mof`, `searchable_mof`, `params_mof`) VALUES(1, 'e58dfdbe-0baa-102e-80e2-001a6470da26', 1, 3, 0, 'CMS_object_string', 1, 0, 1, 0, 0, 1, 'a:3:{s:9:"maxLength";s:3:"255";s:7:"isEmail";b:0;s:8:"matchExp";s:0:"";}');
+INSERT INTO `mod_object_field` (`id_mof`, `uuid_mof`, `object_id_mof`, `label_id_mof`, `desc_id_mof`, `type_mof`, `order_mof`, `system_mof`, `required_mof`, `indexable_mof`, `searchlist_mof`, `searchable_mof`, `params_mof`) VALUES(2, 'e58dfef4-0baa-102e-80e2-001a6470da26', 1, 4, 5, 'CMS_object_text', 3, 0, 1, 0, 0, 1, 'a:4:{s:4:"html";b:1;s:7:"toolbar";s:9:"BasicLink";s:12:"toolbarWidth";s:3:"550";s:13:"toolbarHeight";s:3:"200";}');
+INSERT INTO `mod_object_field` (`id_mof`, `uuid_mof`, `object_id_mof`, `label_id_mof`, `desc_id_mof`, `type_mof`, `order_mof`, `system_mof`, `required_mof`, `indexable_mof`, `searchlist_mof`, `searchable_mof`, `params_mof`) VALUES(3, 'e58dffc6-0baa-102e-80e2-001a6470da26', 1, 6, 7, 'CMS_object_text', 4, 0, 0, 0, 0, 1, 'a:4:{s:4:"html";b:1;s:7:"toolbar";s:9:"BasicLink";s:12:"toolbarWidth";s:3:"550";s:13:"toolbarHeight";s:3:"500";}');
+INSERT INTO `mod_object_field` (`id_mof`, `uuid_mof`, `object_id_mof`, `label_id_mof`, `desc_id_mof`, `type_mof`, `order_mof`, `system_mof`, `required_mof`, `indexable_mof`, `searchlist_mof`, `searchable_mof`, `params_mof`) VALUES(4, 'e58e0098-0baa-102e-80e2-001a6470da26', 1, 8, 0, 'CMS_object_image', 5, 0, 0, 0, 0, 1, 'a:8:{s:8:"maxWidth";s:0:"";s:9:"maxHeight";s:0:"";s:8:"makeZoom";b:1;s:12:"maxZoomWidth";s:0:"";s:13:"maxZoomHeight";s:0:"";s:15:"useDistinctZoom";b:0;s:14:"maxWidthPreviz";s:2:"16";s:15:"legendMandatory";b:0;}');
+INSERT INTO `mod_object_field` (`id_mof`, `uuid_mof`, `object_id_mof`, `label_id_mof`, `desc_id_mof`, `type_mof`, `order_mof`, `system_mof`, `required_mof`, `indexable_mof`, `searchlist_mof`, `searchable_mof`, `params_mof`) VALUES(5, 'e58e016a-0baa-102e-80e2-001a6470da26', 1, 9, 0, 'CMS_object_categories', 2, 0, 1, 0, 1, 1, 'a:6:{s:15:"multiCategories";b:0;s:12:"rootCategory";s:1:"2";s:12:"defaultValue";s:0:"";s:15:"associateUnused";b:0;s:11:"selectWidth";s:0:"";s:12:"selectHeight";s:0:"";}');
+INSERT INTO `mod_object_field` (`id_mof`, `uuid_mof`, `object_id_mof`, `label_id_mof`, `desc_id_mof`, `type_mof`, `order_mof`, `system_mof`, `required_mof`, `indexable_mof`, `searchlist_mof`, `searchable_mof`, `params_mof`) VALUES(6, 'e58e023c-0baa-102e-80e2-001a6470da26', 2, 80, 0, 'CMS_object_string', 1, 0, 1, 0, 0, 1, 'a:3:{s:9:"maxLength";s:3:"255";s:7:"isEmail";b:0;s:8:"matchExp";s:0:"";}');
+INSERT INTO `mod_object_field` (`id_mof`, `uuid_mof`, `object_id_mof`, `label_id_mof`, `desc_id_mof`, `type_mof`, `order_mof`, `system_mof`, `required_mof`, `indexable_mof`, `searchlist_mof`, `searchable_mof`, `params_mof`) VALUES(7, 'e58e0304-0baa-102e-80e2-001a6470da26', 2, 83, 0, 'CMS_object_text', 2, 0, 0, 0, 0, 1, 'a:4:{s:4:"html";b:1;s:7:"toolbar";s:9:"BasicLink";s:12:"toolbarWidth";s:4:"100%";s:13:"toolbarHeight";s:3:"200";}');
+INSERT INTO `mod_object_field` (`id_mof`, `uuid_mof`, `object_id_mof`, `label_id_mof`, `desc_id_mof`, `type_mof`, `order_mof`, `system_mof`, `required_mof`, `indexable_mof`, `searchlist_mof`, `searchable_mof`, `params_mof`) VALUES(8, 'e58e03d6-0baa-102e-80e2-001a6470da26', 2, 84, 0, 'CMS_object_categories', 3, 0, 1, 0, 1, 1, 'a:6:{s:15:"multiCategories";b:0;s:12:"rootCategory";s:2:"18";s:12:"defaultValue";s:0:"";s:15:"associateUnused";b:0;s:11:"selectWidth";s:0:"";s:12:"selectHeight";s:0:"";}');
+INSERT INTO `mod_object_field` (`id_mof`, `uuid_mof`, `object_id_mof`, `label_id_mof`, `desc_id_mof`, `type_mof`, `order_mof`, `system_mof`, `required_mof`, `indexable_mof`, `searchlist_mof`, `searchable_mof`, `params_mof`) VALUES(9, 'e58e049e-0baa-102e-80e2-001a6470da26', 2, 85, 86, 'CMS_object_file', 4, 0, 1, 0, 1, 1, 'a:8:{s:12:"useThumbnail";b:1;s:13:"thumbMaxWidth";s:0:"";s:14:"thumbMaxHeight";s:0:"";s:9:"fileIcons";a:18:{s:3:"doc";s:7:"doc.gif";s:3:"gif";s:7:"gif.gif";s:4:"html";s:8:"html.gif";s:3:"htm";s:8:"html.gif";s:3:"jpg";s:7:"jpg.gif";s:4:"jpeg";s:7:"jpg.gif";s:3:"jpe";s:7:"jpg.gif";s:3:"mov";s:7:"mov.gif";s:3:"mp3";s:7:"mp3.gif";s:3:"pdf";s:7:"pdf.gif";s:3:"png";s:7:"png.gif";s:3:"ppt";s:7:"ppt.gif";s:3:"pps";s:7:"ppt.gif";s:3:"swf";s:7:"swf.gif";s:3:"sxw";s:7:"sxw.gif";s:3:"url";s:7:"url.gif";s:3:"xls";s:7:"xls.gif";s:3:"xml";s:7:"xml.gif";}s:8:"allowFtp";b:0;s:6:"ftpDir";s:13:"/automne/tmp/";s:11:"allowedType";s:0:"";s:14:"disallowedType";s:31:"exe,php,pif,vbs,bat,com,scr,reg";}');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `mod_object_i18nm`
+-- Structure de la table `mod_object_i18nm`
 --
 
 DROP TABLE IF EXISTS `mod_object_i18nm`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mod_object_i18nm` (
-  `id_i18nm` int(11) unsigned NOT NULL,
+  `id_i18nm` int(11) unsigned NOT NULL auto_increment,
   `code_i18nm` char(2) NOT NULL default '',
   `value_i18nm` mediumtext NOT NULL,
   UNIQUE KEY `id` (`id_i18nm`,`code_i18nm`),
   KEY `code` (`code_i18nm`),
   KEY `id_2` (`id_i18nm`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mod_object_i18nm`
+-- Contenu de la table `mod_object_i18nm`
 --
 
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (1,'fr','Actualités');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (1,'en','News');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (2,'fr','Cet élément permet de saisir des textes catégorisés et soumis à une date de publication.');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (2,'en','This item allows you to enter texts categorized and subject to publication date.');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (3,'fr','Titre');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (3,'en','Title');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (4,'fr','Introduction');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (4,'en','Introduction');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (5,'fr','Visible sur la page d\'accueil');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (5,'en','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (6,'fr','Texte');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (6,'en','Text');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (7,'fr','Ce texte sera visible dans le détail d\'une actualité');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (7,'en','This text will be visible in the news detail');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (8,'fr','Image');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (8,'en','Image');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (9,'fr','Catégorie');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (9,'en','Category');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (10,'fr','Automne : Actualités');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (10,'en','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (11,'fr','Fil RSS des actualités de la démonstration d\'Automne');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (11,'en','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (13,'fr','Un document est un fichier Word, PDF au autre complété par un titre, une description, etc.');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (13,'en','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (20,'fr','Insérez un lien vers un document français dans vos textes.');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (20,'en','Insert a link to a french document into your texts');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (22,'fr','Insérez un lien vers un document anglais dans vos textes');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (22,'en','Insert a link to an english document into your texts');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (24,'fr','Cette ressource permet de publier des images soumises à validation');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (24,'en','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (26,'fr','Permet de catégoriser les images');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (26,'en','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (29,'fr','Titre de l\'image');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (29,'en','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (31,'fr','Image de la photothèque, alignée à droite');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (31,'en','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (33,'fr','Image de la photothèque, alignée à gauche');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (33,'en','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (34,'fr','RSS de la photothèque');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (34,'en','Pictures RSS');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (35,'fr','Fil RSS de la photothèque');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (35,'en','Pictures RSS feed');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (36,'fr','Actualités de Automne');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (36,'en','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (37,'fr','Flux RSS du site de démonstration d\'automne');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (37,'en','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (38,'fr','Actualités de Automne');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (38,'en','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (39,'fr','Flux RSS du site de démonstration d\'automne');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (39,'en','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (40,'fr','Actualités de la démo Automne');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (40,'en','News of Automne demo');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (41,'fr','Flux RSS du site de démonstration d\'Automne');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (41,'en','RSS feed of the Automne demonstration website.');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (42,'fr','Média');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (42,'en','Media');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (43,'fr','Fichier média à télécharger. Ce peut-être une vidéo (flv), un son (mp3), une image (jpg, png, gif) ou bien tout autre document (doc, pdf, txt, etc.).');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (43,'en','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (44,'fr','Média');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (44,'en','Media');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (45,'fr','test');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (45,'en','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (46,'fr','Média');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (46,'en','Media');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (47,'fr','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (47,'en','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (48,'fr','Média');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (48,'en','Media');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (49,'fr','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (49,'en','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (50,'fr','Média');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (50,'en','Media');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (51,'fr','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (51,'en','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (52,'fr','Média');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (52,'en','Media');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (53,'fr','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (53,'en','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (54,'fr','Média');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (54,'en','Media');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (55,'fr','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (55,'en','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (56,'fr','Média');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (56,'en','Media');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (57,'fr','test');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (57,'en','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (58,'fr','Média');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (58,'en','Media');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (59,'fr','test');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (59,'en','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (60,'fr','Média');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (60,'en','Media');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (61,'fr','test');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (61,'en','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (62,'fr','Média');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (62,'en','Media');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (63,'fr','test');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (63,'en','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (64,'fr','Média');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (64,'en','Media');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (65,'fr','test');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (65,'en','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (66,'fr','Média');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (66,'en','Media');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (67,'fr','test');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (67,'en','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (68,'fr','Média');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (68,'en','Media');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (69,'fr','test');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (69,'en','');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (70,'fr','Média');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (70,'en','Media');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (71,'fr','Média à télécharger de type Vidéo (flv), Image (jpg, gif, png), Son (mp3) ou tout autre type de fichier (doc, pdf, etc.).');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (71,'en','Downloadable Media of type Video (flv), image (jpg, gif, png), Audio (mp3) or any other file type (doc, pdf, etc.).');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (72,'fr','Titre');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (72,'en','Title');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (73,'fr','Titre');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (73,'en','Title');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (74,'fr','Titre');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (74,'en','Title');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (75,'fr','Titre');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (75,'en','Title');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (76,'fr','Titre');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (76,'en','Title');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (77,'fr','Titre');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (77,'en','Title');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (78,'fr','Titre');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (78,'en','Title');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (79,'fr','Titre');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (79,'en','Title');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (80,'fr','Titre');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (80,'en','Title');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (81,'fr','Description');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (82,'fr','Description');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (83,'fr','Description');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (83,'en','Description');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (84,'fr','Catégorie');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (84,'en','Category');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (85,'fr','Fichier');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (85,'en','File');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (86,'fr','Média à télécharger de type Vidéo (flv), Image (jpg, gif, png), Son (mp3) ou tout autre type de fichier (doc, pdf, etc.).');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (86,'en','Downloadable Media type Video (flv), image (jpg, gif, png), Audio (mp3) or any other file type (doc, pdf, etc.).');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (87,'fr','Insérer un Média');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (87,'en','Insert a Media');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (88,'fr','Insérez un Média depuis la Médiathèque directement dans votre texte.');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (88,'en','Insert a Media from the Mediacenter directly into your text.');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (89,'fr','Lien vers un Média');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (89,'en','Link to Media');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (90,'fr','Faites un lien depuis votre texte sélectionné vers un Média géré par le module Médiathèque');
-INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES (90,'en','Make a link from your selected text to a Media managed by the Mediacenter module');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(1, 'fr', 'Actualités');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(1, 'en', 'News');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(2, 'fr', 'Cet élément permet de saisir des textes catégorisés et soumis à une date de publication.');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(2, 'en', 'This item allows you to enter texts categorized and subject to publication date.');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(3, 'fr', 'Titre');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(3, 'en', 'Title');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(4, 'fr', 'Introduction');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(4, 'en', 'Introduction');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(5, 'fr', 'Visible sur la page d''accueil');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(5, 'en', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(6, 'fr', 'Texte');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(6, 'en', 'Text');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(7, 'fr', 'Ce texte sera visible dans le détail d''une actualité');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(7, 'en', 'This text will be visible in the news detail');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(8, 'fr', 'Image');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(8, 'en', 'Image');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(9, 'fr', 'Catégorie');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(9, 'en', 'Category');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(10, 'fr', 'Automne : Actualités');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(10, 'en', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(11, 'fr', 'Fil RSS des actualités de la démonstration d''Automne');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(11, 'en', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(13, 'fr', 'Un document est un fichier Word, PDF au autre complété par un titre, une description, etc.');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(13, 'en', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(20, 'fr', 'Insérez un lien vers un document français dans vos textes.');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(20, 'en', 'Insert a link to a french document into your texts');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(22, 'fr', 'Insérez un lien vers un document anglais dans vos textes');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(22, 'en', 'Insert a link to an english document into your texts');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(24, 'fr', 'Cette ressource permet de publier des images soumises à validation');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(24, 'en', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(26, 'fr', 'Permet de catégoriser les images');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(26, 'en', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(29, 'fr', 'Titre de l''image');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(29, 'en', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(31, 'fr', 'Image de la photothèque, alignée à droite');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(31, 'en', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(33, 'fr', 'Image de la photothèque, alignée à gauche');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(33, 'en', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(34, 'fr', 'RSS de la photothèque');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(34, 'en', 'Pictures RSS');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(35, 'fr', 'Fil RSS de la photothèque');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(35, 'en', 'Pictures RSS feed');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(36, 'fr', 'Actualités de Automne');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(36, 'en', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(37, 'fr', 'Flux RSS du site de démonstration d''automne');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(37, 'en', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(38, 'fr', 'Actualités de Automne');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(38, 'en', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(39, 'fr', 'Flux RSS du site de démonstration d''automne');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(39, 'en', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(40, 'fr', 'Actualités de la démo Automne');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(40, 'en', 'News of Automne demo');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(41, 'fr', 'Flux RSS du site de démonstration d''Automne');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(41, 'en', 'RSS feed of the Automne demonstration website.');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(42, 'fr', 'Média');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(42, 'en', 'Media');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(43, 'fr', 'Fichier média à télécharger. Ce peut-être une vidéo (flv), un son (mp3), une image (jpg, png, gif) ou bien tout autre document (doc, pdf, txt, etc.).');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(43, 'en', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(44, 'fr', 'Média');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(44, 'en', 'Media');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(45, 'fr', 'test');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(45, 'en', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(46, 'fr', 'Média');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(46, 'en', 'Media');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(47, 'fr', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(47, 'en', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(48, 'fr', 'Média');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(48, 'en', 'Media');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(49, 'fr', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(49, 'en', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(50, 'fr', 'Média');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(50, 'en', 'Media');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(51, 'fr', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(51, 'en', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(52, 'fr', 'Média');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(52, 'en', 'Media');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(53, 'fr', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(53, 'en', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(54, 'fr', 'Média');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(54, 'en', 'Media');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(55, 'fr', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(55, 'en', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(56, 'fr', 'Média');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(56, 'en', 'Media');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(57, 'fr', 'test');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(57, 'en', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(58, 'fr', 'Média');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(58, 'en', 'Media');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(59, 'fr', 'test');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(59, 'en', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(60, 'fr', 'Média');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(60, 'en', 'Media');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(61, 'fr', 'test');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(61, 'en', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(62, 'fr', 'Média');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(62, 'en', 'Media');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(63, 'fr', 'test');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(63, 'en', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(64, 'fr', 'Média');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(64, 'en', 'Media');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(65, 'fr', 'test');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(65, 'en', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(66, 'fr', 'Média');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(66, 'en', 'Media');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(67, 'fr', 'test');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(67, 'en', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(68, 'fr', 'Média');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(68, 'en', 'Media');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(69, 'fr', 'test');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(69, 'en', '');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(70, 'fr', 'Média');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(70, 'en', 'Media');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(71, 'fr', 'Média à télécharger de type Vidéo (flv), Image (jpg, gif, png), Son (mp3) ou tout autre type de fichier (doc, pdf, etc.).');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(71, 'en', 'Downloadable Media of type Video (flv), image (jpg, gif, png), Audio (mp3) or any other file type (doc, pdf, etc.).');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(72, 'fr', 'Titre');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(72, 'en', 'Title');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(73, 'fr', 'Titre');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(73, 'en', 'Title');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(74, 'fr', 'Titre');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(74, 'en', 'Title');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(75, 'fr', 'Titre');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(75, 'en', 'Title');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(76, 'fr', 'Titre');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(76, 'en', 'Title');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(77, 'fr', 'Titre');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(77, 'en', 'Title');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(78, 'fr', 'Titre');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(78, 'en', 'Title');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(79, 'fr', 'Titre');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(79, 'en', 'Title');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(80, 'fr', 'Titre');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(80, 'en', 'Title');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(81, 'fr', 'Description');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(82, 'fr', 'Description');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(83, 'fr', 'Description');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(83, 'en', 'Description');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(84, 'fr', 'Catégorie');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(84, 'en', 'Category');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(85, 'fr', 'Fichier');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(85, 'en', 'File');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(86, 'fr', 'Média à télécharger de type Vidéo (flv), Image (jpg, gif, png), Son (mp3) ou tout autre type de fichier (doc, pdf, etc.).');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(86, 'en', 'Downloadable Media type Video (flv), image (jpg, gif, png), Audio (mp3) or any other file type (doc, pdf, etc.).');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(87, 'fr', 'Insérer un Média');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(87, 'en', 'Insert a Media');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(88, 'fr', 'Insérez un Média depuis la Médiathèque directement dans votre texte.');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(88, 'en', 'Insert a Media from the Mediacenter directly into your text.');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(89, 'fr', 'Lien vers un Média');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(89, 'en', 'Link to Media');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(90, 'fr', 'Faites un lien depuis votre texte sélectionné vers un Média géré par le module Médiathèque');
+INSERT INTO `mod_object_i18nm` (`id_i18nm`, `code_i18nm`, `value_i18nm`) VALUES(90, 'en', 'Make a link from your selected text to a Media managed by the Mediacenter module');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `mod_object_plugin_definition`
+-- Structure de la table `mod_object_plugin_definition`
 --
 
 DROP TABLE IF EXISTS `mod_object_plugin_definition`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mod_object_plugin_definition` (
-  `id_mowd` int(11) unsigned NOT NULL,
+  `id_mowd` int(11) unsigned NOT NULL auto_increment,
   `uuid_mowd` varchar(36) NOT NULL,
   `object_id_mowd` int(11) unsigned NOT NULL default '0',
   `label_id_mowd` int(11) unsigned NOT NULL default '0',
@@ -1993,66 +2069,64 @@ CREATE TABLE `mod_object_plugin_definition` (
   `compiled_definition_mowd` mediumtext NOT NULL,
   PRIMARY KEY  (`id_mowd`),
   KEY `object_id_mowd` (`object_id_mowd`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mod_object_plugin_definition`
+-- Contenu de la table `mod_object_plugin_definition`
 --
 
-INSERT INTO `mod_object_plugin_definition` (`id_mowd`, `uuid_mowd`, `object_id_mowd`, `label_id_mowd`, `description_id_mowd`, `query_mowd`, `definition_mowd`, `compiled_definition_mowd`) VALUES (1,'e59d665a-0baa-102e-80e2-001a6470da26',2,87,88,'a:1:{i:8;s:1:\"0\";}','<atm-plugin language=\"fr\">\r\n    <atm-plugin-valid>\r\n       <atm-if what=\"{[\'object2\'][\'fields\'][9][\'fileExtension\']} == \'flv\'\">\r\n			<atm-if what=\"{[\'object2\'][\'fields\'][9][\'thumbnail\']}\">\r\n				<script type=\"text/javascript\">\r\n					swfobject.embedSWF(\'{constant:string:PATH_REALROOT_WR}/automne/playerflv/player_flv.swf\', \'media-{[\'object2\'][\'id\']}\', \'320\', \'200\', \'9.0.0\', \'{constant:string:PATH_REALROOT_WR}/automne/swfobject/expressInstall.swf\', {flv:\'{[\'object2\'][\'fields\'][9][\'file\']}\', configxml:\'{constant:string:PATH_REALROOT_WR}/automne/playerflv/config_playerflv.xml\', startimage:\'{[\'object2\'][\'fields\'][9][\'thumb\']}\'}, {allowfullscreen:true, wmode:\'transparent\'}, false);\r\n				</script>\r\n			</atm-if>\r\n			<atm-if what=\"!{[\'object2\'][\'fields\'][9][\'thumbnail\']}\">\r\n				<script type=\"text/javascript\">\r\n					swfobject.embedSWF(\'{constant:string:PATH_REALROOT_WR}/automne/playerflv/player_flv.swf\', \'media-{[\'object2\'][\'id\']}\', \'320\', \'200\', \'9.0.0\', \'{constant:string:PATH_REALROOT_WR}/automne/swfobject/expressInstall.swf\', {flv:\'{[\'object2\'][\'fields\'][9][\'file\']}\', configxml:\'{constant:string:PATH_REALROOT_WR}/automne/playerflv/config_playerflv.xml\'}, {allowfullscreen:true, wmode:\'transparent\'}, false);\r\n				</script>\r\n			</atm-if>\r\n			<div id=\"media-{[\'object2\'][\'id\']}\" class=\"pmedias-video\">\r\n				<p><a href=\"http://www.adobe.com/go/getflashplayer\" target=\"_blank\"><img src=\"http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif\" alt=\"Get Adobe Flash player\" /></a></p>\r\n			</div>\r\n		</atm-if>\r\n		<atm-if what=\"{[\'object2\'][\'fields\'][9][\'fileExtension\']} == \'mp3\'\">\r\n			<script type=\"text/javascript\">\r\n				swfobject.embedSWF(\'{constant:string:PATH_REALROOT_WR}/automne/playermp3/player_mp3.swf\', \'media-{[\'object2\'][\'id\']}\', \'200\', \'20\', \'9.0.0\', \'{constant:string:PATH_REALROOT_WR}/automne/swfobject/expressInstall.swf\', {mp3:\'{[\'object2\'][\'fields\'][9][\'file\']}\', configxml:\'{constant:string:PATH_REALROOT_WR}/automne/playermp3/config_playermp3.xml\'}, {wmode:\'transparent\'}, false);\r\n			</script>\r\n			<div id=\"media-{[\'object2\'][\'id\']}\" class=\"pmedias-audio\">\r\n				<p><a href=\"http://www.adobe.com/go/getflashplayer\" target=\"_blank\"><img src=\"http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif\" alt=\"Get Adobe Flash player\" /></a></p>\r\n			</div>\r\n		</atm-if>\r\n		<atm-if what=\"{[\'object2\'][\'fields\'][9][\'fileExtension\']} == \'jpg\' || {[\'object2\'][\'fields\'][9][\'fileExtension\']} == \'gif\' || {[\'object2\'][\'fields\'][9][\'fileExtension\']} == \'png\'\">\r\n			<atm-if what=\"{[\'object2\'][\'fields\'][9][\'thumbname\']}\">\r\n				<a href=\"{[\'object2\'][\'fields\'][9][\'file\']}\" class=\"pmedia-image\" rel=\"atm-enlarge\" target=\"_blank\" title=\"Illustration \'{[\'object2\'][\'label\']}\' ({[\'object2\'][\'fields\'][9][\'fileExtension\']} - {[\'object2\'][\'fields\'][9][\'fileSize\']}Mo)\"><img src=\"{[\'object2\'][\'fields\'][9][\'thumb\']|200}\" alt=\"{[\'object2\'][\'label\']}\" /></a>\r\n			</atm-if>\r\n			<atm-if what=\"!{[\'object2\'][\'fields\'][9][\'thumbname\']}\">\r\n				<a href=\"{[\'object2\'][\'fields\'][9][\'file\']}\" class=\"pmedia-image\" rel=\"atm-enlarge\" target=\"_blank\" title=\"Illustration \'{[\'object2\'][\'label\']}\' ({[\'object2\'][\'fields\'][9][\'fileExtension\']} - {[\'object2\'][\'fields\'][9][\'fileSize\']}Mo)\"><img src=\"{[\'object2\'][\'fields\'][9][\'file\']|200}\" alt=\"{[\'object2\'][\'label\']}\" /></a>\r\n			</atm-if>\r\n		</atm-if>\r\n		<atm-if what=\"{[\'object2\'][\'fields\'][9][\'fileExtension\']} != \'flv\' &amp;&amp; {[\'object2\'][\'fields\'][9][\'fileExtension\']} != \'mp3\' &amp;&amp; {[\'object2\'][\'fields\'][9][\'fileExtension\']} != \'jpg\' &amp;&amp; {[\'object2\'][\'fields\'][9][\'fileExtension\']} != \'gif\' &amp;&amp; {[\'object2\'][\'fields\'][9][\'fileExtension\']} != \'png\'\">\r\n			<atm-if what=\"{[\'object2\'][\'fields\'][9][\'thumbname\']}\">\r\n				<a href=\"{[\'object2\'][\'fields\'][9][\'file\']}\" class=\"pmedia-file\" target=\"_blank\" title=\"Télécharger le document \'{[\'object2\'][\'label\']}\' ({[\'object2\'][\'fields\'][9][\'fileExtension\']} - {[\'object2\'][\'fields\'][9][\'fileSize\']}Mo)\"><img src=\"{[\'object2\'][\'fields\'][9][\'thumb\']|200}\" alt=\"{[\'object2\'][\'label\']}\" /></a>\r\n			</atm-if>\r\n			<atm-if what=\"!{[\'object2\'][\'fields\'][9][\'thumbname\']}\">\r\n				<a href=\"{[\'object2\'][\'fields\'][9][\'file\']}\" class=\"pmedia-file\" target=\"_blank\" title=\"Télécharger le document \'{[\'object2\'][\'label\']}\' ({[\'object2\'][\'fields\'][9][\'fileExtension\']} - {[\'object2\'][\'fields\'][9][\'fileSize\']}Mo)\">{[\'object2\'][\'label\']}</a>\r\n			</atm-if>\r\n		</atm-if>\r\n    </atm-plugin-valid>\r\n	<atm-plugin-view>\r\n        <atm-if what=\"{[\'object2\'][\'fields\'][9][\'fileExtension\']} != \'jpg\' &amp;&amp; {[\'object2\'][\'fields\'][9][\'fileExtension\']} != \'gif\' &amp;&amp; {[\'object2\'][\'fields\'][9][\'fileExtension\']} != \'png\'\">\r\n			{[\'object2\'][\'label\']}\r\n		</atm-if>\r\n    	<atm-if what=\"{[\'object2\'][\'fields\'][9][\'fileExtension\']} == \'jpg\' || {[\'object2\'][\'fields\'][9][\'fileExtension\']} == \'gif\' || {[\'object2\'][\'fields\'][9][\'fileExtension\']} == \'png\'\">\r\n			<atm-if what=\"{[\'object2\'][\'fields\'][9][\'thumbnail\']}\">\r\n				<img src=\"{[\'object2\'][\'fields\'][9][\'thumb\']|200}\" alt=\"{[\'object2\'][\'label\']}\" />\r\n			</atm-if>\r\n			<atm-if what=\"!{[\'object2\'][\'fields\'][9][\'thumbnail\']}\">\r\n				<img src=\"{[\'object2\'][\'fields\'][9][\'file\']|200}\" alt=\"{[\'object2\'][\'label\']}\" />\r\n			</atm-if>\r\n		</atm-if>\r\n    </atm-plugin-view>\r\n</atm-plugin>','<?php\n/*Generated on Tue, 22 Feb 2011 17:29:35 +0100 by Automne (TM) 4.1.0b3 */\nif(!APPLICATION_ENFORCES_ACCESS_CONTROL || (isset($cms_user) && is_a($cms_user, \'CMS_profile_user\') && $cms_user->hasModuleClearance(\'pmedia\', CLEARANCE_MODULE_VIEW))){\n	$content = \"\";\n	$replace = \"\";\n	$atmIfResults = array();\n	if (!isset($objectDefinitions) || !is_array($objectDefinitions)) $objectDefinitions = array();\n	$parameters[\'objectID\'] = 2;\n	if (!isset($cms_language) || (isset($cms_language) && $cms_language->getCode() != \'fr\')) $cms_language = new CMS_language(\'fr\');\n	$parameters[\'public\'] = (isset($parameters[\'public\'])) ? $parameters[\'public\'] : true;\n	if (isset($parameters[\'item\'])) {$parameters[\'objectID\'] = $parameters[\'item\']->getObjectID();} elseif (isset($parameters[\'itemID\']) && sensitiveIO::isPositiveInteger($parameters[\'itemID\']) && !isset($parameters[\'objectID\'])) $parameters[\'objectID\'] = CMS_poly_object_catalog::getObjectDefinitionByID($parameters[\'itemID\']);\n	if (!isset($object) || !is_array($object)) $object = array();\n	if (!isset($object[2])) $object[2] = new CMS_poly_object(2, 0, array(), $parameters[\'public\']);\n	$parameters[\'module\'] = \'pmedia\';\n	//PLUGIN TAG START 5_11f393\n	if (!sensitiveIO::isPositiveInteger($parameters[\'itemID\']) || !sensitiveIO::isPositiveInteger($parameters[\'objectID\'])) {\n		CMS_grandFather::raiseError(\'Error into atm-plugin tag : can\\\'t found object infos to use into : $parameters[\\\'itemID\\\'] and $parameters[\\\'objectID\\\']\');\n	} else {\n		//search needed object (need to search it for publications and rights purpose)\n		if (!isset($objectDefinitions[$parameters[\'objectID\']])) {\n			$objectDefinitions[$parameters[\'objectID\']] = new CMS_poly_object_definition($parameters[\'objectID\']);\n		}\n		$search_5_11f393 = new CMS_object_search($objectDefinitions[$parameters[\'objectID\']], $parameters[\'public\']);\n		$search_5_11f393->addWhereCondition(\'item\', $parameters[\'itemID\']);\n		$results_5_11f393 = $search_5_11f393->search();\n		if (isset($results_5_11f393[$parameters[\'itemID\']]) && is_object($results_5_11f393[$parameters[\'itemID\']])) {\n			$object[$parameters[\'objectID\']] = $results_5_11f393[$parameters[\'itemID\']];\n		} else {\n			$object[$parameters[\'objectID\']] = new CMS_poly_object($parameters[\'objectID\'], 0, array(), $parameters[\'public\']);\n		}\n		unset($search_5_11f393);\n		$parameters[\'has-plugin-view\'] = true;\n		//PLUGIN-VALID TAG START 6_4c413d\n		if ($object[$parameters[\'objectID\']]->isInUserSpace() && !(@$parameters[\'plugin-view\'] && @$parameters[\'has-plugin-view\']) ) {\n			//ATM-IF TAG START [ref. 7_89cf47]\n			$ifcondition_7_89cf47 = CMS_polymod_definition_parsing::replaceVars(CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(\'fileExtension\',\'\')).\" == \'flv\'\", @$replace);\n			if ($ifcondition_7_89cf47):\n				$func_7_89cf47 = create_function(\"\",\"return (\".$ifcondition_7_89cf47.\");\");\n				if ($func_7_89cf47()):\n					//ATM-IF TAG START [ref. 8_f8132a]\n					$ifcondition_8_f8132a = CMS_polymod_definition_parsing::replaceVars(CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(\'thumbnail\',\'\')), @$replace);\n					if ($ifcondition_8_f8132a):\n						$func_8_f8132a = create_function(\"\",\"return (\".$ifcondition_8_f8132a.\");\");\n						if ($func_8_f8132a()):\n							$content .=\"\n							<script type=\\\"text/javascript\\\">\n							swfobject.embedSWF(\'\".CMS_poly_definition_functions::getVarContent(\"constant\", \"PATH_REALROOT_WR\", \"string\", @$PATH_REALROOT_WR).\"/automne/playerflv/player_flv.swf\', \'media-\".$object[2]->getValue(\'id\',\'\').\"\', \'320\', \'200\', \'9.0.0\', \'\".CMS_poly_definition_functions::getVarContent(\"constant\", \"PATH_REALROOT_WR\", \"string\", @$PATH_REALROOT_WR).\"/automne/swfobject/expressInstall.swf\', {flv:\'\".$object[2]->objectValues(9)->getValue(\'file\',\'\').\"\', configxml:\'\".CMS_poly_definition_functions::getVarContent(\"constant\", \"PATH_REALROOT_WR\", \"string\", @$PATH_REALROOT_WR).\"/automne/playerflv/config_playerflv.xml\', startimage:\'\".$object[2]->objectValues(9)->getValue(\'thumb\',\'\').\"\'}, {allowfullscreen:true, wmode:\'transparent\'}, false);\n							</script>\n							\";\n						endif;\n						unset($func_8_f8132a);\n					endif;\n					unset($ifcondition_8_f8132a);\n					//ATM-IF TAG END [ref. 8_f8132a]\n					//ATM-IF TAG START [ref. 9_c27d2c]\n					$ifcondition_9_c27d2c = CMS_polymod_definition_parsing::replaceVars(\"!\".CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(\'thumbnail\',\'\')), @$replace);\n					if ($ifcondition_9_c27d2c):\n						$func_9_c27d2c = create_function(\"\",\"return (\".$ifcondition_9_c27d2c.\");\");\n						if ($func_9_c27d2c()):\n							$content .=\"\n							<script type=\\\"text/javascript\\\">\n							swfobject.embedSWF(\'\".CMS_poly_definition_functions::getVarContent(\"constant\", \"PATH_REALROOT_WR\", \"string\", @$PATH_REALROOT_WR).\"/automne/playerflv/player_flv.swf\', \'media-\".$object[2]->getValue(\'id\',\'\').\"\', \'320\', \'200\', \'9.0.0\', \'\".CMS_poly_definition_functions::getVarContent(\"constant\", \"PATH_REALROOT_WR\", \"string\", @$PATH_REALROOT_WR).\"/automne/swfobject/expressInstall.swf\', {flv:\'\".$object[2]->objectValues(9)->getValue(\'file\',\'\').\"\', configxml:\'\".CMS_poly_definition_functions::getVarContent(\"constant\", \"PATH_REALROOT_WR\", \"string\", @$PATH_REALROOT_WR).\"/automne/playerflv/config_playerflv.xml\'}, {allowfullscreen:true, wmode:\'transparent\'}, false);\n							</script>\n							\";\n						endif;\n						unset($func_9_c27d2c);\n					endif;\n					unset($ifcondition_9_c27d2c);\n					//ATM-IF TAG END [ref. 9_c27d2c]\n					$content .=\"\n					<div id=\\\"media-\".$object[2]->getValue(\'id\',\'\').\"\\\" class=\\\"pmedias-video\\\">\n					<p><a href=\\\"http://www.adobe.com/go/getflashplayer\\\" target=\\\"_blank\\\"><img src=\\\"http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif\\\" alt=\\\"Get Adobe Flash player\\\" /></a></p>\n					</div>\n					\";\n				endif;\n				unset($func_7_89cf47);\n			endif;\n			unset($ifcondition_7_89cf47);\n			//ATM-IF TAG END [ref. 7_89cf47]\n			//ATM-IF TAG START [ref. 10_319d03]\n			$ifcondition_10_319d03 = CMS_polymod_definition_parsing::replaceVars(CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(\'fileExtension\',\'\')).\" == \'mp3\'\", @$replace);\n			if ($ifcondition_10_319d03):\n				$func_10_319d03 = create_function(\"\",\"return (\".$ifcondition_10_319d03.\");\");\n				if ($func_10_319d03()):\n					$content .=\"\n					<script type=\\\"text/javascript\\\">\n					swfobject.embedSWF(\'\".CMS_poly_definition_functions::getVarContent(\"constant\", \"PATH_REALROOT_WR\", \"string\", @$PATH_REALROOT_WR).\"/automne/playermp3/player_mp3.swf\', \'media-\".$object[2]->getValue(\'id\',\'\').\"\', \'200\', \'20\', \'9.0.0\', \'\".CMS_poly_definition_functions::getVarContent(\"constant\", \"PATH_REALROOT_WR\", \"string\", @$PATH_REALROOT_WR).\"/automne/swfobject/expressInstall.swf\', {mp3:\'\".$object[2]->objectValues(9)->getValue(\'file\',\'\').\"\', configxml:\'\".CMS_poly_definition_functions::getVarContent(\"constant\", \"PATH_REALROOT_WR\", \"string\", @$PATH_REALROOT_WR).\"/automne/playermp3/config_playermp3.xml\'}, {wmode:\'transparent\'}, false);\n					</script>\n					<div id=\\\"media-\".$object[2]->getValue(\'id\',\'\').\"\\\" class=\\\"pmedias-audio\\\">\n					<p><a href=\\\"http://www.adobe.com/go/getflashplayer\\\" target=\\\"_blank\\\"><img src=\\\"http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif\\\" alt=\\\"Get Adobe Flash player\\\" /></a></p>\n					</div>\n					\";\n				endif;\n				unset($func_10_319d03);\n			endif;\n			unset($ifcondition_10_319d03);\n			//ATM-IF TAG END [ref. 10_319d03]\n			//ATM-IF TAG START [ref. 11_407247]\n			$ifcondition_11_407247 = CMS_polymod_definition_parsing::replaceVars(CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(\'fileExtension\',\'\')).\" == \'jpg\' || \".CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(\'fileExtension\',\'\')).\" == \'gif\' || \".CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(\'fileExtension\',\'\')).\" == \'png\'\", @$replace);\n			if ($ifcondition_11_407247):\n				$func_11_407247 = create_function(\"\",\"return (\".$ifcondition_11_407247.\");\");\n				if ($func_11_407247()):\n					//ATM-IF TAG START [ref. 12_04e79f]\n					$ifcondition_12_04e79f = CMS_polymod_definition_parsing::replaceVars(CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(\'thumbname\',\'\')), @$replace);\n					if ($ifcondition_12_04e79f):\n						$func_12_04e79f = create_function(\"\",\"return (\".$ifcondition_12_04e79f.\");\");\n						if ($func_12_04e79f()):\n							$content .=\"\n							<a href=\\\"\".$object[2]->objectValues(9)->getValue(\'file\',\'\').\"\\\" class=\\\"pmedia-image\\\" rel=\\\"atm-enlarge\\\" target=\\\"_blank\\\" title=\\\"Illustration \'\".$object[2]->getValue(\'label\',\'\').\"\' (\".$object[2]->objectValues(9)->getValue(\'fileExtension\',\'\').\" - \".$object[2]->objectValues(9)->getValue(\'fileSize\',\'\').\"Mo)\\\"><img src=\\\"\".$object[2]->objectValues(9)->getValue(\'thumb\',\'200\').\"\\\" alt=\\\"\".$object[2]->getValue(\'label\',\'\').\"\\\" /></a>\n							\";\n						endif;\n						unset($func_12_04e79f);\n					endif;\n					unset($ifcondition_12_04e79f);\n					//ATM-IF TAG END [ref. 12_04e79f]\n					//ATM-IF TAG START [ref. 13_0320a1]\n					$ifcondition_13_0320a1 = CMS_polymod_definition_parsing::replaceVars(\"!\".CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(\'thumbname\',\'\')), @$replace);\n					if ($ifcondition_13_0320a1):\n						$func_13_0320a1 = create_function(\"\",\"return (\".$ifcondition_13_0320a1.\");\");\n						if ($func_13_0320a1()):\n							$content .=\"\n							<a href=\\\"\".$object[2]->objectValues(9)->getValue(\'file\',\'\').\"\\\" class=\\\"pmedia-image\\\" rel=\\\"atm-enlarge\\\" target=\\\"_blank\\\" title=\\\"Illustration \'\".$object[2]->getValue(\'label\',\'\').\"\' (\".$object[2]->objectValues(9)->getValue(\'fileExtension\',\'\').\" - \".$object[2]->objectValues(9)->getValue(\'fileSize\',\'\').\"Mo)\\\"><img src=\\\"\".$object[2]->objectValues(9)->getValue(\'file\',\'200\').\"\\\" alt=\\\"\".$object[2]->getValue(\'label\',\'\').\"\\\" /></a>\n							\";\n						endif;\n						unset($func_13_0320a1);\n					endif;\n					unset($ifcondition_13_0320a1);\n					//ATM-IF TAG END [ref. 13_0320a1]\n				endif;\n				unset($func_11_407247);\n			endif;\n			unset($ifcondition_11_407247);\n			//ATM-IF TAG END [ref. 11_407247]\n			//ATM-IF TAG START [ref. 14_2a49dc]\n			$ifcondition_14_2a49dc = CMS_polymod_definition_parsing::replaceVars(CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(\'fileExtension\',\'\')).\" != \'flv\' && \".CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(\'fileExtension\',\'\')).\" != \'mp3\' && \".CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(\'fileExtension\',\'\')).\" != \'jpg\' && \".CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(\'fileExtension\',\'\')).\" != \'gif\' && \".CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(\'fileExtension\',\'\')).\" != \'png\'\", @$replace);\n			if ($ifcondition_14_2a49dc):\n				$func_14_2a49dc = create_function(\"\",\"return (\".$ifcondition_14_2a49dc.\");\");\n				if ($func_14_2a49dc()):\n					//ATM-IF TAG START [ref. 15_7dfc6e]\n					$ifcondition_15_7dfc6e = CMS_polymod_definition_parsing::replaceVars(CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(\'thumbname\',\'\')), @$replace);\n					if ($ifcondition_15_7dfc6e):\n						$func_15_7dfc6e = create_function(\"\",\"return (\".$ifcondition_15_7dfc6e.\");\");\n						if ($func_15_7dfc6e()):\n							$content .=\"\n							<a href=\\\"\".$object[2]->objectValues(9)->getValue(\'file\',\'\').\"\\\" class=\\\"pmedia-file\\\" target=\\\"_blank\\\" title=\\\"Télécharger le document \'\".$object[2]->getValue(\'label\',\'\').\"\' (\".$object[2]->objectValues(9)->getValue(\'fileExtension\',\'\').\" - \".$object[2]->objectValues(9)->getValue(\'fileSize\',\'\').\"Mo)\\\"><img src=\\\"\".$object[2]->objectValues(9)->getValue(\'thumb\',\'200\').\"\\\" alt=\\\"\".$object[2]->getValue(\'label\',\'\').\"\\\" /></a>\n							\";\n						endif;\n						unset($func_15_7dfc6e);\n					endif;\n					unset($ifcondition_15_7dfc6e);\n					//ATM-IF TAG END [ref. 15_7dfc6e]\n					//ATM-IF TAG START [ref. 16_642288]\n					$ifcondition_16_642288 = CMS_polymod_definition_parsing::replaceVars(\"!\".CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(\'thumbname\',\'\')), @$replace);\n					if ($ifcondition_16_642288):\n						$func_16_642288 = create_function(\"\",\"return (\".$ifcondition_16_642288.\");\");\n						if ($func_16_642288()):\n							$content .=\"\n							<a href=\\\"\".$object[2]->objectValues(9)->getValue(\'file\',\'\').\"\\\" class=\\\"pmedia-file\\\" target=\\\"_blank\\\" title=\\\"Télécharger le document \'\".$object[2]->getValue(\'label\',\'\').\"\' (\".$object[2]->objectValues(9)->getValue(\'fileExtension\',\'\').\" - \".$object[2]->objectValues(9)->getValue(\'fileSize\',\'\').\"Mo)\\\">\".$object[2]->getValue(\'label\',\'\').\"</a>\n							\";\n						endif;\n						unset($func_16_642288);\n					endif;\n					unset($ifcondition_16_642288);\n					//ATM-IF TAG END [ref. 16_642288]\n				endif;\n				unset($func_14_2a49dc);\n			endif;\n			unset($ifcondition_14_2a49dc);\n			//ATM-IF TAG END [ref. 14_2a49dc]\n		}\n		//PLUGIN-VALID END 6_4c413d\n		//PLUGIN-VIEW TAG START 17_db80b7\n		if ($object[$parameters[\'objectID\']]->isInUserSpace() && isset($parameters[\'plugin-view\'])) {\n			//ATM-IF TAG START [ref. 18_0ed96c]\n			$ifcondition_18_0ed96c = CMS_polymod_definition_parsing::replaceVars(CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(\'fileExtension\',\'\')).\" != \'jpg\' && \".CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(\'fileExtension\',\'\')).\" != \'gif\' && \".CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(\'fileExtension\',\'\')).\" != \'png\'\", @$replace);\n			if ($ifcondition_18_0ed96c):\n				$func_18_0ed96c = create_function(\"\",\"return (\".$ifcondition_18_0ed96c.\");\");\n				if ($func_18_0ed96c()):\n					$content .=\"\n					\".$object[2]->getValue(\'label\',\'\').\"\n					\";\n				endif;\n				unset($func_18_0ed96c);\n			endif;\n			unset($ifcondition_18_0ed96c);\n			//ATM-IF TAG END [ref. 18_0ed96c]\n			//ATM-IF TAG START [ref. 19_71e79c]\n			$ifcondition_19_71e79c = CMS_polymod_definition_parsing::replaceVars(CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(\'fileExtension\',\'\')).\" == \'jpg\' || \".CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(\'fileExtension\',\'\')).\" == \'gif\' || \".CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(\'fileExtension\',\'\')).\" == \'png\'\", @$replace);\n			if ($ifcondition_19_71e79c):\n				$func_19_71e79c = create_function(\"\",\"return (\".$ifcondition_19_71e79c.\");\");\n				if ($func_19_71e79c()):\n					//ATM-IF TAG START [ref. 20_9c85fd]\n					$ifcondition_20_9c85fd = CMS_polymod_definition_parsing::replaceVars(CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(\'thumbnail\',\'\')), @$replace);\n					if ($ifcondition_20_9c85fd):\n						$func_20_9c85fd = create_function(\"\",\"return (\".$ifcondition_20_9c85fd.\");\");\n						if ($func_20_9c85fd()):\n							$content .=\"\n							<img src=\\\"\".$object[2]->objectValues(9)->getValue(\'thumb\',\'200\').\"\\\" alt=\\\"\".$object[2]->getValue(\'label\',\'\').\"\\\" />\n							\";\n						endif;\n						unset($func_20_9c85fd);\n					endif;\n					unset($ifcondition_20_9c85fd);\n					//ATM-IF TAG END [ref. 20_9c85fd]\n					//ATM-IF TAG START [ref. 21_e60637]\n					$ifcondition_21_e60637 = CMS_polymod_definition_parsing::replaceVars(\"!\".CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(\'thumbnail\',\'\')), @$replace);\n					if ($ifcondition_21_e60637):\n						$func_21_e60637 = create_function(\"\",\"return (\".$ifcondition_21_e60637.\");\");\n						if ($func_21_e60637()):\n							$content .=\"\n							<img src=\\\"\".$object[2]->objectValues(9)->getValue(\'file\',\'200\').\"\\\" alt=\\\"\".$object[2]->getValue(\'label\',\'\').\"\\\" />\n							\";\n						endif;\n						unset($func_21_e60637);\n					endif;\n					unset($ifcondition_21_e60637);\n					//ATM-IF TAG END [ref. 21_e60637]\n				endif;\n				unset($func_19_71e79c);\n			endif;\n			unset($ifcondition_19_71e79c);\n			//ATM-IF TAG END [ref. 19_71e79c]\n		}\n		//PLUGIN-VIEW END 17_db80b7\n		$content .=\"\n		\";\n	}\n	//PLUGIN TAG END 5_11f393\n	$content = CMS_polymod_definition_parsing::replaceVars($content, $replace);\n	$content .= \'<!--{elements:\'.base64_encode(serialize(array (\n		\'module\' =>\n		array (\n			0 => \'pmedia\',\n		),\n	))).\'}-->\';\n	echo $content;\n	unset($content);\n	unset($replace);}\n	?>');
-INSERT INTO `mod_object_plugin_definition` (`id_mowd`, `uuid_mowd`, `object_id_mowd`, `label_id_mowd`, `description_id_mowd`, `query_mowd`, `definition_mowd`, `compiled_definition_mowd`) VALUES (2,'e59d688a-0baa-102e-80e2-001a6470da26',2,89,90,'a:1:{i:8;s:1:\"0\";}','<atm-plugin language=\"fr\">\r\n    <atm-plugin-valid>\r\n        <a href=\"{[\'object2\'][\'fields\'][9][\'file\']}\" target=\"_blank\" title=\"Télécharger le document \'{[\'object2\'][\'fields\'][9][\'fileLabel\']}\' ({[\'object2\'][\'fields\'][9][\'fileExtension\']} - {[\'object2\'][\'fields\'][9][\'fileSize\']}Mo)\"><atm-if what=\"{[\'object2\'][\'fields\'][9][\'fileIcon\']}\"><img src=\"{[\'object2\'][\'fields\'][9][\'fileIcon\']}\" alt=\"Fichier {[\'object2\'][\'fields\'][9][\'fileExtension\']}\" title=\"Fichier {[\'object2\'][\'fields\'][9][\'fileExtension\']}\" /> </atm-if>{plugin:selection}</a>\r\n    </atm-plugin-valid>\r\n	<atm-plugin-invalid>\r\n        {plugin:selection}\r\n    </atm-plugin-invalid>\r\n</atm-plugin>','<?php\n/*Generated on Tue, 22 Feb 2011 17:13:09 +0100 by Automne (TM) 4.1.0b3 */\nif(!APPLICATION_ENFORCES_ACCESS_CONTROL || (isset($cms_user) && is_a($cms_user, \'CMS_profile_user\') && $cms_user->hasModuleClearance(\'pmedia\', CLEARANCE_MODULE_VIEW))){\n	$content = \"\";\n	$replace = \"\";\n	$atmIfResults = array();\n	if (!isset($objectDefinitions) || !is_array($objectDefinitions)) $objectDefinitions = array();\n	$parameters[\'objectID\'] = 2;\n	if (!isset($cms_language) || (isset($cms_language) && $cms_language->getCode() != \'fr\')) $cms_language = new CMS_language(\'fr\');\n	$parameters[\'public\'] = (isset($parameters[\'public\'])) ? $parameters[\'public\'] : true;\n	if (isset($parameters[\'item\'])) {$parameters[\'objectID\'] = $parameters[\'item\']->getObjectID();} elseif (isset($parameters[\'itemID\']) && sensitiveIO::isPositiveInteger($parameters[\'itemID\']) && !isset($parameters[\'objectID\'])) $parameters[\'objectID\'] = CMS_poly_object_catalog::getObjectDefinitionByID($parameters[\'itemID\']);\n	if (!isset($object) || !is_array($object)) $object = array();\n	if (!isset($object[2])) $object[2] = new CMS_poly_object(2, 0, array(), $parameters[\'public\']);\n	$parameters[\'module\'] = \'pmedia\';\n	//PLUGIN TAG START 5_1d212d\n	if (!sensitiveIO::isPositiveInteger($parameters[\'itemID\']) || !sensitiveIO::isPositiveInteger($parameters[\'objectID\'])) {\n		CMS_grandFather::raiseError(\'Error into atm-plugin tag : can\\\'t found object infos to use into : $parameters[\\\'itemID\\\'] and $parameters[\\\'objectID\\\']\');\n	} else {\n		//search needed object (need to search it for publications and rights purpose)\n		if (!isset($objectDefinitions[$parameters[\'objectID\']])) {\n			$objectDefinitions[$parameters[\'objectID\']] = new CMS_poly_object_definition($parameters[\'objectID\']);\n		}\n		$search_5_1d212d = new CMS_object_search($objectDefinitions[$parameters[\'objectID\']], $parameters[\'public\']);\n		$search_5_1d212d->addWhereCondition(\'item\', $parameters[\'itemID\']);\n		$results_5_1d212d = $search_5_1d212d->search();\n		if (isset($results_5_1d212d[$parameters[\'itemID\']]) && is_object($results_5_1d212d[$parameters[\'itemID\']])) {\n			$object[$parameters[\'objectID\']] = $results_5_1d212d[$parameters[\'itemID\']];\n		} else {\n			$object[$parameters[\'objectID\']] = new CMS_poly_object($parameters[\'objectID\'], 0, array(), $parameters[\'public\']);\n		}\n		unset($search_5_1d212d);\n		$parameters[\'has-plugin-view\'] = false;\n		//PLUGIN-VALID TAG START 6_cc39d4\n		if ($object[$parameters[\'objectID\']]->isInUserSpace() && !(@$parameters[\'plugin-view\'] && @$parameters[\'has-plugin-view\']) ) {\n			$content .=\"\n			<a href=\\\"\".$object[2]->objectValues(9)->getValue(\'file\',\'\').\"\\\" target=\\\"_blank\\\" title=\\\"Télécharger le document \'\".$object[2]->objectValues(9)->getValue(\'fileLabel\',\'\').\"\' (\".$object[2]->objectValues(9)->getValue(\'fileExtension\',\'\').\" - \".$object[2]->objectValues(9)->getValue(\'fileSize\',\'\').\"Mo)\\\">\";\n			//ATM-IF TAG START [ref. 7_3fb9c8]\n			$ifcondition_7_3fb9c8 = CMS_polymod_definition_parsing::replaceVars(CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(\'fileIcon\',\'\')), @$replace);\n			if ($ifcondition_7_3fb9c8):\n				$func_7_3fb9c8 = create_function(\"\",\"return (\".$ifcondition_7_3fb9c8.\");\");\n				if ($func_7_3fb9c8()):\n					$content .=\"<img src=\\\"\".$object[2]->objectValues(9)->getValue(\'fileIcon\',\'\').\"\\\" alt=\\\"Fichier \".$object[2]->objectValues(9)->getValue(\'fileExtension\',\'\').\"\\\" title=\\\"Fichier \".$object[2]->objectValues(9)->getValue(\'fileExtension\',\'\').\"\\\" /> \";\n				endif;\n				unset($func_7_3fb9c8);\n			endif;\n			unset($ifcondition_7_3fb9c8);\n			//ATM-IF TAG END [ref. 7_3fb9c8]\n			$content .=$parameters[\'selection\'].\"</a>\n			\";\n		}\n		//PLUGIN-VALID END 6_cc39d4\n		//PLUGIN-INVALID TAG START 8_67a2fb\n		if (!$object[$parameters[\'objectID\']]->isInUserSpace()) {\n			$content .=\"\n			\".$parameters[\'selection\'].\"\n			\";\n		}\n		//PLUGIN-INVALID END 8_67a2fb\n		$content .=\"\n		\";\n	}\n	//PLUGIN TAG END 5_1d212d\n	$content = CMS_polymod_definition_parsing::replaceVars($content, $replace);\n	$content .= \'<!--{elements:\'.base64_encode(serialize(array (\n		\'module\' =>\n		array (\n			0 => \'pmedia\',\n		),\n	))).\'}-->\';\n	echo $content;\n	unset($content);\n	unset($replace);}\n	?>');
+INSERT INTO `mod_object_plugin_definition` (`id_mowd`, `uuid_mowd`, `object_id_mowd`, `label_id_mowd`, `description_id_mowd`, `query_mowd`, `definition_mowd`, `compiled_definition_mowd`) VALUES(1, 'e59d665a-0baa-102e-80e2-001a6470da26', 2, 87, 88, 'a:1:{i:8;s:1:"0";}', '<atm-plugin language="fr">\r\n    <atm-plugin-valid>\r\n       <atm-if what="{[''object2''][''fields''][9][''fileExtension'']} == ''flv''">\r\n			<atm-if what="{[''object2''][''fields''][9][''thumbnail'']}">\r\n				<script type="text/javascript">\r\n					swfobject.embedSWF(''{constant:string:PATH_REALROOT_WR}/automne/playerflv/player_flv.swf'', ''media-{[''object2''][''id'']}'', ''320'', ''200'', ''9.0.0'', ''{constant:string:PATH_REALROOT_WR}/automne/swfobject/expressInstall.swf'', {flv:''{[''object2''][''fields''][9][''file'']}'', configxml:''{constant:string:PATH_REALROOT_WR}/automne/playerflv/config_playerflv.xml'', startimage:''{[''object2''][''fields''][9][''thumb'']}''}, {allowfullscreen:true, wmode:''transparent''}, false);\r\n				</script>\r\n			</atm-if>\r\n			<atm-if what="!{[''object2''][''fields''][9][''thumbnail'']}">\r\n				<script type="text/javascript">\r\n					swfobject.embedSWF(''{constant:string:PATH_REALROOT_WR}/automne/playerflv/player_flv.swf'', ''media-{[''object2''][''id'']}'', ''320'', ''200'', ''9.0.0'', ''{constant:string:PATH_REALROOT_WR}/automne/swfobject/expressInstall.swf'', {flv:''{[''object2''][''fields''][9][''file'']}'', configxml:''{constant:string:PATH_REALROOT_WR}/automne/playerflv/config_playerflv.xml''}, {allowfullscreen:true, wmode:''transparent''}, false);\r\n				</script>\r\n			</atm-if>\r\n			<div id="media-{[''object2''][''id'']}" class="pmedias-video">\r\n				<p><a href="http://www.adobe.com/go/getflashplayer" target="_blank"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p>\r\n			</div>\r\n		</atm-if>\r\n		<atm-if what="{[''object2''][''fields''][9][''fileExtension'']} == ''mp3''">\r\n			<script type="text/javascript">\r\n				swfobject.embedSWF(''{constant:string:PATH_REALROOT_WR}/automne/playermp3/player_mp3.swf'', ''media-{[''object2''][''id'']}'', ''200'', ''20'', ''9.0.0'', ''{constant:string:PATH_REALROOT_WR}/automne/swfobject/expressInstall.swf'', {mp3:''{[''object2''][''fields''][9][''file'']}'', configxml:''{constant:string:PATH_REALROOT_WR}/automne/playermp3/config_playermp3.xml''}, {wmode:''transparent''}, false);\r\n			</script>\r\n			<div id="media-{[''object2''][''id'']}" class="pmedias-audio">\r\n				<p><a href="http://www.adobe.com/go/getflashplayer" target="_blank"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p>\r\n			</div>\r\n		</atm-if>\r\n		<atm-if what="{[''object2''][''fields''][9][''fileExtension'']} == ''jpg'' || {[''object2''][''fields''][9][''fileExtension'']} == ''gif'' || {[''object2''][''fields''][9][''fileExtension'']} == ''png''">\r\n			<atm-if what="{[''object2''][''fields''][9][''thumbname'']}">\r\n				<a href="{[''object2''][''fields''][9][''file'']}" class="pmedia-image" rel="atm-enlarge" target="_blank" title="Illustration ''{[''object2''][''label'']}'' ({[''object2''][''fields''][9][''fileExtension'']} - {[''object2''][''fields''][9][''fileSize'']}Mo)"><img src="{[''object2''][''fields''][9][''thumb'']|200}" alt="{[''object2''][''label'']}" /></a>\r\n			</atm-if>\r\n			<atm-if what="!{[''object2''][''fields''][9][''thumbname'']}">\r\n				<a href="{[''object2''][''fields''][9][''file'']}" class="pmedia-image" rel="atm-enlarge" target="_blank" title="Illustration ''{[''object2''][''label'']}'' ({[''object2''][''fields''][9][''fileExtension'']} - {[''object2''][''fields''][9][''fileSize'']}Mo)"><img src="{[''object2''][''fields''][9][''file'']|200}" alt="{[''object2''][''label'']}" /></a>\r\n			</atm-if>\r\n		</atm-if>\r\n		<atm-if what="{[''object2''][''fields''][9][''fileExtension'']} != ''flv'' &amp;&amp; {[''object2''][''fields''][9][''fileExtension'']} != ''mp3'' &amp;&amp; {[''object2''][''fields''][9][''fileExtension'']} != ''jpg'' &amp;&amp; {[''object2''][''fields''][9][''fileExtension'']} != ''gif'' &amp;&amp; {[''object2''][''fields''][9][''fileExtension'']} != ''png''">\r\n			<atm-if what="{[''object2''][''fields''][9][''thumbname'']}">\r\n				<a href="{[''object2''][''fields''][9][''file'']}" class="pmedia-file" target="_blank" title="Télécharger le document ''{[''object2''][''label'']}'' ({[''object2''][''fields''][9][''fileExtension'']} - {[''object2''][''fields''][9][''fileSize'']}Mo)"><img src="{[''object2''][''fields''][9][''thumb'']|200}" alt="{[''object2''][''label'']}" /></a>\r\n			</atm-if>\r\n			<atm-if what="!{[''object2''][''fields''][9][''thumbname'']}">\r\n				<a href="{[''object2''][''fields''][9][''file'']}" class="pmedia-file" target="_blank" title="Télécharger le document ''{[''object2''][''label'']}'' ({[''object2''][''fields''][9][''fileExtension'']} - {[''object2''][''fields''][9][''fileSize'']}Mo)">{[''object2''][''label'']}</a>\r\n			</atm-if>\r\n		</atm-if>\r\n    </atm-plugin-valid>\r\n	<atm-plugin-view>\r\n        <atm-if what="{[''object2''][''fields''][9][''fileExtension'']} != ''jpg'' &amp;&amp; {[''object2''][''fields''][9][''fileExtension'']} != ''gif'' &amp;&amp; {[''object2''][''fields''][9][''fileExtension'']} != ''png''">\r\n			{[''object2''][''label'']}\r\n		</atm-if>\r\n    	<atm-if what="{[''object2''][''fields''][9][''fileExtension'']} == ''jpg'' || {[''object2''][''fields''][9][''fileExtension'']} == ''gif'' || {[''object2''][''fields''][9][''fileExtension'']} == ''png''">\r\n			<atm-if what="{[''object2''][''fields''][9][''thumbnail'']}">\r\n				<img src="{[''object2''][''fields''][9][''thumb'']|200}" alt="{[''object2''][''label'']}" />\r\n			</atm-if>\r\n			<atm-if what="!{[''object2''][''fields''][9][''thumbnail'']}">\r\n				<img src="{[''object2''][''fields''][9][''file'']|200}" alt="{[''object2''][''label'']}" />\r\n			</atm-if>\r\n		</atm-if>\r\n    </atm-plugin-view>\r\n</atm-plugin>', '<?php\n/*Generated on Tue, 22 Feb 2011 17:29:35 +0100 by Automne (TM) 4.1.0b3 */\nif(!APPLICATION_ENFORCES_ACCESS_CONTROL || (isset($cms_user) && is_a($cms_user, ''CMS_profile_user'') && $cms_user->hasModuleClearance(''pmedia'', CLEARANCE_MODULE_VIEW))){\n	$content = "";\n	$replace = "";\n	$atmIfResults = array();\n	if (!isset($objectDefinitions) || !is_array($objectDefinitions)) $objectDefinitions = array();\n	$parameters[''objectID''] = 2;\n	if (!isset($cms_language) || (isset($cms_language) && $cms_language->getCode() != ''fr'')) $cms_language = new CMS_language(''fr'');\n	$parameters[''public''] = (isset($parameters[''public''])) ? $parameters[''public''] : true;\n	if (isset($parameters[''item''])) {$parameters[''objectID''] = $parameters[''item'']->getObjectID();} elseif (isset($parameters[''itemID'']) && sensitiveIO::isPositiveInteger($parameters[''itemID'']) && !isset($parameters[''objectID''])) $parameters[''objectID''] = CMS_poly_object_catalog::getObjectDefinitionByID($parameters[''itemID'']);\n	if (!isset($object) || !is_array($object)) $object = array();\n	if (!isset($object[2])) $object[2] = new CMS_poly_object(2, 0, array(), $parameters[''public'']);\n	$parameters[''module''] = ''pmedia'';\n	//PLUGIN TAG START 5_11f393\n	if (!sensitiveIO::isPositiveInteger($parameters[''itemID'']) || !sensitiveIO::isPositiveInteger($parameters[''objectID''])) {\n		CMS_grandFather::raiseError(''Error into atm-plugin tag : can\\''t found object infos to use into : $parameters[\\''itemID\\''] and $parameters[\\''objectID\\'']'');\n	} else {\n		//search needed object (need to search it for publications and rights purpose)\n		if (!isset($objectDefinitions[$parameters[''objectID'']])) {\n			$objectDefinitions[$parameters[''objectID'']] = new CMS_poly_object_definition($parameters[''objectID'']);\n		}\n		$search_5_11f393 = new CMS_object_search($objectDefinitions[$parameters[''objectID'']], $parameters[''public'']);\n		$search_5_11f393->addWhereCondition(''item'', $parameters[''itemID'']);\n		$results_5_11f393 = $search_5_11f393->search();\n		if (isset($results_5_11f393[$parameters[''itemID'']]) && is_object($results_5_11f393[$parameters[''itemID'']])) {\n			$object[$parameters[''objectID'']] = $results_5_11f393[$parameters[''itemID'']];\n		} else {\n			$object[$parameters[''objectID'']] = new CMS_poly_object($parameters[''objectID''], 0, array(), $parameters[''public'']);\n		}\n		unset($search_5_11f393);\n		$parameters[''has-plugin-view''] = true;\n		//PLUGIN-VALID TAG START 6_4c413d\n		if ($object[$parameters[''objectID'']]->isInUserSpace() && !(@$parameters[''plugin-view''] && @$parameters[''has-plugin-view'']) ) {\n			//ATM-IF TAG START [ref. 7_89cf47]\n			$ifcondition_7_89cf47 = CMS_polymod_definition_parsing::replaceVars(CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(''fileExtension'',''''))." == ''flv''", @$replace);\n			if ($ifcondition_7_89cf47):\n				$func_7_89cf47 = create_function("","return (".$ifcondition_7_89cf47.");");\n				if ($func_7_89cf47()):\n					//ATM-IF TAG START [ref. 8_f8132a]\n					$ifcondition_8_f8132a = CMS_polymod_definition_parsing::replaceVars(CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(''thumbnail'','''')), @$replace);\n					if ($ifcondition_8_f8132a):\n						$func_8_f8132a = create_function("","return (".$ifcondition_8_f8132a.");");\n						if ($func_8_f8132a()):\n							$content .="\n							<script type=\\"text/javascript\\">\n							swfobject.embedSWF(''".CMS_poly_definition_functions::getVarContent("constant", "PATH_REALROOT_WR", "string", @$PATH_REALROOT_WR)."/automne/playerflv/player_flv.swf'', ''media-".$object[2]->getValue(''id'','''')."'', ''320'', ''200'', ''9.0.0'', ''".CMS_poly_definition_functions::getVarContent("constant", "PATH_REALROOT_WR", "string", @$PATH_REALROOT_WR)."/automne/swfobject/expressInstall.swf'', {flv:''".$object[2]->objectValues(9)->getValue(''file'','''')."'', configxml:''".CMS_poly_definition_functions::getVarContent("constant", "PATH_REALROOT_WR", "string", @$PATH_REALROOT_WR)."/automne/playerflv/config_playerflv.xml'', startimage:''".$object[2]->objectValues(9)->getValue(''thumb'','''')."''}, {allowfullscreen:true, wmode:''transparent''}, false);\n							</script>\n							";\n						endif;\n						unset($func_8_f8132a);\n					endif;\n					unset($ifcondition_8_f8132a);\n					//ATM-IF TAG END [ref. 8_f8132a]\n					//ATM-IF TAG START [ref. 9_c27d2c]\n					$ifcondition_9_c27d2c = CMS_polymod_definition_parsing::replaceVars("!".CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(''thumbnail'','''')), @$replace);\n					if ($ifcondition_9_c27d2c):\n						$func_9_c27d2c = create_function("","return (".$ifcondition_9_c27d2c.");");\n						if ($func_9_c27d2c()):\n							$content .="\n							<script type=\\"text/javascript\\">\n							swfobject.embedSWF(''".CMS_poly_definition_functions::getVarContent("constant", "PATH_REALROOT_WR", "string", @$PATH_REALROOT_WR)."/automne/playerflv/player_flv.swf'', ''media-".$object[2]->getValue(''id'','''')."'', ''320'', ''200'', ''9.0.0'', ''".CMS_poly_definition_functions::getVarContent("constant", "PATH_REALROOT_WR", "string", @$PATH_REALROOT_WR)."/automne/swfobject/expressInstall.swf'', {flv:''".$object[2]->objectValues(9)->getValue(''file'','''')."'', configxml:''".CMS_poly_definition_functions::getVarContent("constant", "PATH_REALROOT_WR", "string", @$PATH_REALROOT_WR)."/automne/playerflv/config_playerflv.xml''}, {allowfullscreen:true, wmode:''transparent''}, false);\n							</script>\n							";\n						endif;\n						unset($func_9_c27d2c);\n					endif;\n					unset($ifcondition_9_c27d2c);\n					//ATM-IF TAG END [ref. 9_c27d2c]\n					$content .="\n					<div id=\\"media-".$object[2]->getValue(''id'','''')."\\" class=\\"pmedias-video\\">\n					<p><a href=\\"http://www.adobe.com/go/getflashplayer\\" target=\\"_blank\\"><img src=\\"http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif\\" alt=\\"Get Adobe Flash player\\" /></a></p>\n					</div>\n					";\n				endif;\n				unset($func_7_89cf47);\n			endif;\n			unset($ifcondition_7_89cf47);\n			//ATM-IF TAG END [ref. 7_89cf47]\n			//ATM-IF TAG START [ref. 10_319d03]\n			$ifcondition_10_319d03 = CMS_polymod_definition_parsing::replaceVars(CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(''fileExtension'',''''))." == ''mp3''", @$replace);\n			if ($ifcondition_10_319d03):\n				$func_10_319d03 = create_function("","return (".$ifcondition_10_319d03.");");\n				if ($func_10_319d03()):\n					$content .="\n					<script type=\\"text/javascript\\">\n					swfobject.embedSWF(''".CMS_poly_definition_functions::getVarContent("constant", "PATH_REALROOT_WR", "string", @$PATH_REALROOT_WR)."/automne/playermp3/player_mp3.swf'', ''media-".$object[2]->getValue(''id'','''')."'', ''200'', ''20'', ''9.0.0'', ''".CMS_poly_definition_functions::getVarContent("constant", "PATH_REALROOT_WR", "string", @$PATH_REALROOT_WR)."/automne/swfobject/expressInstall.swf'', {mp3:''".$object[2]->objectValues(9)->getValue(''file'','''')."'', configxml:''".CMS_poly_definition_functions::getVarContent("constant", "PATH_REALROOT_WR", "string", @$PATH_REALROOT_WR)."/automne/playermp3/config_playermp3.xml''}, {wmode:''transparent''}, false);\n					</script>\n					<div id=\\"media-".$object[2]->getValue(''id'','''')."\\" class=\\"pmedias-audio\\">\n					<p><a href=\\"http://www.adobe.com/go/getflashplayer\\" target=\\"_blank\\"><img src=\\"http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif\\" alt=\\"Get Adobe Flash player\\" /></a></p>\n					</div>\n					";\n				endif;\n				unset($func_10_319d03);\n			endif;\n			unset($ifcondition_10_319d03);\n			//ATM-IF TAG END [ref. 10_319d03]\n			//ATM-IF TAG START [ref. 11_407247]\n			$ifcondition_11_407247 = CMS_polymod_definition_parsing::replaceVars(CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(''fileExtension'',''''))." == ''jpg'' || ".CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(''fileExtension'',''''))." == ''gif'' || ".CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(''fileExtension'',''''))." == ''png''", @$replace);\n			if ($ifcondition_11_407247):\n				$func_11_407247 = create_function("","return (".$ifcondition_11_407247.");");\n				if ($func_11_407247()):\n					//ATM-IF TAG START [ref. 12_04e79f]\n					$ifcondition_12_04e79f = CMS_polymod_definition_parsing::replaceVars(CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(''thumbname'','''')), @$replace);\n					if ($ifcondition_12_04e79f):\n						$func_12_04e79f = create_function("","return (".$ifcondition_12_04e79f.");");\n						if ($func_12_04e79f()):\n							$content .="\n							<a href=\\"".$object[2]->objectValues(9)->getValue(''file'','''')."\\" class=\\"pmedia-image\\" rel=\\"atm-enlarge\\" target=\\"_blank\\" title=\\"Illustration ''".$object[2]->getValue(''label'','''')."'' (".$object[2]->objectValues(9)->getValue(''fileExtension'','''')." - ".$object[2]->objectValues(9)->getValue(''fileSize'','''')."Mo)\\"><img src=\\"".$object[2]->objectValues(9)->getValue(''thumb'',''200'')."\\" alt=\\"".$object[2]->getValue(''label'','''')."\\" /></a>\n							";\n						endif;\n						unset($func_12_04e79f);\n					endif;\n					unset($ifcondition_12_04e79f);\n					//ATM-IF TAG END [ref. 12_04e79f]\n					//ATM-IF TAG START [ref. 13_0320a1]\n					$ifcondition_13_0320a1 = CMS_polymod_definition_parsing::replaceVars("!".CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(''thumbname'','''')), @$replace);\n					if ($ifcondition_13_0320a1):\n						$func_13_0320a1 = create_function("","return (".$ifcondition_13_0320a1.");");\n						if ($func_13_0320a1()):\n							$content .="\n							<a href=\\"".$object[2]->objectValues(9)->getValue(''file'','''')."\\" class=\\"pmedia-image\\" rel=\\"atm-enlarge\\" target=\\"_blank\\" title=\\"Illustration ''".$object[2]->getValue(''label'','''')."'' (".$object[2]->objectValues(9)->getValue(''fileExtension'','''')." - ".$object[2]->objectValues(9)->getValue(''fileSize'','''')."Mo)\\"><img src=\\"".$object[2]->objectValues(9)->getValue(''file'',''200'')."\\" alt=\\"".$object[2]->getValue(''label'','''')."\\" /></a>\n							";\n						endif;\n						unset($func_13_0320a1);\n					endif;\n					unset($ifcondition_13_0320a1);\n					//ATM-IF TAG END [ref. 13_0320a1]\n				endif;\n				unset($func_11_407247);\n			endif;\n			unset($ifcondition_11_407247);\n			//ATM-IF TAG END [ref. 11_407247]\n			//ATM-IF TAG START [ref. 14_2a49dc]\n			$ifcondition_14_2a49dc = CMS_polymod_definition_parsing::replaceVars(CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(''fileExtension'',''''))." != ''flv'' && ".CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(''fileExtension'',''''))." != ''mp3'' && ".CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(''fileExtension'',''''))." != ''jpg'' && ".CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(''fileExtension'',''''))." != ''gif'' && ".CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(''fileExtension'',''''))." != ''png''", @$replace);\n			if ($ifcondition_14_2a49dc):\n				$func_14_2a49dc = create_function("","return (".$ifcondition_14_2a49dc.");");\n				if ($func_14_2a49dc()):\n					//ATM-IF TAG START [ref. 15_7dfc6e]\n					$ifcondition_15_7dfc6e = CMS_polymod_definition_parsing::replaceVars(CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(''thumbname'','''')), @$replace);\n					if ($ifcondition_15_7dfc6e):\n						$func_15_7dfc6e = create_function("","return (".$ifcondition_15_7dfc6e.");");\n						if ($func_15_7dfc6e()):\n							$content .="\n							<a href=\\"".$object[2]->objectValues(9)->getValue(''file'','''')."\\" class=\\"pmedia-file\\" target=\\"_blank\\" title=\\"Télécharger le document ''".$object[2]->getValue(''label'','''')."'' (".$object[2]->objectValues(9)->getValue(''fileExtension'','''')." - ".$object[2]->objectValues(9)->getValue(''fileSize'','''')."Mo)\\"><img src=\\"".$object[2]->objectValues(9)->getValue(''thumb'',''200'')."\\" alt=\\"".$object[2]->getValue(''label'','''')."\\" /></a>\n							";\n						endif;\n						unset($func_15_7dfc6e);\n					endif;\n					unset($ifcondition_15_7dfc6e);\n					//ATM-IF TAG END [ref. 15_7dfc6e]\n					//ATM-IF TAG START [ref. 16_642288]\n					$ifcondition_16_642288 = CMS_polymod_definition_parsing::replaceVars("!".CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(''thumbname'','''')), @$replace);\n					if ($ifcondition_16_642288):\n						$func_16_642288 = create_function("","return (".$ifcondition_16_642288.");");\n						if ($func_16_642288()):\n							$content .="\n							<a href=\\"".$object[2]->objectValues(9)->getValue(''file'','''')."\\" class=\\"pmedia-file\\" target=\\"_blank\\" title=\\"Télécharger le document ''".$object[2]->getValue(''label'','''')."'' (".$object[2]->objectValues(9)->getValue(''fileExtension'','''')." - ".$object[2]->objectValues(9)->getValue(''fileSize'','''')."Mo)\\">".$object[2]->getValue(''label'','''')."</a>\n							";\n						endif;\n						unset($func_16_642288);\n					endif;\n					unset($ifcondition_16_642288);\n					//ATM-IF TAG END [ref. 16_642288]\n				endif;\n				unset($func_14_2a49dc);\n			endif;\n			unset($ifcondition_14_2a49dc);\n			//ATM-IF TAG END [ref. 14_2a49dc]\n		}\n		//PLUGIN-VALID END 6_4c413d\n		//PLUGIN-VIEW TAG START 17_db80b7\n		if ($object[$parameters[''objectID'']]->isInUserSpace() && isset($parameters[''plugin-view''])) {\n			//ATM-IF TAG START [ref. 18_0ed96c]\n			$ifcondition_18_0ed96c = CMS_polymod_definition_parsing::replaceVars(CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(''fileExtension'',''''))." != ''jpg'' && ".CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(''fileExtension'',''''))." != ''gif'' && ".CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(''fileExtension'',''''))." != ''png''", @$replace);\n			if ($ifcondition_18_0ed96c):\n				$func_18_0ed96c = create_function("","return (".$ifcondition_18_0ed96c.");");\n				if ($func_18_0ed96c()):\n					$content .="\n					".$object[2]->getValue(''label'','''')."\n					";\n				endif;\n				unset($func_18_0ed96c);\n			endif;\n			unset($ifcondition_18_0ed96c);\n			//ATM-IF TAG END [ref. 18_0ed96c]\n			//ATM-IF TAG START [ref. 19_71e79c]\n			$ifcondition_19_71e79c = CMS_polymod_definition_parsing::replaceVars(CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(''fileExtension'',''''))." == ''jpg'' || ".CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(''fileExtension'',''''))." == ''gif'' || ".CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(''fileExtension'',''''))." == ''png''", @$replace);\n			if ($ifcondition_19_71e79c):\n				$func_19_71e79c = create_function("","return (".$ifcondition_19_71e79c.");");\n				if ($func_19_71e79c()):\n					//ATM-IF TAG START [ref. 20_9c85fd]\n					$ifcondition_20_9c85fd = CMS_polymod_definition_parsing::replaceVars(CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(''thumbnail'','''')), @$replace);\n					if ($ifcondition_20_9c85fd):\n						$func_20_9c85fd = create_function("","return (".$ifcondition_20_9c85fd.");");\n						if ($func_20_9c85fd()):\n							$content .="\n							<img src=\\"".$object[2]->objectValues(9)->getValue(''thumb'',''200'')."\\" alt=\\"".$object[2]->getValue(''label'','''')."\\" />\n							";\n						endif;\n						unset($func_20_9c85fd);\n					endif;\n					unset($ifcondition_20_9c85fd);\n					//ATM-IF TAG END [ref. 20_9c85fd]\n					//ATM-IF TAG START [ref. 21_e60637]\n					$ifcondition_21_e60637 = CMS_polymod_definition_parsing::replaceVars("!".CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(''thumbnail'','''')), @$replace);\n					if ($ifcondition_21_e60637):\n						$func_21_e60637 = create_function("","return (".$ifcondition_21_e60637.");");\n						if ($func_21_e60637()):\n							$content .="\n							<img src=\\"".$object[2]->objectValues(9)->getValue(''file'',''200'')."\\" alt=\\"".$object[2]->getValue(''label'','''')."\\" />\n							";\n						endif;\n						unset($func_21_e60637);\n					endif;\n					unset($ifcondition_21_e60637);\n					//ATM-IF TAG END [ref. 21_e60637]\n				endif;\n				unset($func_19_71e79c);\n			endif;\n			unset($ifcondition_19_71e79c);\n			//ATM-IF TAG END [ref. 19_71e79c]\n		}\n		//PLUGIN-VIEW END 17_db80b7\n		$content .="\n		";\n	}\n	//PLUGIN TAG END 5_11f393\n	$content = CMS_polymod_definition_parsing::replaceVars($content, $replace);\n	$content .= ''<!--{elements:''.base64_encode(serialize(array (\n		''module'' =>\n		array (\n			0 => ''pmedia'',\n		),\n	))).''}-->'';\n	echo $content;\n	unset($content);\n	unset($replace);}\n	?>');
+INSERT INTO `mod_object_plugin_definition` (`id_mowd`, `uuid_mowd`, `object_id_mowd`, `label_id_mowd`, `description_id_mowd`, `query_mowd`, `definition_mowd`, `compiled_definition_mowd`) VALUES(2, 'e59d688a-0baa-102e-80e2-001a6470da26', 2, 89, 90, 'a:1:{i:8;s:1:"0";}', '<atm-plugin language="fr">\r\n    <atm-plugin-valid>\r\n        <a href="{[''object2''][''fields''][9][''file'']}" target="_blank" title="Télécharger le document ''{[''object2''][''fields''][9][''fileLabel'']}'' ({[''object2''][''fields''][9][''fileExtension'']} - {[''object2''][''fields''][9][''fileSize'']}Mo)"><atm-if what="{[''object2''][''fields''][9][''fileIcon'']}"><img src="{[''object2''][''fields''][9][''fileIcon'']}" alt="Fichier {[''object2''][''fields''][9][''fileExtension'']}" title="Fichier {[''object2''][''fields''][9][''fileExtension'']}" /> </atm-if>{plugin:selection}</a>\r\n    </atm-plugin-valid>\r\n	<atm-plugin-invalid>\r\n        {plugin:selection}\r\n    </atm-plugin-invalid>\r\n</atm-plugin>', '<?php\n/*Generated on Tue, 22 Feb 2011 17:13:09 +0100 by Automne (TM) 4.1.0b3 */\nif(!APPLICATION_ENFORCES_ACCESS_CONTROL || (isset($cms_user) && is_a($cms_user, ''CMS_profile_user'') && $cms_user->hasModuleClearance(''pmedia'', CLEARANCE_MODULE_VIEW))){\n	$content = "";\n	$replace = "";\n	$atmIfResults = array();\n	if (!isset($objectDefinitions) || !is_array($objectDefinitions)) $objectDefinitions = array();\n	$parameters[''objectID''] = 2;\n	if (!isset($cms_language) || (isset($cms_language) && $cms_language->getCode() != ''fr'')) $cms_language = new CMS_language(''fr'');\n	$parameters[''public''] = (isset($parameters[''public''])) ? $parameters[''public''] : true;\n	if (isset($parameters[''item''])) {$parameters[''objectID''] = $parameters[''item'']->getObjectID();} elseif (isset($parameters[''itemID'']) && sensitiveIO::isPositiveInteger($parameters[''itemID'']) && !isset($parameters[''objectID''])) $parameters[''objectID''] = CMS_poly_object_catalog::getObjectDefinitionByID($parameters[''itemID'']);\n	if (!isset($object) || !is_array($object)) $object = array();\n	if (!isset($object[2])) $object[2] = new CMS_poly_object(2, 0, array(), $parameters[''public'']);\n	$parameters[''module''] = ''pmedia'';\n	//PLUGIN TAG START 5_1d212d\n	if (!sensitiveIO::isPositiveInteger($parameters[''itemID'']) || !sensitiveIO::isPositiveInteger($parameters[''objectID''])) {\n		CMS_grandFather::raiseError(''Error into atm-plugin tag : can\\''t found object infos to use into : $parameters[\\''itemID\\''] and $parameters[\\''objectID\\'']'');\n	} else {\n		//search needed object (need to search it for publications and rights purpose)\n		if (!isset($objectDefinitions[$parameters[''objectID'']])) {\n			$objectDefinitions[$parameters[''objectID'']] = new CMS_poly_object_definition($parameters[''objectID'']);\n		}\n		$search_5_1d212d = new CMS_object_search($objectDefinitions[$parameters[''objectID'']], $parameters[''public'']);\n		$search_5_1d212d->addWhereCondition(''item'', $parameters[''itemID'']);\n		$results_5_1d212d = $search_5_1d212d->search();\n		if (isset($results_5_1d212d[$parameters[''itemID'']]) && is_object($results_5_1d212d[$parameters[''itemID'']])) {\n			$object[$parameters[''objectID'']] = $results_5_1d212d[$parameters[''itemID'']];\n		} else {\n			$object[$parameters[''objectID'']] = new CMS_poly_object($parameters[''objectID''], 0, array(), $parameters[''public'']);\n		}\n		unset($search_5_1d212d);\n		$parameters[''has-plugin-view''] = false;\n		//PLUGIN-VALID TAG START 6_cc39d4\n		if ($object[$parameters[''objectID'']]->isInUserSpace() && !(@$parameters[''plugin-view''] && @$parameters[''has-plugin-view'']) ) {\n			$content .="\n			<a href=\\"".$object[2]->objectValues(9)->getValue(''file'','''')."\\" target=\\"_blank\\" title=\\"Télécharger le document ''".$object[2]->objectValues(9)->getValue(''fileLabel'','''')."'' (".$object[2]->objectValues(9)->getValue(''fileExtension'','''')." - ".$object[2]->objectValues(9)->getValue(''fileSize'','''')."Mo)\\">";\n			//ATM-IF TAG START [ref. 7_3fb9c8]\n			$ifcondition_7_3fb9c8 = CMS_polymod_definition_parsing::replaceVars(CMS_polymod_definition_parsing::prepareVar($object[2]->objectValues(9)->getValue(''fileIcon'','''')), @$replace);\n			if ($ifcondition_7_3fb9c8):\n				$func_7_3fb9c8 = create_function("","return (".$ifcondition_7_3fb9c8.");");\n				if ($func_7_3fb9c8()):\n					$content .="<img src=\\"".$object[2]->objectValues(9)->getValue(''fileIcon'','''')."\\" alt=\\"Fichier ".$object[2]->objectValues(9)->getValue(''fileExtension'','''')."\\" title=\\"Fichier ".$object[2]->objectValues(9)->getValue(''fileExtension'','''')."\\" /> ";\n				endif;\n				unset($func_7_3fb9c8);\n			endif;\n			unset($ifcondition_7_3fb9c8);\n			//ATM-IF TAG END [ref. 7_3fb9c8]\n			$content .=$parameters[''selection'']."</a>\n			";\n		}\n		//PLUGIN-VALID END 6_cc39d4\n		//PLUGIN-INVALID TAG START 8_67a2fb\n		if (!$object[$parameters[''objectID'']]->isInUserSpace()) {\n			$content .="\n			".$parameters[''selection'']."\n			";\n		}\n		//PLUGIN-INVALID END 8_67a2fb\n		$content .="\n		";\n	}\n	//PLUGIN TAG END 5_1d212d\n	$content = CMS_polymod_definition_parsing::replaceVars($content, $replace);\n	$content .= ''<!--{elements:''.base64_encode(serialize(array (\n		''module'' =>\n		array (\n			0 => ''pmedia'',\n		),\n	))).''}-->'';\n	echo $content;\n	unset($content);\n	unset($replace);}\n	?>');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `mod_object_polyobjects`
+-- Structure de la table `mod_object_polyobjects`
 --
 
 DROP TABLE IF EXISTS `mod_object_polyobjects`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mod_object_polyobjects` (
-  `id_moo` int(11) unsigned NOT NULL,
+  `id_moo` int(11) unsigned NOT NULL auto_increment,
   `object_type_id_moo` int(11) unsigned NOT NULL default '0',
   `deleted_moo` int(1) NOT NULL default '0',
   PRIMARY KEY  (`id_moo`),
   KEY `object_id_moo` (`object_type_id_moo`),
   KEY `deleted_moo` (`deleted_moo`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mod_object_polyobjects`
+-- Contenu de la table `mod_object_polyobjects`
 --
 
-INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES (4,1,0);
-INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES (17,2,0);
-INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES (24,2,0);
-INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES (25,2,0);
-INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES (26,2,0);
-INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES (27,2,0);
-INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES (28,2,0);
-INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES (29,2,0);
-INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES (34,2,0);
-INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES (35,2,0);
-INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES (36,2,0);
-INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES (37,2,0);
-INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES (38,2,0);
-INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES (39,2,0);
-INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES (40,2,0);
-INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES (44,1,0);
-INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES (45,2,0);
-INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES (46,2,0);
-INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES (47,2,0);
+INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES(4, 1, 0);
+INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES(17, 2, 0);
+INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES(24, 2, 0);
+INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES(25, 2, 0);
+INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES(26, 2, 0);
+INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES(27, 2, 0);
+INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES(28, 2, 0);
+INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES(29, 2, 0);
+INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES(34, 2, 0);
+INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES(35, 2, 0);
+INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES(36, 2, 0);
+INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES(37, 2, 0);
+INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES(38, 2, 0);
+INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES(39, 2, 0);
+INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES(40, 2, 0);
+INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES(44, 1, 0);
+INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES(45, 2, 0);
+INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES(46, 2, 0);
+INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES(47, 2, 0);
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `mod_object_rss_definition`
+-- Structure de la table `mod_object_rss_definition`
 --
 
 DROP TABLE IF EXISTS `mod_object_rss_definition`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mod_object_rss_definition` (
-  `id_mord` int(11) unsigned NOT NULL,
+  `id_mord` int(11) unsigned NOT NULL auto_increment,
   `uuid_mord` varchar(36) NOT NULL,
   `object_id_mord` int(11) unsigned NOT NULL default '0',
   `label_id_mord` int(11) unsigned NOT NULL default '0',
@@ -2068,22 +2142,21 @@ CREATE TABLE `mod_object_rss_definition` (
   `last_compilation_mord` datetime NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`id_mord`),
   KEY `object_id_mord` (`object_id_mord`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mod_object_rss_definition`
+-- Contenu de la table `mod_object_rss_definition`
 --
 
-INSERT INTO `mod_object_rss_definition` (`id_mord`, `uuid_mord`, `object_id_mord`, `label_id_mord`, `description_id_mord`, `link_mord`, `author_mord`, `copyright_mord`, `categories_mord`, `ttl_mord`, `email_mord`, `definition_mord`, `compiled_definition_mord`, `last_compilation_mord`) VALUES (1,'e5a7a52a-0baa-102e-80e2-001a6470da26',1,40,41,'','','','',1440,'','<atm-rss language=\"fr\">\r\n    <atm-rss-title>Actualités du site démo d\'Automne</atm-rss-title>\r\n    <atm-search what=\"{[\'object1\']}\" name=\"rss\">\r\n        <atm-search-order search=\"rss\" type=\"publication date after\" direction=\"desc\" />\r\n        <atm-result search=\"rss\">\r\n            <atm-rss-item>\r\n                <atm-rss-item-url>{page:5:url}?item={[\'object1\'][\'id\']}</atm-rss-item-url>\r\n                <atm-rss-item-title>{[\'object1\'][\'fields\'][1][\'value\']}</atm-rss-item-title>\r\n                <atm-rss-item-content>{[\'object1\'][\'fields\'][2][\'htmlvalue\']}</atm-rss-item-content>\r\n                <atm-rss-item-date>{[\'object1\'][\'formatedDateStart\']|rss}</atm-rss-item-date>\r\n            </atm-rss-item>\r\n        </atm-result>\r\n    </atm-search>\r\n</atm-rss>','<?php\n/*Generated on Wed, 23 Feb 2011 14:12:19 +0100 by Automne (TM) 4.1.0b3 */\nif(!APPLICATION_ENFORCES_ACCESS_CONTROL || (isset($cms_user) && is_a($cms_user, \'CMS_profile_user\') && $cms_user->hasModuleClearance(\'pnews\', CLEARANCE_MODULE_VIEW))){\n	$content = \"\";\n	$replace = \"\";\n	$atmIfResults = array();\n	if (!isset($objectDefinitions) || !is_array($objectDefinitions)) $objectDefinitions = array();\n	$parameters[\'objectID\'] = 1;\n	if (!isset($cms_language) || (isset($cms_language) && $cms_language->getCode() != \'fr\')) $cms_language = new CMS_language(\'fr\');\n	$parameters[\'public\'] = true;\n	if (isset($parameters[\'item\'])) {$parameters[\'objectID\'] = $parameters[\'item\']->getObjectID();} elseif (isset($parameters[\'itemID\']) && sensitiveIO::isPositiveInteger($parameters[\'itemID\']) && !isset($parameters[\'objectID\'])) $parameters[\'objectID\'] = CMS_poly_object_catalog::getObjectDefinitionByID($parameters[\'itemID\']);\n	if (!isset($object) || !is_array($object)) $object = array();\n	if (!isset($object[1])) $object[1] = new CMS_poly_object(1, 0, array(), $parameters[\'public\']);\n	$parameters[\'module\'] = \'pnews\';\n	//RSS TAG START 11_12cd77\n	if (!sensitiveIO::isPositiveInteger($parameters[\'objectID\'])) {\n		CMS_grandFather::raiseError(\'Error into atm-rss tag : can\\\'t found object infos to use into : $parameters[\\\'objectID\\\']\');\n	} else {\n		//RSS-ITEM-TITLE TAG START 12_73e2f1\n		$content .= \'<title>\';\n		//save content\n		$content_12_73e2f1 = $content;\n		$content = \'\';\n		$content .=\"Actualités du site démo d\'Automne\";\n		//then remove tags from content and add it to old content\n		$entities = array(\'&\' => \'&amp;\',\'>\' => \'&gt;\',\'<\' => \'&lt;\',);\n		$content = $content_12_73e2f1.str_replace(array_keys($entities),$entities,strip_tags(io::decodeEntities($content)));\n		unset($content_12_73e2f1);\n		$content .= \'</title>\';\n		//RSS-ITEM-TITLE TAG END 12_73e2f1\n		//SEARCH rss TAG START 13_ba10d2\n		$objectDefinition_rss = \'1\';\n		if (!isset($objectDefinitions[$objectDefinition_rss])) {\n			$objectDefinitions[$objectDefinition_rss] = new CMS_poly_object_definition($objectDefinition_rss);\n		}\n		//public search ?\n		$public_13_ba10d2 = isset($public_search) ? $public_search : false;\n		//get search params\n		$search_rss = new CMS_object_search($objectDefinitions[$objectDefinition_rss], $public_13_ba10d2);\n		$launchSearch_rss = true;\n		$searchLaunched_rss = false;\n		//add search conditions if any\n		$search_rss->addOrderCondition(\"publication date after\", \"desc\");\n		//RESULT rss TAG START 14_662dd8\n		if(isset($search_rss) && $launchSearch_rss && $searchLaunched_rss === false) {\n			//launch search\n			if ($search_rss->search(CMS_object_search::POLYMOD_SEARCH_RETURN_INDIVIDUALS_OBJECTS)) {\n				$searchLaunched_rss = true;\n			}\n		} elseif (isset($search_rss) && $launchSearch_rss && $searchLaunched_rss === true) {\n			//reset search stack (search already done before)\n			$search_rss->resetResultStack();\n		} else {\n			CMS_grandFather::raiseError(\"Malformed atm-result tag : can\'t use this tag outside of atm-search \\\"rss\\\" tag ...\");\n		}\n		if (isset($search_rss) && $launchSearch_rss && $searchLaunched_rss === true) {\n			$object_14_662dd8 = (isset($object[$objectDefinition_rss])) ? $object[$objectDefinition_rss] : \"\"; //save previous object search if any\n			$replace_14_662dd8 = $replace; //save previous replace vars if any\n			$count_14_662dd8 = 0;\n			$content_14_662dd8 = $content; //save previous content var if any\n			$maxPages_14_662dd8 = $search_rss->getMaxPages();\n			$maxResults_14_662dd8 = $search_rss->getNumRows();\n			while ($object[$objectDefinition_rss] = $search_rss->getNextResult()) {\n				$content = \"\";\n				$replace[\"atm-search\"] = array (\n					\"{resultid}\" 	=> (isset($resultID_rss)) ? $resultID_rss : $object[$objectDefinition_rss]->getID(),\n					\"{firstresult}\" => (!$count_14_662dd8) ? 1 : 0,\n					\"{lastresult}\" 	=> $search_rss->isLastResult() ? 1 : 0,\n					\"{resultcount}\" => ($count_14_662dd8+1),\n					\"{maxpages}\"    => $maxPages_14_662dd8,\n					\"{currentpage}\" => ($search_rss->getAttribute(\'page\')+1),\n					\"{maxresults}\"  => $maxResults_14_662dd8,\n					\"{altclass}\"    => (($count_14_662dd8+1) % 2) ? \"CMS_odd\" : \"CMS_even\",\n				);\n				//RSS-ITEM TAG START 15_0451e4\n				$content .= \'<item>\n				<guid isPermaLink=\"false\">object\'.$parameters[\'objectID\'].\'-\'.$object[$parameters[\'objectID\']]->getID().\'</guid>\';\n				//RSS-ITEM-LINK TAG START 16_60bf68\n				$content .= \'<link>\';\n				//save content\n				$content_16_60bf68 = $content;\n				$content = \'\';\n				$content .=CMS_tree::getPageValue(\"5\", \"url\", @$public_search, @$parameters[\"pageID\"]).\"?item=\".$object[1]->getValue(\'id\',\'\');\n				//then remove tags from content and add it to old content\n				$entities = array(\'&\' => \'&amp;\',\'>\' => \'&gt;\',\'<\' => \'&lt;\',);\n				$content = $content_16_60bf68.str_replace(array_keys($entities),$entities,strip_tags(io::decodeEntities($content)));\n				unset($content_16_60bf68);\n				$content .= \'</link>\';\n				//RSS-ITEM-LINK TAG END 16_60bf68\n				//RSS-ITEM-TITLE TAG START 17_10036f\n				$content .= \'<title>\';\n				//save content\n				$content_17_10036f = $content;\n				$content = \'\';\n				$content .=$object[1]->objectValues(1)->getValue(\'value\',\'\');\n				//then remove tags from content and add it to old content\n				$entities = array(\'&\' => \'&amp;\',\'>\' => \'&gt;\',\'<\' => \'&lt;\',);\n				$content = $content_17_10036f.str_replace(array_keys($entities),$entities,strip_tags(io::decodeEntities($content)));\n				unset($content_17_10036f);\n				$content .= \'</title>\';\n				//RSS-ITEM-TITLE TAG END 17_10036f\n				//RSS-ITEM-DESCRIPTION TAG START 18_bd3d20\n				$content .= \'<description>\';\n				$content .= \'<![CDATA[\';\n				$content .=$object[1]->objectValues(2)->getValue(\'htmlvalue\',\'\');\n				$content .= \']]>\';\n				$content .= \'</description>\';\n				//RSS-ITEM-DESCRIPTION TAG END 18_bd3d20\n				//RSS-ITEM-PUBDATE TAG START 19_65c54d\n				$content .= \'<pubDate>\';\n				//save content\n				$content_19_65c54d = $content;\n				$content = \'\';\n				$content .=$object[1]->getValue(\'formatedDateStart\',\'rss\');\n				//then remove tags from content and add it to old content\n				$entities = array(\'&\' => \'&amp;\',\'>\' => \'&gt;\',\'<\' => \'&lt;\',);\n				$content = $content_19_65c54d.str_replace(array_keys($entities),$entities,strip_tags(io::decodeEntities($content)));\n				unset($content_19_65c54d);\n				$content .= \'</pubDate>\';\n				//RSS-ITEM-PUBDATE TAG END 19_65c54d\n				$content .= \'</item>\';\n				//RSS-ITEM TAG END 15_0451e4\n				$count_14_662dd8++;\n				//do all result vars replacement\n				$content_14_662dd8.= CMS_polymod_definition_parsing::replaceVars($content, $replace);\n			}\n			$content = $content_14_662dd8; //retrieve previous content var if any\n			$replace = $replace_14_662dd8; //retrieve previous replace vars if any\n			$object[$objectDefinition_rss] = $object_14_662dd8; //retrieve previous object search if any\n			unset($object_14_662dd8, $replace_14_662dd8, $content_14_662dd8);\n		}\n		//RESULT rss TAG END 14_662dd8\n		//destroy search and results rss objects\n		unset($search_rss, $launchSearch_rss, $searchLaunched_rss);\n		//SEARCH rss TAG END 13_ba10d2\n		$content .=\"\n		\";\n	}\n	//RSS TAG END 11_12cd77\n	$content = CMS_polymod_definition_parsing::replaceVars($content, $replace);\n	$content .= \'<!--{elements:\'.base64_encode(serialize(array (\n		\'module\' =>\n		array (\n			0 => \'standard\',\n			1 => \'pnews\',\n		),\n	))).\'}-->\';\n	echo $content;\n	unset($content);\n	unset($replace);}\n	?>','2011-02-23 14:12:19');
+INSERT INTO `mod_object_rss_definition` (`id_mord`, `uuid_mord`, `object_id_mord`, `label_id_mord`, `description_id_mord`, `link_mord`, `author_mord`, `copyright_mord`, `categories_mord`, `ttl_mord`, `email_mord`, `definition_mord`, `compiled_definition_mord`, `last_compilation_mord`) VALUES(1, 'e5a7a52a-0baa-102e-80e2-001a6470da26', 1, 40, 41, '', '', '', '', 1440, '', '<atm-rss language="fr">\r\n    <atm-rss-title>Actualités du site démo d''Automne</atm-rss-title>\r\n    <atm-search what="{[''object1'']}" name="rss">\r\n        <atm-search-order search="rss" type="publication date after" direction="desc" />\r\n        <atm-result search="rss">\r\n            <atm-rss-item>\r\n                <atm-rss-item-url>{page:5:url}?item={[''object1''][''id'']}</atm-rss-item-url>\r\n                <atm-rss-item-title>{[''object1''][''fields''][1][''value'']}</atm-rss-item-title>\r\n                <atm-rss-item-content>{[''object1''][''fields''][2][''htmlvalue'']}</atm-rss-item-content>\r\n                <atm-rss-item-date>{[''object1''][''formatedDateStart'']|rss}</atm-rss-item-date>\r\n            </atm-rss-item>\r\n        </atm-result>\r\n    </atm-search>\r\n</atm-rss>', '<?php\n/*Generated on Wed, 23 Feb 2011 14:12:19 +0100 by Automne (TM) 4.1.0b3 */\nif(!APPLICATION_ENFORCES_ACCESS_CONTROL || (isset($cms_user) && is_a($cms_user, ''CMS_profile_user'') && $cms_user->hasModuleClearance(''pnews'', CLEARANCE_MODULE_VIEW))){\n	$content = "";\n	$replace = "";\n	$atmIfResults = array();\n	if (!isset($objectDefinitions) || !is_array($objectDefinitions)) $objectDefinitions = array();\n	$parameters[''objectID''] = 1;\n	if (!isset($cms_language) || (isset($cms_language) && $cms_language->getCode() != ''fr'')) $cms_language = new CMS_language(''fr'');\n	$parameters[''public''] = true;\n	if (isset($parameters[''item''])) {$parameters[''objectID''] = $parameters[''item'']->getObjectID();} elseif (isset($parameters[''itemID'']) && sensitiveIO::isPositiveInteger($parameters[''itemID'']) && !isset($parameters[''objectID''])) $parameters[''objectID''] = CMS_poly_object_catalog::getObjectDefinitionByID($parameters[''itemID'']);\n	if (!isset($object) || !is_array($object)) $object = array();\n	if (!isset($object[1])) $object[1] = new CMS_poly_object(1, 0, array(), $parameters[''public'']);\n	$parameters[''module''] = ''pnews'';\n	//RSS TAG START 11_12cd77\n	if (!sensitiveIO::isPositiveInteger($parameters[''objectID''])) {\n		CMS_grandFather::raiseError(''Error into atm-rss tag : can\\''t found object infos to use into : $parameters[\\''objectID\\'']'');\n	} else {\n		//RSS-ITEM-TITLE TAG START 12_73e2f1\n		$content .= ''<title>'';\n		//save content\n		$content_12_73e2f1 = $content;\n		$content = '''';\n		$content .="Actualités du site démo d''Automne";\n		//then remove tags from content and add it to old content\n		$entities = array(''&'' => ''&amp;'',''>'' => ''&gt;'',''<'' => ''&lt;'',);\n		$content = $content_12_73e2f1.str_replace(array_keys($entities),$entities,strip_tags(io::decodeEntities($content)));\n		unset($content_12_73e2f1);\n		$content .= ''</title>'';\n		//RSS-ITEM-TITLE TAG END 12_73e2f1\n		//SEARCH rss TAG START 13_ba10d2\n		$objectDefinition_rss = ''1'';\n		if (!isset($objectDefinitions[$objectDefinition_rss])) {\n			$objectDefinitions[$objectDefinition_rss] = new CMS_poly_object_definition($objectDefinition_rss);\n		}\n		//public search ?\n		$public_13_ba10d2 = isset($public_search) ? $public_search : false;\n		//get search params\n		$search_rss = new CMS_object_search($objectDefinitions[$objectDefinition_rss], $public_13_ba10d2);\n		$launchSearch_rss = true;\n		$searchLaunched_rss = false;\n		//add search conditions if any\n		$search_rss->addOrderCondition("publication date after", "desc");\n		//RESULT rss TAG START 14_662dd8\n		if(isset($search_rss) && $launchSearch_rss && $searchLaunched_rss === false) {\n			//launch search\n			if ($search_rss->search(CMS_object_search::POLYMOD_SEARCH_RETURN_INDIVIDUALS_OBJECTS)) {\n				$searchLaunched_rss = true;\n			}\n		} elseif (isset($search_rss) && $launchSearch_rss && $searchLaunched_rss === true) {\n			//reset search stack (search already done before)\n			$search_rss->resetResultStack();\n		} else {\n			CMS_grandFather::raiseError("Malformed atm-result tag : can''t use this tag outside of atm-search \\"rss\\" tag ...");\n		}\n		if (isset($search_rss) && $launchSearch_rss && $searchLaunched_rss === true) {\n			$object_14_662dd8 = (isset($object[$objectDefinition_rss])) ? $object[$objectDefinition_rss] : ""; //save previous object search if any\n			$replace_14_662dd8 = $replace; //save previous replace vars if any\n			$count_14_662dd8 = 0;\n			$content_14_662dd8 = $content; //save previous content var if any\n			$maxPages_14_662dd8 = $search_rss->getMaxPages();\n			$maxResults_14_662dd8 = $search_rss->getNumRows();\n			while ($object[$objectDefinition_rss] = $search_rss->getNextResult()) {\n				$content = "";\n				$replace["atm-search"] = array (\n					"{resultid}" 	=> (isset($resultID_rss)) ? $resultID_rss : $object[$objectDefinition_rss]->getID(),\n					"{firstresult}" => (!$count_14_662dd8) ? 1 : 0,\n					"{lastresult}" 	=> $search_rss->isLastResult() ? 1 : 0,\n					"{resultcount}" => ($count_14_662dd8+1),\n					"{maxpages}"    => $maxPages_14_662dd8,\n					"{currentpage}" => ($search_rss->getAttribute(''page'')+1),\n					"{maxresults}"  => $maxResults_14_662dd8,\n					"{altclass}"    => (($count_14_662dd8+1) % 2) ? "CMS_odd" : "CMS_even",\n				);\n				//RSS-ITEM TAG START 15_0451e4\n				$content .= ''<item>\n				<guid isPermaLink="false">object''.$parameters[''objectID''].''-''.$object[$parameters[''objectID'']]->getID().''</guid>'';\n				//RSS-ITEM-LINK TAG START 16_60bf68\n				$content .= ''<link>'';\n				//save content\n				$content_16_60bf68 = $content;\n				$content = '''';\n				$content .=CMS_tree::getPageValue("5", "url", @$public_search, @$parameters["pageID"])."?item=".$object[1]->getValue(''id'','''');\n				//then remove tags from content and add it to old content\n				$entities = array(''&'' => ''&amp;'',''>'' => ''&gt;'',''<'' => ''&lt;'',);\n				$content = $content_16_60bf68.str_replace(array_keys($entities),$entities,strip_tags(io::decodeEntities($content)));\n				unset($content_16_60bf68);\n				$content .= ''</link>'';\n				//RSS-ITEM-LINK TAG END 16_60bf68\n				//RSS-ITEM-TITLE TAG START 17_10036f\n				$content .= ''<title>'';\n				//save content\n				$content_17_10036f = $content;\n				$content = '''';\n				$content .=$object[1]->objectValues(1)->getValue(''value'','''');\n				//then remove tags from content and add it to old content\n				$entities = array(''&'' => ''&amp;'',''>'' => ''&gt;'',''<'' => ''&lt;'',);\n				$content = $content_17_10036f.str_replace(array_keys($entities),$entities,strip_tags(io::decodeEntities($content)));\n				unset($content_17_10036f);\n				$content .= ''</title>'';\n				//RSS-ITEM-TITLE TAG END 17_10036f\n				//RSS-ITEM-DESCRIPTION TAG START 18_bd3d20\n				$content .= ''<description>'';\n				$content .= ''<![CDATA['';\n				$content .=$object[1]->objectValues(2)->getValue(''htmlvalue'','''');\n				$content .= '']]>'';\n				$content .= ''</description>'';\n				//RSS-ITEM-DESCRIPTION TAG END 18_bd3d20\n				//RSS-ITEM-PUBDATE TAG START 19_65c54d\n				$content .= ''<pubDate>'';\n				//save content\n				$content_19_65c54d = $content;\n				$content = '''';\n				$content .=$object[1]->getValue(''formatedDateStart'',''rss'');\n				//then remove tags from content and add it to old content\n				$entities = array(''&'' => ''&amp;'',''>'' => ''&gt;'',''<'' => ''&lt;'',);\n				$content = $content_19_65c54d.str_replace(array_keys($entities),$entities,strip_tags(io::decodeEntities($content)));\n				unset($content_19_65c54d);\n				$content .= ''</pubDate>'';\n				//RSS-ITEM-PUBDATE TAG END 19_65c54d\n				$content .= ''</item>'';\n				//RSS-ITEM TAG END 15_0451e4\n				$count_14_662dd8++;\n				//do all result vars replacement\n				$content_14_662dd8.= CMS_polymod_definition_parsing::replaceVars($content, $replace);\n			}\n			$content = $content_14_662dd8; //retrieve previous content var if any\n			$replace = $replace_14_662dd8; //retrieve previous replace vars if any\n			$object[$objectDefinition_rss] = $object_14_662dd8; //retrieve previous object search if any\n			unset($object_14_662dd8, $replace_14_662dd8, $content_14_662dd8);\n		}\n		//RESULT rss TAG END 14_662dd8\n		//destroy search and results rss objects\n		unset($search_rss, $launchSearch_rss, $searchLaunched_rss);\n		//SEARCH rss TAG END 13_ba10d2\n		$content .="\n		";\n	}\n	//RSS TAG END 11_12cd77\n	$content = CMS_polymod_definition_parsing::replaceVars($content, $replace);\n	$content .= ''<!--{elements:''.base64_encode(serialize(array (\n		''module'' =>\n		array (\n			0 => ''standard'',\n			1 => ''pnews'',\n		),\n	))).''}-->'';\n	echo $content;\n	unset($content);\n	unset($replace);}\n	?>', '2011-02-23 14:12:19');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `mod_standard_clientSpaces_archived`
+-- Structure de la table `mod_standard_clientSpaces_archived`
 --
 
 DROP TABLE IF EXISTS `mod_standard_clientSpaces_archived`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mod_standard_clientSpaces_archived` (
   `template_cs` int(11) unsigned NOT NULL default '0',
   `tagID_cs` varchar(100) NOT NULL default '',
@@ -2093,21 +2166,20 @@ CREATE TABLE `mod_standard_clientSpaces_archived` (
   PRIMARY KEY  (`template_cs`,`tagID_cs`,`order_cs`),
   KEY `template_cs` (`template_cs`),
   KEY `type_cs` (`type_cs`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mod_standard_clientSpaces_archived`
+-- Contenu de la table `mod_standard_clientSpaces_archived`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `mod_standard_clientSpaces_deleted`
+-- Structure de la table `mod_standard_clientSpaces_deleted`
 --
 
 DROP TABLE IF EXISTS `mod_standard_clientSpaces_deleted`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mod_standard_clientSpaces_deleted` (
   `template_cs` int(11) unsigned NOT NULL default '0',
   `tagID_cs` varchar(100) NOT NULL default '',
@@ -2117,21 +2189,20 @@ CREATE TABLE `mod_standard_clientSpaces_deleted` (
   PRIMARY KEY  (`template_cs`,`tagID_cs`,`order_cs`),
   KEY `template_cs` (`template_cs`),
   KEY `type_cs` (`type_cs`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mod_standard_clientSpaces_deleted`
+-- Contenu de la table `mod_standard_clientSpaces_deleted`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `mod_standard_clientSpaces_edited`
+-- Structure de la table `mod_standard_clientSpaces_edited`
 --
 
 DROP TABLE IF EXISTS `mod_standard_clientSpaces_edited`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mod_standard_clientSpaces_edited` (
   `template_cs` int(11) unsigned NOT NULL default '0',
   `tagID_cs` varchar(100) NOT NULL default '',
@@ -2141,96 +2212,95 @@ CREATE TABLE `mod_standard_clientSpaces_edited` (
   PRIMARY KEY  (`template_cs`,`tagID_cs`,`order_cs`),
   KEY `template_cs` (`template_cs`),
   KEY `type_cs` (`type_cs`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mod_standard_clientSpaces_edited`
+-- Contenu de la table `mod_standard_clientSpaces_edited`
 --
 
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (95,'first','27253551d67fd5f23b3269719a3f5364',44,1);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (58,'first','8910cceb3902f8e5b364ac872a452570',70,3);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (64,'first','d2d4e5e21d0e19cc40dfc62fa94d20df',42,0);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (95,'first','e76f4966a4808ea827d71853fd371ee3',43,2);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (94,'first','f94004914e89f986916e96a4731db322',42,0);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (92,'first','bd159ce9706787ad5cdda03cbd03de7e',42,0);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (95,'first','4f342492c25a2b686c2b531760008d98',70,3);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (58,'first','ef68332801171f3678986a9192ea85db',67,2);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (58,'first','947a9a22e4eefe4a486202ab6005f8b5',69,1);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (58,'first','e41e88d5ba9dc4da5ec2772895543861',43,0);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (84,'first','4564d92b193505d71f29b5ae69dddde0',44,3);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (84,'first','56025a9b887be03112111d215ca6f31d',69,2);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (83,'first','22f3ce37f32ed90e7efcb5e2c3379e88',69,3);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (85,'first','9ba530cba11a3763a081a2e34072711f',69,2);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (93,'first','198690666d878af31b7d27d2f4c1cfd3',67,3);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (93,'first','472f95744f761c8f816f68cd59cf28a8',46,2);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (93,'first','8d1b3ec256dada4f0c811896050fdc9f',45,1);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (61,'first','413bd2c305740ddba9c4883228604ab1',42,0);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (62,'first','608b203e1d2422c57d5f890bcef33f36',42,0);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (57,'first','a0922acb28a233e527aa46607bfec987c',44,2);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (93,'first','53a2f135735e315515920da75a688354',43,0);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (94,'first','7fac447905b2c5da7fb86162c1656561',44,1);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (57,'first','a5dc59c9028fd290e4f240131991fa8a2',43,0);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (57,'second','a149c4ef608130b6963fff950126d8690',66,0);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (87,'first','ffcabb4c56442c5a6e6659260c7110fb',44,1);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (65,'first','aa09fe3cdbc32c9b9b7808a6ae073f604',55,2);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (92,'first','18f076b2de7e3b4310097f83ac547533',43,2);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (92,'first','9f851c9d1868ad933f280c33e5a419f3',69,1);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (82,'first','55319cd65490d790a905969af656ee08',44,2);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (95,'first','3a8e6888f4d5e7036861b7863814f35e',43,4);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (95,'first','48e8e4c2bea88305e6a9353511f51ea7',69,5);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (59,'first','8af055ba864f1f9fc7572b993e54c6d7',42,0);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (59,'first','f2c8532eb6f56afe1d435350eebd9a52',69,1);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (65,'first','17a6be4c940c12530cfaecfb2eb6b828',44,1);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (64,'first','85e7287f61fa20d9cd0d0adabbef07d1',54,1);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (59,'first','6ff77816cb91134d254f1b0723fa0022',44,2);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (81,'first','d92af30786e78deab57f106f9398e830',43,1);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (82,'first','267e03d5f6a4d0392b79a2d31dcd40f2',69,1);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (88,'first','7448f10ee9579c5f0de5616d06e7b7f2',44,1);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (88,'first','2e05b6ab8648c84e56b486ea0bbf09fc',42,0);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (81,'first','26396451d4054e05237066375ccd6e8e',42,0);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (65,'first','d227e9c886232aa6c2bbbddb2b348ad4',44,3);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (81,'first','a76b35963e7853924f49b447d533f5ab',69,2);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (81,'second','60a0b56f24fbf5e01737f620b657520d',66,0);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (82,'second','0ee47170b662e4e79dea40ea0f9833c0',66,0);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (83,'first','efa99bdc885c7e3d486c9073dd4b3ea5',44,2);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (83,'first','d9357a8e2eaabff878edd590a3390747',69,1);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (82,'first','f9cbbf6b3c5ac7cbb1a803ab380d36f3',42,0);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (83,'first','51acc66642f99a940dc8eb94504c131b',42,0);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (84,'first','f863b4e5ea5a0c8019440ff99e59e29f',44,1);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (84,'first','5d7229d29d8f71d7b30d9f830db58735',42,0);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (85,'first','8d231671f5511d2e3004c79991317d93',44,1);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (85,'first','7be68b66b22b4b190536a89f91d4da32',42,0);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (92,'first','718dfb04e3bd006a81604b9ccdf448cf',44,3);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (94,'first','3c1cf8ef8f25de1ae96706a2585bffb7',69,2);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (95,'first','67834d6b4d508349b9b2892e4932e718',43,6);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (95,'first','e1c9a76f8a25f03b479f1aaac1d48932',42,0);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (91,'first','3b670218b85e117891afe278e7049563',42,0);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (61,'first','a23554f135ed742872910b38a70131cf3',58,1);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (62,'first','a1ba42094f9b45486a0338b5eea859dfb',68,1);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (86,'first','530e1be13c69bcfec950100e6c6421a3',44,1);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (86,'first','6600f0d4c66704194be3cfd3b144cc51',42,0);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (90,'first','adbbb020aeadb2df9957a83e19e55211',44,1);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (90,'first','b5e288a53dc78ea05a6535356abeac07',42,0);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (87,'first','59655220bef9a6a88d8c2e35b30ba1d0',42,0);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (59,'second','49b5d0e77d63ac544da150a1e8e4e367',66,0);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (65,'first','759d757b5beb586dd93fecdbd1cd6c3b',61,4);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (65,'first','9ce6e306ff41794fc8cac477c349a086',42,0);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (83,'second','b099453f9cb986f40020465b5eb94d90',66,0);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (91,'first','592c2e33c7971c02ec553000d0eaea43',44,1);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (87,'first','dda8207197eda19c8be4b1f63d76b382',44,2);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (95,'first','65990b9ff00394714dd60ffd708b2d77',70,7);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (59,'first','39a32afb98d21c8252ea3714cff0f62e',69,3);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (59,'first','9110334505c2e7ace9a292686b89c405',44,4);
-INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (88,'second','d241ac8ced41b4a82642372c193e116b',66,0);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(95, 'first', '27253551d67fd5f23b3269719a3f5364', 44, 1);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(58, 'first', '8910cceb3902f8e5b364ac872a452570', 70, 3);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(64, 'first', 'd2d4e5e21d0e19cc40dfc62fa94d20df', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(95, 'first', 'e76f4966a4808ea827d71853fd371ee3', 43, 2);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(94, 'first', 'f94004914e89f986916e96a4731db322', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(92, 'first', 'bd159ce9706787ad5cdda03cbd03de7e', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(95, 'first', '4f342492c25a2b686c2b531760008d98', 70, 3);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(58, 'first', 'ef68332801171f3678986a9192ea85db', 67, 2);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(58, 'first', '947a9a22e4eefe4a486202ab6005f8b5', 69, 1);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(58, 'first', 'e41e88d5ba9dc4da5ec2772895543861', 43, 0);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(84, 'first', '4564d92b193505d71f29b5ae69dddde0', 44, 3);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(84, 'first', '56025a9b887be03112111d215ca6f31d', 69, 2);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(83, 'first', '22f3ce37f32ed90e7efcb5e2c3379e88', 69, 3);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(85, 'first', '9ba530cba11a3763a081a2e34072711f', 69, 2);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(93, 'first', '198690666d878af31b7d27d2f4c1cfd3', 67, 3);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(93, 'first', '472f95744f761c8f816f68cd59cf28a8', 46, 2);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(93, 'first', '8d1b3ec256dada4f0c811896050fdc9f', 45, 1);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(61, 'first', '413bd2c305740ddba9c4883228604ab1', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(62, 'first', '608b203e1d2422c57d5f890bcef33f36', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(57, 'first', 'a0922acb28a233e527aa46607bfec987c', 44, 2);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(93, 'first', '53a2f135735e315515920da75a688354', 43, 0);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(94, 'first', '7fac447905b2c5da7fb86162c1656561', 44, 1);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(57, 'first', 'a5dc59c9028fd290e4f240131991fa8a2', 43, 0);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(57, 'second', 'a149c4ef608130b6963fff950126d8690', 66, 0);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(87, 'first', 'ffcabb4c56442c5a6e6659260c7110fb', 44, 1);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(65, 'first', 'aa09fe3cdbc32c9b9b7808a6ae073f604', 55, 2);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(92, 'first', '18f076b2de7e3b4310097f83ac547533', 43, 2);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(92, 'first', '9f851c9d1868ad933f280c33e5a419f3', 69, 1);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(82, 'first', '55319cd65490d790a905969af656ee08', 44, 2);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(95, 'first', '3a8e6888f4d5e7036861b7863814f35e', 43, 4);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(95, 'first', '48e8e4c2bea88305e6a9353511f51ea7', 69, 5);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(59, 'first', '8af055ba864f1f9fc7572b993e54c6d7', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(59, 'first', 'f2c8532eb6f56afe1d435350eebd9a52', 69, 1);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(65, 'first', '17a6be4c940c12530cfaecfb2eb6b828', 44, 1);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(64, 'first', '85e7287f61fa20d9cd0d0adabbef07d1', 54, 1);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(59, 'first', '6ff77816cb91134d254f1b0723fa0022', 44, 2);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(81, 'first', 'd92af30786e78deab57f106f9398e830', 43, 1);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(82, 'first', '267e03d5f6a4d0392b79a2d31dcd40f2', 69, 1);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(88, 'first', '7448f10ee9579c5f0de5616d06e7b7f2', 44, 1);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(88, 'first', '2e05b6ab8648c84e56b486ea0bbf09fc', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(81, 'first', '26396451d4054e05237066375ccd6e8e', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(65, 'first', 'd227e9c886232aa6c2bbbddb2b348ad4', 44, 3);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(81, 'first', 'a76b35963e7853924f49b447d533f5ab', 69, 2);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(81, 'second', '60a0b56f24fbf5e01737f620b657520d', 66, 0);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(82, 'second', '0ee47170b662e4e79dea40ea0f9833c0', 66, 0);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(83, 'first', 'efa99bdc885c7e3d486c9073dd4b3ea5', 44, 2);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(83, 'first', 'd9357a8e2eaabff878edd590a3390747', 69, 1);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(82, 'first', 'f9cbbf6b3c5ac7cbb1a803ab380d36f3', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(83, 'first', '51acc66642f99a940dc8eb94504c131b', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(84, 'first', 'f863b4e5ea5a0c8019440ff99e59e29f', 44, 1);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(84, 'first', '5d7229d29d8f71d7b30d9f830db58735', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(85, 'first', '8d231671f5511d2e3004c79991317d93', 44, 1);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(85, 'first', '7be68b66b22b4b190536a89f91d4da32', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(92, 'first', '718dfb04e3bd006a81604b9ccdf448cf', 44, 3);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(94, 'first', '3c1cf8ef8f25de1ae96706a2585bffb7', 69, 2);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(95, 'first', '67834d6b4d508349b9b2892e4932e718', 43, 6);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(95, 'first', 'e1c9a76f8a25f03b479f1aaac1d48932', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(91, 'first', '3b670218b85e117891afe278e7049563', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(61, 'first', 'a23554f135ed742872910b38a70131cf3', 58, 1);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(62, 'first', 'a1ba42094f9b45486a0338b5eea859dfb', 68, 1);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(86, 'first', '530e1be13c69bcfec950100e6c6421a3', 44, 1);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(86, 'first', '6600f0d4c66704194be3cfd3b144cc51', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(90, 'first', 'adbbb020aeadb2df9957a83e19e55211', 44, 1);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(90, 'first', 'b5e288a53dc78ea05a6535356abeac07', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(87, 'first', '59655220bef9a6a88d8c2e35b30ba1d0', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(59, 'second', '49b5d0e77d63ac544da150a1e8e4e367', 66, 0);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(65, 'first', '759d757b5beb586dd93fecdbd1cd6c3b', 61, 4);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(65, 'first', '9ce6e306ff41794fc8cac477c349a086', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(83, 'second', 'b099453f9cb986f40020465b5eb94d90', 66, 0);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(91, 'first', '592c2e33c7971c02ec553000d0eaea43', 44, 1);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(87, 'first', 'dda8207197eda19c8be4b1f63d76b382', 44, 2);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(95, 'first', '65990b9ff00394714dd60ffd708b2d77', 70, 7);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(59, 'first', '39a32afb98d21c8252ea3714cff0f62e', 69, 3);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(59, 'first', '9110334505c2e7ace9a292686b89c405', 44, 4);
+INSERT INTO `mod_standard_clientSpaces_edited` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(88, 'second', 'd241ac8ced41b4a82642372c193e116b', 66, 0);
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `mod_standard_clientSpaces_edition`
+-- Structure de la table `mod_standard_clientSpaces_edition`
 --
 
 DROP TABLE IF EXISTS `mod_standard_clientSpaces_edition`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mod_standard_clientSpaces_edition` (
   `template_cs` int(11) unsigned NOT NULL default '0',
   `tagID_cs` varchar(100) NOT NULL default '',
@@ -2240,21 +2310,20 @@ CREATE TABLE `mod_standard_clientSpaces_edition` (
   PRIMARY KEY  (`template_cs`,`tagID_cs`,`order_cs`),
   KEY `template_cs` (`template_cs`),
   KEY `type_cs` (`type_cs`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mod_standard_clientSpaces_edition`
+-- Contenu de la table `mod_standard_clientSpaces_edition`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `mod_standard_clientSpaces_public`
+-- Structure de la table `mod_standard_clientSpaces_public`
 --
 
 DROP TABLE IF EXISTS `mod_standard_clientSpaces_public`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mod_standard_clientSpaces_public` (
   `template_cs` int(11) unsigned NOT NULL default '0',
   `tagID_cs` varchar(100) NOT NULL default '',
@@ -2264,94 +2333,93 @@ CREATE TABLE `mod_standard_clientSpaces_public` (
   PRIMARY KEY  (`template_cs`,`tagID_cs`,`order_cs`),
   KEY `template_cs` (`template_cs`),
   KEY `type_cs` (`type_cs`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mod_standard_clientSpaces_public`
+-- Contenu de la table `mod_standard_clientSpaces_public`
 --
 
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (61,'first','413bd2c305740ddba9c4883228604ab1',42,0);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (82,'first','f9cbbf6b3c5ac7cbb1a803ab380d36f3',42,0);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (94,'first','7fac447905b2c5da7fb86162c1656561',44,1);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (92,'first','18f076b2de7e3b4310097f83ac547533',43,2);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (84,'first','56025a9b887be03112111d215ca6f31d',69,2);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (83,'first','22f3ce37f32ed90e7efcb5e2c3379e88',69,3);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (87,'first','dda8207197eda19c8be4b1f63d76b382',44,2);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (93,'first','472f95744f761c8f816f68cd59cf28a8',46,2);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (93,'first','8d1b3ec256dada4f0c811896050fdc9f',45,1);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (93,'first','53a2f135735e315515920da75a688354',43,0);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (62,'first','608b203e1d2422c57d5f890bcef33f36',42,0);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (93,'first','198690666d878af31b7d27d2f4c1cfd3',67,3);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (84,'first','f863b4e5ea5a0c8019440ff99e59e29f',44,1);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (57,'first','a5dc59c9028fd290e4f240131991fa8a2',43,0);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (87,'first','ffcabb4c56442c5a6e6659260c7110fb',44,1);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (90,'first','adbbb020aeadb2df9957a83e19e55211',44,1);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (59,'first','8af055ba864f1f9fc7572b993e54c6d7',42,0);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (59,'first','f2c8532eb6f56afe1d435350eebd9a52',69,1);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (92,'first','bd159ce9706787ad5cdda03cbd03de7e',42,0);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (82,'first','267e03d5f6a4d0392b79a2d31dcd40f2',69,1);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (85,'first','9ba530cba11a3763a081a2e34072711f',69,2);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (95,'first','e1c9a76f8a25f03b479f1aaac1d48932',42,0);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (95,'first','67834d6b4d508349b9b2892e4932e718',43,6);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (95,'first','48e8e4c2bea88305e6a9353511f51ea7',69,5);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (95,'first','3a8e6888f4d5e7036861b7863814f35e',43,4);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (95,'first','4f342492c25a2b686c2b531760008d98',70,3);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (57,'first','a0922acb28a233e527aa46607bfec987c',44,2);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (92,'first','9f851c9d1868ad933f280c33e5a419f3',69,1);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (64,'first','85e7287f61fa20d9cd0d0adabbef07d1',54,1);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (65,'first','17a6be4c940c12530cfaecfb2eb6b828',44,1);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (64,'first','d2d4e5e21d0e19cc40dfc62fa94d20df',42,0);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (59,'first','6ff77816cb91134d254f1b0723fa0022',44,2);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (81,'first','d92af30786e78deab57f106f9398e830',43,1);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (88,'first','7448f10ee9579c5f0de5616d06e7b7f2',44,1);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (88,'first','2e05b6ab8648c84e56b486ea0bbf09fc',42,0);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (81,'first','26396451d4054e05237066375ccd6e8e',42,0);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (65,'first','aa09fe3cdbc32c9b9b7808a6ae073f604',55,2);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (81,'first','a76b35963e7853924f49b447d533f5ab',69,2);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (81,'second','60a0b56f24fbf5e01737f620b657520d',66,0);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (82,'first','55319cd65490d790a905969af656ee08',44,2);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (82,'second','0ee47170b662e4e79dea40ea0f9833c0',66,0);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (83,'first','efa99bdc885c7e3d486c9073dd4b3ea5',44,2);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (83,'first','d9357a8e2eaabff878edd590a3390747',69,1);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (83,'first','51acc66642f99a940dc8eb94504c131b',42,0);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (94,'first','f94004914e89f986916e96a4731db322',42,0);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (84,'first','5d7229d29d8f71d7b30d9f830db58735',42,0);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (85,'first','8d231671f5511d2e3004c79991317d93',44,1);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (85,'first','7be68b66b22b4b190536a89f91d4da32',42,0);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (92,'first','718dfb04e3bd006a81604b9ccdf448cf',44,3);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (94,'first','3c1cf8ef8f25de1ae96706a2585bffb7',69,2);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (95,'first','65990b9ff00394714dd60ffd708b2d77',70,7);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (95,'first','e76f4966a4808ea827d71853fd371ee3',43,2);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (95,'first','27253551d67fd5f23b3269719a3f5364',44,1);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (91,'first','3b670218b85e117891afe278e7049563',42,0);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (57,'second','a149c4ef608130b6963fff950126d8690',66,0);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (61,'first','a23554f135ed742872910b38a70131cf3',58,1);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (62,'first','a1ba42094f9b45486a0338b5eea859dfb',68,1);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (86,'first','530e1be13c69bcfec950100e6c6421a3',44,1);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (86,'first','6600f0d4c66704194be3cfd3b144cc51',42,0);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (90,'first','b5e288a53dc78ea05a6535356abeac07',42,0);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (87,'first','59655220bef9a6a88d8c2e35b30ba1d0',42,0);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (59,'second','49b5d0e77d63ac544da150a1e8e4e367',66,0);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (65,'first','d227e9c886232aa6c2bbbddb2b348ad4',44,3);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (65,'first','759d757b5beb586dd93fecdbd1cd6c3b',61,4);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (65,'first','9ce6e306ff41794fc8cac477c349a086',42,0);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (83,'second','b099453f9cb986f40020465b5eb94d90',66,0);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (91,'first','592c2e33c7971c02ec553000d0eaea43',44,1);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (84,'first','4564d92b193505d71f29b5ae69dddde0',44,3);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (59,'first','39a32afb98d21c8252ea3714cff0f62e',69,3);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (59,'first','9110334505c2e7ace9a292686b89c405',44,4);
-INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES (88,'second','d241ac8ced41b4a82642372c193e116b',66,0);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(61, 'first', '413bd2c305740ddba9c4883228604ab1', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(82, 'first', 'f9cbbf6b3c5ac7cbb1a803ab380d36f3', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(94, 'first', '7fac447905b2c5da7fb86162c1656561', 44, 1);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(92, 'first', '18f076b2de7e3b4310097f83ac547533', 43, 2);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(84, 'first', '56025a9b887be03112111d215ca6f31d', 69, 2);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(83, 'first', '22f3ce37f32ed90e7efcb5e2c3379e88', 69, 3);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(87, 'first', 'dda8207197eda19c8be4b1f63d76b382', 44, 2);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(93, 'first', '472f95744f761c8f816f68cd59cf28a8', 46, 2);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(93, 'first', '8d1b3ec256dada4f0c811896050fdc9f', 45, 1);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(93, 'first', '53a2f135735e315515920da75a688354', 43, 0);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(62, 'first', '608b203e1d2422c57d5f890bcef33f36', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(93, 'first', '198690666d878af31b7d27d2f4c1cfd3', 67, 3);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(84, 'first', 'f863b4e5ea5a0c8019440ff99e59e29f', 44, 1);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(57, 'first', 'a5dc59c9028fd290e4f240131991fa8a2', 43, 0);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(87, 'first', 'ffcabb4c56442c5a6e6659260c7110fb', 44, 1);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(90, 'first', 'adbbb020aeadb2df9957a83e19e55211', 44, 1);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(59, 'first', '8af055ba864f1f9fc7572b993e54c6d7', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(59, 'first', 'f2c8532eb6f56afe1d435350eebd9a52', 69, 1);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(92, 'first', 'bd159ce9706787ad5cdda03cbd03de7e', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(82, 'first', '267e03d5f6a4d0392b79a2d31dcd40f2', 69, 1);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(85, 'first', '9ba530cba11a3763a081a2e34072711f', 69, 2);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(95, 'first', 'e1c9a76f8a25f03b479f1aaac1d48932', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(95, 'first', '67834d6b4d508349b9b2892e4932e718', 43, 6);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(95, 'first', '48e8e4c2bea88305e6a9353511f51ea7', 69, 5);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(95, 'first', '3a8e6888f4d5e7036861b7863814f35e', 43, 4);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(95, 'first', '4f342492c25a2b686c2b531760008d98', 70, 3);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(57, 'first', 'a0922acb28a233e527aa46607bfec987c', 44, 2);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(92, 'first', '9f851c9d1868ad933f280c33e5a419f3', 69, 1);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(64, 'first', '85e7287f61fa20d9cd0d0adabbef07d1', 54, 1);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(65, 'first', '17a6be4c940c12530cfaecfb2eb6b828', 44, 1);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(64, 'first', 'd2d4e5e21d0e19cc40dfc62fa94d20df', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(59, 'first', '6ff77816cb91134d254f1b0723fa0022', 44, 2);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(81, 'first', 'd92af30786e78deab57f106f9398e830', 43, 1);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(88, 'first', '7448f10ee9579c5f0de5616d06e7b7f2', 44, 1);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(88, 'first', '2e05b6ab8648c84e56b486ea0bbf09fc', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(81, 'first', '26396451d4054e05237066375ccd6e8e', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(65, 'first', 'aa09fe3cdbc32c9b9b7808a6ae073f604', 55, 2);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(81, 'first', 'a76b35963e7853924f49b447d533f5ab', 69, 2);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(81, 'second', '60a0b56f24fbf5e01737f620b657520d', 66, 0);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(82, 'first', '55319cd65490d790a905969af656ee08', 44, 2);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(82, 'second', '0ee47170b662e4e79dea40ea0f9833c0', 66, 0);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(83, 'first', 'efa99bdc885c7e3d486c9073dd4b3ea5', 44, 2);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(83, 'first', 'd9357a8e2eaabff878edd590a3390747', 69, 1);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(83, 'first', '51acc66642f99a940dc8eb94504c131b', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(94, 'first', 'f94004914e89f986916e96a4731db322', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(84, 'first', '5d7229d29d8f71d7b30d9f830db58735', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(85, 'first', '8d231671f5511d2e3004c79991317d93', 44, 1);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(85, 'first', '7be68b66b22b4b190536a89f91d4da32', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(92, 'first', '718dfb04e3bd006a81604b9ccdf448cf', 44, 3);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(94, 'first', '3c1cf8ef8f25de1ae96706a2585bffb7', 69, 2);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(95, 'first', '65990b9ff00394714dd60ffd708b2d77', 70, 7);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(95, 'first', 'e76f4966a4808ea827d71853fd371ee3', 43, 2);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(95, 'first', '27253551d67fd5f23b3269719a3f5364', 44, 1);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(91, 'first', '3b670218b85e117891afe278e7049563', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(57, 'second', 'a149c4ef608130b6963fff950126d8690', 66, 0);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(61, 'first', 'a23554f135ed742872910b38a70131cf3', 58, 1);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(62, 'first', 'a1ba42094f9b45486a0338b5eea859dfb', 68, 1);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(86, 'first', '530e1be13c69bcfec950100e6c6421a3', 44, 1);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(86, 'first', '6600f0d4c66704194be3cfd3b144cc51', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(90, 'first', 'b5e288a53dc78ea05a6535356abeac07', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(87, 'first', '59655220bef9a6a88d8c2e35b30ba1d0', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(59, 'second', '49b5d0e77d63ac544da150a1e8e4e367', 66, 0);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(65, 'first', 'd227e9c886232aa6c2bbbddb2b348ad4', 44, 3);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(65, 'first', '759d757b5beb586dd93fecdbd1cd6c3b', 61, 4);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(65, 'first', '9ce6e306ff41794fc8cac477c349a086', 42, 0);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(83, 'second', 'b099453f9cb986f40020465b5eb94d90', 66, 0);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(91, 'first', '592c2e33c7971c02ec553000d0eaea43', 44, 1);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(84, 'first', '4564d92b193505d71f29b5ae69dddde0', 44, 3);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(59, 'first', '39a32afb98d21c8252ea3714cff0f62e', 69, 3);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(59, 'first', '9110334505c2e7ace9a292686b89c405', 44, 4);
+INSERT INTO `mod_standard_clientSpaces_public` (`template_cs`, `tagID_cs`, `rowsDefinition_cs`, `type_cs`, `order_cs`) VALUES(88, 'second', 'd241ac8ced41b4a82642372c193e116b', 66, 0);
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `mod_standard_rows`
+-- Structure de la table `mod_standard_rows`
 --
 
 DROP TABLE IF EXISTS `mod_standard_rows`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mod_standard_rows` (
-  `id_row` int(11) unsigned NOT NULL,
+  `id_row` int(11) unsigned NOT NULL auto_increment,
   `uuid_row` varchar(36) NOT NULL,
   `label_row` varchar(100) NOT NULL default '',
   `definitionFile_row` varchar(100) NOT NULL default '',
@@ -2363,42 +2431,41 @@ CREATE TABLE `mod_standard_rows` (
   `useable_row` int(1) NOT NULL default '0',
   PRIMARY KEY  (`id_row`),
   FULLTEXT KEY `label_row` (`label_row`,`description_row`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mod_standard_rows`
+-- Contenu de la table `mod_standard_rows`
 --
 
-INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES (25,'e5ae86ce-0baa-102e-80e2-001a6470da26','000 Exemple','r25_Complet.xml','standard','','nopicto.gif','Cette rangée regroupe des exemples des différents types de blocs à votre disposition : chaîne de caractères, texte, image, fichier, animation Flash','',0);
-INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES (46,'e5ae8a0c-0baa-102e-80e2-001a6470da26','220 Texte et Image Gauche','r46_220_Texte_et_Image_Gauche.xml','standard','','text-img-left.gif','Cette rangée permet d\'insérer du texte qu\'on pourra mettre en forme via l\'éditeur Wysiwyg et elle permet d\'insérer en plus une image alignée sur le côté gauche','',0);
-INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES (45,'e5ae8d0e-0baa-102e-80e2-001a6470da26','210 Texte et Image Droite','r45_210_Texte__image_droite.xml','standard','','text-img-right.gif','Cette rangée permet d\'insérer du texte qu\'on pourra mettre en forme via l\'éditeur Wysiwyg et elle permet d\'insérer en plus une image alignée sur le côté droit','',0);
-INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES (44,'e5ae9042-0baa-102e-80e2-001a6470da26','200 Texte','r44_200_Texte.xml','standard','','text.gif','Cette rangée peut contenir du texte mis en forme (liens, listes à puces, tableaux, etc.) à l\'aide de l\'éditeur Wysiwyg. Elle permet aussi d\'insérer des liens vers des contenus stockés dans les modules','',1);
-INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES (43,'e5ae93a8-0baa-102e-80e2-001a6470da26','110 Sous Titre (niveau 2)','r43_100_Sous_Titre.xml','standard','','title.gif','Cette rangée permet d\'insérer un titre de niveau 2 correspondant à l\'élément H2 en HTML','',1);
-INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES (42,'e5ae95ba-0baa-102e-80e2-001a6470da26','100 Titre (niveau 1)','r42_000_Titre.xml','standard','','title.gif','Cette rangée vous permet d\'insérer un titre de niveau 1 correspondant à l\'élément H1 en HTML','',1);
-INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES (47,'e5ae983a-0baa-102e-80e2-001a6470da26','400 Télécharger un fichier','r47_400_Telecharger_un_fichier.xml','standard','','file.gif','Cette rangée permet d\'insérer un fichier à télécharger','',0);
-INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES (48,'e5ae99f2-0baa-102e-80e2-001a6470da26','300 Image Centrée','r48_300_Image_Centree.xml','standard','','img.gif','Cette rangée insère une image centrée dont la largeur est limitée à 500px','',0);
-INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES (49,'e5ae9be6-0baa-102e-80e2-001a6470da26','410 Animation Flash','r49_500_Animation_Flash.xml','standard','','flash.gif','Cette rangée permet d\'insérer une animation Flash (.swf)','',0);
-INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES (54,'e5ae9d8a-0baa-102e-80e2-001a6470da26','700 Plan du site','r54_700_Plan_du_site.xml','','admin','tree.gif','Cette rangée génère un plan du site à partir de la racine du site sur 3 niveaux de profondeur','',0);
-INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES (55,'e5ae9f92-0baa-102e-80e2-001a6470da26','800 [Formulaire]','r55_800_Formulaire.xml','cms_forms','admin','form.gif','Cette rangée permet d\'insérer un formulaire créé à partir du module formulaire','',0);
-INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES (58,'e5aea17c-0baa-102e-80e2-001a6470da26','605 [Actualités] Recherche','r58_610_Actualites__Recherche_FR.xml','pnews','admin','module.gif','Cette rangée affiche les dix dernières actualités et permet une recherche par mots-clés ou par catégorie d\'actualités','',0);
-INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES (61,'e5aea3ac-0baa-102e-80e2-001a6470da26','900 Carte Google','r61_900_Google_Maps.xml','standard','admin','googlemaps.gif','Cette rangée vous permet d\'insérer une carte Google Maps à partir d\'une adresse postale.\nVoir le code source de la rangée pour plus d\'informations.','',0);
-INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES (66,'e5aea776-0baa-102e-80e2-001a6470da26','615 [Actualités] Dernière actualité','r66_615_Derniere_actualite.xml','pnews','admin','module.gif','Cette rangée affiche la dernière actualité','',0);
-INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES (67,'e5aea92e-0baa-102e-80e2-001a6470da26','120 Mini Titre (niveau 3)','r67_120_Sous_Sous_Titre.xml','standard','','title.gif','Cette rangée vous permet d\'insérer un titre de niveau 3 correspondant à l\'élément H3 en HTML','',1);
-INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES (68,'e5aeab54-0baa-102e-80e2-001a6470da26','650 [Médiathèque] Recherche','r68_650_Mediatheque.xml','pmedia','admin','module.gif','Cette rangée affiche les dix derniers éléments de la médiathèque et permet une recherche par mots-clés ou par catégorie de médias','',0);
-INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES (69,'e5aeadb6-0baa-102e-80e2-001a6470da26','230 Texte et Média à Droite','r69_Texte_-_Media_a_droite.xml','pmedia;standard','','text-mod-right.gif','Cette rangée permet d\'insérer du texte qu\'on pourra mettre en forme via l\'éditeur Wysiwyg avec,  aligné à droite, un élément issu du module médiathèque','',1);
-INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES (70,'e5aeb0b8-0baa-102e-80e2-001a6470da26','240 Texte et Média à Gauche','r70_240_Texte_et_Media_a_Gauche.xml','pmedia;standard','','text-mod-left.gif','Cette rangée permet d\'insérer du texte qu\'on pourra mettre en forme via l\'éditeur Wysiwyg avec,  aligné à gauche, un élément issu du module médiathèque','',1);
-INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES (71,'02163c06-9082-102e-80e2-001a6470da26','300 Média Centré','r71_300_Media_centre.xml','pmedia','','module.gif','Cette rangée permet d\'insérer un élément issu du module médiathèque centré dans la page.','',1);
+INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES(25, 'e5ae86ce-0baa-102e-80e2-001a6470da26', '000 Exemple', 'r25_Complet.xml', 'standard', '', 'nopicto.gif', 'Cette rangée regroupe des exemples des différents types de blocs à votre disposition : chaîne de caractères, texte, image, fichier, animation Flash', '', 0);
+INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES(46, 'e5ae8a0c-0baa-102e-80e2-001a6470da26', '220 Texte et Image Gauche', 'r46_220_Texte_et_Image_Gauche.xml', 'standard', '', 'text-img-left.gif', 'Cette rangée permet d''insérer du texte qu''on pourra mettre en forme via l''éditeur Wysiwyg et elle permet d''insérer en plus une image alignée sur le côté gauche', '', 0);
+INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES(45, 'e5ae8d0e-0baa-102e-80e2-001a6470da26', '210 Texte et Image Droite', 'r45_210_Texte__image_droite.xml', 'standard', '', 'text-img-right.gif', 'Cette rangée permet d''insérer du texte qu''on pourra mettre en forme via l''éditeur Wysiwyg et elle permet d''insérer en plus une image alignée sur le côté droit', '', 0);
+INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES(44, 'e5ae9042-0baa-102e-80e2-001a6470da26', '200 Texte', 'r44_200_Texte.xml', 'standard', '', 'text.gif', 'Cette rangée peut contenir du texte mis en forme (liens, listes à puces, tableaux, etc.) à l''aide de l''éditeur Wysiwyg. Elle permet aussi d''insérer des liens vers des contenus stockés dans les modules', '', 1);
+INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES(43, 'e5ae93a8-0baa-102e-80e2-001a6470da26', '110 Sous Titre (niveau 2)', 'r43_100_Sous_Titre.xml', 'standard', '', 'title.gif', 'Cette rangée permet d''insérer un titre de niveau 2 correspondant à l''élément H2 en HTML', '', 1);
+INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES(42, 'e5ae95ba-0baa-102e-80e2-001a6470da26', '100 Titre (niveau 1)', 'r42_000_Titre.xml', 'standard', '', 'title.gif', 'Cette rangée vous permet d''insérer un titre de niveau 1 correspondant à l''élément H1 en HTML', '', 1);
+INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES(47, 'e5ae983a-0baa-102e-80e2-001a6470da26', '400 Télécharger un fichier', 'r47_400_Telecharger_un_fichier.xml', 'standard', '', 'file.gif', 'Cette rangée permet d''insérer un fichier à télécharger', '', 0);
+INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES(48, 'e5ae99f2-0baa-102e-80e2-001a6470da26', '300 Image Centrée', 'r48_300_Image_Centree.xml', 'standard', '', 'img.gif', 'Cette rangée insère une image centrée dont la largeur est limitée à 500px', '', 0);
+INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES(49, 'e5ae9be6-0baa-102e-80e2-001a6470da26', '410 Animation Flash', 'r49_500_Animation_Flash.xml', 'standard', '', 'flash.gif', 'Cette rangée permet d''insérer une animation Flash (.swf)', '', 0);
+INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES(54, 'e5ae9d8a-0baa-102e-80e2-001a6470da26', '700 Plan du site', 'r54_700_Plan_du_site.xml', '', 'admin', 'tree.gif', 'Cette rangée génère un plan du site à partir de la racine du site sur 3 niveaux de profondeur', '', 0);
+INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES(55, 'e5ae9f92-0baa-102e-80e2-001a6470da26', '800 [Formulaire]', 'r55_800_Formulaire.xml', 'cms_forms', 'admin', 'form.gif', 'Cette rangée permet d''insérer un formulaire créé à partir du module formulaire', '', 0);
+INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES(58, 'e5aea17c-0baa-102e-80e2-001a6470da26', '605 [Actualités] Recherche', 'r58_610_Actualites__Recherche_FR.xml', 'pnews', 'admin', 'module.gif', 'Cette rangée affiche les dix dernières actualités et permet une recherche par mots-clés ou par catégorie d''actualités', '', 0);
+INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES(61, 'e5aea3ac-0baa-102e-80e2-001a6470da26', '900 Carte Google', 'r61_900_Google_Maps.xml', 'standard', 'admin', 'googlemaps.gif', 'Cette rangée vous permet d''insérer une carte Google Maps à partir d''une adresse postale.\nVoir le code source de la rangée pour plus d''informations.', '', 0);
+INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES(66, 'e5aea776-0baa-102e-80e2-001a6470da26', '615 [Actualités] Dernière actualité', 'r66_615_Derniere_actualite.xml', 'pnews', 'admin', 'module.gif', 'Cette rangée affiche la dernière actualité', '', 0);
+INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES(67, 'e5aea92e-0baa-102e-80e2-001a6470da26', '120 Mini Titre (niveau 3)', 'r67_120_Sous_Sous_Titre.xml', 'standard', '', 'title.gif', 'Cette rangée vous permet d''insérer un titre de niveau 3 correspondant à l''élément H3 en HTML', '', 1);
+INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES(68, 'e5aeab54-0baa-102e-80e2-001a6470da26', '650 [Médiathèque] Recherche', 'r68_650_Mediatheque.xml', 'pmedia', 'admin', 'module.gif', 'Cette rangée affiche les dix derniers éléments de la médiathèque et permet une recherche par mots-clés ou par catégorie de médias', '', 0);
+INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES(69, 'e5aeadb6-0baa-102e-80e2-001a6470da26', '230 Texte et Média à Droite', 'r69_Texte_-_Media_a_droite.xml', 'pmedia;standard', '', 'text-mod-right.gif', 'Cette rangée permet d''insérer du texte qu''on pourra mettre en forme via l''éditeur Wysiwyg avec,  aligné à droite, un élément issu du module médiathèque', '', 1);
+INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES(70, 'e5aeb0b8-0baa-102e-80e2-001a6470da26', '240 Texte et Média à Gauche', 'r70_240_Texte_et_Media_a_Gauche.xml', 'pmedia;standard', '', 'text-mod-left.gif', 'Cette rangée permet d''insérer du texte qu''on pourra mettre en forme via l''éditeur Wysiwyg avec,  aligné à gauche, un élément issu du module médiathèque', '', 1);
+INSERT INTO `mod_standard_rows` (`id_row`, `uuid_row`, `label_row`, `definitionFile_row`, `modulesStack_row`, `groupsStack_row`, `image_row`, `description_row`, `tplfilter_row`, `useable_row`) VALUES(71, '02163c06-9082-102e-80e2-001a6470da26', '300 Média Centré', 'r71_300_Media_centre.xml', 'pmedia', '', 'module.gif', 'Cette rangée permet d''insérer un élément issu du module médiathèque centré dans la page.', '', 1);
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `mod_subobject_date_deleted`
+-- Structure de la table `mod_subobject_date_deleted`
 --
 
 DROP TABLE IF EXISTS `mod_subobject_date_deleted`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mod_subobject_date_deleted` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `objectID` int(11) unsigned NOT NULL default '0',
   `objectFieldID` int(11) unsigned NOT NULL default '0',
   `objectSubFieldID` int(11) unsigned NOT NULL default '0',
@@ -2407,23 +2474,22 @@ CREATE TABLE `mod_subobject_date_deleted` (
   KEY `objectID` (`objectID`),
   KEY `objectFieldID` (`objectFieldID`),
   KEY `objectSubFieldID` (`objectSubFieldID`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mod_subobject_date_deleted`
+-- Contenu de la table `mod_subobject_date_deleted`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `mod_subobject_date_edited`
+-- Structure de la table `mod_subobject_date_edited`
 --
 
 DROP TABLE IF EXISTS `mod_subobject_date_edited`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mod_subobject_date_edited` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `objectID` int(11) unsigned NOT NULL default '0',
   `objectFieldID` int(11) unsigned NOT NULL default '0',
   `objectSubFieldID` int(11) unsigned NOT NULL default '0',
@@ -2432,23 +2498,22 @@ CREATE TABLE `mod_subobject_date_edited` (
   KEY `objectID` (`objectID`),
   KEY `objectFieldID` (`objectFieldID`),
   KEY `objectSubFieldID` (`objectSubFieldID`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mod_subobject_date_edited`
+-- Contenu de la table `mod_subobject_date_edited`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `mod_subobject_date_public`
+-- Structure de la table `mod_subobject_date_public`
 --
 
 DROP TABLE IF EXISTS `mod_subobject_date_public`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mod_subobject_date_public` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `objectID` int(11) unsigned NOT NULL default '0',
   `objectFieldID` int(11) unsigned NOT NULL default '0',
   `objectSubFieldID` int(11) unsigned NOT NULL default '0',
@@ -2457,23 +2522,22 @@ CREATE TABLE `mod_subobject_date_public` (
   KEY `objectID` (`objectID`),
   KEY `objectFieldID` (`objectFieldID`),
   KEY `objectSubFieldID` (`objectSubFieldID`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mod_subobject_date_public`
+-- Contenu de la table `mod_subobject_date_public`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `mod_subobject_integer_deleted`
+-- Structure de la table `mod_subobject_integer_deleted`
 --
 
 DROP TABLE IF EXISTS `mod_subobject_integer_deleted`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mod_subobject_integer_deleted` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `objectID` int(11) unsigned NOT NULL default '0',
   `objectFieldID` int(11) unsigned NOT NULL default '0',
   `objectSubFieldID` int(11) unsigned NOT NULL default '0',
@@ -2482,23 +2546,22 @@ CREATE TABLE `mod_subobject_integer_deleted` (
   KEY `objectID` (`objectID`),
   KEY `objectFieldID` (`objectFieldID`),
   KEY `objectSubFieldID` (`objectSubFieldID`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mod_subobject_integer_deleted`
+-- Contenu de la table `mod_subobject_integer_deleted`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `mod_subobject_integer_edited`
+-- Structure de la table `mod_subobject_integer_edited`
 --
 
 DROP TABLE IF EXISTS `mod_subobject_integer_edited`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mod_subobject_integer_edited` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `objectID` int(11) unsigned NOT NULL default '0',
   `objectFieldID` int(11) unsigned NOT NULL default '0',
   `objectSubFieldID` int(11) unsigned NOT NULL default '0',
@@ -2507,78 +2570,77 @@ CREATE TABLE `mod_subobject_integer_edited` (
   KEY `objectID` (`objectID`),
   KEY `objectFieldID` (`objectFieldID`),
   KEY `objectSubFieldID` (`objectSubFieldID`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mod_subobject_integer_edited`
+-- Contenu de la table `mod_subobject_integer_edited`
 --
 
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (9,4,0,0,49);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (11,4,5,0,17);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (26,17,0,0,75);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (27,17,8,0,20);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (28,17,9,3,1);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (82,35,9,3,1);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (81,35,8,0,20);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (80,35,0,0,107);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (47,24,0,0,96);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (48,24,8,0,20);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (49,24,9,3,1);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (50,25,0,0,97);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (51,25,9,3,1);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (52,25,8,0,20);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (53,26,0,0,98);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (54,26,8,0,20);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (55,26,9,3,1);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (56,27,0,0,99);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (57,27,8,0,20);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (58,27,9,3,1);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (59,28,0,0,100);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (60,28,8,0,20);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (61,28,9,3,1);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (62,29,0,0,101);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (63,29,8,0,20);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (64,29,9,3,1);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (79,34,9,3,1);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (78,34,8,0,20);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (77,34,0,0,106);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (83,36,0,0,109);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (84,36,8,0,20);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (85,36,9,3,1);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (86,37,0,0,110);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (87,37,9,3,1);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (88,37,8,0,20);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (89,38,0,0,111);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (90,38,8,0,20);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (91,38,9,3,1);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (92,39,0,0,112);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (93,39,8,0,20);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (94,39,9,3,1);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (95,40,0,0,113);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (96,40,8,0,20);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (97,40,9,3,1);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (98,44,0,0,117);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (99,44,5,0,17);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (100,45,0,0,118);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (101,45,8,0,20);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (102,45,9,3,1);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (103,46,0,0,119);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (104,46,8,0,22);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (105,46,9,3,1);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (106,47,0,0,120);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (107,47,8,0,19);
-INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (108,47,9,3,1);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(9, 4, 0, 0, 49);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(11, 4, 5, 0, 17);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(26, 17, 0, 0, 75);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(27, 17, 8, 0, 20);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(28, 17, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(82, 35, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(81, 35, 8, 0, 20);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(80, 35, 0, 0, 107);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(47, 24, 0, 0, 96);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(48, 24, 8, 0, 20);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(49, 24, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(50, 25, 0, 0, 97);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(51, 25, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(52, 25, 8, 0, 20);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(53, 26, 0, 0, 98);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(54, 26, 8, 0, 20);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(55, 26, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(56, 27, 0, 0, 99);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(57, 27, 8, 0, 20);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(58, 27, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(59, 28, 0, 0, 100);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(60, 28, 8, 0, 20);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(61, 28, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(62, 29, 0, 0, 101);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(63, 29, 8, 0, 20);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(64, 29, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(79, 34, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(78, 34, 8, 0, 20);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(77, 34, 0, 0, 106);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(83, 36, 0, 0, 109);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(84, 36, 8, 0, 20);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(85, 36, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(86, 37, 0, 0, 110);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(87, 37, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(88, 37, 8, 0, 20);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(89, 38, 0, 0, 111);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(90, 38, 8, 0, 20);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(91, 38, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(92, 39, 0, 0, 112);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(93, 39, 8, 0, 20);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(94, 39, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(95, 40, 0, 0, 113);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(96, 40, 8, 0, 20);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(97, 40, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(98, 44, 0, 0, 117);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(99, 44, 5, 0, 17);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(100, 45, 0, 0, 118);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(101, 45, 8, 0, 20);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(102, 45, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(103, 46, 0, 0, 119);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(104, 46, 8, 0, 22);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(105, 46, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(106, 47, 0, 0, 120);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(107, 47, 8, 0, 19);
+INSERT INTO `mod_subobject_integer_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(108, 47, 9, 3, 1);
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `mod_subobject_integer_public`
+-- Structure de la table `mod_subobject_integer_public`
 --
 
 DROP TABLE IF EXISTS `mod_subobject_integer_public`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mod_subobject_integer_public` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `objectID` int(11) unsigned NOT NULL default '0',
   `objectFieldID` int(11) unsigned NOT NULL default '0',
   `objectSubFieldID` int(11) unsigned NOT NULL default '0',
@@ -2587,78 +2649,77 @@ CREATE TABLE `mod_subobject_integer_public` (
   KEY `objectID` (`objectID`),
   KEY `objectFieldID` (`objectFieldID`),
   KEY `objectSubFieldID` (`objectSubFieldID`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mod_subobject_integer_public`
+-- Contenu de la table `mod_subobject_integer_public`
 --
 
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (11,4,5,0,17);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (9,4,0,0,49);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (28,17,9,3,1);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (27,17,8,0,20);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (26,17,0,0,75);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (80,35,0,0,107);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (81,35,8,0,20);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (82,35,9,3,1);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (49,24,9,3,1);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (48,24,8,0,20);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (47,24,0,0,96);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (52,25,8,0,20);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (51,25,9,3,1);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (50,25,0,0,97);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (55,26,9,3,1);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (54,26,8,0,20);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (53,26,0,0,98);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (58,27,9,3,1);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (57,27,8,0,20);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (56,27,0,0,99);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (61,28,9,3,1);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (60,28,8,0,20);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (59,28,0,0,100);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (64,29,9,3,1);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (63,29,8,0,20);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (62,29,0,0,101);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (77,34,0,0,106);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (78,34,8,0,20);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (79,34,9,3,1);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (85,36,9,3,1);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (84,36,8,0,20);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (83,36,0,0,109);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (88,37,8,0,20);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (87,37,9,3,1);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (86,37,0,0,110);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (91,38,9,3,1);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (90,38,8,0,20);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (89,38,0,0,111);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (94,39,9,3,1);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (93,39,8,0,20);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (92,39,0,0,112);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (97,40,9,3,1);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (96,40,8,0,20);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (95,40,0,0,113);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (99,44,5,0,17);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (98,44,0,0,117);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (102,45,9,3,1);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (101,45,8,0,20);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (100,45,0,0,118);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (105,46,9,3,1);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (104,46,8,0,22);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (103,46,0,0,119);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (108,47,9,3,1);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (107,47,8,0,19);
-INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (106,47,0,0,120);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(11, 4, 5, 0, 17);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(9, 4, 0, 0, 49);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(28, 17, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(27, 17, 8, 0, 20);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(26, 17, 0, 0, 75);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(80, 35, 0, 0, 107);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(81, 35, 8, 0, 20);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(82, 35, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(49, 24, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(48, 24, 8, 0, 20);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(47, 24, 0, 0, 96);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(52, 25, 8, 0, 20);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(51, 25, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(50, 25, 0, 0, 97);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(55, 26, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(54, 26, 8, 0, 20);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(53, 26, 0, 0, 98);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(58, 27, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(57, 27, 8, 0, 20);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(56, 27, 0, 0, 99);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(61, 28, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(60, 28, 8, 0, 20);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(59, 28, 0, 0, 100);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(64, 29, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(63, 29, 8, 0, 20);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(62, 29, 0, 0, 101);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(77, 34, 0, 0, 106);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(78, 34, 8, 0, 20);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(79, 34, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(85, 36, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(84, 36, 8, 0, 20);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(83, 36, 0, 0, 109);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(88, 37, 8, 0, 20);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(87, 37, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(86, 37, 0, 0, 110);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(91, 38, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(90, 38, 8, 0, 20);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(89, 38, 0, 0, 111);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(94, 39, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(93, 39, 8, 0, 20);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(92, 39, 0, 0, 112);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(97, 40, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(96, 40, 8, 0, 20);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(95, 40, 0, 0, 113);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(99, 44, 5, 0, 17);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(98, 44, 0, 0, 117);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(102, 45, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(101, 45, 8, 0, 20);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(100, 45, 0, 0, 118);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(105, 46, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(104, 46, 8, 0, 22);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(103, 46, 0, 0, 119);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(108, 47, 9, 3, 1);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(107, 47, 8, 0, 19);
+INSERT INTO `mod_subobject_integer_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(106, 47, 0, 0, 120);
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `mod_subobject_string_deleted`
+-- Structure de la table `mod_subobject_string_deleted`
 --
 
 DROP TABLE IF EXISTS `mod_subobject_string_deleted`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mod_subobject_string_deleted` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `objectID` int(11) unsigned NOT NULL default '0',
   `objectFieldID` int(11) unsigned NOT NULL default '0',
   `objectSubFieldID` int(11) unsigned NOT NULL default '0',
@@ -2667,23 +2728,22 @@ CREATE TABLE `mod_subobject_string_deleted` (
   KEY `objectID` (`objectID`),
   KEY `objectFieldID` (`objectFieldID`),
   KEY `objectSubFieldID` (`objectSubFieldID`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mod_subobject_string_deleted`
+-- Contenu de la table `mod_subobject_string_deleted`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `mod_subobject_string_edited`
+-- Structure de la table `mod_subobject_string_edited`
 --
 
 DROP TABLE IF EXISTS `mod_subobject_string_edited`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mod_subobject_string_edited` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `objectID` int(11) unsigned NOT NULL default '0',
   `objectFieldID` int(11) unsigned NOT NULL default '0',
   `objectSubFieldID` int(11) unsigned NOT NULL default '0',
@@ -2693,116 +2753,115 @@ CREATE TABLE `mod_subobject_string_edited` (
   KEY `objectFieldID` (`objectFieldID`),
   KEY `objectSubFieldID` (`objectSubFieldID`),
   FULLTEXT KEY `value` (`value`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mod_subobject_string_edited`
+-- Contenu de la table `mod_subobject_string_edited`
 --
 
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (15,4,1,0,'Automne : le CMS intuitif');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (16,4,4,0,'');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (17,4,4,1,'');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (18,4,4,2,'');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (43,17,6,0,'Gestion des dates de publication');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (44,17,9,0,'Gestion des dates de publication');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (45,17,9,1,'');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (46,17,9,2,'0.01');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (47,17,9,4,'r17_9_date_de_publication_-_automne_cms.png');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (137,35,9,4,'r35_9_interface-automne-cms-demo.png');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (136,35,9,2,'0.21');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (134,35,9,0,'Interface du CMS Automne');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (135,35,9,1,'');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (78,24,6,0,'Gestion des rangées de contenu');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (79,24,9,0,'Gestion des rangées de contenu');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (80,24,9,1,'');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (81,24,9,2,'0.05');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (82,24,9,4,'r24_9_edition_rangee_de_contenu_-_automne_cms.png');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (83,25,6,0,'Gestion des modèles de pages');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (84,25,9,0,'Gestion des modèles de pages');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (85,25,9,1,'');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (86,25,9,2,'0.11');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (87,25,9,4,'r25_9_gestion_des_modeles_de_page_-_automne.png');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (88,26,6,0,'Modules installés par défaut dans Automne');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (89,26,9,0,'Modules installés par défaut dans Automne');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (90,26,9,1,'');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (91,26,9,2,'0.02');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (92,26,9,4,'r26_9_module.jpg');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (93,27,6,0,'Gestion des utilisateurs / groupes');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (94,27,9,0,'Gestion des utilisateurs / groupes');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (95,27,9,1,'');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (96,27,9,2,'0.04');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (97,27,9,4,'r27_9_gestion_des_utilisateurs_-_automne_cms.png');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (98,28,6,0,'Gestion des droits d&#039;utilisateurs.');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (99,28,9,0,'Gestion des droits d&#039;utilisateurs.');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (100,28,9,1,'');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (101,28,9,2,'0.08');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (102,28,9,4,'r28_9_droits.jpg');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (103,29,6,0,'Demande de validation après modification');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (104,29,9,0,'Demande de validation après modification');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (105,29,9,1,'');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (106,29,9,2,'0.02');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (107,29,9,4,'r29_9_validation.jpg');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (132,34,9,4,'r34_9_glisser-deposer-rangee-automne-cms.png');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (130,34,9,1,'');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (131,34,9,2,'0.09');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (129,34,9,0,'Glisser-déposer d&#039;une rangée de contenu');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (128,34,6,0,'Glisser-déposer d&#039;une rangée de contenu');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (133,35,6,0,'Interface d&#039;administration du CMS Automne');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (138,36,6,0,'Assistant de création de page');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (139,36,9,0,'Assistant de création de page');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (140,36,9,1,'');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (141,36,9,2,'0.06');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (142,36,9,4,'r36_9_assistant-creation-de-page-automne-cms.png');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (143,37,6,0,'Aide du module actualités');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (144,37,9,0,'Aide du module actualités');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (145,37,9,1,'');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (146,37,9,2,'0.14');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (147,37,9,4,'r37_9_aide.jpg');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (148,38,6,0,'Aide contextuelle');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (149,38,9,0,'Aide contextuelle');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (150,38,9,1,'');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (151,38,9,2,'0.13');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (152,38,9,4,'r38_9_aiderobots.jpg');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (153,39,6,0,'Moteur de recherche');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (154,39,9,0,'Résultats de recherche');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (155,39,9,1,'');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (156,39,9,2,'0.09');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (157,39,9,4,'r39_9_moteur-recherche-automne-cms.png');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (158,40,6,0,'Administration du module formulaire');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (159,40,9,0,'Administration du module formulaire');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (160,40,9,1,'');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (161,40,9,2,'0');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (162,40,9,4,'r40_9_gestion-formulaires-automne-cms.png');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (163,44,1,0,'Automne aux rencontres mondiales du logiciel libre');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (164,44,4,0,'');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (165,44,4,1,'');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (166,44,4,2,'');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (167,45,6,0,'Automne : anatomie des pages');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (168,45,9,0,'Automne : anatomie des pages');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (169,45,9,1,'');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (170,45,9,2,'0.03');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (171,45,9,4,'r45_9_automne-shema-modeles-rangees.jpg');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (172,46,6,0,'Fichier audio');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (173,46,9,0,'Fichier audio');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (174,46,9,1,'');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (175,46,9,2,'0.07');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (176,46,9,4,'r46_9_automne-loop.mp3');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (177,47,6,0,'Animation vidéo Automne');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (178,47,9,0,'Animation vidéo Automne');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (179,47,9,1,'r47_9_video_thumbnail.jpg');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (180,47,9,2,'0.19');
-INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (181,47,9,4,'r47_9_logo_atm2.flv');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(15, 4, 1, 0, 'Automne : le CMS intuitif');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(16, 4, 4, 0, '');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(17, 4, 4, 1, '');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(18, 4, 4, 2, '');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(43, 17, 6, 0, 'Gestion des dates de publication');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(44, 17, 9, 0, 'Gestion des dates de publication');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(45, 17, 9, 1, '');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(46, 17, 9, 2, '0.01');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(47, 17, 9, 4, 'r17_9_date_de_publication_-_automne_cms.png');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(137, 35, 9, 4, 'r35_9_interface-automne-cms-demo.png');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(136, 35, 9, 2, '0.21');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(134, 35, 9, 0, 'Interface du CMS Automne');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(135, 35, 9, 1, '');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(78, 24, 6, 0, 'Gestion des rangées de contenu');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(79, 24, 9, 0, 'Gestion des rangées de contenu');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(80, 24, 9, 1, '');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(81, 24, 9, 2, '0.05');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(82, 24, 9, 4, 'r24_9_edition_rangee_de_contenu_-_automne_cms.png');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(83, 25, 6, 0, 'Gestion des modèles de pages');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(84, 25, 9, 0, 'Gestion des modèles de pages');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(85, 25, 9, 1, '');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(86, 25, 9, 2, '0.11');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(87, 25, 9, 4, 'r25_9_gestion_des_modeles_de_page_-_automne.png');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(88, 26, 6, 0, 'Modules installés par défaut dans Automne');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(89, 26, 9, 0, 'Modules installés par défaut dans Automne');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(90, 26, 9, 1, '');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(91, 26, 9, 2, '0.02');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(92, 26, 9, 4, 'r26_9_module.jpg');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(93, 27, 6, 0, 'Gestion des utilisateurs / groupes');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(94, 27, 9, 0, 'Gestion des utilisateurs / groupes');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(95, 27, 9, 1, '');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(96, 27, 9, 2, '0.04');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(97, 27, 9, 4, 'r27_9_gestion_des_utilisateurs_-_automne_cms.png');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(98, 28, 6, 0, 'Gestion des droits d&#039;utilisateurs.');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(99, 28, 9, 0, 'Gestion des droits d&#039;utilisateurs.');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(100, 28, 9, 1, '');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(101, 28, 9, 2, '0.08');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(102, 28, 9, 4, 'r28_9_droits.jpg');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(103, 29, 6, 0, 'Demande de validation après modification');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(104, 29, 9, 0, 'Demande de validation après modification');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(105, 29, 9, 1, '');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(106, 29, 9, 2, '0.02');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(107, 29, 9, 4, 'r29_9_validation.jpg');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(132, 34, 9, 4, 'r34_9_glisser-deposer-rangee-automne-cms.png');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(130, 34, 9, 1, '');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(131, 34, 9, 2, '0.09');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(129, 34, 9, 0, 'Glisser-déposer d&#039;une rangée de contenu');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(128, 34, 6, 0, 'Glisser-déposer d&#039;une rangée de contenu');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(133, 35, 6, 0, 'Interface d&#039;administration du CMS Automne');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(138, 36, 6, 0, 'Assistant de création de page');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(139, 36, 9, 0, 'Assistant de création de page');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(140, 36, 9, 1, '');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(141, 36, 9, 2, '0.06');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(142, 36, 9, 4, 'r36_9_assistant-creation-de-page-automne-cms.png');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(143, 37, 6, 0, 'Aide du module actualités');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(144, 37, 9, 0, 'Aide du module actualités');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(145, 37, 9, 1, '');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(146, 37, 9, 2, '0.14');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(147, 37, 9, 4, 'r37_9_aide.jpg');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(148, 38, 6, 0, 'Aide contextuelle');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(149, 38, 9, 0, 'Aide contextuelle');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(150, 38, 9, 1, '');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(151, 38, 9, 2, '0.13');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(152, 38, 9, 4, 'r38_9_aiderobots.jpg');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(153, 39, 6, 0, 'Moteur de recherche');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(154, 39, 9, 0, 'Résultats de recherche');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(155, 39, 9, 1, '');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(156, 39, 9, 2, '0.09');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(157, 39, 9, 4, 'r39_9_moteur-recherche-automne-cms.png');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(158, 40, 6, 0, 'Administration du module formulaire');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(159, 40, 9, 0, 'Administration du module formulaire');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(160, 40, 9, 1, '');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(161, 40, 9, 2, '0');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(162, 40, 9, 4, 'r40_9_gestion-formulaires-automne-cms.png');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(163, 44, 1, 0, 'Automne aux rencontres mondiales du logiciel libre');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(164, 44, 4, 0, '');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(165, 44, 4, 1, '');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(166, 44, 4, 2, '');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(167, 45, 6, 0, 'Automne : anatomie des pages');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(168, 45, 9, 0, 'Automne : anatomie des pages');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(169, 45, 9, 1, '');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(170, 45, 9, 2, '0.03');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(171, 45, 9, 4, 'r45_9_automne-shema-modeles-rangees.jpg');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(172, 46, 6, 0, 'Fichier audio');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(173, 46, 9, 0, 'Fichier audio');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(174, 46, 9, 1, '');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(175, 46, 9, 2, '0.07');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(176, 46, 9, 4, 'r46_9_automne-loop.mp3');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(177, 47, 6, 0, 'Animation vidéo Automne');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(178, 47, 9, 0, 'Animation vidéo Automne');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(179, 47, 9, 1, 'r47_9_video_thumbnail.jpg');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(180, 47, 9, 2, '0.19');
+INSERT INTO `mod_subobject_string_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(181, 47, 9, 4, 'r47_9_logo_atm2.flv');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `mod_subobject_string_public`
+-- Structure de la table `mod_subobject_string_public`
 --
 
 DROP TABLE IF EXISTS `mod_subobject_string_public`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mod_subobject_string_public` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `objectID` int(11) unsigned NOT NULL default '0',
   `objectFieldID` int(11) unsigned NOT NULL default '0',
   `objectSubFieldID` int(11) unsigned NOT NULL default '0',
@@ -2812,116 +2871,115 @@ CREATE TABLE `mod_subobject_string_public` (
   KEY `objectFieldID` (`objectFieldID`),
   KEY `objectSubFieldID` (`objectSubFieldID`),
   FULLTEXT KEY `value` (`value`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mod_subobject_string_public`
+-- Contenu de la table `mod_subobject_string_public`
 --
 
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (180,47,9,2,'0.19');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (106,29,9,2,'0.02');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (99,28,9,0,'Gestion des droits d&#039;utilisateurs.');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (96,27,9,2,'0.04');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (86,25,9,2,'0.11');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (87,25,9,4,'r25_9_gestion_des_modeles_de_page_-_automne.png');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (90,26,9,1,'');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (97,27,9,4,'r27_9_gestion_des_utilisateurs_-_automne_cms.png');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (95,27,9,1,'');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (105,29,9,1,'');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (128,34,6,0,'Glisser-déposer d&#039;une rangée de contenu');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (89,26,9,0,'Modules installés par défaut dans Automne');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (107,29,9,4,'r29_9_validation.jpg');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (104,29,9,0,'Demande de validation après modification');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (98,28,6,0,'Gestion des droits d&#039;utilisateurs.');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (85,25,9,1,'');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (80,24,9,1,'');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (129,34,9,0,'Glisser-déposer d&#039;une rangée de contenu');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (135,35,9,1,'');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (133,35,6,0,'Interface d&#039;administration du CMS Automne');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (141,36,9,2,'0.06');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (142,36,9,4,'r36_9_assistant-creation-de-page-automne-cms.png');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (146,37,9,2,'0.14');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (145,37,9,1,'');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (144,37,9,0,'Aide du module actualités');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (151,38,9,2,'0.13');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (150,38,9,1,'');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (156,39,9,2,'0.09');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (157,39,9,4,'r39_9_moteur-recherche-automne-cms.png');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (155,39,9,1,'');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (161,40,9,2,'0');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (162,40,9,4,'r40_9_gestion-formulaires-automne-cms.png');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (160,40,9,1,'');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (134,35,9,0,'Interface du CMS Automne');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (18,4,4,2,'');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (17,4,4,1,'');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (81,24,9,2,'0.05');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (103,29,6,0,'Demande de validation après modification');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (143,37,6,0,'Aide du module actualités');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (149,38,9,0,'Aide contextuelle');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (148,38,6,0,'Aide contextuelle');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (16,4,4,0,'');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (15,4,1,0,'Automne : le CMS intuitif');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (46,17,9,2,'0.01');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (47,17,9,4,'r17_9_date_de_publication_-_automne_cms.png');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (165,44,4,1,'');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (166,44,4,2,'');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (136,35,9,2,'0.21');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (137,35,9,4,'r35_9_interface-automne-cms-demo.png');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (140,36,9,1,'');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (167,45,6,0,'Automne : anatomie des pages');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (168,45,9,0,'Automne : anatomie des pages');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (169,45,9,1,'');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (170,45,9,2,'0.03');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (171,45,9,4,'r45_9_automne-shema-modeles-rangees.jpg');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (175,46,9,2,'0.07');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (174,46,9,1,'');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (179,47,9,1,'r47_9_video_thumbnail.jpg');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (173,46,9,0,'Fichier audio');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (172,46,6,0,'Fichier audio');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (88,26,6,0,'Modules installés par défaut dans Automne');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (84,25,9,0,'Gestion des modèles de pages');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (83,25,6,0,'Gestion des modèles de pages');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (139,36,9,0,'Assistant de création de page');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (138,36,6,0,'Assistant de création de page');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (178,47,9,0,'Animation vidéo Automne');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (159,40,9,0,'Administration du module formulaire');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (158,40,6,0,'Administration du module formulaire');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (177,47,6,0,'Animation vidéo Automne');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (154,39,9,0,'Résultats de recherche');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (153,39,6,0,'Moteur de recherche');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (131,34,9,2,'0.09');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (130,34,9,1,'');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (132,34,9,4,'r34_9_glisser-deposer-rangee-automne-cms.png');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (94,27,9,0,'Gestion des utilisateurs / groupes');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (93,27,6,0,'Gestion des utilisateurs / groupes');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (82,24,9,4,'r24_9_edition_rangee_de_contenu_-_automne_cms.png');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (79,24,9,0,'Gestion des rangées de contenu');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (78,24,6,0,'Gestion des rangées de contenu');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (45,17,9,1,'');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (44,17,9,0,'Gestion des dates de publication');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (43,17,6,0,'Gestion des dates de publication');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (164,44,4,0,'');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (163,44,1,0,'Automne aux rencontres mondiales du logiciel libre');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (176,46,9,4,'r46_9_automne-loop.mp3');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (152,38,9,4,'r38_9_aiderobots.jpg');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (147,37,9,4,'r37_9_aide.jpg');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (100,28,9,1,'');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (101,28,9,2,'0.08');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (102,28,9,4,'r28_9_droits.jpg');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (91,26,9,2,'0.02');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (92,26,9,4,'r26_9_module.jpg');
-INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (181,47,9,4,'r47_9_logo_atm2.flv');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(180, 47, 9, 2, '0.19');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(106, 29, 9, 2, '0.02');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(99, 28, 9, 0, 'Gestion des droits d&#039;utilisateurs.');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(96, 27, 9, 2, '0.04');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(86, 25, 9, 2, '0.11');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(87, 25, 9, 4, 'r25_9_gestion_des_modeles_de_page_-_automne.png');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(90, 26, 9, 1, '');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(97, 27, 9, 4, 'r27_9_gestion_des_utilisateurs_-_automne_cms.png');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(95, 27, 9, 1, '');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(105, 29, 9, 1, '');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(128, 34, 6, 0, 'Glisser-déposer d&#039;une rangée de contenu');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(89, 26, 9, 0, 'Modules installés par défaut dans Automne');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(107, 29, 9, 4, 'r29_9_validation.jpg');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(104, 29, 9, 0, 'Demande de validation après modification');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(98, 28, 6, 0, 'Gestion des droits d&#039;utilisateurs.');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(85, 25, 9, 1, '');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(80, 24, 9, 1, '');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(129, 34, 9, 0, 'Glisser-déposer d&#039;une rangée de contenu');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(135, 35, 9, 1, '');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(133, 35, 6, 0, 'Interface d&#039;administration du CMS Automne');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(141, 36, 9, 2, '0.06');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(142, 36, 9, 4, 'r36_9_assistant-creation-de-page-automne-cms.png');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(146, 37, 9, 2, '0.14');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(145, 37, 9, 1, '');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(144, 37, 9, 0, 'Aide du module actualités');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(151, 38, 9, 2, '0.13');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(150, 38, 9, 1, '');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(156, 39, 9, 2, '0.09');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(157, 39, 9, 4, 'r39_9_moteur-recherche-automne-cms.png');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(155, 39, 9, 1, '');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(161, 40, 9, 2, '0');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(162, 40, 9, 4, 'r40_9_gestion-formulaires-automne-cms.png');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(160, 40, 9, 1, '');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(134, 35, 9, 0, 'Interface du CMS Automne');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(18, 4, 4, 2, '');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(17, 4, 4, 1, '');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(81, 24, 9, 2, '0.05');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(103, 29, 6, 0, 'Demande de validation après modification');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(143, 37, 6, 0, 'Aide du module actualités');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(149, 38, 9, 0, 'Aide contextuelle');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(148, 38, 6, 0, 'Aide contextuelle');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(16, 4, 4, 0, '');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(15, 4, 1, 0, 'Automne : le CMS intuitif');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(46, 17, 9, 2, '0.01');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(47, 17, 9, 4, 'r17_9_date_de_publication_-_automne_cms.png');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(165, 44, 4, 1, '');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(166, 44, 4, 2, '');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(136, 35, 9, 2, '0.21');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(137, 35, 9, 4, 'r35_9_interface-automne-cms-demo.png');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(140, 36, 9, 1, '');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(167, 45, 6, 0, 'Automne : anatomie des pages');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(168, 45, 9, 0, 'Automne : anatomie des pages');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(169, 45, 9, 1, '');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(170, 45, 9, 2, '0.03');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(171, 45, 9, 4, 'r45_9_automne-shema-modeles-rangees.jpg');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(175, 46, 9, 2, '0.07');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(174, 46, 9, 1, '');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(179, 47, 9, 1, 'r47_9_video_thumbnail.jpg');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(173, 46, 9, 0, 'Fichier audio');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(172, 46, 6, 0, 'Fichier audio');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(88, 26, 6, 0, 'Modules installés par défaut dans Automne');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(84, 25, 9, 0, 'Gestion des modèles de pages');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(83, 25, 6, 0, 'Gestion des modèles de pages');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(139, 36, 9, 0, 'Assistant de création de page');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(138, 36, 6, 0, 'Assistant de création de page');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(178, 47, 9, 0, 'Animation vidéo Automne');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(159, 40, 9, 0, 'Administration du module formulaire');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(158, 40, 6, 0, 'Administration du module formulaire');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(177, 47, 6, 0, 'Animation vidéo Automne');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(154, 39, 9, 0, 'Résultats de recherche');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(153, 39, 6, 0, 'Moteur de recherche');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(131, 34, 9, 2, '0.09');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(130, 34, 9, 1, '');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(132, 34, 9, 4, 'r34_9_glisser-deposer-rangee-automne-cms.png');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(94, 27, 9, 0, 'Gestion des utilisateurs / groupes');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(93, 27, 6, 0, 'Gestion des utilisateurs / groupes');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(82, 24, 9, 4, 'r24_9_edition_rangee_de_contenu_-_automne_cms.png');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(79, 24, 9, 0, 'Gestion des rangées de contenu');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(78, 24, 6, 0, 'Gestion des rangées de contenu');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(45, 17, 9, 1, '');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(44, 17, 9, 0, 'Gestion des dates de publication');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(43, 17, 6, 0, 'Gestion des dates de publication');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(164, 44, 4, 0, '');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(163, 44, 1, 0, 'Automne aux rencontres mondiales du logiciel libre');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(176, 46, 9, 4, 'r46_9_automne-loop.mp3');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(152, 38, 9, 4, 'r38_9_aiderobots.jpg');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(147, 37, 9, 4, 'r37_9_aide.jpg');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(100, 28, 9, 1, '');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(101, 28, 9, 2, '0.08');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(102, 28, 9, 4, 'r28_9_droits.jpg');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(91, 26, 9, 2, '0.02');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(92, 26, 9, 4, 'r26_9_module.jpg');
+INSERT INTO `mod_subobject_string_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(181, 47, 9, 4, 'r47_9_logo_atm2.flv');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `mod_subobject_text_deleted`
+-- Structure de la table `mod_subobject_text_deleted`
 --
 
 DROP TABLE IF EXISTS `mod_subobject_text_deleted`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mod_subobject_text_deleted` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `objectID` int(11) unsigned NOT NULL default '0',
   `objectFieldID` int(11) unsigned NOT NULL default '0',
   `objectSubFieldID` int(11) unsigned NOT NULL default '0',
@@ -2930,23 +2988,22 @@ CREATE TABLE `mod_subobject_text_deleted` (
   KEY `objectID` (`objectID`),
   KEY `objectFieldID` (`objectFieldID`),
   KEY `objectSubFieldID` (`objectSubFieldID`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mod_subobject_text_deleted`
+-- Contenu de la table `mod_subobject_text_deleted`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `mod_subobject_text_edited`
+-- Structure de la table `mod_subobject_text_edited`
 --
 
 DROP TABLE IF EXISTS `mod_subobject_text_edited`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mod_subobject_text_edited` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `objectID` int(11) unsigned NOT NULL default '0',
   `objectFieldID` int(11) unsigned NOT NULL default '0',
   `objectSubFieldID` int(11) unsigned NOT NULL default '0',
@@ -2956,44 +3013,43 @@ CREATE TABLE `mod_subobject_text_edited` (
   KEY `objectFieldID` (`objectFieldID`),
   KEY `objectSubFieldID` (`objectSubFieldID`),
   FULLTEXT KEY `value` (`value`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mod_subobject_text_edited`
+-- Contenu de la table `mod_subobject_text_edited`
 --
 
-INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (4,4,2,0,'<p>Connectez-vous sur le site et appréciez la simplicité d\'édition et de gestion de contenu offerte par Automne. Modifiez le contenu et l\'arborescence des pages du site ainsi que les actualités ou les éléments de la médiathèque en quelques clics.</p>');
-INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (5,4,3,0,'<p>Automne est l\'aboutissement de plusieurs années d\'expérience utilisateur avec les précédentes versions d\'Automne.&#160;L\'interface d\'administration a été pensée pour être intuitive, ergonomique et extensible.&#160;</p> <blockquote> <p>Grâce à des outils provenant de la communauté open-source, nous avons pu ajouter plein de fonctionnalités pratiques à Automne. Un grand merci à leurs auteurs pour leur travail !</p> </blockquote> <p>Vous pouvez utiliser librement <a target=\"_blank\" href=\"http://www.automne-cms.org\">Automne</a> pour vos projets, nous avons mis à votre disposition <a target=\"_blank\" href=\"http://doc.automne-cms.org\">toutes les informations nécessaires</a> pour vous lancer.</p> <p>Si vous avez des questions vous pouvez vous rendre sur le <a target=\"_blank\" href=\"http://forum.automne-cms.org\">forum</a> ou nous contacter directement via le <span id=\"standard-9-true\"><?php if (CMS_tree::pageExistsForUser(9)) { echo \'<a  href=\"\'.CMS_tree::getPageValue(9, \'url\').\'\">formulaire de contact</a>\';} else { echo \'formulaire de contact\';} ?><!--{elements:YToxOntzOjY6Im1vZHVsZSI7YToxOntpOjA7czo4OiJzdGFuZGFyZCI7fX0=}--></span>.</p> <p>Bonne visite.</p>');
-INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (36,44,2,0,'<p>Nous avons eu le plaisir de nous rendre pour la première fois aux rencontres mondiales du logiciel libre dont l\'édition 2010 se tenait à Bordeaux. Beaucoup d\'échanges et de présentations intéressantes avec des acteurs du logiciel libre et donc un bilan très positif.</p>');
-INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (37,44,3,0,'<p>Voici la présentation d\'Automne que nous avons donné aux rencontres mondiales du logiciel libre à Bordeaux. Il s\'agissait pour nous de faire passer en 20 minutes, les principales caractéristiques et la philosophie d\'Automne, qui s\'adresse à la fois au grand public pour la partie mise à jour des contenus et avant-tout à un public de développeurs front-end pour la conception.</p> <p><a title=\"Automne, CMS open source\" target=\"_blank\" href=\"http://www.slideshare.net/DIrtyF/automne-cms-open-source-4727427\">Slide de la présentation : Automne, CMS open source</a></p> <p>Si vous avez des retours ou des demandes sur Automne, n\'hésitez pas poster dans les commentaires ou sur le <a target=\"_blank\" href=\"http://forum.automne-cms.org\">forum</a>.</p>');
-INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (12,17,7,0,'<p>Gestion des dates de publication d\'un élément sur le site dans Automne.</p>');
-INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (19,24,7,0,'<p>Lors de l\'édition de rangée de contenu, vous pouvez modifier les propriétés de la rangée ainsi que son code XML.</p>');
-INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (20,25,7,0,'<p>Gestion des modèles de page, édition du code XML.</p>');
-INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (21,26,7,0,'<p>Modules disponibles par défaut dans Automne : gestion de pages, actualités, formulaires, alias et médiathèque.</p>');
-INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (22,27,7,0,'<p>L\'interface de gestion des utilisateurs et des groupes dans Automne.</p>');
-INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (23,28,7,0,'<p>Ecran de la gestion des droits d\'utilisateurs.</p>');
-INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (24,29,7,0,'<p>Ecran de validation d\'une page après modification.</p>');
-INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (29,34,7,0,'<p>Lors de l\'édition, &#160;vous pouvez faire un glisser-déposer pour déplacer les rangées et réorganiser votre page simplement.</p>');
-INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (30,35,7,0,'<p>L\'interface d\'Automne vient se greffer sur votre site web. Vous avez ensuite la possibilité d\'éditer les pages de manière visuelle. Vous avez également accès à la gestion des modules installés dans la barre latérale ainsi qu\'à toutes les fonctions d\'administration si vous avez les droits adéquats.</p>');
-INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (31,36,7,0,'<p>L\'assistant d\'ajout de page vous permet d\'ajouter simplement des pages dans votre arborescence en choisissant :</p><ul><li>un titre voire un libellé différent pour le lien vers cette page ;</li><li>un modèle avec ou sans les rangées par défaut.</li></ul>');
-INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (32,37,7,0,'<p>Aide à la syntaxe des rangées de contenu actualités.</p>');
-INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (33,38,7,0,'<p>Ecran de l\'aide contextuelle pour les robots.</p>');
-INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (34,39,7,0,'<p>Liste de résultats pour une recherche sur le mot \"interface\" dans Automne.</p>');
-INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (35,40,7,0,'<p>Ecran d\'administration du module formulaire.</p>');
-INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (38,45,7,0,'<p>Dans Automne une page web comporte obligatoirement un modèle de page qui peut contenir une ou plusieurs zones modifiables (espaces client), qui elles même peuvent recevoir un ou plusieurs blocs de contenu (rangées).&#160;</p>');
-INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (39,46,7,0,'<p>Exemple de fichier audio.</p>');
-INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (40,47,7,0,'<p>&#160;Exemple d\'animation vidéo pour la démonstration d\'Automne.</p>');
+INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(4, 4, 2, 0, '<p>Connectez-vous sur le site et appréciez la simplicité d''édition et de gestion de contenu offerte par Automne. Modifiez le contenu et l''arborescence des pages du site ainsi que les actualités ou les éléments de la médiathèque en quelques clics.</p>');
+INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(5, 4, 3, 0, '<p>Automne est l''aboutissement de plusieurs années d''expérience utilisateur avec les précédentes versions d''Automne.&#160;L''interface d''administration a été pensée pour être intuitive, ergonomique et extensible.&#160;</p> <blockquote> <p>Grâce à des outils provenant de la communauté open-source, nous avons pu ajouter plein de fonctionnalités pratiques à Automne. Un grand merci à leurs auteurs pour leur travail !</p> </blockquote> <p>Vous pouvez utiliser librement <a target="_blank" href="http://www.automne-cms.org">Automne</a> pour vos projets, nous avons mis à votre disposition <a target="_blank" href="http://doc.automne-cms.org">toutes les informations nécessaires</a> pour vous lancer.</p> <p>Si vous avez des questions vous pouvez vous rendre sur le <a target="_blank" href="http://forum.automne-cms.org">forum</a> ou nous contacter directement via le <span id="standard-9-true"><?php if (CMS_tree::pageExistsForUser(9)) { echo ''<a  href="''.CMS_tree::getPageValue(9, ''url'').''">formulaire de contact</a>'';} else { echo ''formulaire de contact'';} ?><!--{elements:YToxOntzOjY6Im1vZHVsZSI7YToxOntpOjA7czo4OiJzdGFuZGFyZCI7fX0=}--></span>.</p> <p>Bonne visite.</p>');
+INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(36, 44, 2, 0, '<p>Nous avons eu le plaisir de nous rendre pour la première fois aux rencontres mondiales du logiciel libre dont l''édition 2010 se tenait à Bordeaux. Beaucoup d''échanges et de présentations intéressantes avec des acteurs du logiciel libre et donc un bilan très positif.</p>');
+INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(37, 44, 3, 0, '<p>Voici la présentation d''Automne que nous avons donné aux rencontres mondiales du logiciel libre à Bordeaux. Il s''agissait pour nous de faire passer en 20 minutes, les principales caractéristiques et la philosophie d''Automne, qui s''adresse à la fois au grand public pour la partie mise à jour des contenus et avant-tout à un public de développeurs front-end pour la conception.</p> <p><a title="Automne, CMS open source" target="_blank" href="http://www.slideshare.net/DIrtyF/automne-cms-open-source-4727427">Slide de la présentation : Automne, CMS open source</a></p> <p>Si vous avez des retours ou des demandes sur Automne, n''hésitez pas poster dans les commentaires ou sur le <a target="_blank" href="http://forum.automne-cms.org">forum</a>.</p>');
+INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(12, 17, 7, 0, '<p>Gestion des dates de publication d''un élément sur le site dans Automne.</p>');
+INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(19, 24, 7, 0, '<p>Lors de l''édition de rangée de contenu, vous pouvez modifier les propriétés de la rangée ainsi que son code XML.</p>');
+INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(20, 25, 7, 0, '<p>Gestion des modèles de page, édition du code XML.</p>');
+INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(21, 26, 7, 0, '<p>Modules disponibles par défaut dans Automne : gestion de pages, actualités, formulaires, alias et médiathèque.</p>');
+INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(22, 27, 7, 0, '<p>L''interface de gestion des utilisateurs et des groupes dans Automne.</p>');
+INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(23, 28, 7, 0, '<p>Ecran de la gestion des droits d''utilisateurs.</p>');
+INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(24, 29, 7, 0, '<p>Ecran de validation d''une page après modification.</p>');
+INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(29, 34, 7, 0, '<p>Lors de l''édition, &#160;vous pouvez faire un glisser-déposer pour déplacer les rangées et réorganiser votre page simplement.</p>');
+INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(30, 35, 7, 0, '<p>L''interface d''Automne vient se greffer sur votre site web. Vous avez ensuite la possibilité d''éditer les pages de manière visuelle. Vous avez également accès à la gestion des modules installés dans la barre latérale ainsi qu''à toutes les fonctions d''administration si vous avez les droits adéquats.</p>');
+INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(31, 36, 7, 0, '<p>L''assistant d''ajout de page vous permet d''ajouter simplement des pages dans votre arborescence en choisissant :</p><ul><li>un titre voire un libellé différent pour le lien vers cette page ;</li><li>un modèle avec ou sans les rangées par défaut.</li></ul>');
+INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(32, 37, 7, 0, '<p>Aide à la syntaxe des rangées de contenu actualités.</p>');
+INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(33, 38, 7, 0, '<p>Ecran de l''aide contextuelle pour les robots.</p>');
+INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(34, 39, 7, 0, '<p>Liste de résultats pour une recherche sur le mot "interface" dans Automne.</p>');
+INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(35, 40, 7, 0, '<p>Ecran d''administration du module formulaire.</p>');
+INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(38, 45, 7, 0, '<p>Dans Automne une page web comporte obligatoirement un modèle de page qui peut contenir une ou plusieurs zones modifiables (espaces client), qui elles même peuvent recevoir un ou plusieurs blocs de contenu (rangées).&#160;</p>');
+INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(39, 46, 7, 0, '<p>Exemple de fichier audio.</p>');
+INSERT INTO `mod_subobject_text_edited` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(40, 47, 7, 0, '<p>&#160;Exemple d''animation vidéo pour la démonstration d''Automne.</p>');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `mod_subobject_text_public`
+-- Structure de la table `mod_subobject_text_public`
 --
 
 DROP TABLE IF EXISTS `mod_subobject_text_public`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mod_subobject_text_public` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL auto_increment,
   `objectID` int(11) unsigned NOT NULL default '0',
   `objectFieldID` int(11) unsigned NOT NULL default '0',
   `objectSubFieldID` int(11) unsigned NOT NULL default '0',
@@ -3003,186 +3059,291 @@ CREATE TABLE `mod_subobject_text_public` (
   KEY `objectFieldID` (`objectFieldID`),
   KEY `objectSubFieldID` (`objectSubFieldID`),
   FULLTEXT KEY `value` (`value`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mod_subobject_text_public`
+-- Contenu de la table `mod_subobject_text_public`
 --
 
-INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (30,35,7,0,'<p>L\'interface d\'Automne vient se greffer sur votre site web. Vous avez ensuite la possibilité d\'éditer les pages de manière visuelle. Vous avez également accès à la gestion des modules installés dans la barre latérale ainsi qu\'à toutes les fonctions d\'administration si vous avez les droits adéquats.</p>');
-INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (20,25,7,0,'<p>Gestion des modèles de page, édition du code XML.</p>');
-INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (21,26,7,0,'<p>Modules disponibles par défaut dans Automne : gestion de pages, actualités, formulaires, alias et médiathèque.</p>');
-INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (22,27,7,0,'<p>L\'interface de gestion des utilisateurs et des groupes dans Automne.</p>');
-INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (24,29,7,0,'<p>Ecran de validation d\'une page après modification.</p>');
-INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (23,28,7,0,'<p>Ecran de la gestion des droits d\'utilisateurs.</p>');
-INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (32,37,7,0,'<p>Aide à la syntaxe des rangées de contenu actualités.</p>');
-INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (33,38,7,0,'<p>Ecran de l\'aide contextuelle pour les robots.</p>');
-INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (34,39,7,0,'<p>Liste de résultats pour une recherche sur le mot \"interface\" dans Automne.</p>');
-INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (35,40,7,0,'<p>Ecran d\'administration du module formulaire.</p>');
-INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (4,4,2,0,'<p>Connectez-vous sur le site et appréciez la simplicité d\'édition et de gestion de contenu offerte par Automne. Modifiez le contenu et l\'arborescence des pages du site ainsi que les actualités ou les éléments de la médiathèque en quelques clics.</p>');
-INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (5,4,3,0,'<p>Automne est l\'aboutissement de plusieurs années d\'expérience utilisateur avec les précédentes versions d\'Automne.&#160;L\'interface d\'administration a été pensée pour être intuitive, ergonomique et extensible.&#160;</p> <blockquote> <p>Grâce à des outils provenant de la communauté open-source, nous avons pu ajouter plein de fonctionnalités pratiques à Automne. Un grand merci à leurs auteurs pour leur travail !</p> </blockquote> <p>Vous pouvez utiliser librement <a target=\"_blank\" href=\"http://www.automne-cms.org\">Automne</a> pour vos projets, nous avons mis à votre disposition <a target=\"_blank\" href=\"http://doc.automne-cms.org\">toutes les informations nécessaires</a> pour vous lancer.</p> <p>Si vous avez des questions vous pouvez vous rendre sur le <a target=\"_blank\" href=\"http://forum.automne-cms.org\">forum</a> ou nous contacter directement via le <span id=\"standard-9-true\"><?php if (CMS_tree::pageExistsForUser(9)) { echo \'<a  href=\"\'.CMS_tree::getPageValue(9, \'url\').\'\">formulaire de contact</a>\';} else { echo \'formulaire de contact\';} ?><!--{elements:YToxOntzOjY6Im1vZHVsZSI7YToxOntpOjA7czo4OiJzdGFuZGFyZCI7fX0=}--></span>.</p> <p>Bonne visite.</p>');
-INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (36,44,2,0,'<p>Nous avons eu le plaisir de nous rendre pour la première fois aux rencontres mondiales du logiciel libre dont l\'édition 2010 se tenait à Bordeaux. Beaucoup d\'échanges et de présentations intéressantes avec des acteurs du logiciel libre et donc un bilan très positif.</p>');
-INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (37,44,3,0,'<p>Voici la présentation d\'Automne que nous avons donné aux rencontres mondiales du logiciel libre à Bordeaux. Il s\'agissait pour nous de faire passer en 20 minutes, les principales caractéristiques et la philosophie d\'Automne, qui s\'adresse à la fois au grand public pour la partie mise à jour des contenus et avant-tout à un public de développeurs front-end pour la conception.</p> <p><a title=\"Automne, CMS open source\" target=\"_blank\" href=\"http://www.slideshare.net/DIrtyF/automne-cms-open-source-4727427\">Slide de la présentation : Automne, CMS open source</a></p> <p>Si vous avez des retours ou des demandes sur Automne, n\'hésitez pas poster dans les commentaires ou sur le <a target=\"_blank\" href=\"http://forum.automne-cms.org\">forum</a>.</p>');
-INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (31,36,7,0,'<p>L\'assistant d\'ajout de page vous permet d\'ajouter simplement des pages dans votre arborescence en choisissant :</p><ul><li>un titre voire un libellé différent pour le lien vers cette page ;</li><li>un modèle avec ou sans les rangées par défaut.</li></ul>');
-INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (38,45,7,0,'<p>Dans Automne une page web comporte obligatoirement un modèle de page qui peut contenir une ou plusieurs zones modifiables (espaces client), qui elles même peuvent recevoir un ou plusieurs blocs de contenu (rangées).&#160;</p>');
-INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (39,46,7,0,'<p>Exemple de fichier audio.</p>');
-INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (40,47,7,0,'<p>&#160;Exemple d\'animation vidéo pour la démonstration d\'Automne.</p>');
-INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (29,34,7,0,'<p>Lors de l\'édition, &#160;vous pouvez faire un glisser-déposer pour déplacer les rangées et réorganiser votre page simplement.</p>');
-INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (19,24,7,0,'<p>Lors de l\'édition de rangée de contenu, vous pouvez modifier les propriétés de la rangée ainsi que son code XML.</p>');
-INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES (12,17,7,0,'<p>Gestion des dates de publication d\'un élément sur le site dans Automne.</p>');
+INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(30, 35, 7, 0, '<p>L''interface d''Automne vient se greffer sur votre site web. Vous avez ensuite la possibilité d''éditer les pages de manière visuelle. Vous avez également accès à la gestion des modules installés dans la barre latérale ainsi qu''à toutes les fonctions d''administration si vous avez les droits adéquats.</p>');
+INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(20, 25, 7, 0, '<p>Gestion des modèles de page, édition du code XML.</p>');
+INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(21, 26, 7, 0, '<p>Modules disponibles par défaut dans Automne : gestion de pages, actualités, formulaires, alias et médiathèque.</p>');
+INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(22, 27, 7, 0, '<p>L''interface de gestion des utilisateurs et des groupes dans Automne.</p>');
+INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(24, 29, 7, 0, '<p>Ecran de validation d''une page après modification.</p>');
+INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(23, 28, 7, 0, '<p>Ecran de la gestion des droits d''utilisateurs.</p>');
+INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(32, 37, 7, 0, '<p>Aide à la syntaxe des rangées de contenu actualités.</p>');
+INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(33, 38, 7, 0, '<p>Ecran de l''aide contextuelle pour les robots.</p>');
+INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(34, 39, 7, 0, '<p>Liste de résultats pour une recherche sur le mot "interface" dans Automne.</p>');
+INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(35, 40, 7, 0, '<p>Ecran d''administration du module formulaire.</p>');
+INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(4, 4, 2, 0, '<p>Connectez-vous sur le site et appréciez la simplicité d''édition et de gestion de contenu offerte par Automne. Modifiez le contenu et l''arborescence des pages du site ainsi que les actualités ou les éléments de la médiathèque en quelques clics.</p>');
+INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(5, 4, 3, 0, '<p>Automne est l''aboutissement de plusieurs années d''expérience utilisateur avec les précédentes versions d''Automne.&#160;L''interface d''administration a été pensée pour être intuitive, ergonomique et extensible.&#160;</p> <blockquote> <p>Grâce à des outils provenant de la communauté open-source, nous avons pu ajouter plein de fonctionnalités pratiques à Automne. Un grand merci à leurs auteurs pour leur travail !</p> </blockquote> <p>Vous pouvez utiliser librement <a target="_blank" href="http://www.automne-cms.org">Automne</a> pour vos projets, nous avons mis à votre disposition <a target="_blank" href="http://doc.automne-cms.org">toutes les informations nécessaires</a> pour vous lancer.</p> <p>Si vous avez des questions vous pouvez vous rendre sur le <a target="_blank" href="http://forum.automne-cms.org">forum</a> ou nous contacter directement via le <span id="standard-9-true"><?php if (CMS_tree::pageExistsForUser(9)) { echo ''<a  href="''.CMS_tree::getPageValue(9, ''url'').''">formulaire de contact</a>'';} else { echo ''formulaire de contact'';} ?><!--{elements:YToxOntzOjY6Im1vZHVsZSI7YToxOntpOjA7czo4OiJzdGFuZGFyZCI7fX0=}--></span>.</p> <p>Bonne visite.</p>');
+INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(36, 44, 2, 0, '<p>Nous avons eu le plaisir de nous rendre pour la première fois aux rencontres mondiales du logiciel libre dont l''édition 2010 se tenait à Bordeaux. Beaucoup d''échanges et de présentations intéressantes avec des acteurs du logiciel libre et donc un bilan très positif.</p>');
+INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(37, 44, 3, 0, '<p>Voici la présentation d''Automne que nous avons donné aux rencontres mondiales du logiciel libre à Bordeaux. Il s''agissait pour nous de faire passer en 20 minutes, les principales caractéristiques et la philosophie d''Automne, qui s''adresse à la fois au grand public pour la partie mise à jour des contenus et avant-tout à un public de développeurs front-end pour la conception.</p> <p><a title="Automne, CMS open source" target="_blank" href="http://www.slideshare.net/DIrtyF/automne-cms-open-source-4727427">Slide de la présentation : Automne, CMS open source</a></p> <p>Si vous avez des retours ou des demandes sur Automne, n''hésitez pas poster dans les commentaires ou sur le <a target="_blank" href="http://forum.automne-cms.org">forum</a>.</p>');
+INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(31, 36, 7, 0, '<p>L''assistant d''ajout de page vous permet d''ajouter simplement des pages dans votre arborescence en choisissant :</p><ul><li>un titre voire un libellé différent pour le lien vers cette page ;</li><li>un modèle avec ou sans les rangées par défaut.</li></ul>');
+INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(38, 45, 7, 0, '<p>Dans Automne une page web comporte obligatoirement un modèle de page qui peut contenir une ou plusieurs zones modifiables (espaces client), qui elles même peuvent recevoir un ou plusieurs blocs de contenu (rangées).&#160;</p>');
+INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(39, 46, 7, 0, '<p>Exemple de fichier audio.</p>');
+INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(40, 47, 7, 0, '<p>&#160;Exemple d''animation vidéo pour la démonstration d''Automne.</p>');
+INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(29, 34, 7, 0, '<p>Lors de l''édition, &#160;vous pouvez faire un glisser-déposer pour déplacer les rangées et réorganiser votre page simplement.</p>');
+INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(19, 24, 7, 0, '<p>Lors de l''édition de rangée de contenu, vous pouvez modifier les propriétés de la rangée ainsi que son code XML.</p>');
+INSERT INTO `mod_subobject_text_public` (`id`, `objectID`, `objectFieldID`, `objectSubFieldID`, `value`) VALUES(12, 17, 7, 0, '<p>Gestion des dates de publication d''un élément sur le site dans Automne.</p>');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `modules`
+-- Structure de la table `pages`
 --
 
-DROP TABLE IF EXISTS `modules`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-CREATE TABLE `modules` (
-  `id_mod` int(11) unsigned NOT NULL,
-  `label_mod` int(11) unsigned NOT NULL default '0',
-  `codename_mod` varchar(20) NOT NULL default '',
-  `administrationFrontend_mod` varchar(100) NOT NULL default '',
-  `hasParameters_mod` tinyint(4) NOT NULL default '0',
-  `isPolymod_mod` int(1) unsigned NOT NULL default '0',
-  PRIMARY KEY  (`id_mod`),
-  KEY `codename_mod` (`codename_mod`),
-  KEY `isPolymod_mod` (`isPolymod_mod`)
-);
-SET character_set_client = @saved_cs_client;
+DROP TABLE IF EXISTS `pages`;
+CREATE TABLE `pages` (
+  `id_pag` int(11) unsigned NOT NULL auto_increment,
+  `resource_pag` int(11) unsigned NOT NULL default '0',
+  `remindedEditorsStack_pag` varchar(255) NOT NULL default '',
+  `lastReminder_pag` date NOT NULL default '0000-00-00',
+  `template_pag` int(11) unsigned NOT NULL default '0',
+  `lastFileCreation_pag` datetime NOT NULL default '0000-00-00 00:00:00',
+  `url_pag` varchar(255) NOT NULL default '',
+  PRIMARY KEY  (`id_pag`),
+  KEY `template_pag` (`template_pag`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `modules`
+-- Contenu de la table `pages`
 --
 
-INSERT INTO `modules` (`id_mod`, `label_mod`, `codename_mod`, `administrationFrontend_mod`, `hasParameters_mod`, `isPolymod_mod`) VALUES (1,243,'standard','',1,0);
-INSERT INTO `modules` (`id_mod`, `label_mod`, `codename_mod`, `administrationFrontend_mod`, `hasParameters_mod`, `isPolymod_mod`) VALUES (2,1,'cms_aliases','index.php',0,0);
-INSERT INTO `modules` (`id_mod`, `label_mod`, `codename_mod`, `administrationFrontend_mod`, `hasParameters_mod`, `isPolymod_mod`) VALUES (3,1,'cms_forms','index.php',1,0);
-INSERT INTO `modules` (`id_mod`, `label_mod`, `codename_mod`, `administrationFrontend_mod`, `hasParameters_mod`, `isPolymod_mod`) VALUES (4,1,'pnews','index.php',0,1);
-INSERT INTO `modules` (`id_mod`, `label_mod`, `codename_mod`, `administrationFrontend_mod`, `hasParameters_mod`, `isPolymod_mod`) VALUES (5,1,'pmedia','index.php',0,1);
+INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES(1, 1, '', '2008-10-31', 1, '2011-02-23 14:27:02', '1-automne.php');
+INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES(2, 40, '1', '2008-10-31', 57, '2011-02-23 14:27:00', '2-automne-gouter-a-la-simplicite.php');
+INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES(3, 41, '1', '2008-11-03', 59, '2011-02-23 14:26:59', '3-presentation.php');
+INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES(5, 43, '1', '2008-11-03', 61, '2011-02-23 14:26:57', '5-actualites.php');
+INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES(6, 44, '1', '2008-11-03', 62, '2011-02-23 14:26:56', '6-mediatheque.php');
+INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES(7, 45, '', '2008-11-03', 63, '0000-00-00 00:00:00', '');
+INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES(8, 46, '1', '2008-11-03', 64, '2011-02-23 14:26:54', '8-plan-du-site.php');
+INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES(9, 47, '1', '2008-11-03', 65, '2011-02-23 14:26:53', '9-contact.php');
+INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES(38, 108, '1', '2009-03-04', 95, '2011-02-23 14:26:32', '38-aide-aux-utilisateurs.php');
+INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES(24, 80, '1', '2009-02-03', 81, '2011-02-23 14:26:51', '24-fonctionnalites.php');
+INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES(25, 81, '1', '2009-02-03', 82, '2011-02-23 14:26:50', '25-modeles-de-pages.php');
+INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES(26, 82, '1', '2009-02-03', 83, '2011-02-23 14:26:48', '26-rangees-de-contenu.php');
+INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES(27, 83, '1', '2009-02-03', 84, '2011-02-23 14:26:47', '27-modules.php');
+INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES(28, 84, '1', '2009-02-03', 85, '2011-02-23 14:26:45', '28-gestion-des-utilisateurs.php');
+INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES(29, 85, '1', '2009-02-04', 86, '2011-02-23 14:26:44', '29-automne.php');
+INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES(30, 86, '1', '2009-02-04', 87, '2011-02-23 14:26:42', '30-pre-requis.php');
+INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES(31, 87, '1', '2009-02-04', 88, '2011-02-23 14:26:39', '31-exemples-de-modules.php');
+INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES(33, 89, '1', '2009-02-04', 90, '2011-02-23 14:26:41', '33-points-forts.php');
+INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES(34, 90, '1', '2009-02-04', 91, '2011-02-23 14:26:38', '34-fonctions-avancees.php');
+INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES(35, 91, '1', '2009-02-04', 92, '2011-02-23 14:26:36', '35-gestion-des-droits.php');
+INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES(36, 92, '', '2009-03-02', 93, '2011-02-23 14:26:35', '36-formulaire.php');
+INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES(37, 93, '1', '2009-03-02', 94, '2011-02-23 14:26:33', '37-circuit-de-publication.php');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `modulesCategories`
+-- Structure de la table `pagesBaseData_archived`
 --
 
-DROP TABLE IF EXISTS `modulesCategories`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-CREATE TABLE `modulesCategories` (
-  `id_mca` int(11) unsigned NOT NULL,
-  `uuid_mca` varchar(36) NOT NULL,
-  `module_mca` varchar(20) NOT NULL default '',
-  `parent_mca` int(10) unsigned NOT NULL default '0',
-  `root_mca` int(10) unsigned NOT NULL default '0',
-  `lineage_mca` varchar(255) NOT NULL default '',
-  `order_mca` int(10) unsigned NOT NULL default '1',
-  `icon_mca` varchar(255) NOT NULL default '',
-  PRIMARY KEY  (`id_mca`),
-  KEY `module` (`module_mca`),
-  KEY `lineage` (`lineage_mca`),
-  KEY `parent` (`parent_mca`),
-  KEY `root` (`root_mca`)
-);
-SET character_set_client = @saved_cs_client;
+DROP TABLE IF EXISTS `pagesBaseData_archived`;
+CREATE TABLE `pagesBaseData_archived` (
+  `id_pbd` int(11) unsigned NOT NULL auto_increment,
+  `page_pbd` int(11) unsigned NOT NULL default '0',
+  `title_pbd` varchar(150) NOT NULL default '',
+  `linkTitle_pbd` varchar(150) NOT NULL default '',
+  `keywords_pbd` mediumtext NOT NULL,
+  `description_pbd` mediumtext NOT NULL,
+  `reminderPeriodicity_pbd` smallint(6) unsigned NOT NULL default '0',
+  `reminderOn_pbd` date NOT NULL default '0000-00-00',
+  `reminderOnMessage_pbd` mediumtext NOT NULL,
+  `category_pbd` varchar(255) NOT NULL default '',
+  `author_pbd` varchar(255) NOT NULL default '',
+  `replyto_pbd` varchar(255) NOT NULL default '',
+  `copyright_pbd` varchar(255) NOT NULL default '',
+  `language_pbd` varchar(255) NOT NULL default '',
+  `robots_pbd` varchar(255) NOT NULL default '',
+  `pragma_pbd` varchar(255) NOT NULL default '',
+  `refresh_pbd` varchar(255) NOT NULL default '',
+  `redirect_pbd` varchar(255) NOT NULL default '',
+  `refreshUrl_pbd` int(1) NOT NULL default '0',
+  `url_pbd` varchar(255) NOT NULL default '',
+  `metas_pbd` text NOT NULL,
+  `codename_pbd` varchar(20) NOT NULL,
+  PRIMARY KEY  (`id_pbd`),
+  KEY `page_pbd` (`page_pbd`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `modulesCategories`
+-- Contenu de la table `pagesBaseData_archived`
 --
 
-INSERT INTO `modulesCategories` (`id_mca`, `uuid_mca`, `module_mca`, `parent_mca`, `root_mca`, `lineage_mca`, `order_mca`, `icon_mca`) VALUES (1,'e595b48c-0baa-102e-80e2-001a6470da26','cms_forms',0,0,'1',1,'');
-INSERT INTO `modulesCategories` (`id_mca`, `uuid_mca`, `module_mca`, `parent_mca`, `root_mca`, `lineage_mca`, `order_mca`, `icon_mca`) VALUES (2,'e595b5b8-0baa-102e-80e2-001a6470da26','pnews',0,0,'2',2,'');
-INSERT INTO `modulesCategories` (`id_mca`, `uuid_mca`, `module_mca`, `parent_mca`, `root_mca`, `lineage_mca`, `order_mca`, `icon_mca`) VALUES (17,'e595b676-0baa-102e-80e2-001a6470da26','pnews',2,2,'2;17',1,'');
-INSERT INTO `modulesCategories` (`id_mca`, `uuid_mca`, `module_mca`, `parent_mca`, `root_mca`, `lineage_mca`, `order_mca`, `icon_mca`) VALUES (18,'e595b734-0baa-102e-80e2-001a6470da26','pmedia',0,0,'18',5,'');
-INSERT INTO `modulesCategories` (`id_mca`, `uuid_mca`, `module_mca`, `parent_mca`, `root_mca`, `lineage_mca`, `order_mca`, `icon_mca`) VALUES (19,'e595b7e8-0baa-102e-80e2-001a6470da26','pmedia',18,18,'18;19',3,'');
-INSERT INTO `modulesCategories` (`id_mca`, `uuid_mca`, `module_mca`, `parent_mca`, `root_mca`, `lineage_mca`, `order_mca`, `icon_mca`) VALUES (20,'e595b8a6-0baa-102e-80e2-001a6470da26','pmedia',18,18,'18;20',1,'');
-INSERT INTO `modulesCategories` (`id_mca`, `uuid_mca`, `module_mca`, `parent_mca`, `root_mca`, `lineage_mca`, `order_mca`, `icon_mca`) VALUES (21,'e595b964-0baa-102e-80e2-001a6470da26','pmedia',18,18,'18;21',2,'');
-INSERT INTO `modulesCategories` (`id_mca`, `uuid_mca`, `module_mca`, `parent_mca`, `root_mca`, `lineage_mca`, `order_mca`, `icon_mca`) VALUES (22,'e595ba18-0baa-102e-80e2-001a6470da26','pmedia',18,18,'18;22',4,'');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `modulesCategories_clearances`
+-- Structure de la table `pagesBaseData_deleted`
 --
 
-DROP TABLE IF EXISTS `modulesCategories_clearances`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-CREATE TABLE `modulesCategories_clearances` (
-  `id_mcc` int(11) unsigned NOT NULL,
-  `profile_mcc` int(11) unsigned NOT NULL default '0',
-  `category_mcc` int(10) unsigned NOT NULL default '0',
-  `clearance_mcc` tinyint(16) unsigned NOT NULL default '0',
-  PRIMARY KEY  (`id_mcc`),
-  UNIQUE KEY `profilecategories` (`profile_mcc`,`category_mcc`),
-  KEY `profile` (`profile_mcc`),
-  KEY `category` (`category_mcc`)
-);
-SET character_set_client = @saved_cs_client;
+DROP TABLE IF EXISTS `pagesBaseData_deleted`;
+CREATE TABLE `pagesBaseData_deleted` (
+  `id_pbd` int(11) unsigned NOT NULL auto_increment,
+  `page_pbd` int(11) unsigned NOT NULL default '0',
+  `title_pbd` varchar(150) NOT NULL default '',
+  `linkTitle_pbd` varchar(150) NOT NULL default '',
+  `keywords_pbd` mediumtext NOT NULL,
+  `description_pbd` mediumtext NOT NULL,
+  `reminderPeriodicity_pbd` smallint(6) unsigned NOT NULL default '0',
+  `reminderOn_pbd` date NOT NULL default '0000-00-00',
+  `reminderOnMessage_pbd` mediumtext NOT NULL,
+  `category_pbd` varchar(255) NOT NULL default '',
+  `author_pbd` varchar(255) NOT NULL default '',
+  `replyto_pbd` varchar(255) NOT NULL default '',
+  `copyright_pbd` varchar(255) NOT NULL default '',
+  `language_pbd` varchar(255) NOT NULL default '',
+  `robots_pbd` varchar(255) NOT NULL default '',
+  `pragma_pbd` varchar(255) NOT NULL default '',
+  `refresh_pbd` varchar(255) NOT NULL default '',
+  `redirect_pbd` varchar(255) NOT NULL default '',
+  `refreshUrl_pbd` int(1) NOT NULL default '0',
+  `url_pbd` varchar(255) NOT NULL default '',
+  `metas_pbd` text NOT NULL,
+  `codename_pbd` varchar(20) NOT NULL,
+  PRIMARY KEY  (`id_pbd`),
+  KEY `page_pbd` (`page_pbd`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `modulesCategories_clearances`
+-- Contenu de la table `pagesBaseData_deleted`
 --
 
-INSERT INTO `modulesCategories_clearances` (`id_mcc`, `profile_mcc`, `category_mcc`, `clearance_mcc`) VALUES (669,1,1,3);
-INSERT INTO `modulesCategories_clearances` (`id_mcc`, `profile_mcc`, `category_mcc`, `clearance_mcc`) VALUES (172,3,2,1);
-INSERT INTO `modulesCategories_clearances` (`id_mcc`, `profile_mcc`, `category_mcc`, `clearance_mcc`) VALUES (171,3,1,1);
-INSERT INTO `modulesCategories_clearances` (`id_mcc`, `profile_mcc`, `category_mcc`, `clearance_mcc`) VALUES (670,1,2,3);
-INSERT INTO `modulesCategories_clearances` (`id_mcc`, `profile_mcc`, `category_mcc`, `clearance_mcc`) VALUES (671,1,18,3);
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `modulesCategories_i18nm`
+-- Structure de la table `pagesBaseData_edited`
 --
 
-DROP TABLE IF EXISTS `modulesCategories_i18nm`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-CREATE TABLE `modulesCategories_i18nm` (
-  `id_mcl` int(11) unsigned NOT NULL,
-  `category_mcl` int(11) unsigned NOT NULL default '0',
-  `language_mcl` char(2) NOT NULL default 'en',
-  `label_mcl` varchar(255) NOT NULL default '',
-  `description_mcl` text NOT NULL,
-  `file_mcl` varchar(255) NOT NULL default '',
-  PRIMARY KEY  (`id_mcl`),
-  UNIQUE KEY `categoryperlang` (`category_mcl`,`language_mcl`),
-  KEY `category` (`category_mcl`),
-  KEY `language` (`language_mcl`)
-);
-SET character_set_client = @saved_cs_client;
+DROP TABLE IF EXISTS `pagesBaseData_edited`;
+CREATE TABLE `pagesBaseData_edited` (
+  `id_pbd` int(11) unsigned NOT NULL auto_increment,
+  `page_pbd` int(11) unsigned NOT NULL default '0',
+  `title_pbd` varchar(150) NOT NULL default '',
+  `linkTitle_pbd` varchar(150) NOT NULL default '',
+  `keywords_pbd` mediumtext NOT NULL,
+  `description_pbd` mediumtext NOT NULL,
+  `reminderPeriodicity_pbd` smallint(6) unsigned NOT NULL default '0',
+  `reminderOn_pbd` date NOT NULL default '0000-00-00',
+  `reminderOnMessage_pbd` mediumtext NOT NULL,
+  `category_pbd` varchar(255) NOT NULL default '',
+  `author_pbd` varchar(255) NOT NULL default '',
+  `replyto_pbd` varchar(255) NOT NULL default '',
+  `copyright_pbd` varchar(255) NOT NULL default '',
+  `language_pbd` varchar(255) NOT NULL default '',
+  `robots_pbd` varchar(255) NOT NULL default '',
+  `pragma_pbd` varchar(255) NOT NULL default '',
+  `refresh_pbd` varchar(255) NOT NULL default '',
+  `redirect_pbd` varchar(255) NOT NULL default '',
+  `refreshUrl_pbd` int(1) NOT NULL default '0',
+  `url_pbd` varchar(255) NOT NULL default '',
+  `metas_pbd` text NOT NULL,
+  `codename_pbd` varchar(20) NOT NULL,
+  PRIMARY KEY  (`id_pbd`),
+  KEY `page_pbd` (`page_pbd`),
+  FULLTEXT KEY `title_pbd` (`title_pbd`,`linkTitle_pbd`,`keywords_pbd`,`description_pbd`,`codename_pbd`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `modulesCategories_i18nm`
+-- Contenu de la table `pagesBaseData_edited`
 --
 
-INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES (167,1,'en','Forms','','');
-INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES (168,1,'fr','Formulaire','','');
-INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES (155,2,'en','News','','');
-INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES (156,2,'fr','Actualités','','');
-INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES (27,6,'en','Documents','','');
-INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES (28,6,'fr','Documents','','');
-INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES (71,14,'en','Pictures','','');
-INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES (72,14,'fr','Photos','','');
-INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES (161,17,'en','News item','','');
-INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES (162,17,'fr','Actualité','','');
-INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES (113,18,'en','Media','','');
-INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES (114,18,'fr','Média','','');
-INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES (131,19,'en','Movie','','');
-INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES (132,19,'fr','Vidéo','','');
-INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES (119,20,'en','Image','','');
-INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES (120,20,'fr','Image','','');
-INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES (125,21,'en','Document','','');
-INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES (126,21,'fr','Document','','');
-INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES (144,22,'fr','Audio','','');
-INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`, `label_mcl`, `description_mcl`, `file_mcl`) VALUES (143,22,'en','Audio','','');
+INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(1, 1, 'Automne', 'Automne', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '1|2|||_top|||', 0, '', '', 'root');
+INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(20, 2, 'Automne : goûter à la simplicité', 'Accueil', 'automne, cms, ecm, gestionnaire de contenu, toulouse, ws-interactive', 'Automne est un gestionnaire de contenu pour les entreprises open-source. Entièrement modulable il s''adapte à vos besoins.', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0||||_top|||', 0, '', '', 'home');
+INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(21, 3, 'Présentation', 'Présentation', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '|||||||', 0, '', '', '');
+INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(23, 5, 'Actualités', 'Actualités', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '|||||||', 0, '', '', 'news');
+INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(24, 6, 'Médiathèque', 'Médiathèque', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '|||||||', 0, '', '', 'media');
+INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(25, 7, 'Bas de page', 'Bas de page', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0|||||||', 0, '', '', 'footer');
+INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(26, 8, 'Plan du site', 'Plan du site', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0||||_top|||', 0, '', '', 'sitemap');
+INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(27, 9, 'Contact', 'Contact', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0||||_top|||', 0, '', '', 'contact');
+INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(54, 38, 'Aide aux utilisateurs', 'Aide utilisateurs', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0||||_top|||', 0, '', '', '');
+INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(40, 24, 'Fonctionnalités', 'Fonctionnalités', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0|||||||', 0, '', '', '');
+INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(41, 25, 'Modèles de Pages', 'Modèles', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0||||_top|||', 0, '', '', '');
+INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(42, 26, 'Rangées de contenu', 'Rangées', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0||||_top|||', 0, '', '', '');
+INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(43, 27, 'Modules', 'Modules', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0|||||||', 0, '', '', '');
+INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(44, 28, 'Gestion des utilisateurs', 'Gestion des utilisateurs', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0|||||||', 0, '', '', '');
+INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(45, 29, 'Automne', 'Automne', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0|||||||', 0, '', '', '');
+INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(46, 30, 'Pré-requis', 'Pré-requis', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0||||_top|||', 0, '', '', '');
+INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(47, 31, 'Exemples de modules', 'Modules', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0||||_top|||', 0, '', '', '');
+INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(49, 33, 'Points forts', 'Points forts', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0||||_top|||', 0, '', '', '');
+INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(50, 34, 'Fonctions avancées', 'Fonctions avancées', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0||||_top|||', 0, '', '', '');
+INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(51, 35, 'Gestion des droits', 'Gestion des droits', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0|||||||', 0, '', '', '');
+INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(52, 36, 'Formulaire', 'Formulaire', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '1|9|||_top|||', 0, '', '', '');
+INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(53, 37, 'Circuit de publication', 'Circuit de publication', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0||||_top|||', 0, '', '', '');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `pageTemplates`
+-- Structure de la table `pagesBaseData_public`
+--
+
+DROP TABLE IF EXISTS `pagesBaseData_public`;
+CREATE TABLE `pagesBaseData_public` (
+  `id_pbd` int(11) unsigned NOT NULL auto_increment,
+  `page_pbd` int(11) unsigned NOT NULL default '0',
+  `title_pbd` varchar(150) NOT NULL default '',
+  `linkTitle_pbd` varchar(150) NOT NULL default '',
+  `keywords_pbd` mediumtext NOT NULL,
+  `description_pbd` mediumtext NOT NULL,
+  `reminderPeriodicity_pbd` smallint(6) unsigned NOT NULL default '0',
+  `reminderOn_pbd` date NOT NULL default '0000-00-00',
+  `reminderOnMessage_pbd` mediumtext NOT NULL,
+  `category_pbd` varchar(255) NOT NULL default '',
+  `author_pbd` varchar(255) NOT NULL default '',
+  `replyto_pbd` varchar(255) NOT NULL default '',
+  `copyright_pbd` varchar(255) NOT NULL default '',
+  `language_pbd` varchar(255) NOT NULL default '',
+  `robots_pbd` varchar(255) NOT NULL default '',
+  `pragma_pbd` varchar(255) NOT NULL default '',
+  `refresh_pbd` varchar(255) NOT NULL default '',
+  `redirect_pbd` varchar(255) NOT NULL default '',
+  `refreshUrl_pbd` int(1) NOT NULL default '0',
+  `url_pbd` varchar(255) NOT NULL default '',
+  `metas_pbd` text NOT NULL,
+  `codename_pbd` varchar(20) NOT NULL,
+  PRIMARY KEY  (`id_pbd`),
+  KEY `page_pbd` (`page_pbd`),
+  FULLTEXT KEY `title_pbd` (`title_pbd`,`linkTitle_pbd`,`keywords_pbd`,`description_pbd`,`codename_pbd`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `pagesBaseData_public`
+--
+
+INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(1, 1, 'Automne', 'Automne', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '1|2|||_top|||', 0, '', '', 'root');
+INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(20, 2, 'Automne : goûter à la simplicité', 'Accueil', 'automne, cms, ecm, gestionnaire de contenu, toulouse, ws-interactive', 'Automne est un gestionnaire de contenu pour les entreprises open-source. Entièrement modulable il s''adapte à vos besoins.', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0||||_top|||', 0, '', '', 'home');
+INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(21, 3, 'Présentation', 'Présentation', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '|||||||', 0, '', '', '');
+INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(23, 5, 'Actualités', 'Actualités', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '|||||||', 0, '', '', 'news');
+INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(24, 6, 'Médiathèque', 'Médiathèque', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '|||||||', 0, '', '', 'media');
+INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(25, 7, 'Bas de page', 'Bas de page', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0|||||||', 0, '', '', 'footer');
+INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(54, 38, 'Aide aux utilisateurs', 'Aide utilisateurs', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0||||_top|||', 0, '', '', '');
+INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(42, 26, 'Rangées de contenu', 'Rangées', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0||||_top|||', 0, '', '', '');
+INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(40, 24, 'Fonctionnalités', 'Fonctionnalités', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0|||||||', 0, '', '', '');
+INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(43, 27, 'Modules', 'Modules', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0|||||||', 0, '', '', '');
+INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(44, 28, 'Gestion des utilisateurs', 'Gestion des utilisateurs', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0|||||||', 0, '', '', '');
+INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(45, 29, 'Automne', 'Automne', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0|||||||', 0, '', '', '');
+INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(47, 31, 'Exemples de modules', 'Modules', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0||||_top|||', 0, '', '', '');
+INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(41, 25, 'Modèles de Pages', 'Modèles', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0||||_top|||', 0, '', '', '');
+INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(51, 35, 'Gestion des droits', 'Gestion des droits', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0|||||||', 0, '', '', '');
+INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(52, 36, 'Formulaire', 'Formulaire', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '1|9|||_top|||', 0, '', '', '');
+INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(50, 34, 'Fonctions avancées', 'Fonctions avancées', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0||||_top|||', 0, '', '', '');
+INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(27, 9, 'Contact', 'Contact', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0||||_top|||', 0, '', '', 'contact');
+INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(26, 8, 'Plan du site', 'Plan du site', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0||||_top|||', 0, '', '', 'sitemap');
+INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(53, 37, 'Circuit de publication', 'Circuit de publication', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0||||_top|||', 0, '', '', '');
+INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(49, 33, 'Points forts', 'Points forts', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0||||_top|||', 0, '', '', '');
+INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES(46, 30, 'Pré-requis', 'Pré-requis', '', '', 0, '0000-00-00', '', '', '', '', '', '', '', '', '', '0||||_top|||', 0, '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `pageTemplates`
 --
 
 DROP TABLE IF EXISTS `pageTemplates`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `pageTemplates` (
-  `id_pt` int(11) unsigned NOT NULL,
+  `id_pt` int(11) unsigned NOT NULL auto_increment,
   `label_pt` varchar(100) NOT NULL default '',
   `groupsStack_pt` varchar(255) NOT NULL default '',
   `modulesStack_pt` varchar(255) NOT NULL default '1',
@@ -3197,339 +3358,63 @@ CREATE TABLE `pageTemplates` (
   PRIMARY KEY  (`id_pt`),
   KEY `definitionFile_pt` (`definitionFile_pt`),
   FULLTEXT KEY `label_pt` (`label_pt`,`description_pt`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `pageTemplates`
+-- Contenu de la table `pageTemplates`
 --
 
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (1,'[Vide] Redirection','fr','','splash.xml',0,0,'nopicto.gif',0,'','Modèle vide. Usuellement employé pour les pages de redirections.','');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (2,'Exemple','fr','standard','example.xml',0,0,'nopicto.gif',0,'','Modèle d\'exemple. Comporte les différents tags Automne disponibles pour la création d\'un modèle de page.','');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (56,'[Demo] Accueil','fr','standard','pt56_Accueil.xml',0,0,'pt56_accueil.png',1,'first;second','Modèle de la page d\'accueil de la démonstration Automne.','1');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (57,'[Demo] Accueil','fr','standard','pt56_Accueil.xml',0,1,'pt56_accueil.png',0,'first;second','','');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (58,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,0,'pt58_page.png',1,'first','Modèle des pages intérieures de la démonstration Automne.','1');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (59,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','','');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (60,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','','');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (61,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','','');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (62,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','','');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (63,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','','');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (64,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','','');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (65,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','','');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (66,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','','');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (67,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','Modèles des pages intérieures du site français.','1');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (68,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','Modèles des pages intérieures du site français.','1');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (69,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','Modèles des pages intérieures du site français.','1');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (70,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','Modèles des pages intérieures du site français.','1');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (71,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','Modèles des pages intérieures du site français.','1');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (72,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','Modèles des pages intérieures du site français.','1');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (73,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','Modèles des pages intérieures du site français.','1');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (74,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','Modèles des pages intérieures du site français.','1');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (75,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','Modèles des pages intérieures du site français.','1');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (76,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','Modèles des pages intérieures du site français.','1');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (77,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','Modèles des pages intérieures du site français.','1');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (78,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','Modèles des pages intérieures du site français.','1');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (79,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','Modèles des pages intérieures du site français.','1');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (95,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','Modèles des pages intérieures du site français.','1');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (81,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','Modèles des pages intérieures du site français.','1');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (82,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','Modèles des pages intérieures du site français.','1');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (83,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','Modèles des pages intérieures du site français.','1');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (84,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','Modèles des pages intérieures du site français.','1');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (85,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','Modèles des pages intérieures du site français.','1');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (86,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','Modèles des pages intérieures du site français.','1');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (87,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','Modèles des pages intérieures du site français.','1');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (88,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','Modèles des pages intérieures du site français.','1');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (89,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','Modèles des pages intérieures du site français.','1');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (90,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','Modèles des pages intérieures du site français.','1');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (91,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','Modèles des pages intérieures du site français.','1');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (92,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','Modèles des pages intérieures du site français.','1');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (93,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','Modèles des pages intérieures du site français.','1');
-INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES (94,'[Demo] Page','fr','standard','pt58_Interieur.xml',0,1,'pt58_page.png',0,'first','Modèles des pages intérieures du site français.','1');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(1, '[Vide] Redirection', 'fr', '', 'splash.xml', 0, 0, 'nopicto.gif', 0, '', 'Modèle vide. Usuellement employé pour les pages de redirections.', '');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(2, 'Exemple', 'fr', 'standard', 'example.xml', 0, 0, 'nopicto.gif', 0, '', 'Modèle d''exemple. Comporte les différents tags Automne disponibles pour la création d''un modèle de page.', '');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(56, '[Demo] Accueil', 'fr', 'standard', 'pt56_Accueil.xml', 0, 0, 'pt56_accueil.png', 1, 'first;second', 'Modèle de la page d''accueil de la démonstration Automne.', '1');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(57, '[Demo] Accueil', 'fr', 'standard', 'pt56_Accueil.xml', 0, 1, 'pt56_accueil.png', 0, 'first;second', '', '');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(58, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 0, 'pt58_page.png', 1, 'first', 'Modèle des pages intérieures de la démonstration Automne.', '1');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(59, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', '', '');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(60, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', '', '');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(61, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', '', '');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(62, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', '', '');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(63, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', '', '');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(64, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', '', '');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(65, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', '', '');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(66, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', '', '');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(67, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', 'Modèles des pages intérieures du site français.', '1');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(68, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', 'Modèles des pages intérieures du site français.', '1');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(69, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', 'Modèles des pages intérieures du site français.', '1');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(70, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', 'Modèles des pages intérieures du site français.', '1');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(71, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', 'Modèles des pages intérieures du site français.', '1');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(72, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', 'Modèles des pages intérieures du site français.', '1');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(73, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', 'Modèles des pages intérieures du site français.', '1');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(74, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', 'Modèles des pages intérieures du site français.', '1');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(75, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', 'Modèles des pages intérieures du site français.', '1');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(76, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', 'Modèles des pages intérieures du site français.', '1');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(77, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', 'Modèles des pages intérieures du site français.', '1');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(78, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', 'Modèles des pages intérieures du site français.', '1');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(79, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', 'Modèles des pages intérieures du site français.', '1');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(95, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', 'Modèles des pages intérieures du site français.', '1');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(81, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', 'Modèles des pages intérieures du site français.', '1');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(82, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', 'Modèles des pages intérieures du site français.', '1');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(83, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', 'Modèles des pages intérieures du site français.', '1');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(84, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', 'Modèles des pages intérieures du site français.', '1');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(85, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', 'Modèles des pages intérieures du site français.', '1');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(86, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', 'Modèles des pages intérieures du site français.', '1');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(87, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', 'Modèles des pages intérieures du site français.', '1');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(88, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', 'Modèles des pages intérieures du site français.', '1');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(89, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', 'Modèles des pages intérieures du site français.', '1');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(90, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', 'Modèles des pages intérieures du site français.', '1');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(91, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', 'Modèles des pages intérieures du site français.', '1');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(92, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', 'Modèles des pages intérieures du site français.', '1');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(93, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', 'Modèles des pages intérieures du site français.', '1');
+INSERT INTO `pageTemplates` (`id_pt`, `label_pt`, `groupsStack_pt`, `modulesStack_pt`, `definitionFile_pt`, `creator_pt`, `private_pt`, `image_pt`, `inUse_pt`, `printingCSOrder_pt`, `description_pt`, `websitesdenied_pt`) VALUES(94, '[Demo] Page', 'fr', 'standard', 'pt58_Interieur.xml', 0, 1, 'pt58_page.png', 0, 'first', 'Modèles des pages intérieures du site français.', '1');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `pages`
---
-
-DROP TABLE IF EXISTS `pages`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-CREATE TABLE `pages` (
-  `id_pag` int(11) unsigned NOT NULL,
-  `resource_pag` int(11) unsigned NOT NULL default '0',
-  `remindedEditorsStack_pag` varchar(255) NOT NULL default '',
-  `lastReminder_pag` date NOT NULL default '0000-00-00',
-  `template_pag` int(11) unsigned NOT NULL default '0',
-  `lastFileCreation_pag` datetime NOT NULL default '0000-00-00 00:00:00',
-  `url_pag` varchar(255) NOT NULL default '',
-  PRIMARY KEY  (`id_pag`),
-  KEY `template_pag` (`template_pag`)
-);
-SET character_set_client = @saved_cs_client;
-
---
--- Dumping data for table `pages`
---
-
-INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES (1,1,'','2008-10-31',1,'2011-02-23 14:27:02','1-automne.php');
-INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES (2,40,'1','2008-10-31',57,'2011-02-23 14:27:00','2-automne-gouter-a-la-simplicite.php');
-INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES (3,41,'1','2008-11-03',59,'2011-02-23 14:26:59','3-presentation.php');
-INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES (5,43,'1','2008-11-03',61,'2011-02-23 14:26:57','5-actualites.php');
-INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES (6,44,'1','2008-11-03',62,'2011-02-23 14:26:56','6-mediatheque.php');
-INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES (7,45,'','2008-11-03',63,'0000-00-00 00:00:00','');
-INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES (8,46,'1','2008-11-03',64,'2011-02-23 14:26:54','8-plan-du-site.php');
-INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES (9,47,'1','2008-11-03',65,'2011-02-23 14:26:53','9-contact.php');
-INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES (38,108,'1','2009-03-04',95,'2011-02-23 14:26:32','38-aide-aux-utilisateurs.php');
-INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES (24,80,'1','2009-02-03',81,'2011-02-23 14:26:51','24-fonctionnalites.php');
-INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES (25,81,'1','2009-02-03',82,'2011-02-23 14:26:50','25-modeles-de-pages.php');
-INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES (26,82,'1','2009-02-03',83,'2011-02-23 14:26:48','26-rangees-de-contenu.php');
-INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES (27,83,'1','2009-02-03',84,'2011-02-23 14:26:47','27-modules.php');
-INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES (28,84,'1','2009-02-03',85,'2011-02-23 14:26:45','28-gestion-des-utilisateurs.php');
-INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES (29,85,'1','2009-02-04',86,'2011-02-23 14:26:44','29-automne.php');
-INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES (30,86,'1','2009-02-04',87,'2011-02-23 14:26:42','30-pre-requis.php');
-INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES (31,87,'1','2009-02-04',88,'2011-02-23 14:26:39','31-exemples-de-modules.php');
-INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES (33,89,'1','2009-02-04',90,'2011-02-23 14:26:41','33-points-forts.php');
-INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES (34,90,'1','2009-02-04',91,'2011-02-23 14:26:38','34-fonctions-avancees.php');
-INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES (35,91,'1','2009-02-04',92,'2011-02-23 14:26:36','35-gestion-des-droits.php');
-INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES (36,92,'','2009-03-02',93,'2011-02-23 14:26:35','36-formulaire.php');
-INSERT INTO `pages` (`id_pag`, `resource_pag`, `remindedEditorsStack_pag`, `lastReminder_pag`, `template_pag`, `lastFileCreation_pag`, `url_pag`) VALUES (37,93,'1','2009-03-02',94,'2011-02-23 14:26:33','37-circuit-de-publication.php');
-
---
--- Table structure for table `pagesBaseData_archived`
---
-
-DROP TABLE IF EXISTS `pagesBaseData_archived`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-CREATE TABLE `pagesBaseData_archived` (
-  `id_pbd` int(11) unsigned NOT NULL,
-  `page_pbd` int(11) unsigned NOT NULL default '0',
-  `title_pbd` varchar(150) NOT NULL default '',
-  `linkTitle_pbd` varchar(150) NOT NULL default '',
-  `keywords_pbd` mediumtext NOT NULL,
-  `description_pbd` mediumtext NOT NULL,
-  `reminderPeriodicity_pbd` smallint(6) unsigned NOT NULL default '0',
-  `reminderOn_pbd` date NOT NULL default '0000-00-00',
-  `reminderOnMessage_pbd` mediumtext NOT NULL,
-  `category_pbd` varchar(255) NOT NULL default '',
-  `author_pbd` varchar(255) NOT NULL default '',
-  `replyto_pbd` varchar(255) NOT NULL default '',
-  `copyright_pbd` varchar(255) NOT NULL default '',
-  `language_pbd` varchar(255) NOT NULL default '',
-  `robots_pbd` varchar(255) NOT NULL default '',
-  `pragma_pbd` varchar(255) NOT NULL default '',
-  `refresh_pbd` varchar(255) NOT NULL default '',
-  `redirect_pbd` varchar(255) NOT NULL default '',
-  `refreshUrl_pbd` int(1) NOT NULL default '0',
-  `url_pbd` varchar(255) NOT NULL default '',
-  `metas_pbd` text NOT NULL,
-  `codename_pbd` varchar(20) NOT NULL,
-  PRIMARY KEY  (`id_pbd`),
-  KEY `page_pbd` (`page_pbd`)
-);
-SET character_set_client = @saved_cs_client;
-
---
--- Dumping data for table `pagesBaseData_archived`
---
-
-
---
--- Table structure for table `pagesBaseData_deleted`
---
-
-DROP TABLE IF EXISTS `pagesBaseData_deleted`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-CREATE TABLE `pagesBaseData_deleted` (
-  `id_pbd` int(11) unsigned NOT NULL,
-  `page_pbd` int(11) unsigned NOT NULL default '0',
-  `title_pbd` varchar(150) NOT NULL default '',
-  `linkTitle_pbd` varchar(150) NOT NULL default '',
-  `keywords_pbd` mediumtext NOT NULL,
-  `description_pbd` mediumtext NOT NULL,
-  `reminderPeriodicity_pbd` smallint(6) unsigned NOT NULL default '0',
-  `reminderOn_pbd` date NOT NULL default '0000-00-00',
-  `reminderOnMessage_pbd` mediumtext NOT NULL,
-  `category_pbd` varchar(255) NOT NULL default '',
-  `author_pbd` varchar(255) NOT NULL default '',
-  `replyto_pbd` varchar(255) NOT NULL default '',
-  `copyright_pbd` varchar(255) NOT NULL default '',
-  `language_pbd` varchar(255) NOT NULL default '',
-  `robots_pbd` varchar(255) NOT NULL default '',
-  `pragma_pbd` varchar(255) NOT NULL default '',
-  `refresh_pbd` varchar(255) NOT NULL default '',
-  `redirect_pbd` varchar(255) NOT NULL default '',
-  `refreshUrl_pbd` int(1) NOT NULL default '0',
-  `url_pbd` varchar(255) NOT NULL default '',
-  `metas_pbd` text NOT NULL,
-  `codename_pbd` varchar(20) NOT NULL,
-  PRIMARY KEY  (`id_pbd`),
-  KEY `page_pbd` (`page_pbd`)
-);
-SET character_set_client = @saved_cs_client;
-
---
--- Dumping data for table `pagesBaseData_deleted`
---
-
-
---
--- Table structure for table `pagesBaseData_edited`
---
-
-DROP TABLE IF EXISTS `pagesBaseData_edited`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-CREATE TABLE `pagesBaseData_edited` (
-  `id_pbd` int(11) unsigned NOT NULL,
-  `page_pbd` int(11) unsigned NOT NULL default '0',
-  `title_pbd` varchar(150) NOT NULL default '',
-  `linkTitle_pbd` varchar(150) NOT NULL default '',
-  `keywords_pbd` mediumtext NOT NULL,
-  `description_pbd` mediumtext NOT NULL,
-  `reminderPeriodicity_pbd` smallint(6) unsigned NOT NULL default '0',
-  `reminderOn_pbd` date NOT NULL default '0000-00-00',
-  `reminderOnMessage_pbd` mediumtext NOT NULL,
-  `category_pbd` varchar(255) NOT NULL default '',
-  `author_pbd` varchar(255) NOT NULL default '',
-  `replyto_pbd` varchar(255) NOT NULL default '',
-  `copyright_pbd` varchar(255) NOT NULL default '',
-  `language_pbd` varchar(255) NOT NULL default '',
-  `robots_pbd` varchar(255) NOT NULL default '',
-  `pragma_pbd` varchar(255) NOT NULL default '',
-  `refresh_pbd` varchar(255) NOT NULL default '',
-  `redirect_pbd` varchar(255) NOT NULL default '',
-  `refreshUrl_pbd` int(1) NOT NULL default '0',
-  `url_pbd` varchar(255) NOT NULL default '',
-  `metas_pbd` text NOT NULL,
-  `codename_pbd` varchar(20) NOT NULL,
-  PRIMARY KEY  (`id_pbd`),
-  KEY `page_pbd` (`page_pbd`),
-  FULLTEXT KEY `title_pbd` (`title_pbd`,`linkTitle_pbd`,`keywords_pbd`,`description_pbd`,`codename_pbd`)
-);
-SET character_set_client = @saved_cs_client;
-
---
--- Dumping data for table `pagesBaseData_edited`
---
-
-INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (1,1,'Automne','Automne','','',0,'0000-00-00','','','','','','','','','','1|2|||_top|||',0,'','','root');
-INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (20,2,'Automne : goûter à la simplicité','Accueil','automne, cms, ecm, gestionnaire de contenu, toulouse, ws-interactive','Automne est un gestionnaire de contenu pour les entreprises open-source. Entièrement modulable il s\'adapte à vos besoins.',0,'0000-00-00','','','','','','','','','','0||||_top|||',0,'','','home');
-INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (21,3,'Présentation','Présentation','','',0,'0000-00-00','','','','','','','','','','|||||||',0,'','','');
-INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (23,5,'Actualités','Actualités','','',0,'0000-00-00','','','','','','','','','','|||||||',0,'','','news');
-INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (24,6,'Médiathèque','Médiathèque','','',0,'0000-00-00','','','','','','','','','','|||||||',0,'','','media');
-INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (25,7,'Bas de page','Bas de page','','',0,'0000-00-00','','','','','','','','','','0|||||||',0,'','','footer');
-INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (26,8,'Plan du site','Plan du site','','',0,'0000-00-00','','','','','','','','','','0||||_top|||',0,'','','sitemap');
-INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (27,9,'Contact','Contact','','',0,'0000-00-00','','','','','','','','','','0||||_top|||',0,'','','contact');
-INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (54,38,'Aide aux utilisateurs','Aide utilisateurs','','',0,'0000-00-00','','','','','','','','','','0||||_top|||',0,'','','');
-INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (40,24,'Fonctionnalités','Fonctionnalités','','',0,'0000-00-00','','','','','','','','','','0|||||||',0,'','','');
-INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (41,25,'Modèles de Pages','Modèles','','',0,'0000-00-00','','','','','','','','','','0||||_top|||',0,'','','');
-INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (42,26,'Rangées de contenu','Rangées','','',0,'0000-00-00','','','','','','','','','','0||||_top|||',0,'','','');
-INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (43,27,'Modules','Modules','','',0,'0000-00-00','','','','','','','','','','0|||||||',0,'','','');
-INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (44,28,'Gestion des utilisateurs','Gestion des utilisateurs','','',0,'0000-00-00','','','','','','','','','','0|||||||',0,'','','');
-INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (45,29,'Automne','Automne','','',0,'0000-00-00','','','','','','','','','','0|||||||',0,'','','');
-INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (46,30,'Pré-requis','Pré-requis','','',0,'0000-00-00','','','','','','','','','','0||||_top|||',0,'','','');
-INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (47,31,'Exemples de modules','Modules','','',0,'0000-00-00','','','','','','','','','','0||||_top|||',0,'','','');
-INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (49,33,'Points forts','Points forts','','',0,'0000-00-00','','','','','','','','','','0||||_top|||',0,'','','');
-INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (50,34,'Fonctions avancées','Fonctions avancées','','',0,'0000-00-00','','','','','','','','','','0||||_top|||',0,'','','');
-INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (51,35,'Gestion des droits','Gestion des droits','','',0,'0000-00-00','','','','','','','','','','0|||||||',0,'','','');
-INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (52,36,'Formulaire','Formulaire','','',0,'0000-00-00','','','','','','','','','','1|9|||_top|||',0,'','','');
-INSERT INTO `pagesBaseData_edited` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (53,37,'Circuit de publication','Circuit de publication','','',0,'0000-00-00','','','','','','','','','','0||||_top|||',0,'','','');
-
---
--- Table structure for table `pagesBaseData_public`
---
-
-DROP TABLE IF EXISTS `pagesBaseData_public`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-CREATE TABLE `pagesBaseData_public` (
-  `id_pbd` int(11) unsigned NOT NULL,
-  `page_pbd` int(11) unsigned NOT NULL default '0',
-  `title_pbd` varchar(150) NOT NULL default '',
-  `linkTitle_pbd` varchar(150) NOT NULL default '',
-  `keywords_pbd` mediumtext NOT NULL,
-  `description_pbd` mediumtext NOT NULL,
-  `reminderPeriodicity_pbd` smallint(6) unsigned NOT NULL default '0',
-  `reminderOn_pbd` date NOT NULL default '0000-00-00',
-  `reminderOnMessage_pbd` mediumtext NOT NULL,
-  `category_pbd` varchar(255) NOT NULL default '',
-  `author_pbd` varchar(255) NOT NULL default '',
-  `replyto_pbd` varchar(255) NOT NULL default '',
-  `copyright_pbd` varchar(255) NOT NULL default '',
-  `language_pbd` varchar(255) NOT NULL default '',
-  `robots_pbd` varchar(255) NOT NULL default '',
-  `pragma_pbd` varchar(255) NOT NULL default '',
-  `refresh_pbd` varchar(255) NOT NULL default '',
-  `redirect_pbd` varchar(255) NOT NULL default '',
-  `refreshUrl_pbd` int(1) NOT NULL default '0',
-  `url_pbd` varchar(255) NOT NULL default '',
-  `metas_pbd` text NOT NULL,
-  `codename_pbd` varchar(20) NOT NULL,
-  PRIMARY KEY  (`id_pbd`),
-  KEY `page_pbd` (`page_pbd`),
-  FULLTEXT KEY `title_pbd` (`title_pbd`,`linkTitle_pbd`,`keywords_pbd`,`description_pbd`,`codename_pbd`)
-);
-SET character_set_client = @saved_cs_client;
-
---
--- Dumping data for table `pagesBaseData_public`
---
-
-INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (1,1,'Automne','Automne','','',0,'0000-00-00','','','','','','','','','','1|2|||_top|||',0,'','','root');
-INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (20,2,'Automne : goûter à la simplicité','Accueil','automne, cms, ecm, gestionnaire de contenu, toulouse, ws-interactive','Automne est un gestionnaire de contenu pour les entreprises open-source. Entièrement modulable il s\'adapte à vos besoins.',0,'0000-00-00','','','','','','','','','','0||||_top|||',0,'','','home');
-INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (21,3,'Présentation','Présentation','','',0,'0000-00-00','','','','','','','','','','|||||||',0,'','','');
-INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (23,5,'Actualités','Actualités','','',0,'0000-00-00','','','','','','','','','','|||||||',0,'','','news');
-INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (24,6,'Médiathèque','Médiathèque','','',0,'0000-00-00','','','','','','','','','','|||||||',0,'','','media');
-INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (25,7,'Bas de page','Bas de page','','',0,'0000-00-00','','','','','','','','','','0|||||||',0,'','','footer');
-INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (54,38,'Aide aux utilisateurs','Aide utilisateurs','','',0,'0000-00-00','','','','','','','','','','0||||_top|||',0,'','','');
-INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (42,26,'Rangées de contenu','Rangées','','',0,'0000-00-00','','','','','','','','','','0||||_top|||',0,'','','');
-INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (40,24,'Fonctionnalités','Fonctionnalités','','',0,'0000-00-00','','','','','','','','','','0|||||||',0,'','','');
-INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (43,27,'Modules','Modules','','',0,'0000-00-00','','','','','','','','','','0|||||||',0,'','','');
-INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (44,28,'Gestion des utilisateurs','Gestion des utilisateurs','','',0,'0000-00-00','','','','','','','','','','0|||||||',0,'','','');
-INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (45,29,'Automne','Automne','','',0,'0000-00-00','','','','','','','','','','0|||||||',0,'','','');
-INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (47,31,'Exemples de modules','Modules','','',0,'0000-00-00','','','','','','','','','','0||||_top|||',0,'','','');
-INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (41,25,'Modèles de Pages','Modèles','','',0,'0000-00-00','','','','','','','','','','0||||_top|||',0,'','','');
-INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (51,35,'Gestion des droits','Gestion des droits','','',0,'0000-00-00','','','','','','','','','','0|||||||',0,'','','');
-INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (52,36,'Formulaire','Formulaire','','',0,'0000-00-00','','','','','','','','','','1|9|||_top|||',0,'','','');
-INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (50,34,'Fonctions avancées','Fonctions avancées','','',0,'0000-00-00','','','','','','','','','','0||||_top|||',0,'','','');
-INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (27,9,'Contact','Contact','','',0,'0000-00-00','','','','','','','','','','0||||_top|||',0,'','','contact');
-INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (26,8,'Plan du site','Plan du site','','',0,'0000-00-00','','','','','','','','','','0||||_top|||',0,'','','sitemap');
-INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (53,37,'Circuit de publication','Circuit de publication','','',0,'0000-00-00','','','','','','','','','','0||||_top|||',0,'','','');
-INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (49,33,'Points forts','Points forts','','',0,'0000-00-00','','','','','','','','','','0||||_top|||',0,'','','');
-INSERT INTO `pagesBaseData_public` (`id_pbd`, `page_pbd`, `title_pbd`, `linkTitle_pbd`, `keywords_pbd`, `description_pbd`, `reminderPeriodicity_pbd`, `reminderOn_pbd`, `reminderOnMessage_pbd`, `category_pbd`, `author_pbd`, `replyto_pbd`, `copyright_pbd`, `language_pbd`, `robots_pbd`, `pragma_pbd`, `refresh_pbd`, `redirect_pbd`, `refreshUrl_pbd`, `url_pbd`, `metas_pbd`, `codename_pbd`) VALUES (46,30,'Pré-requis','Pré-requis','','',0,'0000-00-00','','','','','','','','','','0||||_top|||',0,'','','');
-
---
--- Table structure for table `profileUsersByGroup`
---
-
-DROP TABLE IF EXISTS `profileUsersByGroup`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-CREATE TABLE `profileUsersByGroup` (
-  `id_gu` int(11) NOT NULL,
-  `groupId_gu` int(11) NOT NULL default '0',
-  `userId_gu` int(11) NOT NULL default '0',
-  PRIMARY KEY  (`id_gu`),
-  KEY `groupId_gu` (`groupId_gu`),
-  KEY `userId_gu` (`userId_gu`)
-);
-SET character_set_client = @saved_cs_client;
-
---
--- Dumping data for table `profileUsersByGroup`
---
-
-
---
--- Table structure for table `profiles`
+-- Structure de la table `profiles`
 --
 
 DROP TABLE IF EXISTS `profiles`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `profiles` (
-  `id_pr` int(11) unsigned NOT NULL,
+  `id_pr` int(11) unsigned NOT NULL auto_increment,
   `templateGroupsDeniedStack_pr` varchar(255) NOT NULL default '',
   `rowGroupsDeniedStack_pr` varchar(255) NOT NULL default '',
   `pageClearancesStack_pr` text NOT NULL,
@@ -3537,25 +3422,24 @@ CREATE TABLE `profiles` (
   `validationClearancesStack_pr` text NOT NULL,
   `administrationClearance_pr` int(11) unsigned NOT NULL default '0',
   PRIMARY KEY  (`id_pr`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `profiles`
+-- Contenu de la table `profiles`
 --
 
-INSERT INTO `profiles` (`id_pr`, `templateGroupsDeniedStack_pr`, `rowGroupsDeniedStack_pr`, `pageClearancesStack_pr`, `moduleClearancesStack_pr`, `validationClearancesStack_pr`, `administrationClearance_pr`) VALUES (1,'','','1,2','standard,2;cms_aliases,2;pnews,2;cms_forms,2','standard',319);
-INSERT INTO `profiles` (`id_pr`, `templateGroupsDeniedStack_pr`, `rowGroupsDeniedStack_pr`, `pageClearancesStack_pr`, `moduleClearancesStack_pr`, `validationClearancesStack_pr`, `administrationClearance_pr`) VALUES (3,'fr;en','','1,1','','',0);
+INSERT INTO `profiles` (`id_pr`, `templateGroupsDeniedStack_pr`, `rowGroupsDeniedStack_pr`, `pageClearancesStack_pr`, `moduleClearancesStack_pr`, `validationClearancesStack_pr`, `administrationClearance_pr`) VALUES(1, '', '', '1,2', 'standard,2;cms_aliases,2;pnews,2;cms_forms,2', 'standard', 319);
+INSERT INTO `profiles` (`id_pr`, `templateGroupsDeniedStack_pr`, `rowGroupsDeniedStack_pr`, `pageClearancesStack_pr`, `moduleClearancesStack_pr`, `validationClearancesStack_pr`, `administrationClearance_pr`) VALUES(3, 'fr;en', '', '1,1', '', '', 0);
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `profilesUsers`
+-- Structure de la table `profilesUsers`
 --
 
 DROP TABLE IF EXISTS `profilesUsers`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `profilesUsers` (
-  `id_pru` int(11) unsigned NOT NULL,
+  `id_pru` int(11) unsigned NOT NULL auto_increment,
   `login_pru` varchar(50) NOT NULL default '',
   `password_pru` varchar(32) NOT NULL default '',
   `firstName_pru` varchar(50) NOT NULL default '',
@@ -3571,25 +3455,24 @@ CREATE TABLE `profilesUsers` (
   PRIMARY KEY  (`id_pru`),
   KEY `ldapDN_pru` (`dn_pru`),
   FULLTEXT KEY `login_pru` (`login_pru`,`firstName_pru`,`lastName_pru`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `profilesUsers`
+-- Contenu de la table `profilesUsers`
 --
 
-INSERT INTO `profilesUsers` (`id_pru`, `login_pru`, `password_pru`, `firstName_pru`, `lastName_pru`, `contactData_pru`, `profile_pru`, `language_pru`, `dn_pru`, `active_pru`, `deleted_pru`, `alerts_pru`, `favorites_pru`) VALUES (1,'root','3b0d99b9bb927794036aa828050f364d','','Super administrateur',1,1,'fr','',1,0,'standard,7;pnews,1;pmedia,1','');
-INSERT INTO `profilesUsers` (`id_pru`, `login_pru`, `password_pru`, `firstName_pru`, `lastName_pru`, `contactData_pru`, `profile_pru`, `language_pru`, `dn_pru`, `active_pru`, `deleted_pru`, `alerts_pru`, `favorites_pru`) VALUES (3,'anonymous','294de3557d9d00b3d2d8a1e6aab028cf','','Utilisateur anonyme',3,3,'fr','',1,0,'standard,7','');
+INSERT INTO `profilesUsers` (`id_pru`, `login_pru`, `password_pru`, `firstName_pru`, `lastName_pru`, `contactData_pru`, `profile_pru`, `language_pru`, `dn_pru`, `active_pru`, `deleted_pru`, `alerts_pru`, `favorites_pru`) VALUES(1, 'root', '3b0d99b9bb927794036aa828050f364d', '', 'Super administrateur', 1, 1, 'fr', '', 1, 0, 'standard,7;pnews,1;pmedia,1', '');
+INSERT INTO `profilesUsers` (`id_pru`, `login_pru`, `password_pru`, `firstName_pru`, `lastName_pru`, `contactData_pru`, `profile_pru`, `language_pru`, `dn_pru`, `active_pru`, `deleted_pru`, `alerts_pru`, `favorites_pru`) VALUES(3, 'anonymous', '294de3557d9d00b3d2d8a1e6aab028cf', '', 'Utilisateur anonyme', 3, 3, 'fr', '', 1, 0, 'standard,7', '');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `profilesUsersGroups`
+-- Structure de la table `profilesUsersGroups`
 --
 
 DROP TABLE IF EXISTS `profilesUsersGroups`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `profilesUsersGroups` (
-  `id_prg` int(11) unsigned NOT NULL,
+  `id_prg` int(11) unsigned NOT NULL auto_increment,
   `description_prg` mediumtext NOT NULL,
   `label_prg` varchar(50) NOT NULL default '',
   `profile_prg` int(11) unsigned NOT NULL default '0',
@@ -3598,63 +3481,182 @@ CREATE TABLE `profilesUsersGroups` (
   PRIMARY KEY  (`id_prg`),
   KEY `ldapDN_prg` (`dn_prg`),
   FULLTEXT KEY `description_prg` (`description_prg`,`label_prg`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `profilesUsersGroups`
+-- Contenu de la table `profilesUsersGroups`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `profilesUsers_validators`
+-- Structure de la table `profilesUsers_validators`
 --
 
 DROP TABLE IF EXISTS `profilesUsers_validators`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `profilesUsers_validators` (
-  `id_puv` int(11) NOT NULL,
+  `id_puv` int(11) NOT NULL auto_increment,
   `userId_puv` int(11) unsigned NOT NULL default '0',
   `module_puv` varchar(100) default NULL,
   PRIMARY KEY  (`id_puv`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `profilesUsers_validators`
+-- Contenu de la table `profilesUsers_validators`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `regenerator`
+-- Structure de la table `profileUsersByGroup`
+--
+
+DROP TABLE IF EXISTS `profileUsersByGroup`;
+CREATE TABLE `profileUsersByGroup` (
+  `id_gu` int(11) NOT NULL auto_increment,
+  `groupId_gu` int(11) NOT NULL default '0',
+  `userId_gu` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`id_gu`),
+  KEY `groupId_gu` (`groupId_gu`),
+  KEY `userId_gu` (`userId_gu`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `profileUsersByGroup`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `regenerator`
 --
 
 DROP TABLE IF EXISTS `regenerator`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `regenerator` (
-  `id_reg` int(11) unsigned NOT NULL,
+  `id_reg` int(11) unsigned NOT NULL auto_increment,
   `module_reg` varchar(255) NOT NULL default '0',
   `parameters_reg` text NOT NULL,
   PRIMARY KEY  (`id_reg`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `regenerator`
+-- Contenu de la table `regenerator`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `resourceStatuses`
+-- Structure de la table `resources`
+--
+
+DROP TABLE IF EXISTS `resources`;
+CREATE TABLE `resources` (
+  `id_res` int(11) unsigned NOT NULL auto_increment,
+  `status_res` int(11) unsigned NOT NULL default '0',
+  `editorsStack_res` varchar(255) NOT NULL default '',
+  PRIMARY KEY  (`id_res`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `resources`
+--
+
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(1, 1, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(40, 40, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(41, 41, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(42, 42, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(43, 43, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(44, 44, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(45, 45, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(46, 46, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(47, 47, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(48, 48, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(49, 49, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(50, 50, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(51, 51, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(52, 52, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(53, 53, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(54, 54, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(55, 55, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(56, 56, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(57, 57, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(58, 58, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(59, 59, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(60, 60, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(61, 61, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(62, 62, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(63, 63, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(64, 64, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(65, 65, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(66, 66, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(67, 67, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(68, 68, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(69, 69, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(70, 70, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(71, 71, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(72, 72, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(73, 73, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(74, 74, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(75, 75, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(76, 76, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(77, 77, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(78, 78, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(79, 79, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(80, 80, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(81, 81, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(82, 82, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(83, 83, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(84, 84, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(85, 85, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(86, 86, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(87, 87, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(88, 88, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(89, 89, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(90, 90, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(91, 91, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(92, 92, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(93, 93, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(94, 94, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(95, 95, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(96, 96, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(97, 97, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(98, 98, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(99, 99, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(100, 100, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(101, 101, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(102, 102, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(103, 103, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(104, 104, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(105, 105, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(106, 106, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(107, 107, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(108, 108, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(109, 109, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(110, 110, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(111, 111, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(112, 112, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(113, 113, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(114, 114, '1,2');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(115, 115, '1,2');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(116, 116, '1,2');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(117, 117, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(118, 118, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(119, 119, '');
+INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES(120, 120, '');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `resourceStatuses`
 --
 
 DROP TABLE IF EXISTS `resourceStatuses`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `resourceStatuses` (
-  `id_rs` int(11) unsigned NOT NULL,
+  `id_rs` int(11) unsigned NOT NULL auto_increment,
   `location_rs` tinyint(4) unsigned NOT NULL default '1',
   `proposedFor_rs` tinyint(4) unsigned NOT NULL default '0',
   `editions_rs` tinyint(4) unsigned NOT NULL default '0',
@@ -3665,251 +3667,146 @@ CREATE TABLE `resourceStatuses` (
   `publicationDateStartEdited_rs` date NOT NULL default '0000-00-00',
   `publicationDateEndEdited_rs` date NOT NULL default '0000-00-00',
   PRIMARY KEY  (`id_rs`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `resourceStatuses`
+-- Contenu de la table `resourceStatuses`
 --
 
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (1,1,0,0,0,2,'2011-02-16','0000-00-00','2008-10-31','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (40,1,0,0,0,2,'2008-10-31','0000-00-00','2008-10-31','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (41,1,0,0,0,2,'2008-11-03','0000-00-00','2008-11-03','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (42,3,0,0,0,1,'2008-11-03','2009-03-01','2008-11-03','2009-03-01');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (43,1,0,0,0,2,'2008-11-03','0000-00-00','2008-11-03','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (44,1,0,0,0,2,'2008-11-03','0000-00-00','2008-11-03','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (45,1,0,0,0,1,'2008-11-03','2008-11-02','2008-11-03','2008-11-02');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (46,1,0,0,0,2,'2008-11-03','0000-00-00','2008-11-03','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (47,1,0,0,0,2,'2008-11-03','0000-00-00','2008-11-03','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (48,3,0,0,0,1,'2011-02-16','0000-00-00','2008-11-04','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (49,1,0,0,0,2,'2011-02-18','0000-00-00','2011-02-18','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (50,3,0,2,0,1,'2011-02-16','0000-00-00','2008-11-07','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (51,3,0,2,0,1,'2011-02-16','0000-00-00','2008-11-07','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (52,3,0,0,0,1,'2011-02-16','0000-00-00','2008-11-12','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (53,3,0,0,0,1,'2011-02-16','0000-00-00','2008-11-12','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (54,3,0,0,0,1,'2011-02-16','0000-00-00','2008-11-12','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (55,3,0,0,0,1,'2011-02-16','0000-00-00','2008-11-12','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (56,3,0,0,0,1,'2011-02-16','0000-00-00','2008-11-12','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (57,3,0,0,0,1,'2011-02-16','0000-00-00','2008-11-12','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (58,3,0,1,0,0,'2008-11-14','0000-00-00','2008-11-14','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (59,3,0,0,0,1,'2011-02-16','0000-00-00','2008-11-14','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (60,3,0,2,0,1,'2011-02-16','0000-00-00','2008-11-19','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (61,3,0,2,0,1,'2011-02-16','0000-00-00','2008-11-19','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (62,3,0,2,0,1,'2011-02-16','0000-00-00','2008-11-19','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (63,3,0,2,0,1,'2011-02-16','0000-00-00','2008-11-19','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (64,3,0,2,0,1,'2011-02-16','0000-00-00','2008-11-21','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (65,3,0,3,0,0,'2008-11-29','0000-00-00','2008-11-29','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (66,3,0,3,0,0,'2008-11-29','2008-11-30','2008-11-29','2008-11-30');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (67,3,0,1,0,0,'2008-11-29','0000-00-00','2008-11-29','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (68,3,0,2,0,0,'2008-11-29','2008-12-01','2008-11-29','2008-12-01');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (69,3,0,2,0,1,'2011-02-16','0000-00-00','2008-12-19','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (70,3,0,1,0,0,'2008-12-23','0000-00-00','2008-12-23','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (71,3,0,2,0,1,'2011-02-16','0000-00-00','2009-02-03','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (72,3,0,2,0,0,'2009-02-03','0000-00-00','2009-02-03','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (73,3,0,2,0,1,'2011-02-16','0000-00-00','2009-02-03','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (74,3,0,3,3,0,'2009-02-03','0000-00-00','2009-02-03','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (75,1,0,0,0,2,'2009-02-03','0000-00-00','2009-02-03','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (76,3,0,2,0,1,'2011-02-16','0000-00-00','2009-02-03','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (77,3,0,2,0,1,'2011-02-16','0000-00-00','2009-02-03','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (78,3,0,2,0,1,'2011-02-16','0000-00-00','2009-02-03','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (79,3,0,2,0,1,'2011-02-16','0000-00-00','2009-02-03','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (80,1,0,0,0,2,'2009-02-03','0000-00-00','2009-02-03','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (81,1,0,0,0,2,'2009-02-03','0000-00-00','2009-02-03','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (82,1,0,0,0,2,'2009-02-03','0000-00-00','2009-02-03','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (83,1,0,0,0,2,'2009-02-03','0000-00-00','2009-02-03','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (84,1,0,0,0,2,'2009-02-03','0000-00-00','2009-02-03','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (85,1,0,0,0,2,'2009-02-04','0000-00-00','2009-02-04','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (86,1,0,0,0,2,'2009-02-04','0000-00-00','2009-02-04','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (87,1,0,0,0,2,'2009-02-04','0000-00-00','2009-02-04','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (88,3,0,0,0,1,'2011-02-16','0000-00-00','2009-02-04','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (89,1,0,0,0,2,'2009-02-04','0000-00-00','2009-02-04','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (90,1,0,0,0,2,'2009-02-04','0000-00-00','2009-02-04','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (91,1,0,0,0,2,'2009-02-04','0000-00-00','2009-02-04','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (92,1,0,0,0,2,'2011-02-16','0000-00-00','2009-03-02','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (93,1,0,0,0,2,'2009-03-02','0000-00-00','2009-03-02','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (94,3,0,2,0,1,'2011-02-16','0000-00-00','2009-03-02','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (95,3,0,2,0,1,'2011-02-16','0000-00-00','2009-03-02','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (96,1,0,0,0,2,'2009-03-02','0000-00-00','2009-03-02','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (97,1,0,0,0,2,'2009-03-02','0000-00-00','2009-03-02','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (98,1,0,0,0,2,'2009-03-02','0000-00-00','2009-03-02','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (99,1,0,0,0,2,'2009-03-02','0000-00-00','2009-03-02','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (100,1,0,0,0,2,'2009-03-02','0000-00-00','2009-03-02','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (101,1,0,0,0,2,'2009-03-02','0000-00-00','2009-03-02','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (102,3,0,2,0,1,'2011-02-16','0000-00-00','2009-03-02','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (103,3,0,2,0,1,'2011-02-16','0000-00-00','2009-03-04','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (104,3,0,2,0,1,'2011-02-16','0000-00-00','2009-03-04','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (105,3,0,2,0,1,'2011-02-16','0000-00-00','2009-03-04','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (106,1,0,0,0,2,'2009-03-04','0000-00-00','2009-03-04','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (107,1,0,0,0,2,'2009-03-04','0000-00-00','2009-03-04','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (108,1,0,0,0,2,'2009-03-04','0000-00-00','2009-03-04','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (109,1,0,0,0,2,'2009-03-04','0000-00-00','2009-03-04','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (110,1,0,0,0,2,'2009-03-05','0000-00-00','2009-03-05','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (111,1,0,0,0,2,'2009-03-05','0000-00-00','2009-03-05','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (112,1,0,0,0,2,'2009-03-05','0000-00-00','2009-03-05','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (113,1,0,0,0,2,'2009-03-05','0000-00-00','2009-03-05','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (114,3,0,2,0,0,'2008-11-05','0000-00-00','2008-11-05','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (115,3,0,2,0,0,'2008-11-05','0000-00-00','2008-11-05','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (116,3,0,2,0,0,'2009-06-23','0000-00-00','2009-06-23','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (117,1,0,0,0,2,'2010-07-19','0000-00-00','2010-07-19','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (118,1,0,0,0,2,'2010-02-15','0000-00-00','2010-02-15','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (119,1,0,0,0,2,'2011-02-18','0000-00-00','2011-02-18','0000-00-00');
-INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES (120,1,0,0,0,2,'2011-02-18','0000-00-00','2011-02-18','0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(1, 1, 0, 0, 0, 2, '2011-02-16', '0000-00-00', '2008-10-31', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(40, 1, 0, 0, 0, 2, '2008-10-31', '0000-00-00', '2008-10-31', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(41, 1, 0, 0, 0, 2, '2008-11-03', '0000-00-00', '2008-11-03', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(42, 3, 0, 0, 0, 1, '2008-11-03', '2009-03-01', '2008-11-03', '2009-03-01');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(43, 1, 0, 0, 0, 2, '2008-11-03', '0000-00-00', '2008-11-03', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(44, 1, 0, 0, 0, 2, '2008-11-03', '0000-00-00', '2008-11-03', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(45, 1, 0, 0, 0, 1, '2008-11-03', '2008-11-02', '2008-11-03', '2008-11-02');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(46, 1, 0, 0, 0, 2, '2008-11-03', '0000-00-00', '2008-11-03', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(47, 1, 0, 0, 0, 2, '2008-11-03', '0000-00-00', '2008-11-03', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(48, 3, 0, 0, 0, 1, '2011-02-16', '0000-00-00', '2008-11-04', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(49, 1, 0, 0, 0, 2, '2011-02-18', '0000-00-00', '2011-02-18', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(50, 3, 0, 2, 0, 1, '2011-02-16', '0000-00-00', '2008-11-07', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(51, 3, 0, 2, 0, 1, '2011-02-16', '0000-00-00', '2008-11-07', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(52, 3, 0, 0, 0, 1, '2011-02-16', '0000-00-00', '2008-11-12', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(53, 3, 0, 0, 0, 1, '2011-02-16', '0000-00-00', '2008-11-12', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(54, 3, 0, 0, 0, 1, '2011-02-16', '0000-00-00', '2008-11-12', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(55, 3, 0, 0, 0, 1, '2011-02-16', '0000-00-00', '2008-11-12', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(56, 3, 0, 0, 0, 1, '2011-02-16', '0000-00-00', '2008-11-12', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(57, 3, 0, 0, 0, 1, '2011-02-16', '0000-00-00', '2008-11-12', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(58, 3, 0, 1, 0, 0, '2008-11-14', '0000-00-00', '2008-11-14', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(59, 3, 0, 0, 0, 1, '2011-02-16', '0000-00-00', '2008-11-14', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(60, 3, 0, 2, 0, 1, '2011-02-16', '0000-00-00', '2008-11-19', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(61, 3, 0, 2, 0, 1, '2011-02-16', '0000-00-00', '2008-11-19', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(62, 3, 0, 2, 0, 1, '2011-02-16', '0000-00-00', '2008-11-19', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(63, 3, 0, 2, 0, 1, '2011-02-16', '0000-00-00', '2008-11-19', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(64, 3, 0, 2, 0, 1, '2011-02-16', '0000-00-00', '2008-11-21', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(65, 3, 0, 3, 0, 0, '2008-11-29', '0000-00-00', '2008-11-29', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(66, 3, 0, 3, 0, 0, '2008-11-29', '2008-11-30', '2008-11-29', '2008-11-30');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(67, 3, 0, 1, 0, 0, '2008-11-29', '0000-00-00', '2008-11-29', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(68, 3, 0, 2, 0, 0, '2008-11-29', '2008-12-01', '2008-11-29', '2008-12-01');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(69, 3, 0, 2, 0, 1, '2011-02-16', '0000-00-00', '2008-12-19', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(70, 3, 0, 1, 0, 0, '2008-12-23', '0000-00-00', '2008-12-23', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(71, 3, 0, 2, 0, 1, '2011-02-16', '0000-00-00', '2009-02-03', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(72, 3, 0, 2, 0, 0, '2009-02-03', '0000-00-00', '2009-02-03', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(73, 3, 0, 2, 0, 1, '2011-02-16', '0000-00-00', '2009-02-03', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(74, 3, 0, 3, 3, 0, '2009-02-03', '0000-00-00', '2009-02-03', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(75, 1, 0, 0, 0, 2, '2009-02-03', '0000-00-00', '2009-02-03', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(76, 3, 0, 2, 0, 1, '2011-02-16', '0000-00-00', '2009-02-03', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(77, 3, 0, 2, 0, 1, '2011-02-16', '0000-00-00', '2009-02-03', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(78, 3, 0, 2, 0, 1, '2011-02-16', '0000-00-00', '2009-02-03', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(79, 3, 0, 2, 0, 1, '2011-02-16', '0000-00-00', '2009-02-03', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(80, 1, 0, 0, 0, 2, '2009-02-03', '0000-00-00', '2009-02-03', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(81, 1, 0, 0, 0, 2, '2009-02-03', '0000-00-00', '2009-02-03', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(82, 1, 0, 0, 0, 2, '2009-02-03', '0000-00-00', '2009-02-03', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(83, 1, 0, 0, 0, 2, '2009-02-03', '0000-00-00', '2009-02-03', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(84, 1, 0, 0, 0, 2, '2009-02-03', '0000-00-00', '2009-02-03', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(85, 1, 0, 0, 0, 2, '2009-02-04', '0000-00-00', '2009-02-04', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(86, 1, 0, 0, 0, 2, '2009-02-04', '0000-00-00', '2009-02-04', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(87, 1, 0, 0, 0, 2, '2009-02-04', '0000-00-00', '2009-02-04', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(88, 3, 0, 0, 0, 1, '2011-02-16', '0000-00-00', '2009-02-04', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(89, 1, 0, 0, 0, 2, '2009-02-04', '0000-00-00', '2009-02-04', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(90, 1, 0, 0, 0, 2, '2009-02-04', '0000-00-00', '2009-02-04', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(91, 1, 0, 0, 0, 2, '2009-02-04', '0000-00-00', '2009-02-04', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(92, 1, 0, 0, 0, 2, '2011-02-16', '0000-00-00', '2009-03-02', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(93, 1, 0, 0, 0, 2, '2009-03-02', '0000-00-00', '2009-03-02', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(94, 3, 0, 2, 0, 1, '2011-02-16', '0000-00-00', '2009-03-02', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(95, 3, 0, 2, 0, 1, '2011-02-16', '0000-00-00', '2009-03-02', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(96, 1, 0, 0, 0, 2, '2009-03-02', '0000-00-00', '2009-03-02', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(97, 1, 0, 0, 0, 2, '2009-03-02', '0000-00-00', '2009-03-02', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(98, 1, 0, 0, 0, 2, '2009-03-02', '0000-00-00', '2009-03-02', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(99, 1, 0, 0, 0, 2, '2009-03-02', '0000-00-00', '2009-03-02', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(100, 1, 0, 0, 0, 2, '2009-03-02', '0000-00-00', '2009-03-02', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(101, 1, 0, 0, 0, 2, '2009-03-02', '0000-00-00', '2009-03-02', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(102, 3, 0, 2, 0, 1, '2011-02-16', '0000-00-00', '2009-03-02', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(103, 3, 0, 2, 0, 1, '2011-02-16', '0000-00-00', '2009-03-04', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(104, 3, 0, 2, 0, 1, '2011-02-16', '0000-00-00', '2009-03-04', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(105, 3, 0, 2, 0, 1, '2011-02-16', '0000-00-00', '2009-03-04', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(106, 1, 0, 0, 0, 2, '2009-03-04', '0000-00-00', '2009-03-04', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(107, 1, 0, 0, 0, 2, '2009-03-04', '0000-00-00', '2009-03-04', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(108, 1, 0, 0, 0, 2, '2009-03-04', '0000-00-00', '2009-03-04', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(109, 1, 0, 0, 0, 2, '2009-03-04', '0000-00-00', '2009-03-04', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(110, 1, 0, 0, 0, 2, '2009-03-05', '0000-00-00', '2009-03-05', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(111, 1, 0, 0, 0, 2, '2009-03-05', '0000-00-00', '2009-03-05', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(112, 1, 0, 0, 0, 2, '2009-03-05', '0000-00-00', '2009-03-05', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(113, 1, 0, 0, 0, 2, '2009-03-05', '0000-00-00', '2009-03-05', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(114, 3, 0, 2, 0, 0, '2008-11-05', '0000-00-00', '2008-11-05', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(115, 3, 0, 2, 0, 0, '2008-11-05', '0000-00-00', '2008-11-05', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(116, 3, 0, 2, 0, 0, '2009-06-23', '0000-00-00', '2009-06-23', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(117, 1, 0, 0, 0, 2, '2010-07-19', '0000-00-00', '2010-07-19', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(118, 1, 0, 0, 0, 2, '2010-02-15', '0000-00-00', '2010-02-15', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(119, 1, 0, 0, 0, 2, '2011-02-18', '0000-00-00', '2011-02-18', '0000-00-00');
+INSERT INTO `resourceStatuses` (`id_rs`, `location_rs`, `proposedFor_rs`, `editions_rs`, `validationsRefused_rs`, `publication_rs`, `publicationDateStart_rs`, `publicationDateEnd_rs`, `publicationDateStartEdited_rs`, `publicationDateEndEdited_rs`) VALUES(120, 1, 0, 0, 0, 2, '2011-02-18', '0000-00-00', '2011-02-18', '0000-00-00');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `resourceValidations`
+-- Structure de la table `resourceValidations`
 --
 
 DROP TABLE IF EXISTS `resourceValidations`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `resourceValidations` (
-  `id_rv` int(11) unsigned NOT NULL,
+  `id_rv` int(11) unsigned NOT NULL auto_increment,
   `module_rv` varchar(100) NOT NULL default '',
   `editions_rv` int(11) unsigned NOT NULL default '0',
   `resourceID_rv` int(11) unsigned NOT NULL default '0',
   `serializedObject_rv` mediumtext NOT NULL,
-  `creationDate_rv` timestamp NOT NULL default CURRENT_TIMESTAMP,
+  `creationDate_rv` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
   PRIMARY KEY  (`id_rv`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `resourceValidations`
+-- Contenu de la table `resourceValidations`
 --
 
 
---
--- Table structure for table `resources`
---
-
-DROP TABLE IF EXISTS `resources`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-CREATE TABLE `resources` (
-  `id_res` int(11) unsigned NOT NULL,
-  `status_res` int(11) unsigned NOT NULL default '0',
-  `editorsStack_res` varchar(255) NOT NULL default '',
-  PRIMARY KEY  (`id_res`)
-);
-SET character_set_client = @saved_cs_client;
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `resources`
---
-
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (1,1,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (40,40,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (41,41,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (42,42,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (43,43,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (44,44,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (45,45,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (46,46,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (47,47,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (48,48,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (49,49,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (50,50,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (51,51,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (52,52,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (53,53,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (54,54,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (55,55,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (56,56,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (57,57,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (58,58,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (59,59,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (60,60,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (61,61,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (62,62,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (63,63,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (64,64,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (65,65,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (66,66,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (67,67,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (68,68,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (69,69,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (70,70,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (71,71,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (72,72,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (73,73,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (74,74,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (75,75,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (76,76,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (77,77,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (78,78,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (79,79,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (80,80,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (81,81,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (82,82,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (83,83,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (84,84,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (85,85,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (86,86,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (87,87,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (88,88,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (89,89,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (90,90,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (91,91,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (92,92,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (93,93,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (94,94,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (95,95,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (96,96,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (97,97,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (98,98,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (99,99,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (100,100,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (101,101,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (102,102,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (103,103,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (104,104,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (105,105,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (106,106,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (107,107,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (108,108,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (109,109,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (110,110,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (111,111,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (112,112,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (113,113,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (114,114,'1,2');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (115,115,'1,2');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (116,116,'1,2');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (117,117,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (118,118,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (119,119,'');
-INSERT INTO `resources` (`id_res`, `status_res`, `editorsStack_res`) VALUES (120,120,'');
-
---
--- Table structure for table `scriptsStatuses`
+-- Structure de la table `scriptsStatuses`
 --
 
 DROP TABLE IF EXISTS `scriptsStatuses`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `scriptsStatuses` (
   `scriptName_ss` varchar(255) NOT NULL default '',
   `launchDate_ss` datetime default NULL,
   `pidFileName_ss` varchar(255) NOT NULL default '',
   `module_ss` varchar(255) NOT NULL default '',
   `parameters_ss` text NOT NULL
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `scriptsStatuses`
+-- Contenu de la table `scriptsStatuses`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `sessions`
+-- Structure de la table `sessions`
 --
 
 DROP TABLE IF EXISTS `sessions`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `sessions` (
-  `id_ses` int(11) unsigned NOT NULL,
+  `id_ses` int(11) unsigned NOT NULL auto_increment,
   `phpid_ses` varchar(75) NOT NULL default '',
   `lastTouch_ses` datetime NOT NULL default '0000-00-00 00:00:00',
   `user_ses` int(11) unsigned NOT NULL default '0',
@@ -3921,48 +3818,46 @@ CREATE TABLE `sessions` (
   KEY `phpid_ses` (`phpid_ses`),
   KEY `user_ses` (`user_ses`),
   KEY `cookie_expire_ses` (`cookie_expire_ses`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `sessions`
+-- Contenu de la table `sessions`
 --
 
 
+-- --------------------------------------------------------
+
 --
--- Table structure for table `toolbars`
+-- Structure de la table `toolbars`
 --
 
 DROP TABLE IF EXISTS `toolbars`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `toolbars` (
-  `id_tool` int(11) unsigned NOT NULL,
+  `id_tool` int(11) unsigned NOT NULL auto_increment,
   `code_tool` varchar(20) NOT NULL default '',
   `label_tool` varchar(255) NOT NULL default '',
   `elements_tool` text NOT NULL,
   PRIMARY KEY  (`id_tool`),
   KEY `code_tool` (`code_tool`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `toolbars`
+-- Contenu de la table `toolbars`
 --
 
-INSERT INTO `toolbars` (`id_tool`, `code_tool`, `label_tool`, `elements_tool`) VALUES (1,'Default','Default','Source|Separator1|ShowBlocks|Separator2|Preview|Templates|Separator3|Cut|Copy|Paste|PasteText|PasteWord|Separator4|Print|Separator5|Undo|Redo|Separator6|Find|Replace|Separator7|SelectAll|RemoveFormat|Separator8|Bold|Italic|Underline|StrikeThrough|Separator9|Subscript|Superscript|Separator10|OrderedList|UnorderedList|Separator11|Outdent|Indent|Separator12|JustifyLeft|JustifyCenter|JustifyRight|JustifyFull|Separator13|Link|Unlink|Anchor|Separator14|Table|Rule|SpecialChar|Separator15|Style|FontFormat|FontSize|Separator16|TextColor|BGColor|Separator17|automneLinks|polymod|Image');
-INSERT INTO `toolbars` (`id_tool`, `code_tool`, `label_tool`, `elements_tool`) VALUES (2,'Basic','Basic','Source|Cut|Copy|Paste|PasteText|PasteWord|Separator4|Undo|Redo|Separator6|Bold|Italic|Underline|StrikeThrough|Separator9|Subscript|Superscript|Separator10|OrderedList|UnorderedList|Separator11|Outdent|Indent|Separator12|JustifyLeft|JustifyCenter|JustifyRight|JustifyFull|Separator13|Table|Rule|SpecialChar|Separator1');
-INSERT INTO `toolbars` (`id_tool`, `code_tool`, `label_tool`, `elements_tool`) VALUES (3,'BasicLink','BasicLink','Source|Separator1|Cut|Copy|Paste|PasteText|PasteWord|Separator4|Undo|Redo|Separator6|Bold|Italic|Underline|StrikeThrough|Separator9|Subscript|Superscript|Separator10|OrderedList|UnorderedList|Separator11|Outdent|Indent|Separator12|JustifyLeft|JustifyCenter|JustifyRight|JustifyFull|Separator13|Link|Unlink|Anchor|Separator14|Table|Rule|SpecialChar|Separator16|automneLinks|polymod');
+INSERT INTO `toolbars` (`id_tool`, `code_tool`, `label_tool`, `elements_tool`) VALUES(1, 'Default', 'Default', 'Source|Separator1|ShowBlocks|Separator2|Preview|Templates|Separator3|Cut|Copy|Paste|PasteText|PasteWord|Separator4|Print|Separator5|Undo|Redo|Separator6|Find|Replace|Separator7|SelectAll|RemoveFormat|Separator8|Bold|Italic|Underline|StrikeThrough|Separator9|Subscript|Superscript|Separator10|OrderedList|UnorderedList|Separator11|Outdent|Indent|Separator12|JustifyLeft|JustifyCenter|JustifyRight|JustifyFull|Separator13|Link|Unlink|Anchor|Separator14|Table|Rule|SpecialChar|Separator15|Style|FontFormat|FontSize|Separator16|TextColor|BGColor|Separator17|automneLinks|polymod|Image');
+INSERT INTO `toolbars` (`id_tool`, `code_tool`, `label_tool`, `elements_tool`) VALUES(2, 'Basic', 'Basic', 'Source|Cut|Copy|Paste|PasteText|PasteWord|Separator4|Undo|Redo|Separator6|Bold|Italic|Underline|StrikeThrough|Separator9|Subscript|Superscript|Separator10|OrderedList|UnorderedList|Separator11|Outdent|Indent|Separator12|JustifyLeft|JustifyCenter|JustifyRight|JustifyFull|Separator13|Table|Rule|SpecialChar|Separator1');
+INSERT INTO `toolbars` (`id_tool`, `code_tool`, `label_tool`, `elements_tool`) VALUES(3, 'BasicLink', 'BasicLink', 'Source|Separator1|Cut|Copy|Paste|PasteText|PasteWord|Separator4|Undo|Redo|Separator6|Bold|Italic|Underline|StrikeThrough|Separator9|Subscript|Superscript|Separator10|OrderedList|UnorderedList|Separator11|Outdent|Indent|Separator12|JustifyLeft|JustifyCenter|JustifyRight|JustifyFull|Separator13|Link|Unlink|Anchor|Separator14|Table|Rule|SpecialChar|Separator16|automneLinks|polymod');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `websites`
+-- Structure de la table `websites`
 --
 
 DROP TABLE IF EXISTS `websites`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `websites` (
-  `id_web` int(11) unsigned NOT NULL,
+  `id_web` int(11) unsigned NOT NULL auto_increment,
   `codename_web` varchar(255) NOT NULL,
   `label_web` varchar(255) NOT NULL default '',
   `url_web` varchar(255) NOT NULL default '',
@@ -3980,20 +3875,11 @@ CREATE TABLE `websites` (
   `metas_web` text NOT NULL,
   `order_web` int(11) unsigned NOT NULL default '0',
   PRIMARY KEY  (`id_web`)
-);
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `websites`
+-- Contenu de la table `websites`
 --
 
-INSERT INTO `websites` (`id_web`, `codename_web`, `label_web`, `url_web`, `altdomains_web`, `root_web`, `keywords_web`, `description_web`, `category_web`, `author_web`, `replyto_web`, `copyright_web`, `language_web`, `robots_web`, `favicon_web`, `metas_web`, `order_web`) VALUES (1,'root','Site principal','127.0.0.1','',1,'','','','','','','fr','','/favicon.ico','',2);
-INSERT INTO `websites` (`id_web`, `codename_web`, `label_web`, `url_web`, `altdomains_web`, `root_web`, `keywords_web`, `description_web`, `category_web`, `author_web`, `replyto_web`, `copyright_web`, `language_web`, `robots_web`, `favicon_web`, `metas_web`, `order_web`) VALUES (2,'demo','Démo du CMS Automne','127.0.0.1','',2,'','','','','','','fr','','/favicon.ico','<link rel=\"alternate\" type=\"application/rss+xml\" title=\"Actualités du site démo d\'Automne\" href=\"rss/rss.php?id=1\" />',1);
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2011-02-23 13:45:50
+INSERT INTO `websites` (`id_web`, `codename_web`, `label_web`, `url_web`, `altdomains_web`, `root_web`, `keywords_web`, `description_web`, `category_web`, `author_web`, `replyto_web`, `copyright_web`, `language_web`, `robots_web`, `favicon_web`, `metas_web`, `order_web`) VALUES(1, 'root', 'Site principal', '127.0.0.1', '', 1, '', '', '', '', '', '', 'fr', '', '/favicon.ico', '', 2);
+INSERT INTO `websites` (`id_web`, `codename_web`, `label_web`, `url_web`, `altdomains_web`, `root_web`, `keywords_web`, `description_web`, `category_web`, `author_web`, `replyto_web`, `copyright_web`, `language_web`, `robots_web`, `favicon_web`, `metas_web`, `order_web`) VALUES(2, 'demo', 'Démo du CMS Automne', '127.0.0.1', '', 2, '', '', '', '', '', '', 'fr', '', '/favicon.ico', '<link rel="alternate" type="application/rss+xml" title="Actualités du site démo d''Automne" href="rss/rss.php?id=1" />', 1);
