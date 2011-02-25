@@ -157,3 +157,10 @@
 	color:					#72635b;
 	padding:				0px;
 }
+/* Medias module styles */
+.right.pmedia-item {
+	margin:					0 0 0 1em;
+}
+.left.pmedia-item {
+	margin:					0 1em 0 0;
+}
