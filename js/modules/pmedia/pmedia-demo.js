@@ -47,11 +47,14 @@ $(document).ready(function(){
 		if ($('.pmedia-results .pmedia-pages')) {
 			$('.pmedia-results .pmedia-pages a').click(getPage);
 		}
-
 		$(".pmedia-result h2").click(function(e){
 			$(e.target).nextAll('.pmedia-content').slideToggle("slow");
 		});
-		
+		//colorbox on results
+		var images = $("a[rel='atm-enlarge']");
+		if (images.length) {
+			images.colorbox();
+		}
 	}
 	$(".pmedia-loading").ajaxStart(function(){
 		$(this).show();
