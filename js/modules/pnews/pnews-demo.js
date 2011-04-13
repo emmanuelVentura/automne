@@ -34,7 +34,9 @@ $(document).ready(function(){
 			//colorbox on results
 			var images = $("a[rel='atm-enlarge']");
 			if (images.length) {
-				images.colorbox();
+				images.colorbox({
+					photo: true
+				});
 			}
 		}
 		return true;
