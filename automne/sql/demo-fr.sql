@@ -1,24 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 2.11.8.1deb5+lenny3
--- http://www.phpmyadmin.net
---
--- Serveur: localhost
--- Généré le : Mer 23 Février 2011 à 14:40
--- Version du serveur: 5.0.51
--- Version de PHP: 4.4.4-8+etch6
-
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
---
--- Base de données: `automne4_demo-fr`
---
-
 -- --------------------------------------------------------
 
 --
@@ -28,7 +7,8 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 DROP TABLE IF EXISTS `actionsTimestamps`;
 CREATE TABLE `actionsTimestamps` (
   `type_at` varchar(50) NOT NULL default '',
-  `date_at` datetime NOT NULL default '0000-00-00 00:00:00'
+  `date_at` datetime NOT NULL default '0000-00-00 00:00:00',
+  `module_at` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
