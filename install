@@ -73,7 +73,7 @@
 >	/js/modules/pmedia/swfobject.js
 >	/js/modules/pnews/pnews-demo.js
 >	/js/demo/colorbox.js
->	/js/demo/jquery-1.5.js
+>	/js/demo/jquery-1.5.2.min.js
 >	/js/demo/jquery.colorbox-min.js
 #Execute demo database
 x	/automne/sql/demo-fr.sql
