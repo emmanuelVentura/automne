@@ -5,3 +5,7 @@
 .left.pmedia-item {
 	margin:					0 1em 0 0;
 }
+.pmedia-oembed-legend {
+	max-width:				320px;
+	overflow:				hidden;
+}
