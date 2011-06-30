@@ -953,6 +953,8 @@ CREATE TABLE `contactDatas` (
   `cellphone_cd` varchar(20) NOT NULL default '',
   `fax_cd` varchar(20) NOT NULL default '',
   `email_cd` varchar(255) NOT NULL default '',
+  `company_cd` varchar(255) NOT NULL,
+  `gender_cd` varchar(255) NOT NULL,
   PRIMARY KEY  (`id_cd`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
@@ -1538,6 +1540,7 @@ CREATE TABLE `modulesCategories` (
   `lineage_mca` varchar(255) NOT NULL default '',
   `order_mca` int(10) unsigned NOT NULL default '1',
   `icon_mca` varchar(255) NOT NULL default '',
+  `protected_mca` int(1) NOT NULL,
   PRIMARY KEY  (`id_mca`),
   KEY `module` (`module_mca`),
   KEY `lineage` (`lineage_mca`),
@@ -3953,6 +3956,7 @@ CREATE TABLE `websites` (
   `label_web` varchar(255) NOT NULL default '',
   `url_web` varchar(255) NOT NULL default '',
   `altdomains_web` text NOT NULL,
+  `altredir_web` int(1) NOT NULL,
   `root_web` int(11) unsigned NOT NULL default '0',
   `keywords_web` mediumtext NOT NULL,
   `description_web` mediumtext NOT NULL,
@@ -3965,10 +3969,10 @@ CREATE TABLE `websites` (
   `favicon_web` varchar(255) NOT NULL default '',
   `metas_web` text NOT NULL,
   `order_web` int(11) unsigned NOT NULL default '0',
-  `403_web` INT( 11 ) UNSIGNED NOT NULL,
-  `404_web` INT( 11 ) UNSIGNED NOT NULL,
+  `403_web` int(11) unsigned NOT NULL,
+  `404_web` int(11) unsigned NOT NULL,
   PRIMARY KEY  (`id_web`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 ;
 
 --
 -- Contenu de la table `websites`
