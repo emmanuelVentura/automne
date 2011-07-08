@@ -1644,15 +1644,19 @@ INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`,
 --
 
 DROP TABLE IF EXISTS `mod_cms_aliases`;
-CREATE TABLE `mod_cms_aliases` (
+CREATE TABLE IF NOT EXISTS `mod_cms_aliases` (
   `id_ma` int(11) unsigned NOT NULL auto_increment,
   `parent_ma` int(11) unsigned NOT NULL default '0',
   `page_ma` int(11) NOT NULL default '0',
   `url_ma` varchar(255) NOT NULL default '',
   `alias_ma` varchar(255) NOT NULL default '',
+  `websites_ma` varchar(255) NOT NULL,
+  `replace_ma` int(1) unsigned NOT NULL,
+  `permanent_ma` int(1) unsigned NOT NULL,
+  `protected_ma` int(1) unsigned NOT NULL,
   PRIMARY KEY  (`id_ma`),
   KEY `alias_ma` (`alias_ma`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `mod_cms_aliases`
@@ -2127,6 +2131,20 @@ INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_m
 INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES(49, 2, 0);
 INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES(50, 2, 0);
 INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES(51, 2, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `mod_object_search_tmp`
+--
+
+DROP TABLE IF EXISTS `mod_object_search_tmp`;
+CREATE TABLE `mod_object_search_tmp` (
+  `search_mos` varchar(32) NOT NULL,
+  `id_mos` int(11) unsigned NOT NULL,
+  UNIQUE KEY `index_mos` (`search_mos`,`id_mos`),
+  KEY `search_mos` (`search_mos`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
