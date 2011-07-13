@@ -28,13 +28,69 @@
 						<div class="pnews-result">
 							<h2><a href="{page:self:url}?item={['object1']['id']}" title="{['object1']['label']}">{['object1']['label']}</a></h2>
 							<p class="date">{['object1']['formatedDateStart']|d/m/Y}</p>
-							<atm-if what="{['object1']['fields'][4]['imageName']}">
+							<atm-if what="{['object1']['fields'][11]['id']}">
 								<div class="right">
-									<atm-if what="{['object1']['fields'][4]['imageZoomName']}" name="thumbnail">
-										<a href="{['object1']['fields'][4]['imageZoom']|800}" target="_blank" title="Illustration '{['object1']['label']}' ({['object1']['fields'][4]['fileExtension']} - {['object1']['fields'][4]['fileSize']}Mo)" rel="atm-enlarge"><img src="{['object1']['fields'][4]['image']|100}" alt="{['object1']['label']}" /></a>
+									<atm-if name="oembed" what="{['object1']['fields'][11]['fields'][10]['hasValue']}">
+										<div class="pmedia-oembed">{['object1']['fields'][11]['fields'][10]['html']|200,125}</div>
+										<atm-if what="{['object1']['fields'][11]['fields'][10]['type']} != 'link' &amp;&amp; ({['object1']['fields'][11]['fields'][10]['authorName']} || {['object1']['fields'][11]['fields'][10]['title']})">
+											<div class="pmedia-oembed-legend">
+												<atm-if name="oembedTitle" what="{['object1']['fields'][11]['fields'][10]['url']} &amp;&amp; {['object1']['fields'][11]['fields'][10]['title']}">
+													<a href="{['object1']['fields'][11]['fields'][10]['url']}" target="_blank">{['object1']['fields'][11]['fields'][10]['title']}</a>
+												</atm-if>
+												<atm-else for="oembedTitle" what="{['object1']['fields'][11]['fields'][10]['title']}">
+													{['object1']['fields'][11]['fields'][10]['title']}
+												</atm-else>
+												<atm-if what="{['object1']['fields'][11]['fields'][10]['authorName']} &amp;&amp; {['object1']['fields'][11]['fields'][10]['title']}"> - </atm-if>
+												<atm-if name="oembedAuthor" what="{['object1']['fields'][11]['fields'][10]['authorName']} &amp;&amp; {['object1']['fields'][11]['fields'][10]['authorUrl']}">
+													<a href="{['object1']['fields'][11]['fields'][10]['authorUrl']}" target="_blank">{['object1']['fields'][11]['fields'][10]['authorName']}</a>
+												</atm-if>
+												<atm-else for="oembedAuthor" what="{['object1']['fields'][11]['fields'][10]['authorName']}">
+													{['object1']['fields'][11]['fields'][10]['authorName']}
+												</atm-else>
+											</div>
+										</atm-if>
 									</atm-if>
-									<atm-else for="thumbnail">
-										<img src="{['object1']['fields'][4]['image']|100}" alt="{['object1']['label']}" />
+									<atm-else for="oembed">
+										<atm-if what="{['object1']['fields'][11]['fields'][9]['filename']} &amp;&amp; {['object1']['fields'][11]['fields'][9]['fileExtension']} &amp;&amp; {['object1']['fields'][11]['fields'][9]['fileExtension']} != 'flv' &amp;&amp; {['object1']['fields'][11]['fields'][9]['fileExtension']} != 'mp3' &amp;&amp; {['object1']['fields'][11]['fields'][9]['fileExtension']} != 'jpg' &amp;&amp; {['object1']['fields'][11]['fields'][9]['fileExtension']} != 'gif' &amp;&amp; {['object1']['fields'][11]['fields'][9]['fileExtension']} != 'png'">
+											<a href="{['object1']['fields'][11]['fields'][9]['file']}" target="_blank" title="T&eacute;l&eacute;charger le document '{['object1']['fields'][11]['label']}' ({['object1']['fields'][11]['fields'][9]['fileExtension']} - {['object1']['fields'][11]['fields'][9]['fileSize']}Mo)"><atm-if what="{['object1']['fields'][11]['fields'][9]['fileIcon']}"><img src="{['object1']['fields'][11]['fields'][9]['fileIcon']}" alt="Fichier {['object1']['fields'][11]['fields'][9]['fileExtension']}" /></atm-if> {['object1']['fields'][11]['label']}</a>
+											<atm-if what="{['object1']['fields'][11]['fields'][9]['thumbname']}">
+												<img src="{['object1']['fields'][11]['fields'][9]['thumb']|200}" alt="{['object1']['fields'][11]['label']}" />
+											</atm-if>
+										</atm-if>
+										<atm-if what="{['object1']['fields'][11]['fields'][9]['fileExtension']} == 'flv'">
+											<atm-if what="{['object1']['fields'][11]['fields'][9]['thumbname']}">
+												<script type="text/javascript">
+													swfobject.embedSWF('automne/playerflv/player_flv.swf', 'media-{['object1']['fields'][11]['id']}', '200', '125', '9.0.0', 'automne/swfobject/expressInstall.swf', {flv:'{['object1']['fields'][11]['fields'][9]['file']}', configxml:'automne/playerflv/config_playerflv.xml', startimage:'{['object1']['fields'][11]['fields'][9]['thumb']}'}, {allowfullscreen:true, wmode:'transparent'}, {'style':'float:right;'});
+												</script>
+											</atm-if>
+											<atm-if what="!{['object1']['fields'][11]['fields'][9]['thumbname']}">
+												<script type="text/javascript">
+													swfobject.embedSWF('automne/playerflv/player_flv.swf', 'media-{['object1']['fields'][11]['id']}', '200', '125', '9.0.0', 'automne/swfobject/expressInstall.swf', {flv:'{['object1']['fields'][11]['fields'][9]['file']}', configxml:'automne/playerflv/config_playerflv.xml'}, {allowfullscreen:true, wmode:'transparent'}, {'style':'float:right;'});
+												</script>
+											</atm-if>
+											<div id="media-{['object1']['fields'][11]['id']}" class="pmedia-video" style="width:200px;height:125px;">
+												<p><a href="http://www.adobe.com/go/getflashplayer" target="_blank"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p>
+											</div>
+										</atm-if>
+										<atm-if what="{['object1']['fields'][11]['fields'][9]['fileExtension']} == 'mp3'">
+											<script type="text/javascript">
+												swfobject.embedSWF('automne/playermp3/player_mp3.swf', 'media-{['object1']['fields'][11]['id']}', '200', '20', '9.0.0', 'automne/swfobject/expressInstall.swf', {mp3:'{['object1']['fields'][11]['fields'][9]['file']}', configxml:'automne/playermp3/config_playermp3.xml'}, {wmode:'transparent'}, {'style':'float:right;'});
+											</script>
+											<div id="media-{['object1']['fields'][11]['id']}" class="pmedia-audio" style="width:200px;height:20px;">
+												<p><a href="http://www.adobe.com/go/getflashplayer" target="_blank"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p>
+											</div>
+											<atm-if what="{['object1']['fields'][11]['fields'][9]['thumbname']}">
+												<img src="{['object1']['fields'][11]['fields'][9]['thumb']|200}" alt="{['object1']['fields'][11]['label']}" />
+											</atm-if>
+										</atm-if>
+										<atm-if what="{['object1']['fields'][11]['fields'][9]['fileExtension']} == 'jpg' || {['object1']['fields'][11]['fields'][9]['fileExtension']} == 'gif' || {['object1']['fields'][11]['fields'][9]['fileExtension']} == 'png'">
+											<atm-if what="{['object1']['fields'][11]['fields'][9]['thumbname']}">
+												<a href="{['object1']['fields'][11]['fields'][9]['file']}" rel="atm-enlarge" target="_blank" title="Illustration '{['object1']['fields'][11]['label']}' ({['object1']['fields'][11]['fields'][9]['fileExtension']} - {['object1']['fields'][11]['fields'][9]['fileSize']}Mo)"><img src="{['object1']['fields'][11]['fields'][9]['thumb']|200}" alt="{['object1']['fields'][11]['label']}" /></a>
+											</atm-if>
+											<atm-if what="!{['object1']['fields'][11]['fields'][9]['thumbname']}">
+												<a href="{['object1']['fields'][11]['fields'][9]['file']}" rel="atm-enlarge" target="_blank" title="Illustration '{['object1']['fields'][11]['label']}' ({['object1']['fields'][11]['fields'][9]['fileExtension']} - {['object1']['fields'][11]['fields'][9]['fileSize']}Mo)"><img src="{['object1']['fields'][11]['fields'][9]['file']|200}" alt="{['object1']['fields'][11]['label']}" /></a>
+											</atm-if>
+										</atm-if>
 									</atm-else>
 								</div>
 							</atm-if>
