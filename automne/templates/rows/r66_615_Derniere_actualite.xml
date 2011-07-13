@@ -2,8 +2,9 @@
 	<block module="pnews" id="lastNews">
 		<div class="pnews">
 			<atm-search what="{['object1']}" name="lastNews">
-				<atm-search-limit search="lastNews" value="1" />
 				<atm-search-order search="lastNews" type="publication date after" direction="desc" />
+				<atm-search-order search="lastNews" type="objectID" direction="desc" />
+				<atm-search-limit search="lastNews" value="1" />
 				<atm-result search="lastNews">
 					<div class="pnews-results">
 						<div class="pnews-result">
@@ -12,7 +13,7 @@
 							<atm-if what="{['object1']['fields'][11]['id']}">
 								<div class="right">
 									<atm-if name="oembed" what="{['object1']['fields'][11]['fields'][10]['hasValue']}">
-										<div class="pmedia-oembed">{['object1']['fields'][11]['fields'][10]['html']|200,125}</div>
+										<div class="pmedia-oembed">{['object1']['fields'][11]['fields'][10]['html']|292,250}</div>
 										<atm-if what="{['object1']['fields'][11]['fields'][10]['type']} != 'link' &amp;&amp; ({['object1']['fields'][11]['fields'][10]['authorName']} || {['object1']['fields'][11]['fields'][10]['title']})">
 											<div class="pmedia-oembed-legend">
 												<atm-if name="oembedTitle" what="{['object1']['fields'][11]['fields'][10]['url']} &amp;&amp; {['object1']['fields'][11]['fields'][10]['title']}">

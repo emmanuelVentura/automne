@@ -1,1 +1,8 @@
 /* News module styles */
+.pnews-result .pmedia-oembed-legend {
+	max-width:			292px;
+}
+.pnews-result .pmedia-oembed,
+.pnews-result .pmedia-oembed-legend {
+	margin:				0 0 5px 5px;
+}
