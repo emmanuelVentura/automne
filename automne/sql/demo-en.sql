@@ -903,6 +903,8 @@ CREATE TABLE `contactDatas` (
   `cellphone_cd` varchar(20) NOT NULL default '',
   `fax_cd` varchar(20) NOT NULL default '',
   `email_cd` varchar(255) NOT NULL default '',
+  `company_cd` varchar(255) NOT NULL,
+  `gender_cd` varchar(255) NOT NULL,
   PRIMARY KEY  (`id_cd`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
@@ -1520,6 +1522,7 @@ CREATE TABLE `modulesCategories` (
   `lineage_mca` varchar(255) NOT NULL default '',
   `order_mca` int(10) unsigned NOT NULL default '1',
   `icon_mca` varchar(255) NOT NULL default '',
+  `protected_mca` int(1) NOT NULL,
   PRIMARY KEY  (`id_mca`),
   KEY `module` (`module_mca`),
   KEY `lineage` (`lineage_mca`),
@@ -1625,15 +1628,19 @@ INSERT INTO `modulesCategories_i18nm` (`id_mcl`, `category_mcl`, `language_mcl`,
 --
 
 DROP TABLE IF EXISTS `mod_cms_aliases`;
-CREATE TABLE `mod_cms_aliases` (
+CREATE TABLE IF NOT EXISTS `mod_cms_aliases` (
   `id_ma` int(11) unsigned NOT NULL auto_increment,
   `parent_ma` int(11) unsigned NOT NULL default '0',
   `page_ma` int(11) NOT NULL default '0',
   `url_ma` varchar(255) NOT NULL default '',
   `alias_ma` varchar(255) NOT NULL default '',
+  `websites_ma` varchar(255) NOT NULL,
+  `replace_ma` int(1) unsigned NOT NULL,
+  `permanent_ma` int(1) unsigned NOT NULL,
+  `protected_ma` int(1) unsigned NOT NULL,
   PRIMARY KEY  (`id_ma`),
   KEY `alias_ma` (`alias_ma`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `mod_cms_aliases`
@@ -2098,6 +2105,20 @@ INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_m
 INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES(41, 1, 1);
 INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES(42, 1, 1);
 INSERT INTO `mod_object_polyobjects` (`id_moo`, `object_type_id_moo`, `deleted_moo`) VALUES(43, 2, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `mod_object_search_tmp`
+--
+
+DROP TABLE IF EXISTS `mod_object_search_tmp`;
+CREATE TABLE `mod_object_search_tmp` (
+  `search_mos` varchar(32) NOT NULL,
+  `id_mos` int(11) unsigned NOT NULL,
+  UNIQUE KEY `index_mos` (`search_mos`,`id_mos`),
+  KEY `search_mos` (`search_mos`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -2968,6 +2989,8 @@ CREATE TABLE `pages` (
   `template_pag` int(11) unsigned NOT NULL default '0',
   `lastFileCreation_pag` datetime NOT NULL default '0000-00-00 00:00:00',
   `url_pag` varchar(255) NOT NULL default '',
+  `protected_pag` int(1) NOT NULL,
+  `https_pag` int(1) NOT NULL,
   PRIMARY KEY  (`id_pag`),
   KEY `template_pag` (`template_pag`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
@@ -3030,7 +3053,7 @@ CREATE TABLE `pagesBaseData_archived` (
   `refreshUrl_pbd` int(1) NOT NULL default '0',
   `url_pbd` varchar(255) NOT NULL default '',
   `metas_pbd` text NOT NULL,
-  `codename_pbd` varchar(20) NOT NULL,
+  `codename_pbd` varchar(100) NOT NULL,
   PRIMARY KEY  (`id_pbd`),
   KEY `page_pbd` (`page_pbd`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
@@ -3069,7 +3092,7 @@ CREATE TABLE `pagesBaseData_deleted` (
   `refreshUrl_pbd` int(1) NOT NULL default '0',
   `url_pbd` varchar(255) NOT NULL default '',
   `metas_pbd` text NOT NULL,
-  `codename_pbd` varchar(20) NOT NULL,
+  `codename_pbd` varchar(100) NOT NULL,
   PRIMARY KEY  (`id_pbd`),
   KEY `page_pbd` (`page_pbd`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
@@ -3108,7 +3131,7 @@ CREATE TABLE `pagesBaseData_edited` (
   `refreshUrl_pbd` int(1) NOT NULL default '0',
   `url_pbd` varchar(255) NOT NULL default '',
   `metas_pbd` text NOT NULL,
-  `codename_pbd` varchar(20) NOT NULL,
+  `codename_pbd` varchar(100) NOT NULL,
   PRIMARY KEY  (`id_pbd`),
   KEY `page_pbd` (`page_pbd`),
   FULLTEXT KEY `title_pbd` (`title_pbd`,`linkTitle_pbd`,`keywords_pbd`,`description_pbd`,`codename_pbd`)
@@ -3170,7 +3193,7 @@ CREATE TABLE `pagesBaseData_public` (
   `refreshUrl_pbd` int(1) NOT NULL default '0',
   `url_pbd` varchar(255) NOT NULL default '',
   `metas_pbd` text NOT NULL,
-  `codename_pbd` varchar(20) NOT NULL,
+  `codename_pbd` varchar(100) NOT NULL,
   PRIMARY KEY  (`id_pbd`),
   KEY `page_pbd` (`page_pbd`),
   FULLTEXT KEY `title_pbd` (`title_pbd`,`linkTitle_pbd`,`keywords_pbd`,`description_pbd`,`codename_pbd`)
@@ -3716,6 +3739,7 @@ CREATE TABLE `websites` (
   `label_web` varchar(255) NOT NULL default '',
   `url_web` varchar(255) NOT NULL default '',
   `altdomains_web` text NOT NULL,
+  `altredir_web` int(1) NOT NULL,
   `root_web` int(11) unsigned NOT NULL default '0',
   `keywords_web` mediumtext NOT NULL,
   `description_web` mediumtext NOT NULL,
@@ -3728,10 +3752,10 @@ CREATE TABLE `websites` (
   `favicon_web` varchar(255) NOT NULL default '',
   `metas_web` text NOT NULL,
   `order_web` int(11) unsigned NOT NULL default '0',
-  `403_web` INT( 11 ) UNSIGNED NOT NULL,
-  `404_web` INT( 11 ) UNSIGNED NOT NULL,
+  `403_web` int(11) unsigned NOT NULL,
+  `404_web` int(11) unsigned NOT NULL,
   PRIMARY KEY  (`id_web`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 ;
 
 --
 -- Contenu de la table `websites`
