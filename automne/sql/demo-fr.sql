@@ -2182,7 +2182,7 @@ CREATE TABLE `mod_object_search_tmp` (
   `id_mos` int(11) unsigned NOT NULL,
   UNIQUE KEY `index_mos` (`search_mos`,`id_mos`),
   KEY `search_mos` (`search_mos`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MEMORY DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `mod_object_search_tmp`
