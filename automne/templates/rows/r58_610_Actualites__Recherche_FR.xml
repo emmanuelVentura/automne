@@ -121,7 +121,9 @@
 							<atm-end-tag tag="div" />
 						</atm-if>
 					</atm-result>
-					<atm-noresult search="newsresult">Aucun r&eacute;sultat trouv&eacute; pour votre recherche ...</atm-noresult>
+					<atm-noresult search="newsresult">
+						<div class="pnews-results">Aucun r&eacute;sultat trouv&eacute; pour votre recherche ...</div>
+					</atm-noresult>
 				</atm-search>
 			</atm-xml>
 		</div>

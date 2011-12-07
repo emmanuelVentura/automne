@@ -35,7 +35,7 @@ $(document).ready(function(){
 			}
 		}
 		if (xmlcontent.getElementsByTagName('data').length > 0) {
-			$('.pmedia-results').html(xmlcontent.getElementsByTagName('data').item(0).firstChild.nodeValue);
+			$('.pmedia-results').replaceWith(xmlcontent.getElementsByTagName('data').item(0).firstChild.nodeValue);
 			catchResults();
 		}
 		return true;
@@ -44,7 +44,7 @@ $(document).ready(function(){
 		//hide all content except first one
 		$(".pmedia-result div.pmedia-content").hide();
 		$(".pmedia-result div.pmedia-content").eq(0).slideToggle("slow");
-		if ($('.pmedia-results .pmedia-pages')) {
+		if ($('.pmedia-results .pmedia-pages').length > 0) {
 			$('.pmedia-results .pmedia-pages a').click(getPage);
 		}
 		$(".pmedia-result h2").click(function(e){
@@ -52,7 +52,7 @@ $(document).ready(function(){
 		});
 		//colorbox on results
 		var images = $("a[rel='atm-enlarge']");
-		if (images.length) {
+		if (images.length > 0) {
 			images.colorbox({
 				photo: true
 			});
