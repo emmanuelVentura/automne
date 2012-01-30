@@ -434,6 +434,7 @@ CREATE TABLE `blocksRawDatas_archived` (
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
   `blockID` varchar(100) NOT NULL default '',
+  `type` varchar(255) NOT NULL,
   `value` text NOT NULL,
   PRIMARY KEY  (`id`),
   KEY `page` (`page`)
@@ -457,6 +458,7 @@ CREATE TABLE `blocksRawDatas_deleted` (
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
   `blockID` varchar(100) NOT NULL default '',
+  `type` varchar(255) NOT NULL,
   `value` text NOT NULL,
   PRIMARY KEY  (`id`),
   KEY `page` (`page`)
@@ -480,6 +482,7 @@ CREATE TABLE `blocksRawDatas_edited` (
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
   `blockID` varchar(100) NOT NULL default '',
+  `type` varchar(255) NOT NULL,
   `value` text NOT NULL,
   PRIMARY KEY  (`id`),
   KEY `page` (`page`)
@@ -489,19 +492,19 @@ CREATE TABLE `blocksRawDatas_edited` (
 -- Contenu de la table `blocksRawDatas_edited`
 --
 
-INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(1, 24, 'first', 'a4ed02469a210827de89cd64d2bb8b35', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"48";}}}');
-INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(23, 30, 'first', '61cbcc65130ccda86b96e663734ab490', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"52";}}}');
-INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(7, 25, 'first', '267e03d5f6a4d0392b79a2d31dcd40f2', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"25";}}}');
-INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(16, 27, 'first', '56025a9b887be03112111d215ca6f31d', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"26";}}}');
-INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(9, 28, 'first', '9ba530cba11a3763a081a2e34072711f', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"27";}}}');
-INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(10, 35, 'first', '9f851c9d1868ad933f280c33e5a419f3', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"28";}}}');
-INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(22, 29, 'first', '0ed9ff0fb2ac8a8eaa61fb380abeae73', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"45";}}}');
-INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(14, 38, 'first', '65990b9ff00394714dd60ffd708b2d77', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"39";}}}');
-INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(15, 38, 'first', '48e8e4c2bea88305e6a9353511f51ea7', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"37";}}}');
-INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(12, 38, 'first', '4f342492c25a2b686c2b531760008d98', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"38";}}}');
-INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(18, 3, 'first', '39a32afb98d21c8252ea3714cff0f62e', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"35";}}}');
-INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(20, 3, 'first', 'f2c8532eb6f56afe1d435350eebd9a52', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"51";}}}');
-INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(2, 2, 'first', '0dd66805b82fd392344cf9a535159768', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"49";}}}');
+INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `type`, `value`) VALUES(1, 24, 'first', 'a4ed02469a210827de89cd64d2bb8b35', 'medias', 'CMS_block_polymod', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"48";}}}');
+INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `type`, `value`) VALUES(23, 30, 'first', '61cbcc65130ccda86b96e663734ab490', 'medias', 'CMS_block_polymod', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"52";}}}');
+INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `type`, `value`) VALUES(7, 25, 'first', '267e03d5f6a4d0392b79a2d31dcd40f2', 'medias', 'CMS_block_polymod', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"25";}}}');
+INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `type`, `value`) VALUES(16, 27, 'first', '56025a9b887be03112111d215ca6f31d', 'medias', 'CMS_block_polymod', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"26";}}}');
+INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `type`, `value`) VALUES(9, 28, 'first', '9ba530cba11a3763a081a2e34072711f', 'medias', 'CMS_block_polymod', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"27";}}}');
+INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `type`, `value`) VALUES(10, 35, 'first', '9f851c9d1868ad933f280c33e5a419f3', 'medias', 'CMS_block_polymod', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"28";}}}');
+INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `type`, `value`) VALUES(22, 29, 'first', '0ed9ff0fb2ac8a8eaa61fb380abeae73', 'medias', 'CMS_block_polymod', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"45";}}}');
+INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `type`, `value`) VALUES(14, 38, 'first', '65990b9ff00394714dd60ffd708b2d77', 'medias', 'CMS_block_polymod', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"39";}}}');
+INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `type`, `value`) VALUES(15, 38, 'first', '48e8e4c2bea88305e6a9353511f51ea7', 'medias', 'CMS_block_polymod', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"37";}}}');
+INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `type`, `value`) VALUES(12, 38, 'first', '4f342492c25a2b686c2b531760008d98', 'medias', 'CMS_block_polymod', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"38";}}}');
+INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `type`, `value`) VALUES(18, 3, 'first', '39a32afb98d21c8252ea3714cff0f62e', 'medias', 'CMS_block_polymod', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"35";}}}');
+INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `type`, `value`) VALUES(20, 3, 'first', 'f2c8532eb6f56afe1d435350eebd9a52', 'medias', 'CMS_block_polymod', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"51";}}}');
+INSERT INTO `blocksRawDatas_edited` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `type`, `value`) VALUES(2, 2, 'first', '0dd66805b82fd392344cf9a535159768', 'medias', 'CMS_block_polymod', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"49";}}}');
 
 -- --------------------------------------------------------
 
@@ -516,10 +519,11 @@ CREATE TABLE `blocksRawDatas_edition` (
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
   `blockID` varchar(100) NOT NULL default '',
+  `type` varchar(255) NOT NULL,
   `value` text NOT NULL,
   PRIMARY KEY  (`id`),
   KEY `page` (`page`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `blocksRawDatas_edition`
@@ -539,6 +543,7 @@ CREATE TABLE `blocksRawDatas_public` (
   `clientSpaceID` varchar(100) NOT NULL default '',
   `rowID` varchar(100) NOT NULL default '',
   `blockID` varchar(100) NOT NULL default '',
+  `type` varchar(255) NOT NULL,
   `value` text NOT NULL,
   PRIMARY KEY  (`id`),
   KEY `page` (`page`)
@@ -548,19 +553,19 @@ CREATE TABLE `blocksRawDatas_public` (
 -- Contenu de la table `blocksRawDatas_public`
 --
 
-INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(1, 24, 'first', 'a4ed02469a210827de89cd64d2bb8b35', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"48";}}}');
-INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(23, 30, 'first', '61cbcc65130ccda86b96e663734ab490', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"52";}}}');
-INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(7, 25, 'first', '267e03d5f6a4d0392b79a2d31dcd40f2', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"25";}}}');
-INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(16, 27, 'first', '56025a9b887be03112111d215ca6f31d', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"26";}}}');
-INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(9, 28, 'first', '9ba530cba11a3763a081a2e34072711f', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"27";}}}');
-INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(10, 35, 'first', '9f851c9d1868ad933f280c33e5a419f3', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"28";}}}');
-INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(22, 29, 'first', '0ed9ff0fb2ac8a8eaa61fb380abeae73', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"45";}}}');
-INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(12, 38, 'first', '4f342492c25a2b686c2b531760008d98', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"38";}}}');
-INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(15, 38, 'first', '48e8e4c2bea88305e6a9353511f51ea7', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"37";}}}');
-INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(14, 38, 'first', '65990b9ff00394714dd60ffd708b2d77', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"39";}}}');
-INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(20, 3, 'first', 'f2c8532eb6f56afe1d435350eebd9a52', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"51";}}}');
-INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(18, 3, 'first', '39a32afb98d21c8252ea3714cff0f62e', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"35";}}}');
-INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `value`) VALUES(2, 2, 'first', '0dd66805b82fd392344cf9a535159768', 'medias', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"49";}}}');
+INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `type`, `value`) VALUES(1, 24, 'first', 'a4ed02469a210827de89cd64d2bb8b35', 'medias', 'CMS_block_polymod', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"48";}}}');
+INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `type`, `value`) VALUES(23, 30, 'first', '61cbcc65130ccda86b96e663734ab490', 'medias', 'CMS_block_polymod', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"52";}}}');
+INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `type`, `value`) VALUES(7, 25, 'first', '267e03d5f6a4d0392b79a2d31dcd40f2', 'medias', 'CMS_block_polymod', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"25";}}}');
+INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `type`, `value`) VALUES(16, 27, 'first', '56025a9b887be03112111d215ca6f31d', 'medias', 'CMS_block_polymod', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"26";}}}');
+INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `type`, `value`) VALUES(9, 28, 'first', '9ba530cba11a3763a081a2e34072711f', 'medias', 'CMS_block_polymod', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"27";}}}');
+INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `type`, `value`) VALUES(10, 35, 'first', '9f851c9d1868ad933f280c33e5a419f3', 'medias', 'CMS_block_polymod', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"28";}}}');
+INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `type`, `value`) VALUES(22, 29, 'first', '0ed9ff0fb2ac8a8eaa61fb380abeae73', 'medias', 'CMS_block_polymod', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"45";}}}');
+INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `type`, `value`) VALUES(12, 38, 'first', '4f342492c25a2b686c2b531760008d98', 'medias', 'CMS_block_polymod', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"38";}}}');
+INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `type`, `value`) VALUES(15, 38, 'first', '48e8e4c2bea88305e6a9353511f51ea7', 'medias', 'CMS_block_polymod', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"37";}}}');
+INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `type`, `value`) VALUES(14, 38, 'first', '65990b9ff00394714dd60ffd708b2d77', 'medias', 'CMS_block_polymod', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"39";}}}');
+INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `type`, `value`) VALUES(20, 3, 'first', 'f2c8532eb6f56afe1d435350eebd9a52', 'medias', 'CMS_block_polymod', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"51";}}}');
+INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `type`, `value`) VALUES(18, 3, 'first', '39a32afb98d21c8252ea3714cff0f62e', 'medias', 'CMS_block_polymod', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"35";}}}');
+INSERT INTO `blocksRawDatas_public` (`id`, `page`, `clientSpaceID`, `rowID`, `blockID`, `type`, `value`) VALUES(2, 2, 'first', '0dd66805b82fd392344cf9a535159768', 'medias', 'CMS_block_polymod', 'a:1:{s:6:"search";a:1:{s:11:"mediaresult";a:1:{s:4:"item";s:2:"49";}}}');
 
 -- --------------------------------------------------------
 
