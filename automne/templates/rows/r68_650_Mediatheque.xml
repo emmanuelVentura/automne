@@ -142,7 +142,7 @@
 						</atm-if>
 					</atm-result>
 					<atm-noresult search="mediaresult">
-						<div class="pmedia-results>
+						<div class="pmedia-results">
 							Aucun r&eacute;sultat trouv&eacute; pour votre recherche ...
 						</div>
 					</atm-noresult>
