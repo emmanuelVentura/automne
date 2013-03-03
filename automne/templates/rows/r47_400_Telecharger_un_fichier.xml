@@ -1,18 +1,5 @@
 <row>
 <block module="standard" type="file" id="fichier">
-<img src="files/standard/icons/{{type}}.gif" alt="Document {{type}}" title="Document {{type}}" /> {{data}} ({{size}})
-<!--
-	Here : all possibles variables for this block type
-	<ul>
-	<li>Download : {{data}}</li>
-	<li>URL : {{href}}</li>
-	<li>Label : {{label}}</li>
-	<li>JSLabel : {{jslabel}}</li>
-	<li>filename : {{filename}}</li>
-	<li>original filename : {{originalfilename}}</li>
-	<li>size : {{size}}</li>
-	<li>type : {{type}}</li>
-	</ul>
--->
+<img src="files/standard/icons/{{type}}.gif" alt="Document {{type}}" /> {{data}} ({{size}})
 </block>
 </row>
