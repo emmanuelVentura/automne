@@ -246,6 +246,9 @@ switch ($step) {
 							}
 							if ($input) {
 								$xhtml .= str_replace(array('{{label}}','{{input}}'),array($label,$input),$xhtmlFieldMask);
+							}else{
+								$xhtml .= '<tr><td colspan="2">'.$label.'</td></tr>'; 
+								$xhtml .= '<tr class="fieldset"><td colspan="2">'.$label.'</td></tr>'; 
 							}
 						}
 					}
@@ -282,6 +285,7 @@ switch ($step) {
 	case 2:
 	case 3:
 		$fieldTypes = array (
+			"fieldset"	=> "<span fckLang=\"DlgCMSFormsFieldset\">Groupe de champs</span>",
 			"text"		=> "<span fckLang=\"DlgCMSFormsText\">Texte</span>",
 			"email" 	=> "<span fckLang=\"DlgCMSFormsTextEmail\">Texte (Email)</span>",
 			"integer" 	=> "<span fckLang=\"DlgCMSFormsTextInteger\">Texte (Chiffres)</span>",
@@ -397,7 +401,8 @@ switch ($step) {
 				$displayDefault = ($aFormField->getAttribute("type") != 'select' 
 									&& $aFormField->getAttribute("type") != 'submit'
 									&& $aFormField->getAttribute("type") != 'file'
-									&& $aFormField->getAttribute("type") != 'pass') ? 'block':'none';
+									&& $aFormField->getAttribute("type") != 'pass'
+									&& $aFormField->getAttribute("type") != 'fieldset') ? 'block':'none';
 			    $displayParams = ($aFormField->getAttribute("type") == 'file') ? 'block' : 'none';
 				
 				$content .= '

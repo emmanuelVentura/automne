@@ -278,10 +278,19 @@ class CMS_forms_formular extends CMS_grandFather {
 		}
 		$cms_module = CMS_modulesCatalog::getByCodename(MOD_CMS_FORMS_CODENAME);
 		if($cms_module->getParameters("output")=='clean'){
+			//replace fieldset tags and legende tags
+			$source = 	preg_replace('#<fieldset>(.*)<fieldset>#siU', '<fieldset>$1</fieldset><fieldset>',
+						preg_replace('#<tr class="fieldset">(.*)</tr>#siU', '<fieldset><legende>$1</legende>', $source, -1, $count_replace));
 			//delete tags from table, add div tag between fields
 			$source = 	preg_replace('#<table([^>]+)>#U', '',
 						str_replace(array('</table>', '<tbody>', '</tbody>', '<td>', '</td>', '<tr>', '</tr>', '&#160;'), array('', '', '', '', '', '<div>', '</div>', ''),
 						preg_replace('#<td([^>]+)>#U', '',$source)));
+			// Close last fieldset
+			if($count_replace){
+					$temp_source=explode('<div>', $source);
+					$temp_source[(count($temp_source)-2)].='</fieldset>';
+					$source=implode('<div>', $temp_source);
+			}
 		}
 		return $source;
 	}
