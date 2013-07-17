@@ -276,6 +276,13 @@ class CMS_forms_formular extends CMS_grandFather {
 				//pr(io::htmlspecialchars($source));
 			break;
 		}
+		$cms_module = CMS_modulesCatalog::getByCodename(MOD_CMS_FORMS_CODENAME);
+		if($cms_module->getParameters("output")=='clean'){
+			//delete tags from table, add div tag between fields
+			$source = 	preg_replace('#<table([^>]+)>#U', '',
+						str_replace(array('</table>', '<tbody>', '</tbody>', '<td>', '</td>', '<tr>', '</tr>', '&#160;'), array('', '', '', '', '', '<div>', '</div>', ''),
+						preg_replace('#<td([^>]+)>#U', '',$source)));
+		}
 		return $source;
 	}
 	
