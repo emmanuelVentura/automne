@@ -9,7 +9,7 @@
 // | LICENSE-GPL, and is available through the world-wide-web at		  |
 // | http://www.gnu.org/copyleft/gpl.html.								  |
 // +----------------------------------------------------------------------+
-// | Author: Sébastien Pauchet <sebastien.pauchet@ws-interactive.fr>      |
+// | Author: Sï¿½bastien Pauchet <sebastien.pauchet@ws-interactive.fr>      |
 // +----------------------------------------------------------------------+
 //
 // $Id: form.php,v 1.7 2010/03/08 16:43:26 sebastien Exp $
@@ -19,7 +19,7 @@
   *
   * @package Automne
   * @subpackage cms_forms
-  * @author Sébastien Pauchet <sebastien.pauchet@ws-interactive.fr>
+  * @author Sï¿½bastien Pauchet <sebastien.pauchet@ws-interactive.fr>
   */
 
 class CMS_forms_formular extends CMS_grandFather {
@@ -280,7 +280,7 @@ class CMS_forms_formular extends CMS_grandFather {
 		if($cms_module->getParameters("output")=='clean'){
 			//replace fieldset tags and legende tags
 			$source = 	preg_replace('#<fieldset>(.*)<fieldset>#siU', '<fieldset>$1</fieldset><fieldset>',
-						preg_replace('#<tr class="fieldset">(.*)</tr>#siU', '<fieldset><legende>$1</legende>', $source, -1, $count_replace));
+						preg_replace('#<tr class="fieldset">(.*)</tr>#siU', '<fieldset><legend>$1</legend>', $source, -1, $count_replace));
 			//delete tags from table, add div tag between fields
 			$source = 	preg_replace('#<table([^>]+)>#U', '',
 						str_replace(array('</table>', '<tbody>', '</tbody>', '<td>', '</td>', '<tr>', '</tr>', '&#160;'), array('', '', '', '', '', '<div>', '</div>', ''),
