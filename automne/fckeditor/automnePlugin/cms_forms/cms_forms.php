@@ -10,7 +10,7 @@
 // | http://www.gnu.org/copyleft/gpl.html.								  |
 // +----------------------------------------------------------------------+
 // | Author: Frederico Caldeira Knabben (fredck@fckeditor.net)            |
-// | Author: Sébastien Pauchet <sebastien.pauchet@ws-interactive.fr>      |
+// | Author: Sï¿½bastien Pauchet <sebastien.pauchet@ws-interactive.fr>      |
 // +----------------------------------------------------------------------+
 //
 // $Id: cms_forms.php,v 1.5 2010/03/08 16:44:19 sebastien Exp $
@@ -22,7 +22,7 @@
   * @package Modules
   * @subpackage admin
   * @author Frederico Caldeira Knabben (fredck@fckeditor.net)
-  * @author Sébastien Pauchet <sebastien.pauchet@ws-interactive.fr>
+  * @author Sï¿½bastien Pauchet <sebastien.pauchet@ws-interactive.fr>
   */
 
 //for this page, HTML output compression is not welcome.
@@ -246,8 +246,7 @@ switch ($step) {
 							}
 							if ($input) {
 								$xhtml .= str_replace(array('{{label}}','{{input}}'),array($label,$input),$xhtmlFieldMask);
-							}else{
-								$xhtml .= '<tr><td colspan="2">'.$label.'</td></tr>'; 
+							}else{ 
 								$xhtml .= '<tr class="fieldset"><td colspan="2">'.$label.'</td></tr>'; 
 							}
 						}
